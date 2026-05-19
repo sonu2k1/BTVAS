@@ -10,6 +10,7 @@ const values = [
     description: "We believe every family deserves compassionate care from beginning to end and throughout treatment",
     image: "/images/card-1.webp",
     borderColor: "#f4a261",
+    objectPosition: "center 5%",
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ const values = [
     description: "We act with honesty and transparency in everything we do for our clients and community.",
     image: "/images/card-2.webp",
     borderColor: "#4fc3f7",
+    objectPosition: "center 5%",
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ const values = [
     description: "We work together with families, caregivers and professionals to achieve the best outcomes.",
     image: "/images/card-3.webp",
     borderColor: "#a5d6a7",
+    objectPosition: "center 5%",
   },
   {
     id: 4,
@@ -31,6 +34,7 @@ const values = [
     description: "Every child belongs. We create welcoming spaces where all abilities are celebrated.",
     image: "/images/card-4.webp",
     borderColor: "#ce93d8",
+    objectPosition: "center 5%",
   },
 ];
 
@@ -157,6 +161,7 @@ export const CoreValues: React.FC = () => {
                   src={val.image}
                   alt={val.title}
                   fill
+                  style={{ objectPosition: val.objectPosition }}
                   className="object-cover"
                 />
               </div>
