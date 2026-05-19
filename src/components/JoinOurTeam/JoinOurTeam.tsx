@@ -3,29 +3,12 @@
 import React from "react";
 import Image from "next/image";
 
-// Each side has 3 stacked images + partial peeks on left/right edges
-// Layout per side (left example):
-//   col-left (partial, ~60px wide, clipped): img1-top, img2-mid, img3-bot
-//   col-right (full 180px): img1-top, img2-mid, img3-bot
+// Layout constants for a perfect fit in 455px height
+const IMG_SIZE = 130;
+const GAP = 17;
+const HALF_OFFSET = -(IMG_SIZE / 2); // -65px so it's exactly half hidden
 
-const LEFT_IMAGES = [
-  "/images/0O3A2433.jpg",
-  "/images/0O3A2433.jpg",
-  "/images/0O3A2462.jpg",
-];
-
-const RIGHT_IMAGES = [
-  "/images/0O3A2474.jpg",
-  "/images/0O3A2486.jpg",
-  "/images/0O3A2500.jpg",
-];
-
-const IMG_W = 180;
-const IMG_H = 160;
-const GAP = 12;
-const PARTIAL_W = 60; // peeking column width
-const SIDE_W = 372;
-const SIDE_H = 476; // 3 images + 2 gaps = 3*160 + 2*12 = 504 → we clip to section height
+const TEAM_IMG = "/images/0O3A2433.jpg"; // We'll just use one of the team images as the repeating one
 
 export const JoinOurTeam: React.FC = () => {
   return (
@@ -35,88 +18,80 @@ export const JoinOurTeam: React.FC = () => {
     >
       {/* ── LEFT IMAGE BLOCK ── */}
       <div
-        className="relative flex-shrink-0 overflow-hidden"
-        style={{ width: `${SIDE_W}px`, height: "455px" }}
+        className="relative flex-shrink-0"
+        style={{ width: "240px", height: "100%" }}
       >
-        {/* Partial peek column (leftmost, clipped) */}
+        {/* Col 1 (Far Left - Half cut off) */}
         <div
-          className="absolute top-0 left-0 flex flex-col"
-          style={{ gap: `${GAP}px`, paddingTop: "0px" }}
-        >
-          {LEFT_IMAGES.map((src, i) => (
-            <div
-              key={`left-partial-${i}`}
-              style={{
-                width: `${PARTIAL_W}px`,
-                height: `${IMG_H}px`,
-                borderRadius: "12px",
-                overflow: "hidden",
-                flexShrink: 0,
-              }}
-            >
-              <Image
-                src={src}
-                alt={`Team photo ${i + 1}`}
-                width={IMG_W}
-                height={IMG_H}
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Main column */}
-        <div
-          className="absolute top-0 flex flex-col"
-          style={{ left: `${PARTIAL_W + GAP}px`, gap: `${GAP}px` }}
-        >
-          {LEFT_IMAGES.map((src, i) => (
-            <div
-              key={`left-main-${i}`}
-              style={{
-                width: `${IMG_W}px`,
-                height: `${IMG_H}px`,
-                borderRadius: "12px",
-                overflow: "hidden",
-                flexShrink: 0,
-              }}
-            >
-              <Image
-                src={src}
-                alt={`Team photo ${i + 1}`}
-                width={IMG_W}
-                height={IMG_H}
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Right partial peek (overlaps into center gap area, subtle) */}
-        <div
-          className="absolute top-0 flex flex-col"
+          className="absolute flex flex-col"
           style={{
-            left: `${PARTIAL_W + GAP + IMG_W + GAP}px`,
+            left: `${HALF_OFFSET}px`,
+            top: `${GAP}px`,
             gap: `${GAP}px`,
           }}
         >
-          {LEFT_IMAGES.map((src, i) => (
+          {/* Top: Grey block */}
+          <div
+            style={{
+              width: `${IMG_SIZE}px`,
+              height: `${IMG_SIZE}px`,
+              backgroundColor: "#D1D5DB", // Grey block
+              borderRadius: "16px",
+            }}
+          />
+          {/* Middle: Image */}
+          <div
+            style={{
+              width: `${IMG_SIZE}px`,
+              height: `${IMG_SIZE}px`,
+              borderRadius: "16px",
+              overflow: "hidden",
+            }}
+          >
+            <Image
+              src={TEAM_IMG}
+              alt="Team"
+              width={IMG_SIZE}
+              height={IMG_SIZE}
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+          {/* Bottom: Grey block */}
+          <div
+            style={{
+              width: `${IMG_SIZE}px`,
+              height: `${IMG_SIZE}px`,
+              backgroundColor: "#D1D5DB", // Grey block
+              borderRadius: "16px",
+            }}
+          />
+        </div>
+
+        {/* Col 2 (Inner Left - Full) */}
+        <div
+          className="absolute flex flex-col"
+          style={{
+            left: `${HALF_OFFSET + IMG_SIZE + GAP}px`, // -65 + 130 + 17 = 82px
+            top: `${GAP}px`,
+            gap: `${GAP}px`,
+          }}
+        >
+          {[1, 2, 3].map((_, i) => (
             <div
-              key={`left-right-peek-${i}`}
+              key={`left-full-${i}`}
               style={{
-                width: `${PARTIAL_W}px`,
-                height: `${IMG_H}px`,
-                borderRadius: "12px",
+                width: `${IMG_SIZE}px`,
+                height: `${IMG_SIZE}px`,
+                borderRadius: "16px",
                 overflow: "hidden",
-                flexShrink: 0,
               }}
             >
               <Image
-                src={src}
-                alt={`Team photo ${i + 1}`}
-                width={IMG_W}
-                height={IMG_H}
-                className="w-full h-full object-cover object-right"
+                src={TEAM_IMG}
+                alt="Team"
+                width={IMG_SIZE}
+                height={IMG_SIZE}
+                className="w-full h-full object-cover object-center"
               />
             </div>
           ))}
@@ -124,19 +99,17 @@ export const JoinOurTeam: React.FC = () => {
       </div>
 
       {/* ── MIDDLE TEXT SECTION ── */}
-      {/* gap 32 on each side from image blocks */}
       <div
         className="flex flex-col items-center justify-center flex-shrink-0"
-        style={{ width: "800px", height: "206px" }}
+        style={{ width: "800px", zIndex: 10 }}
       >
         {/* Subtitle */}
         <p
           style={{
-            fontFamily: "'Georgia', serif",
-            fontSize: "15px",
-            color: "#9CA3AF",
-            fontStyle: "italic",
-            letterSpacing: "0.1em",
+            fontFamily: "'Nunito', sans-serif",
+            fontSize: "17px",
+            fontWeight: "600",
+            color: "#6B7280",
             marginBottom: "8px",
             textAlign: "center",
           }}
@@ -147,9 +120,9 @@ export const JoinOurTeam: React.FC = () => {
         {/* Heading */}
         <h2
           style={{
-            fontFamily: "'Georgia', serif",
-            fontSize: "34px",
-            fontWeight: 800,
+            fontFamily: "'Nunito', sans-serif",
+            fontSize: "40px",
+            fontWeight: 900,
             lineHeight: 1.2,
             textAlign: "center",
             marginBottom: "16px",
@@ -162,126 +135,118 @@ export const JoinOurTeam: React.FC = () => {
         {/* Description */}
         <p
           style={{
-            fontFamily: "'Georgia', serif",
-            fontSize: "16px",
+            fontFamily: "'Nunito', sans-serif",
+            fontSize: "17px",
+            fontWeight: 400,
             color: "#4B5563",
             textAlign: "center",
             lineHeight: 1.6,
-            marginBottom: "28px",
-            maxWidth: "620px",
+            marginBottom: "32px",
+            maxWidth: "600px",
           }}
         >
-          Build your career in a supportive environment that values learning,
-          collaboration, and growth.
+          Build your career in a supportive environment that values learning, collaboration, and growth.
         </p>
 
         {/* Button */}
         <button
           style={{
-            width: "198px",
-            height: "42px",
-            background: "linear-gradient(90deg, #F43F5E 0%, #EC4899 100%)",
-            borderRadius: "999px",
+            width: "200px",
+            height: "48px",
+            backgroundColor: "#FF4880",
+            borderRadius: "50px",
             border: "none",
             color: "#ffffff",
-            fontFamily: "'Georgia', serif",
-            fontSize: "15px",
-            fontWeight: 700,
+            fontFamily: "'Nunito', sans-serif",
+            fontSize: "16px",
+            fontWeight: 800,
             cursor: "pointer",
-            letterSpacing: "0.01em",
+            boxShadow: "0 4px 10px rgba(255, 72, 128, 0.25)",
           }}
         >
           Join Our Team
         </button>
       </div>
 
-      {/* ── RIGHT IMAGE BLOCK (mirror of left) ── */}
+      {/* ── RIGHT IMAGE BLOCK ── */}
       <div
-        className="relative flex-shrink-0 overflow-hidden"
-        style={{ width: `${SIDE_W}px`, height: "455px" }}
+        className="relative flex-shrink-0"
+        style={{ width: "240px", height: "100%" }}
       >
-        {/* Left partial peek */}
+        {/* Col 1 (Inner Right - Full) */}
         <div
-          className="absolute top-0 left-0 flex flex-col"
-          style={{ gap: `${GAP}px` }}
-        >
-          {RIGHT_IMAGES.map((src, i) => (
-            <div
-              key={`right-left-peek-${i}`}
-              style={{
-                width: `${PARTIAL_W}px`,
-                height: `${IMG_H}px`,
-                borderRadius: "12px",
-                overflow: "hidden",
-                flexShrink: 0,
-              }}
-            >
-              <Image
-                src={src}
-                alt={`Team photo ${i + 1}`}
-                width={IMG_W}
-                height={IMG_H}
-                className="w-full h-full object-cover object-left"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Main column */}
-        <div
-          className="absolute top-0 flex flex-col"
-          style={{ left: `${PARTIAL_W + GAP}px`, gap: `${GAP}px` }}
-        >
-          {RIGHT_IMAGES.map((src, i) => (
-            <div
-              key={`right-main-${i}`}
-              style={{
-                width: `${IMG_W}px`,
-                height: `${IMG_H}px`,
-                borderRadius: "12px",
-                overflow: "hidden",
-                flexShrink: 0,
-              }}
-            >
-              <Image
-                src={src}
-                alt={`Team photo ${i + 1}`}
-                width={IMG_W}
-                height={IMG_H}
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Right partial peek (clipped at edge) */}
-        <div
-          className="absolute top-0 flex flex-col"
+          className="absolute flex flex-col"
           style={{
-            left: `${PARTIAL_W + GAP + IMG_W + GAP}px`,
+            right: `${HALF_OFFSET + IMG_SIZE + GAP}px`, // 82px from right
+            top: `${GAP}px`,
             gap: `${GAP}px`,
           }}
         >
-          {RIGHT_IMAGES.map((src, i) => (
+          {[1, 2, 3].map((_, i) => (
             <div
-              key={`right-right-peek-${i}`}
+              key={`right-full-${i}`}
               style={{
-                width: `${PARTIAL_W}px`,
-                height: `${IMG_H}px`,
-                borderRadius: "12px",
+                width: `${IMG_SIZE}px`,
+                height: `${IMG_SIZE}px`,
+                borderRadius: "16px",
                 overflow: "hidden",
-                flexShrink: 0,
               }}
             >
               <Image
-                src={src}
-                alt={`Team photo ${i + 1}`}
-                width={IMG_W}
-                height={IMG_H}
+                src={TEAM_IMG}
+                alt="Team"
+                width={IMG_SIZE}
+                height={IMG_SIZE}
                 className="w-full h-full object-cover object-center"
               />
             </div>
           ))}
+        </div>
+
+        {/* Col 2 (Far Right - Half cut off) */}
+        <div
+          className="absolute flex flex-col"
+          style={{
+            right: `${HALF_OFFSET}px`, // -65px from right
+            top: `${GAP}px`,
+            gap: `${GAP}px`,
+          }}
+        >
+          {/* Top: Grey block */}
+          <div
+            style={{
+              width: `${IMG_SIZE}px`,
+              height: `${IMG_SIZE}px`,
+              backgroundColor: "#D1D5DB", // Grey block
+              borderRadius: "16px",
+            }}
+          />
+          {/* Middle: Image */}
+          <div
+            style={{
+              width: `${IMG_SIZE}px`,
+              height: `${IMG_SIZE}px`,
+              borderRadius: "16px",
+              overflow: "hidden",
+            }}
+          >
+            <Image
+              src={TEAM_IMG}
+              alt="Team"
+              width={IMG_SIZE}
+              height={IMG_SIZE}
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+          {/* Bottom: Grey block */}
+          <div
+            style={{
+              width: `${IMG_SIZE}px`,
+              height: `${IMG_SIZE}px`,
+              backgroundColor: "#D1D5DB", // Grey block
+              borderRadius: "16px",
+            }}
+          />
         </div>
       </div>
     </section>

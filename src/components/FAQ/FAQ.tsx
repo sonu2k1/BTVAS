@@ -40,144 +40,58 @@ export const FAQ: React.FC = () => {
     <div style={{ width: "1440px", margin: "0 auto", display: "flex", flexDirection: "column" }}>
       {/* ── FAQ SECTION ── */}
       <section
-        className="bg-white flex items-center justify-center overflow-hidden flex-shrink-0"
-        style={{ width: "1440px", height: "452px" }}
+        className="bg-white flex items-center justify-center flex-shrink-0"
+        style={{ width: "1440px", padding: "60px 0" }}
       >
         <div
-          className="flex items-center"
-          style={{ width: "1440px", height: "452px", paddingLeft: "37px", paddingRight: "37px", boxSizing: "border-box" }}
+          className="flex items-center justify-between"
+          style={{ width: "1440px", paddingRight: "60px", boxSizing: "border-box" }}
         >
           {/* ── LEFT: Image block ── */}
           <div
             className="relative flex-shrink-0"
             style={{
-              width: "734px",
-              height: "452px",
-              display: "flex",
-              alignItems: "flex-end",
-              paddingBottom: "0px",
+              width: "650px", // Takes up the left side
+              height: "350px", // Matches the height of the 5 FAQs
+              borderRadius: "0 120px 0 0",
+              overflow: "hidden",
             }}
           >
-            <div
-              style={{
-                width: "734px",
-                height: "398px",
-                borderRadius: "20px",
-                overflow: "hidden",
-                position: "absolute",
-                bottom: "0",
-                left: "0",
-              }}
-            >
-              {/* Purple overlay */}
-              <div
-                className="absolute inset-0 z-10"
-                style={{
-                  background:
-                    "linear-gradient(160deg, rgba(109,40,217,0.45) 0%, rgba(139,92,246,0.35) 50%, rgba(109,40,217,0.2) 100%)",
-                  borderRadius: "20px",
-                }}
-              />
-              <Image
-                src="/images/faq-child.png"
-                alt="Child thinking with glasses"
-                width={734}
-                height={398}
-                className="w-full h-full object-cover object-center"
-                priority
-              />
-
-              {/* FAQ label top-left */}
-              <div className="absolute z-20" style={{ top: "28px", left: "28px" }}>
-                <p
-                  style={{
-                    fontFamily: "'Georgia', serif",
-                    fontSize: "13px",
-                    fontWeight: 600,
-                    color: "rgba(255,255,255,0.85)",
-                    letterSpacing: "0.08em",
-                    marginBottom: "6px",
-                  }}
-                >
-                  FAQ
-                </p>
-                <h2
-                  style={{
-                    fontFamily: "'Georgia', serif",
-                    fontSize: "28px",
-                    fontWeight: 800,
-                    color: "#ffffff",
-                    lineHeight: 1.15,
-                    margin: 0,
-                  }}
-                >
-                  Frequently Asked
-                  <br />
-                  Questions
-                </h2>
-              </div>
-
-              {/* Bottom CTA */}
-              <div className="absolute z-20" style={{ bottom: "24px", left: "28px" }}>
-                <p
-                  style={{
-                    fontFamily: "'Georgia', serif",
-                    fontSize: "13px",
-                    color: "rgba(255,255,255,0.8)",
-                    marginBottom: "4px",
-                  }}
-                >
-                  Have other questions ?
-                </p>
-                
-                <a
-                  href="#"
-                  style={{
-                    fontFamily: "'Georgia', serif",
-                    fontSize: "14px",
-                    fontWeight: 700,
-                    color: "#FFD740",
-                    textDecoration: "none",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "4px",
-                  }}
-                >
-                  Get Started <span style={{ fontSize: "16px" }}>→</span>
-                </a>
-              </div>
-            </div>
+            <Image
+              src="/images/FAQimg.png" // Using the provided FAQ image
+              alt="FAQ Section Image"
+              fill
+              className="object-cover object-center"
+              priority
+            />
           </div>
-
-          {/* ── GAP 24px ── */}
-          <div style={{ width: "24px", flexShrink: 0 }} />
 
           {/* ── RIGHT: FAQ accordion ── */}
           <div
             className="flex flex-col justify-center flex-shrink-0"
-            style={{ width: "628px", height: "294px", gap: "6px" }}
+            style={{ width: "660px", gap: "16px" }}
           >
             {faqs.map((faq, i) => (
               <div
                 key={i}
                 style={{
-                  width: "628px",
-                  minHeight: "46px",
-                  borderRadius: "10px",
-                  border: "1.5px solid #E5E7EB",
+                  width: "100%",
+                  minHeight: "52px",
+                  borderRadius: "8px",
+                  border: "1px solid #D1D5DB", // Thin grey border
                   overflow: "hidden",
                   background: "#fff",
-                  transition: "box-shadow 0.2s",
-                  boxShadow: openIndex === i ? "0 2px 12px rgba(124,58,237,0.08)" : "none",
+                  transition: "all 0.2s",
+                  boxShadow: openIndex === i ? "0 4px 12px rgba(0,0,0,0.05)" : "none",
                 }}
               >
-                {/* Question row — exactly 46px */}
+                {/* Question row */}
                 <button
                   onClick={() => toggle(i)}
                   className="w-full flex items-center justify-between"
                   style={{
-                    height: "46px",
-                    padding: "0 16px",
+                    minHeight: "52px",
+                    padding: "0 20px",
                     background: "transparent",
                     border: "none",
                     cursor: "pointer",
@@ -186,9 +100,9 @@ export const FAQ: React.FC = () => {
                 >
                   <span
                     style={{
-                      fontFamily: "'Georgia', serif",
-                      fontSize: "13.5px",
-                      fontWeight: 500,
+                      fontFamily: "'Nunito', sans-serif",
+                      fontSize: "15px",
+                      fontWeight: 700,
                       color: "#111827",
                       lineHeight: 1.3,
                     }}
@@ -197,14 +111,16 @@ export const FAQ: React.FC = () => {
                   </span>
                   <span
                     style={{
-                      fontSize: "20px",
-                      fontWeight: 300,
-                      color: "#374151",
+                      fontSize: "24px",
+                      fontWeight: 700,
+                      color: "#111827",
                       flexShrink: 0,
-                      marginLeft: "12px",
+                      marginLeft: "16px",
                       transition: "transform 0.2s",
                       transform: openIndex === i ? "rotate(45deg)" : "rotate(0deg)",
-                      display: "inline-block",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
                     +
@@ -215,13 +131,12 @@ export const FAQ: React.FC = () => {
                 {openIndex === i && (
                   <div
                     style={{
-                      padding: "0 16px 14px 16px",
-                      fontFamily: "'Georgia', serif",
-                      fontSize: "13px",
-                      color: "#6B7280",
+                      padding: "0 20px 20px 20px",
+                      fontFamily: "'Nunito', sans-serif",
+                      fontSize: "14px",
+                      fontWeight: 500,
+                      color: "#4B5563",
                       lineHeight: 1.6,
-                      borderTop: "1px solid #F3F4F6",
-                      paddingTop: "10px",
                     }}
                   >
                     {faq.answer}
@@ -240,11 +155,11 @@ export const FAQ: React.FC = () => {
       >
         <p
           style={{
-            fontFamily: "'Georgia', serif",
+            fontFamily: "'Nunito', sans-serif",
             fontSize: "18px",
             color: "#888c99",
             marginBottom: "16px",
-            fontWeight: 500,
+            fontWeight: 700,
           }}
         >
           Accepted Insurance

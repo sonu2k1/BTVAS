@@ -41,12 +41,12 @@ export const Mission: React.FC = () => {
           <div
             style={{
               position: "absolute",
-              bottom: 0,
-              left: 0,
-              width: "220px",
-              height: "220px",
-              borderRadius: "50%",
-              backgroundColor: "#f0e6d3",
+              top: "70px",
+              left: "-10px",
+              width: "200px",
+              height: "340px",
+              borderRadius: "170px 0 0 170px",
+              backgroundColor: "#F3E8D6", // Matches the screenshot cream color
               zIndex: 0,
             }}
           />
@@ -55,47 +55,82 @@ export const Mission: React.FC = () => {
           <div
             style={{
               position: "absolute",
-              top: "10px",
-              left: "30px",
+              top: "10px", // Positioned to overlap the image's top-left corner
+              left: "40px",
               zIndex: 3,
               display: "flex",
               alignItems: "center",
-              gap: "12px",
+              marginBottom: "5px", // User's requested bottom margin
             }}
           >
+            {/* Purple circle */}
             <div
               style={{
-                width: "72px",
-                height: "72px",
+                width: "100px",
+                height: "100px",
                 borderRadius: "50%",
-                backgroundColor: "#753DBE",
+                backgroundColor: "#9B72CF", // Matches screenshot purple
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                flexShrink: 0,
+                zIndex: 2,
+                boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+                padding: "6px",
+              }}
+            >
+              {/* Inner dashed border */}
+              <div
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "50%",
+                  border: "2px dashed rgba(255,255,255,0.7)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "'Nunito', sans-serif",
+                    fontSize: "30px",
+                    fontWeight: "900",
+                    color: "#fff",
+                  }}
+                >
+                  25+
+                </span>
+              </div>
+            </div>
+
+            {/* White pill text container */}
+            <div
+              style={{
+                width: "146px", // User requested width
+                height: "46px", // User requested height
+                backgroundColor: "#fff",
+                borderRadius: "0 23px 23px 0",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginLeft: "-20px", // Tucked under the purple circle
+                paddingLeft: "15px", // Push text away from circle
+                boxShadow: "4px 4px 15px rgba(0,0,0,0.06)",
+                zIndex: 1,
               }}
             >
               <span
                 style={{
                   fontFamily: "'Nunito', sans-serif",
-                  fontSize: "22px",
-                  fontWeight: "900",
-                  color: "#fff",
+                  fontSize: "12.5px",
+                  fontWeight: "800",
+                  color: "#333",
+                  whiteSpace: "nowrap",
                 }}
               >
-                25+
+                Years Of Experience
               </span>
             </div>
-            <span
-              style={{
-                fontFamily: "'Nunito', sans-serif",
-                fontSize: "16px",
-                fontWeight: "700",
-                color: "#1a1a1a",
-              }}
-            >
-              Years Of Experience
-            </span>
           </div>
 
           {/* Main image */}
@@ -103,20 +138,46 @@ export const Mission: React.FC = () => {
             style={{
               position: "absolute",
               top: "50px",
-              left: "100px",
+              left: "80px",
               width: "420px",
               height: "400px",
-              borderRadius: "22px",
-              overflow: "hidden",
+              borderRadius: "16px",
               zIndex: 1,
+              backgroundColor: "#fff",
             }}
           >
-            <Image
-              src="/images/0O3A2500.jpg"
-              alt="Beyond The View team"
-              fill
-              className="object-cover"
-              priority
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                borderRadius: "16px",
+                overflow: "hidden",
+              }}
+            >
+              <Image
+                src="/images/0O3A2500.jpg"
+                alt="Beyond The View team"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+            {/* Dashed Border Overlay matching screenshot */}
+            <div
+              style={{
+                position: "absolute",
+                top: "8px",
+                left: "8px",
+                width: "calc(100% - 16px)",
+                height: "calc(100% - 16px)",
+                borderRadius: "12px",
+                border: "2px dashed #D2B48C",
+                zIndex: 2,
+                pointerEvents: "none",
+              }}
             />
           </div>
         </div>
