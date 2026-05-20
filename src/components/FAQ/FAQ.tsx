@@ -128,20 +128,30 @@ export const FAQ: React.FC = () => {
                 </button>
 
                 {/* Answer — expands below */}
-                {openIndex === i && (
-                  <div
-                    style={{
-                      padding: "0 20px 20px 20px",
-                      fontFamily: "'Nunito', sans-serif",
-                      fontSize: "14px",
-                      fontWeight: 500,
-                      color: "#4B5563",
-                      lineHeight: 1.6,
-                    }}
-                  >
-                    {faq.answer}
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateRows: openIndex === i ? "1fr" : "0fr",
+                    transition: "grid-template-rows 0.3s ease-in-out",
+                  }}
+                >
+                  <div style={{ overflow: "hidden" }}>
+                    <div
+                      style={{
+                        padding: openIndex === i ? "0 20px 20px 20px" : "0 20px 0 20px",
+                        opacity: openIndex === i ? 1 : 0,
+                        transition: "all 0.3s ease-in-out",
+                        fontFamily: "'Nunito', sans-serif",
+                        fontSize: "14px",
+                        fontWeight: 500,
+                        color: "#4B5563",
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      {faq.answer}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             ))}
           </div>
