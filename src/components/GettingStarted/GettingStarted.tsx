@@ -49,10 +49,11 @@ const steps = [
 
 export const GettingStarted: React.FC = () => {
   return (
+    <div style={{ width: "100%", backgroundColor: "#753DBE" }}>
     <section
       className="relative overflow-hidden flex flex-col"
       style={{
-        width: "1440px",
+        maxWidth: "1440px",
         height: "455.36px",
         backgroundColor: "#753DBE",
         paddingLeft: "50px",
@@ -247,5 +248,6 @@ export const GettingStarted: React.FC = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };

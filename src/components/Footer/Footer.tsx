@@ -23,12 +23,14 @@ const exploreLinks = [
 export const Footer: React.FC = () => {
   return (
     <footer
-      className="bg-[#010C6F] text-white flex justify-center overflow-hidden"
-      style={{ width: "1440px", height: "445px", margin: "0 auto" }}
+      className="bg-[#010C6F] text-white flex justify-center overflow-hidden w-full"
+      style={{ height: "445px" }}
     >
       <div
         className="relative flex items-start w-full"
         style={{
+          maxWidth: "1440px",
+          margin: "0 auto",
           paddingTop: "36px",
           paddingBottom: "36px",
           paddingLeft: "75px",
@@ -77,7 +79,7 @@ export const Footer: React.FC = () => {
                 </div>
                 <span style={{ fontSize: "12px", color: "rgba(255, 255, 255, 0.9)" }}>/Beyondtheviewautismservices</span>
               </div>
-              
+
               {/* Vertical Divider */}
               <div style={{ width: "1px", height: "24px", background: "rgba(255, 255, 255, 0.2)" }} />
 
@@ -138,7 +140,7 @@ export const Footer: React.FC = () => {
           <h4 style={{ fontSize: "20px", fontWeight: 700, marginBottom: "12px", fontFamily: "'Inter', sans-serif" }}>
             Explore
           </h4>
-          
+
           {/* Custom line underneath Explore */}
           <div style={{ display: "flex", width: "100%", height: "2px", marginBottom: "24px" }}>
             <div style={{ width: "30%", background: "#FF4880" }}></div>

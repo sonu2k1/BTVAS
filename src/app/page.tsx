@@ -59,7 +59,7 @@ export default function Home() {
       <JoinOurTeam />
       <FAQ />
 
-      <div style={{ width: "1440px", margin: "0 auto", display: "flex", justifyContent: "center", position: "relative", zIndex: 20, marginBottom: "-25px", top: "-14px" }}>
+      <div style={{ width: "100%", display: "flex", justifyContent: "center", position: "relative", zIndex: 20, marginBottom: "-25px", top: "-14px" }}>
         <Image 
           src="/divider.webp" 
           alt="Divider" 

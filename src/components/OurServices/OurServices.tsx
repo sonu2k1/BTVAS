@@ -66,7 +66,7 @@ export const OurServices: React.FC = () => {
       id="services"
     >
       {/* Header */}
-      <div className="flex flex-col items-center mt-10 mb-8">
+      <div className="flex flex-col items-center" style={{ marginBottom: "30px" }}>
         <p
           className="tracking-widest mb-1"
           style={{
@@ -212,15 +212,16 @@ export const OurServices: React.FC = () => {
 
       {/* Crocodile toy bottom-right decorative */}
       <div
-        className="absolute bottom-0 right-16 pointer-events-none select-none"
-        style={{ width: "100px", height: "100px" }}
+        className="absolute pointer-events-none select-none"
+        style={{ bottom: "8px", right: "48px", zIndex: 30 }}
         aria-hidden
       >
         <Image
           src="/images/toy-crocodile.png"
           alt="Decorative toy crocodile"
-          fill
-          className="object-contain"
+          width={195}
+          height={83}
+          style={{ width: "194.43px", height: "82.01px" }}
         />
       </div>
     </section>

@@ -41,7 +41,7 @@ export const FAQ: React.FC = () => {
       {/* ── FAQ SECTION ── */}
       <section
         className="bg-white flex items-center justify-center flex-shrink-0"
-        style={{ width: "1440px", padding: "60px 0" }}
+        style={{ width: "1440px", padding: "60px 0 24px 0" }}
       >
         <div
           className="flex items-center justify-between"
@@ -161,7 +161,7 @@ export const FAQ: React.FC = () => {
       {/* ── ACCEPTED INSURANCE BANNER ── */}
       <div
         className="flex flex-col items-center bg-white flex-shrink-0"
-        style={{ width: "1440px", height: "156px", justifyContent: "center" }}
+        style={{ width: "1440px", height: "300px", justifyContent: "center", paddingTop: "24px", boxSizing: "border-box" }}
       >
         <p
           style={{
