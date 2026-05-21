@@ -3,11 +3,17 @@
 import React from "react";
 import Image from "next/image";
 
-// Reusing inline SVG for Location Map Pin as it wasn't specified in the file list.
 const MapPinIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
     <circle cx="12" cy="10" r="3" />
+  </svg>
+);
+
+const ChevronDoubleRight = () => (
+  <svg width="14.68" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
+    <path d="M1 1l5.5 6.5L1 14" stroke="#FF4880" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M6 1l5.5 6.5L6 14" stroke="#FF4880" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 );
 
@@ -39,10 +45,7 @@ export const Footer: React.FC = () => {
         }}
       >
         {/* ── LEFT PART ── */}
-        <div
-          className="flex flex-col flex-1"
-          style={{ gap: "72px" }}
-        >
+        <div className="flex flex-col flex-1" style={{ gap: "72px" }}>
           {/* Upper Part */}
           <div className="flex flex-col">
             <div style={{ marginBottom: "16px" }}>
@@ -72,7 +75,6 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col" style={{ gap: "32px" }}>
             {/* Row 1: Social */}
             <div className="flex items-center" style={{ gap: "40px" }}>
-              {/* Instagram/Link */}
               <div className="flex items-center gap-3">
                 <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px]" style={{ width: "32px", height: "32px" }}>
                   <Image src="/icons/Link.svg" alt="Instagram" width={16} height={16} />
@@ -80,10 +82,8 @@ export const Footer: React.FC = () => {
                 <span style={{ fontSize: "12px", color: "rgba(255, 255, 255, 0.9)" }}>/Beyondtheviewautismservices</span>
               </div>
 
-              {/* Vertical Divider */}
               <div style={{ width: "1px", height: "24px", background: "rgba(255, 255, 255, 0.2)" }} />
 
-              {/* Facebook */}
               <div className="flex items-center gap-3">
                 <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px]" style={{ width: "32px", height: "32px" }}>
                   <Image src="/icons/FB.svg" alt="Facebook" width={16} height={16} />
@@ -141,10 +141,10 @@ export const Footer: React.FC = () => {
             Explore
           </h4>
 
-          {/* Custom line underneath Explore */}
-          <div style={{ display: "flex", width: "100%", height: "2px", marginBottom: "24px" }}>
-            <div style={{ width: "30%", background: "#FF4880" }}></div>
-            <div style={{ width: "70%", background: "rgba(255, 255, 255, 0.2)" }}></div>
+          {/* Divider: 245px total, 80px #FF4880, 165px muted */}
+          <div style={{ display: "flex", width: "245px", height: "2.5px", marginBottom: "24px" }}>
+            <div style={{ width: "80px", height: "2.5px", background: "#FF4880", flexShrink: 0 }} />
+            <div style={{ width: "165px", height: "2.5px", background: "rgba(255, 255, 255, 0.2)", flexShrink: 0 }} />
           </div>
 
           <ul className="flex flex-col" style={{ gap: "16px", padding: 0, margin: 0, listStyle: "none" }}>
@@ -155,7 +155,7 @@ export const Footer: React.FC = () => {
                   className="flex items-center gap-3 text-white transition-colors hover:text-[#FF4880]"
                   style={{ fontSize: "14px", fontWeight: 500, fontFamily: "'Inter', sans-serif", textDecoration: "none" }}
                 >
-                  <span style={{ color: "#FF4880", fontSize: "16px", lineHeight: 1 }}>»</span>
+                  <ChevronDoubleRight />
                   {link.label}
                 </a>
               </li>

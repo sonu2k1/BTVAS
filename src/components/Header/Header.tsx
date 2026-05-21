@@ -32,7 +32,6 @@ export const Header: React.FC = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
-  // Track active section on scroll
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -149,28 +148,56 @@ export const Header: React.FC = () => {
           background: #e03570;
         }
 
-        /* CTA BUTTON */
+        /* CTA BUTTON — 3D drop shadow style */
+        .cta-btn-wrapper {
+          position: relative;
+          display: inline-block;
+          width: 216px;
+          height: 50px;
+          flex-shrink: 0;
+        }
+
+        .cta-btn-shadow {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 216px;
+          height: 42px;
+          background: #c93360;
+          border-radius: 21px;
+        }
+
         .cta-btn {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 216px;
+          height: 42px;
           background: #FF4880;
           color: #ffffff;
           font-family: 'Nunito', sans-serif;
           font-size: 15px;
           font-weight: 800;
           border: none;
-          border-radius: 40px;
-          padding: 14px 32px;
+          border-radius: 21px;
           cursor: pointer;
           white-space: nowrap;
           text-decoration: none;
-          display: inline-block;
-          transition: background 0.2s, transform 0.15s;
-          box-shadow: 0 4px 16px rgba(255, 72, 128, 0.30);
+          display: flex;
+          align-items: center;
+          justify-content: center;
           letter-spacing: 0.2px;
+          transition: top 0.1s ease, background 0.2s ease;
         }
 
         .cta-btn:hover {
+          background: #ff5f95;
+          top: 2px;
+        }
+
+        .cta-btn:active {
+          top: 6px;
           background: #e03570;
-          transform: scale(1.03);
         }
 
         @media (max-width: 1024px) {
@@ -186,17 +213,17 @@ export const Header: React.FC = () => {
           }
         }
       `}</style>
-      
+
       <div className="w-full flex flex-col items-center">
         <nav className={`custom-navbar mx-auto w-full ${scrolled ? 'scrolled' : ''}`}>
           {/* LOGO */}
           <div className="logo-area">
-            <Image 
-              src="/logo.png" 
-              alt="Beyond the View Autism Services" 
-              width={180} 
-              height={80} 
-              className="logo-img" 
+            <Image
+              src="/logo.png"
+              alt="Beyond the View Autism Services"
+              width={180}
+              height={80}
+              className="logo-img"
               priority
             />
           </div>
@@ -219,9 +246,14 @@ export const Header: React.FC = () => {
             })}
           </ul>
 
-          {/* CTA */}
+          {/* CTA — 3D button */}
           <div className="cta-btn-wrapper hidden lg:block">
-            <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")} className="cta-btn">
+            <div className="cta-btn-shadow" />
+            <a
+              href="#contact"
+              onClick={(e) => handleNavClick(e, "#contact")}
+              className="cta-btn"
+            >
               Getting Started
             </a>
           </div>

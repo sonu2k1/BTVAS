@@ -4,7 +4,18 @@ import React from "react";
 
 export const CtaBanner: React.FC = () => {
   return (
-    <section
+    <>
+      <style>{`
+        .cta-banner-btn:hover {
+          background-color: #ff5f95 !important;
+          top: 2px !important;
+        }
+        .cta-banner-btn:active {
+          top: 6px !important;
+          background-color: #e03570 !important;
+        }
+      `}</style>
+      <section
       style={{
         width: "1280px",
         height: "114px",
@@ -68,35 +79,62 @@ export const CtaBanner: React.FC = () => {
           </p>
         </div>
 
-        {/* RIGHT BUTTON */}
-        <a
-          href="mailto:intake@btvas.com"
+        {/* RIGHT BUTTON — 3D drop shadow style */}
+        <div
           style={{
+            position: "relative",
             width: "487px",
-            height: "42px",
-            borderRadius: "40px",
-            backgroundColor: "#FF4880",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            height: "50px",
             flexShrink: 0,
-            textDecoration: "none",
-            cursor: "pointer",
           }}
         >
-          <span
+          {/* Shadow layer */}
+          <div
             style={{
-              fontFamily: "'Nunito', sans-serif",
-              fontSize: "15px",
-              fontWeight: "800",
-              color: "#ffffff",
-              whiteSpace: "nowrap",
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              width: "487px",
+              height: "42px",
+              backgroundColor: "#c93360",
+              borderRadius: "21px",
+            }}
+          />
+          {/* Button layer */}
+          <a
+            href="mailto:intake@btvas.com"
+            className="cta-banner-btn"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "487px",
+              height: "42px",
+              borderRadius: "21px",
+              backgroundColor: "#FF4880",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              textDecoration: "none",
+              cursor: "pointer",
+              transition: "top 0.1s ease, background 0.2s ease",
             }}
           >
-            Email intake@btvas.com to schedule a tour today
-          </span>
-        </a>
+            <span
+              style={{
+                fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive",
+                fontSize: "17px",
+                fontWeight: "700",
+                color: "#ffffff",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Email intake@btvas.com to schedule a tour today
+            </span>
+          </a>
+        </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };

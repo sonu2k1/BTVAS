@@ -12,7 +12,18 @@ const TEAM_IMG = "/images/0O3A2433.jpg"; // We'll just use one of the team image
 
 export const JoinOurTeam: React.FC = () => {
   return (
-    <section
+    <>
+      <style>{`
+        .join-team-btn:hover {
+          background-color: #ff5f95 !important;
+          top: 2px !important;
+        }
+        .join-team-btn:active {
+          top: 6px !important;
+          background-color: #e03570 !important;
+        }
+      `}</style>
+      <section
       className="relative bg-white flex items-center justify-between overflow-hidden"
       style={{ width: "1440px", height: "455px", margin: "0 auto" }}
     >
@@ -148,24 +159,60 @@ export const JoinOurTeam: React.FC = () => {
           Build your career in a supportive environment that values learning, collaboration, and growth.
         </p>
 
-        {/* Button */}
-        <button
+        {/* Button — 3D drop shadow style */}
+        <div
           style={{
-            width: "200px",
-            height: "48px",
-            backgroundColor: "#FF4880",
-            borderRadius: "50px",
-            border: "none",
-            color: "#ffffff",
-            fontFamily: "'Nunito', sans-serif",
-            fontSize: "16px",
-            fontWeight: 800,
-            cursor: "pointer",
-            boxShadow: "0 4px 10px rgba(255, 72, 128, 0.25)",
+            position: "relative",
+            width: "198px",
+            height: "50px",
           }}
         >
-          Join Our Team
-        </button>
+          {/* Shadow layer */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              width: "198px",
+              height: "42px",
+              backgroundColor: "#c93360",
+              borderRadius: "21px",
+            }}
+          />
+          {/* Button layer */}
+          <a
+            href="#team"
+            className="join-team-btn"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "198px",
+              height: "42px",
+              borderRadius: "21px",
+              backgroundColor: "#FF4880",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              textDecoration: "none",
+              cursor: "pointer",
+              border: "none",
+              transition: "top 0.1s ease, background-color 0.2s ease",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive",
+                fontSize: "18px",
+                fontWeight: "700",
+                color: "#ffffff",
+                whiteSpace: "nowrap",
+              }}
+            >
+              Join Our Team
+            </span>
+          </a>
+        </div>
       </div>
 
       {/* ── RIGHT IMAGE BLOCK ── */}
@@ -249,6 +296,7 @@ export const JoinOurTeam: React.FC = () => {
           />
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
