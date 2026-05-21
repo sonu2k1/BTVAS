@@ -13,7 +13,6 @@ import { OurServices } from "@/components/OurServices/OurServices";
 import { GettingStarted } from "@/components/GettingStarted/GettingStarted";
 import { JoinOurTeam } from "@/components/JoinOurTeam/JoinOurTeam";
 import { FAQ } from "@/components/FAQ/FAQ";
-import { ScallopDivider } from "@/components/ScallopDivider/ScallopDivider";
 import { Footer } from "@/components/Footer/Footer";
 import Image from "next/image";
 

@@ -152,20 +152,20 @@ export const GettingStarted: React.FC = () => {
                 transition: "top 0.1s ease, background 0.2s ease",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.top = "2px";
-                (e.currentTarget as HTMLButtonElement).style.background = "#ff5f95";
+                e.currentTarget.style.top = "2px";
+                e.currentTarget.style.background = "#ff5f95";
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.top = "0px";
-                (e.currentTarget as HTMLButtonElement).style.background = "#FF4880";
+                e.currentTarget.style.top = "0px";
+                e.currentTarget.style.background = "#FF4880";
               }}
               onMouseDown={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.top = "6px";
-                (e.currentTarget as HTMLButtonElement).style.background = "#e03570";
+                e.currentTarget.style.top = "6px";
+                e.currentTarget.style.background = "#e03570";
               }}
               onMouseUp={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.top = "2px";
-                (e.currentTarget as HTMLButtonElement).style.background = "#ff5f95";
+                e.currentTarget.style.top = "2px";
+                e.currentTarget.style.background = "#ff5f95";
               }}
             >
               Get Started

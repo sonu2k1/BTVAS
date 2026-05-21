@@ -140,7 +140,7 @@ export const OurTeam: React.FC = () => {
           scrollbar-width: none;
         }
       `}</style>
-    <section
+      <section
       style={{
         width: "1440px",
         height: "800px",
@@ -344,7 +344,7 @@ export const OurTeam: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+      </section>
     </>
   );
 };
