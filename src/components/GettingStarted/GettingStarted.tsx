@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 
 const steps = [
@@ -50,8 +48,9 @@ const steps = [
 export const GettingStarted: React.FC = () => {
   return (
     <div style={{ width: "100%", backgroundColor: "#753DBE" }}>
+      {/* ── DESKTOP VIEW: 100% EXACT ORIGINAL LAYOUT & PIXELS (Visible on lg and larger) ── */}
       <section
-        className="relative overflow-hidden flex flex-col"
+        className="hidden lg:flex relative overflow-hidden flex-col"
         style={{
           maxWidth: "1440px",
           height: "455.36px",
@@ -115,7 +114,7 @@ export const GettingStarted: React.FC = () => {
             </p>
           </div>
 
-          {/* Right: Get Started button — 3D drop shadow style */}
+          {/* Right: Get Started button — 3D drop shadow style (Pure CSS Hover) */}
           <div style={{ position: "relative", width: "216px", height: "50px", flexShrink: 0 }}>
             {/* Shadow layer */}
             <div
@@ -149,24 +148,8 @@ export const GettingStarted: React.FC = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                transition: "top 0.1s ease, background 0.2s ease",
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.top = "2px";
-                e.currentTarget.style.background = "#ff5f95";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.top = "0px";
-                e.currentTarget.style.background = "#FF4880";
-              }}
-              onMouseDown={(e) => {
-                e.currentTarget.style.top = "6px";
-                e.currentTarget.style.background = "#e03570";
-              }}
-              onMouseUp={(e) => {
-                e.currentTarget.style.top = "2px";
-                e.currentTarget.style.background = "#ff5f95";
-              }}
+              className="transition-all duration-100 ease-in-out hover:top-[2px] hover:bg-[#ff5f95] active:top-[6px] active:bg-[#e03570]"
             >
               Get Started
             </button>
@@ -279,6 +262,152 @@ export const GettingStarted: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── MOBILE / TABLET VIEW: DYNAMIC FLUID & RESPONSIVE (Visible below lg) ── */}
+      <section className="flex lg:hidden flex-col w-full px-6 py-12 md:py-16 gap-8">
+        {/* Top Part */}
+        <div className="flex flex-col gap-6 w-full">
+          <div className="flex flex-col justify-center">
+            <p
+              style={{
+                fontFamily: "'Georgia', serif",
+                fontSize: "14px",
+                color: "rgba(255,255,255,0.75)",
+                marginBottom: "4px",
+                letterSpacing: "0.02em",
+              }}
+            >
+              Steps Toward Your Child's Care
+            </p>
+            <h2
+              style={{
+                fontFamily: "'Georgia', serif",
+                fontSize: "32px",
+                fontWeight: 800,
+                lineHeight: 1.1,
+                margin: 0,
+              }}
+            >
+              <span style={{ color: "#ffffff" }}>Getting </span>
+              <span style={{ color: "#FFD740" }}>Start</span>
+            </h2>
+          </div>
+
+          <div className="flex items-center">
+            <p
+              style={{
+                fontFamily: "'Georgia', serif",
+                fontSize: "16px",
+                fontWeight: 700,
+                color: "#ffffff",
+                lineHeight: 1.4,
+                margin: 0,
+              }}
+            >
+              Our goal is to make the process simple so your child can begin services as quickly as possible
+            </p>
+          </div>
+
+          {/* Button wrapper */}
+          <div style={{ position: "relative", width: "216px", height: "50px", flexShrink: 0 }}>
+            {/* Shadow layer */}
+            <div
+              style={{
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                width: "216px",
+                height: "42px",
+                background: "#c93360",
+                borderRadius: "21px",
+              }}
+            />
+            {/* Button layer */}
+            <button
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "216px",
+                height: "42px",
+                background: "#FF4880",
+                borderRadius: "21px",
+                border: "none",
+                color: "#ffffff",
+                fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive",
+                fontSize: "16px",
+                fontWeight: 700,
+                cursor: "pointer",
+                letterSpacing: "0.01em",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+              className="transition-all duration-100 ease-in-out hover:top-[2px] hover:bg-[#ff5f95] active:top-[6px] active:bg-[#e03570]"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+
+        {/* Separator */}
+        <div className="h-4" />
+
+        {/* Mobile Vertical Timeline */}
+        <div className="flex flex-col relative w-full gap-8 pl-8">
+          {/* Vertical connecting line */}
+          <div
+            className="absolute left-[13px] top-4 bottom-4 w-0.5"
+            style={{ backgroundColor: "#FF4880" }}
+          />
+
+          {steps.map((step) => (
+            <div key={step.number} className="relative flex flex-col gap-1 text-left">
+              {/* Number bubble */}
+              <div
+                className="absolute -left-8 flex items-center justify-center"
+                style={{
+                  width: "28px",
+                  height: "28px",
+                  borderRadius: "50%",
+                  background: "#FF4880",
+                  color: "#ffffff",
+                  fontFamily: "'Georgia', serif",
+                  fontSize: "13px",
+                  fontWeight: 700,
+                  boxShadow: "0 0 0 3px rgba(255,72,128,0.3)",
+                  zIndex: 10,
+                }}
+              >
+                {step.number}
+              </div>
+
+              <h4
+                style={{
+                  fontFamily: "'Georgia', serif",
+                  fontSize: "15px",
+                  fontWeight: 700,
+                  color: "#ffffff",
+                  margin: 0,
+                }}
+              >
+                {step.title}
+              </h4>
+              <p
+                style={{
+                  fontFamily: "'Georgia', serif",
+                  fontSize: "13px",
+                  color: "rgba(255,255,255,0.85)",
+                  lineHeight: 1.5,
+                  margin: 0,
+                }}
+              >
+                {step.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
     </div>
