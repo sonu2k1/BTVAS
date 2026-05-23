@@ -25,22 +25,19 @@ const visionaries = [
 export const Visionaries: React.FC = () => {
   return (
     <section
+      className="w-full max-w-[1440px] mx-auto py-10 md:py-16 px-4 sm:px-8 md:px-16 lg:px-20"
       style={{
-        width: "1440px",
-        height: "552px",
         backgroundColor: "#ffffff",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
         boxSizing: "border-box",
-        padding: "0 80px",
         gap: "32px",
-        margin: "0 auto",
       }}
     >
       {/* HEADING */}
-      <div style={{ width: "1280px" }}>
+      <div className="w-full max-w-[1280px]">
         <h2
           style={{
             fontFamily: "'Nunito', sans-serif",
@@ -55,22 +52,15 @@ export const Visionaries: React.FC = () => {
         </h2>
       </div>
 
-      {/* CARDS ROW */}
+      {/* CARDS ROW — stacks on mobile */}
       <div
-        style={{
-          width: "1280px",
-          height: "354px",
-          display: "flex",
-          gap: "48px",
-          alignItems: "center",
-        }}
+        className="w-full max-w-[1280px] flex flex-col md:flex-row gap-6 md:gap-12 items-center"
       >
         {visionaries.map((person) => (
           <div
             key={person.id}
+            className="w-full md:w-[616px] h-auto md:h-[300px]"
             style={{
-              width: "616px",
-              height: "300px",
               borderRadius: "22px",
               backgroundColor: "#FFDC68",
               display: "flex",
@@ -82,6 +72,7 @@ export const Visionaries: React.FC = () => {
           >
             {/* Circle background behind image */}
             <div
+              className="hidden sm:block"
               style={{
                 position: "absolute",
                 left: "-30px",
@@ -97,9 +88,8 @@ export const Visionaries: React.FC = () => {
 
             {/* IMAGE */}
             <div
+              className="w-[120px] sm:w-[160px] md:w-[200px] h-[200px] sm:h-[250px] md:h-[300px]"
               style={{
-                width: "200px",
-                height: "300px",
                 position: "relative",
                 flexShrink: 0,
                 zIndex: 1,
@@ -117,7 +107,7 @@ export const Visionaries: React.FC = () => {
             <div
               style={{
                 flex: 1,
-                padding: "28px 24px",
+                padding: "20px 16px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
@@ -126,9 +116,9 @@ export const Visionaries: React.FC = () => {
             >
               <div>
                 <h3
+                  className="text-[18px] sm:text-[20px] md:text-[24px]"
                   style={{
                     fontFamily: "'Nunito', sans-serif",
-                    fontSize: "24px",
                     fontWeight: "900",
                     color: "#1a1a1a",
                     margin: "0 0 6px 0",
@@ -161,14 +151,14 @@ export const Visionaries: React.FC = () => {
               </div>
 
               <p
+                className="text-[13px] md:text-[14px]"
                 style={{
                   fontFamily: "'Nunito', sans-serif",
-                  fontSize: "14px",
                   fontWeight: "600",
                   fontStyle: "italic",
                   color: "#333",
                   lineHeight: "1.6",
-                  margin: 0,
+                  margin: "12px 0 0 0",
                 }}
               >
                 {person.quote}

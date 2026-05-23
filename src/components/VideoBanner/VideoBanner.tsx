@@ -10,17 +10,17 @@ export const VideoBanner: React.FC = () => {
   return (
     <section id="video" className="w-full bg-[#FFFDF8]">
       <div
-        className="relative overflow-hidden mx-auto"
-        style={{ width: "1440px", height: "555px" }}
+        className="relative overflow-hidden mx-auto w-full max-w-[1440px]"
+        style={{ aspectRatio: "1440 / 555" }}
       >
         {!isPlaying ? (
           <>
             <Image
               src="/images/children-field-banner.png"
               alt="Happy children running together in a sunlit meadow"
-              width={1440}
-              height={555}
-              className="w-full h-full object-cover object-center"
+              fill
+              className="object-cover object-center"
+              sizes="100vw"
               priority
             />
 
@@ -34,7 +34,7 @@ export const VideoBanner: React.FC = () => {
             >
               <div className="relative">
                 <div className="absolute inset-0 bg-[#FFD740] rounded-full blur-md opacity-50 scale-125" />
-                <div className="relative w-[70px] h-[70px] md:w-[80px] md:h-[80px] bg-[#FFD740] rounded-full flex items-center justify-center shadow-xl">
+                <div className="relative w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px] bg-[#FFD740] rounded-full flex items-center justify-center shadow-xl">
                   <svg
                     width="28"
                     height="32"

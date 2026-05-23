@@ -22,9 +22,8 @@ export default function Home() {
       {/* Absolute background layer for the Hero section */}
       <div className="absolute top-0 left-0 w-full bg-navy-deep z-0 overflow-hidden flex justify-center">
         <div 
-          className="w-full max-w-[1688px]"
+          className="w-full max-w-[1688px] h-[500px] md:h-[700px] lg:h-[912px]"
           style={{
-            height: "912px",
             backgroundImage: "url('/images/background.webp')",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
@@ -41,7 +40,7 @@ export default function Home() {
           <Header />
         </div>
 
-        <div className="relative w-full flex justify-center" style={{ minHeight: "calc(912px - 140px)" }}>
+        <div className="relative w-full flex justify-center min-h-[360px] md:min-h-[560px] lg:min-h-[calc(912px-140px)]">
           <Hero />
         </div>
 

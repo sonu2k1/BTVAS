@@ -7,38 +7,26 @@ export const Mission: React.FC = () => {
   return (
     <section
       id="about"
+      className="w-full max-w-[1440px] mx-auto py-10 md:py-16 px-4 sm:px-8 md:px-16"
       style={{
-        width: "1440px",
-        height: "552px",
         backgroundColor: "#faf6f0",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         boxSizing: "border-box",
-        margin: "0 auto",
       }}
     >
       {/* INNER WRAPPER */}
       <div
-        style={{
-          width: "1280px",
-          height: "478px",
-          display: "flex",
-          alignItems: "center",
-          gap: "80px",
-        }}
+        className="w-full max-w-[1280px] flex flex-col md:flex-row items-center gap-8 md:gap-16 lg:gap-20"
       >
         {/* LEFT — Image + 25+ badge */}
         <div
-          style={{
-            width: "518px",
-            height: "454px",
-            position: "relative",
-            flexShrink: 0,
-          }}
+          className="relative w-full md:w-[518px] h-[350px] sm:h-[400px] md:h-[454px] flex-shrink-0"
         >
           {/* Cream circle background */}
           <div
+            className="hidden md:block"
             style={{
               position: "absolute",
               top: "70px",
@@ -46,7 +34,7 @@ export const Mission: React.FC = () => {
               width: "200px",
               height: "340px",
               borderRadius: "170px 0 0 170px",
-              backgroundColor: "#F3E8D6", // Matches the screenshot cream color
+              backgroundColor: "#F3E8D6",
               zIndex: 0,
             }}
           />
@@ -55,21 +43,20 @@ export const Mission: React.FC = () => {
           <div
             style={{
               position: "absolute",
-              top: "10px", // Positioned to overlap the image's top-left corner
-              left: "40px",
+              top: "10px",
+              left: "10px",
               zIndex: 3,
               display: "flex",
               alignItems: "center",
-              marginBottom: "5px", // User's requested bottom margin
+              marginBottom: "5px",
             }}
           >
             {/* Purple circle */}
             <div
+              className="w-[70px] h-[70px] md:w-[100px] md:h-[100px]"
               style={{
-                width: "100px",
-                height: "100px",
                 borderRadius: "50%",
-                backgroundColor: "#9B72CF", // Matches screenshot purple
+                backgroundColor: "#9B72CF",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -91,9 +78,9 @@ export const Mission: React.FC = () => {
                 }}
               >
                 <span
+                  className="text-[22px] md:text-[30px]"
                   style={{
                     fontFamily: "'Nunito', sans-serif",
-                    fontSize: "30px",
                     fontWeight: "900",
                     color: "#fff",
                   }}
@@ -105,24 +92,23 @@ export const Mission: React.FC = () => {
 
             {/* White pill text container */}
             <div
+              className="w-[120px] md:w-[146px] h-[36px] md:h-[46px]"
               style={{
-                width: "146px", // User requested width
-                height: "46px", // User requested height
                 backgroundColor: "#fff",
                 borderRadius: "0 23px 23px 0",
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
-                marginLeft: "-20px", // Tucked under the purple circle
-                paddingLeft: "15px", // Push text away from circle
+                marginLeft: "-20px",
+                paddingLeft: "15px",
                 boxShadow: "4px 4px 15px rgba(0,0,0,0.06)",
                 zIndex: 1,
               }}
             >
               <span
+                className="text-[11px] md:text-[12.5px]"
                 style={{
                   fontFamily: "'Nunito', sans-serif",
-                  fontSize: "12.5px",
                   fontWeight: "800",
                   color: "#333",
                   whiteSpace: "nowrap",
@@ -135,12 +121,8 @@ export const Mission: React.FC = () => {
 
           {/* Main image */}
           <div
+            className="absolute top-[50px] left-4 sm:left-10 md:left-[80px] w-[calc(100%-32px)] sm:w-[calc(100%-80px)] md:w-[420px] h-[280px] sm:h-[340px] md:h-[400px]"
             style={{
-              position: "absolute",
-              top: "50px",
-              left: "80px",
-              width: "420px",
-              height: "400px",
               borderRadius: "16px",
               zIndex: 1,
               backgroundColor: "#fff",
@@ -184,15 +166,7 @@ export const Mission: React.FC = () => {
 
         {/* RIGHT — Description */}
         <div
-          style={{
-            width: "580px",
-            height: "312px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "16px",
-            flexShrink: 0,
-          }}
+          className="w-full md:w-[580px] flex flex-col justify-center gap-4 flex-shrink-0"
         >
           {/* Our Mission label */}
           <p
@@ -211,9 +185,9 @@ export const Mission: React.FC = () => {
           {/* Heading */}
           <div>
             <h2
+              className="text-[28px] sm:text-[32px] md:text-[38px]"
               style={{
                 fontFamily: "'Nunito', sans-serif",
-                fontSize: "38px",
                 fontWeight: "900",
                 color: "#1a1a1a",
                 margin: "0 0 4px 0",
@@ -223,9 +197,9 @@ export const Mission: React.FC = () => {
               Nurturing Growth
             </h2>
             <h2
+              className="text-[28px] sm:text-[32px] md:text-[38px]"
               style={{
                 fontFamily: "'Nunito', sans-serif",
-                fontSize: "38px",
                 fontWeight: "900",
                 margin: 0,
                 lineHeight: 1.1,
@@ -257,12 +231,7 @@ export const Mission: React.FC = () => {
 
           {/* Tags */}
           <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "40px",
-              marginTop: "8px",
-            }}
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-10 mt-2"
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span style={{ fontSize: "22px" }}>🧸</span>

@@ -17,9 +17,8 @@ export const HeroCard: React.FC = () => {
       `}</style>
       {/* OUTER CARD */}
       <div
+        className="w-full max-w-[756px]"
         style={{
-          width: "756px",
-          height: "382px",
           borderRadius: "20px",
           backgroundColor: "rgba(117, 61, 190, 0.6)",
           padding: "10px",
@@ -29,23 +28,22 @@ export const HeroCard: React.FC = () => {
       >
         {/* INNER BORDER */}
         <div
+          className="w-full"
           style={{
-            width: "736px",
-            height: "362px",
             borderRadius: "20px",
             border: "1.5px dashed rgba(255, 255, 255, 0.4)",
             boxSizing: "border-box",
-            padding: "24px",
+            padding: "20px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
+            gap: "20px",
           }}
         >
           {/* CONTENT AREA */}
           <div
+            className="w-full"
             style={{
-              width: "688px",
-              height: "248px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "flex-start",
@@ -54,9 +52,9 @@ export const HeroCard: React.FC = () => {
           >
             {/* Subtitle */}
             <p
+              className="text-[20px] sm:text-[26px] md:text-[32px]"
               style={{
                 fontFamily: "'Nunito', sans-serif",
-                fontSize: "32px",
                 fontWeight: "400",
                 color: "#ffffff",
                 margin: 0,
@@ -68,9 +66,9 @@ export const HeroCard: React.FC = () => {
 
             {/* Main Heading */}
             <h1
+              className="text-[28px] sm:text-[38px] md:text-[52px]"
               style={{
                 fontFamily: "'Nunito', sans-serif",
-                fontSize: "52px",
                 fontWeight: "900",
                 color: "#FFE600",
                 margin: 0,
@@ -82,9 +80,9 @@ export const HeroCard: React.FC = () => {
 
             {/* Quote */}
             <p
+              className="text-[13px] sm:text-[14px] md:text-[15px]"
               style={{
                 fontFamily: "'Nunito', sans-serif",
-                fontSize: "15px",
                 fontWeight: "600",
                 fontStyle: "italic",
                 color: "#ffffff",

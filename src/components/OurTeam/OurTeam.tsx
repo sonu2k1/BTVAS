@@ -141,209 +141,175 @@ export const OurTeam: React.FC = () => {
         }
       `}</style>
       <section
-      style={{
-        width: "1440px",
-        height: "800px",
-        backgroundColor: "#ffffff",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        boxSizing: "border-box",
-        margin: "0 auto",
-      }}
-    >
-      {/* INNER WRAPPER */}
-      <div
+        className="w-full max-w-[1440px] mx-auto py-10 md:py-16 px-4 sm:px-8 md:px-16"
         style={{
-          width: "1280px",
-          height: "750px",
+          backgroundColor: "#ffffff",
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
-          gap: "24px",
+          justifyContent: "center",
+          boxSizing: "border-box",
         }}
       >
-        {/* HEADING */}
-        <h2
-          style={{
-            fontFamily: "'Nunito', sans-serif",
-            fontSize: "36px",
-            fontWeight: "900",
-            color: "#1a1a1a",
-            margin: 0,
-            textAlign: "center",
-          }}
-        >
-          Our <span style={{ color: "#FF4880" }}>Team</span>
-        </h2>
-
-        {/* TABS */}
+        {/* INNER WRAPPER */}
         <div
-          style={{
-            width: "968px",
-            height: "36px",
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-            flexShrink: 0,
-          }}
+          className="w-full max-w-[1280px] flex flex-col items-center gap-6"
         >
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              style={{
-                height: "36px",
-                padding: "0 20px",
-                borderRadius: "40px",
-                border: activeTab === tab ? "none" : "1px solid #ddd",
-                backgroundColor: activeTab === tab ? "#010C6F" : "transparent",
-                color: activeTab === tab ? "#ffffff" : "#555",
-                fontFamily: "'Nunito', sans-serif",
-                fontSize: "14px",
-                fontWeight: activeTab === tab ? "800" : "600",
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-                flexShrink: 0,
-              }}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
-
-        {/* MAIN CONTENT */}
-        <div
-          style={{
-            width: "1232px",
-            height: "560px",
-            display: "flex",
-            gap: "24px",
-            flexShrink: 0,
-          }}
-        >
-          {/* SMALL THUMBNAILS */}
-          <div
+          {/* HEADING */}
+          <h2
             style={{
-              width: "100px",
-              height: "560px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "16px",
-              flexShrink: 0,
-              overflowY: "auto",
+              fontFamily: "'Nunito', sans-serif",
+              fontSize: "36px",
+              fontWeight: "900",
+              color: "#1a1a1a",
+              margin: 0,
+              textAlign: "center",
             }}
-            className="no-scrollbar"
           >
-            {teamMembers.map((member) => (
-              <div
-                key={member.id}
-                onClick={() => setSelectedMember(member)}
+            Our <span style={{ color: "#FF4880" }}>Team</span>
+          </h2>
+
+          {/* TABS — horizontally scrollable on mobile */}
+          <div
+            className="w-full max-w-[968px] flex items-center gap-2 overflow-x-auto pb-2 no-scrollbar"
+          >
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
                 style={{
-                  width: "100px",
-                  height: "100px",
-                  borderRadius: "12px",
-                  overflow: "hidden",
+                  height: "36px",
+                  padding: "0 20px",
+                  borderRadius: "40px",
+                  border: activeTab === tab ? "none" : "1px solid #ddd",
+                  backgroundColor: activeTab === tab ? "#010C6F" : "transparent",
+                  color: activeTab === tab ? "#ffffff" : "#555",
+                  fontFamily: "'Nunito', sans-serif",
+                  fontSize: "14px",
+                  fontWeight: activeTab === tab ? "800" : "600",
                   cursor: "pointer",
+                  whiteSpace: "nowrap",
                   flexShrink: 0,
-                  border: selectedMember.id === member.id ? "3px solid #753DBE" : "3px solid transparent",
-                  boxSizing: "border-box",
+                }}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          {/* MAIN CONTENT — Desktop: horizontal 3-panel / Mobile: stacked */}
+          <div
+            className="w-full flex flex-col lg:flex-row gap-6"
+          >
+            {/* SMALL THUMBNAILS — horizontal scroll on mobile, vertical on desktop */}
+            <div
+              className="flex lg:flex-col gap-3 lg:gap-4 overflow-x-auto lg:overflow-x-visible lg:overflow-y-auto lg:w-[100px] lg:max-h-[560px] flex-shrink-0 pb-2 lg:pb-0 no-scrollbar"
+            >
+              {teamMembers.map((member) => (
+                <div
+                  key={member.id}
+                  onClick={() => setSelectedMember(member)}
+                  className="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] lg:w-[100px] lg:h-[100px]"
+                  style={{
+                    borderRadius: "12px",
+                    overflow: "hidden",
+                    cursor: "pointer",
+                    flexShrink: 0,
+                    border: selectedMember.id === member.id ? "3px solid #753DBE" : "3px solid transparent",
+                    boxSizing: "border-box",
+                    position: "relative",
+                  }}
+                >
+                  <Image
+                    src={member.thumb}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* BIG IMAGE + DESCRIPTION — stacked on mobile, side-by-side on desktop */}
+            <div className="flex flex-col md:flex-row gap-6 flex-1">
+              {/* BIG IMAGE */}
+              <div
+                className="w-full md:w-[400px] lg:w-[560px] aspect-square md:aspect-auto md:h-[400px] lg:h-[560px]"
+                style={{
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  flexShrink: 0,
                   position: "relative",
                 }}
               >
                 <Image
-                  src={member.thumb}
-                  alt={member.name}
+                  src={selectedMember.image}
+                  alt={selectedMember.name}
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
+                  priority
                 />
               </div>
-            ))}
-          </div>
 
-          {/* BIG IMAGE */}
-          <div
-            style={{
-              width: "560px",
-              height: "560px",
-              borderRadius: "16px",
-              overflow: "hidden",
-              flexShrink: 0,
-              position: "relative",
-            }}
-          >
-            <Image
-              src={selectedMember.image}
-              alt={selectedMember.name}
-              fill
-              className="object-cover object-top"
-              priority
-            />
-          </div>
-
-          {/* DESCRIPTION */}
-          <div
-            className="no-scrollbar"
-            style={{
-              width: "524px",
-              height: "518px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "8px",
-              flexShrink: 0,
-              overflowY: "auto",
-            }}
-          >
-            <h3
-              style={{
-                fontFamily: "'Nunito', sans-serif",
-                fontSize: "32px",
-                fontWeight: "900",
-                color: "#1a1a1a",
-                margin: "0 0 4px 0",
-              }}
-            >
-              {selectedMember.name}
-            </h3>
-            <p
-              style={{
-                fontFamily: "'Nunito', sans-serif",
-                fontSize: "15px",
-                fontWeight: "700",
-                color: "#333",
-                margin: 0,
-              }}
-            >
-              {selectedMember.credentials}
-            </p>
-            <p
-              style={{
-                fontFamily: "'Nunito', sans-serif",
-                fontSize: "13px",
-                fontWeight: "400",
-                color: "#777",
-                margin: "0 0 12px 0",
-              }}
-            >
-              {selectedMember.role}
-            </p>
-            <p
-              style={{
-                fontFamily: "'Nunito', sans-serif",
-                fontSize: "14px",
-                fontWeight: "400",
-                fontStyle: "italic",
-                color: "#333",
-                lineHeight: "1.8",
-                margin: 0,
-                whiteSpace: "pre-line",
-              }}
-            >
-              {selectedMember.quote}
-            </p>
+              {/* DESCRIPTION */}
+              <div
+                className="w-full md:flex-1 lg:max-h-[560px] overflow-y-auto no-scrollbar"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "8px",
+                }}
+              >
+                <h3
+                  className="text-[24px] sm:text-[28px] md:text-[32px]"
+                  style={{
+                    fontFamily: "'Nunito', sans-serif",
+                    fontWeight: "900",
+                    color: "#1a1a1a",
+                    margin: "0 0 4px 0",
+                  }}
+                >
+                  {selectedMember.name}
+                </h3>
+                <p
+                  style={{
+                    fontFamily: "'Nunito', sans-serif",
+                    fontSize: "15px",
+                    fontWeight: "700",
+                    color: "#333",
+                    margin: 0,
+                  }}
+                >
+                  {selectedMember.credentials}
+                </p>
+                <p
+                  style={{
+                    fontFamily: "'Nunito', sans-serif",
+                    fontSize: "13px",
+                    fontWeight: "400",
+                    color: "#777",
+                    margin: "0 0 12px 0",
+                  }}
+                >
+                  {selectedMember.role}
+                </p>
+                <p
+                  style={{
+                    fontFamily: "'Nunito', sans-serif",
+                    fontSize: "14px",
+                    fontWeight: "400",
+                    fontStyle: "italic",
+                    color: "#333",
+                    lineHeight: "1.8",
+                    margin: 0,
+                    whiteSpace: "pre-line",
+                  }}
+                >
+                  {selectedMember.quote}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
       </section>
     </>
   );

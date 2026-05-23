@@ -16,35 +16,26 @@ export const CtaBanner: React.FC = () => {
         }
       `}</style>
       <section
+        className="w-[calc(100%-32px)] sm:w-[calc(100%-64px)] max-w-[1280px] mx-auto px-4 sm:px-6 py-6 sm:py-0"
         style={{
-          width: "1280px",
-          height: "114px",
           backgroundColor: "rgba(117, 61, 190, 0.5)",
           borderRadius: "16px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           boxSizing: "border-box",
-          margin: "0 auto",
         }}
       >
         <div
+          className="w-full flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-8 py-4 sm:py-0"
           style={{
-            width: "1280px",
-            height: "114px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: "85px",
-            padding: "0 24px",
             boxSizing: "border-box",
           }}
         >
           {/* LEFT TEXT */}
           <div
+            className="w-full sm:flex-1 text-center sm:text-left"
             style={{
-              width: "660px",
-              height: "66px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
@@ -53,9 +44,9 @@ export const CtaBanner: React.FC = () => {
             }}
           >
             <h2
+              className="text-[20px] sm:text-[22px] md:text-[24px]"
               style={{
                 fontFamily: "'Nunito', sans-serif",
-                fontSize: "24px",
                 fontWeight: "900",
                 color: "#ffffff",
                 margin: 0,
@@ -80,21 +71,12 @@ export const CtaBanner: React.FC = () => {
 
           {/* RIGHT BUTTON — 3D drop shadow style */}
           <div
-            style={{
-              position: "relative",
-              width: "487px",
-              height: "50px",
-              flexShrink: 0,
-            }}
+            className="relative w-full sm:w-auto max-w-[487px] h-[50px] flex-shrink-0"
           >
             {/* Shadow layer */}
             <div
+              className="absolute bottom-0 left-0 w-full h-[42px]"
               style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                width: "487px",
-                height: "42px",
                 backgroundColor: "#c93360",
                 borderRadius: "21px",
               }}
@@ -102,13 +84,8 @@ export const CtaBanner: React.FC = () => {
             {/* Button layer */}
             <a
               href="mailto:intake@btvas.com"
-              className="cta-banner-btn"
+              className="cta-banner-btn absolute top-0 left-0 w-full h-[42px]"
               style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "487px",
-                height: "42px",
                 borderRadius: "21px",
                 backgroundColor: "#FF4880",
                 display: "flex",
@@ -120,9 +97,9 @@ export const CtaBanner: React.FC = () => {
               }}
             >
               <span
+                className="text-[14px] sm:text-[15px] md:text-[17px]"
                 style={{
                   fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive",
-                  fontSize: "17px",
                   fontWeight: "700",
                   color: "#ffffff",
                   whiteSpace: "nowrap",
