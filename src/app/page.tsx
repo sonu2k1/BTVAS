@@ -19,10 +19,21 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="min-h-screen bg-cream relative">
+      <style>{`
+        @media (max-width: 1024px) {
+          .hero-bg-img {
+            height: 500px !important;
+          }
+          .hero-container {
+            min-height: calc(500px - 100px) !important;
+          }
+        }
+      `}</style>
+
       {/* Absolute background layer for the Hero section */}
       <div className="absolute top-0 left-0 w-full bg-navy-deep z-0 overflow-hidden flex justify-center">
         <div 
-          className="w-full max-w-[1688px]"
+          className="w-full max-w-[1688px] hero-bg-img"
           style={{
             height: "912px",
             backgroundImage: "url('/images/background.webp')",
@@ -41,7 +52,7 @@ export default function Home() {
           <Header />
         </div>
 
-        <div className="relative w-full flex justify-center" style={{ minHeight: "calc(912px - 140px)" }}>
+        <div className="relative w-full flex justify-center hero-container" style={{ minHeight: "calc(912px - 140px)" }}>
           <Hero />
         </div>
 

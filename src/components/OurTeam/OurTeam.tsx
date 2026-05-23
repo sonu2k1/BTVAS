@@ -139,32 +139,83 @@ export const OurTeam: React.FC = () => {
           -ms-overflow-style: none;
           scrollbar-width: none;
         }
+        @media (max-width: 1024px) {
+          .team-section {
+            width: 100% !important;
+            height: auto !important;
+            padding: 40px 16px !important;
+          }
+          .team-wrapper {
+            width: 100% !important;
+            height: auto !important;
+            gap: 20px !important;
+          }
+          .team-tabs {
+            width: 100% !important;
+            height: auto !important;
+            overflow-x: auto !important;
+            padding-bottom: 8px !important;
+            margin-bottom: 8px !important;
+          }
+          .team-content-row {
+            width: 100% !important;
+            height: auto !important;
+            flex-direction: column !important;
+            gap: 24px !important;
+          }
+          .team-thumbs {
+            width: 100% !important;
+            height: auto !important;
+            flex-direction: row !important;
+            overflow-x: auto !important;
+            gap: 12px !important;
+            padding-bottom: 8px !important;
+          }
+          .team-thumb-item {
+            width: 80px !important;
+            height: 80px !important;
+          }
+          .team-big-img-wrap {
+            width: 100% !important;
+            max-width: 320px !important;
+            height: 320px !important;
+            margin: 0 auto !important;
+          }
+          .team-desc-wrap {
+            width: 100% !important;
+            height: auto !important;
+            text-align: center !important;
+            overflow-y: visible !important;
+          }
+        }
       `}</style>
       <section
-      style={{
-        width: "1440px",
-        height: "800px",
-        backgroundColor: "#ffffff",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        boxSizing: "border-box",
-        margin: "0 auto",
-      }}
-    >
-      {/* INNER WRAPPER */}
-      <div
+        className="team-section"
         style={{
-          width: "1280px",
-          height: "750px",
+          width: "1440px",
+          height: "800px",
+          backgroundColor: "#ffffff",
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
-          gap: "24px",
+          justifyContent: "center",
+          boxSizing: "border-box",
+          margin: "0 auto",
         }}
       >
-        {/* HEADING */}
-        <h2
+        {/* INNER WRAPPER */}
+        <div
+          className="team-wrapper"
+          style={{
+            width: "1280px",
+            height: "750px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "24px",
+          }}
+        >
+          {/* HEADING */}
+          <h2
           style={{
             fontFamily: "'Nunito', sans-serif",
             fontSize: "36px",
@@ -179,6 +230,7 @@ export const OurTeam: React.FC = () => {
 
         {/* TABS */}
         <div
+          className="team-tabs no-scrollbar"
           style={{
             width: "968px",
             height: "36px",
@@ -214,6 +266,7 @@ export const OurTeam: React.FC = () => {
 
         {/* MAIN CONTENT */}
         <div
+          className="team-content-row"
           style={{
             width: "1232px",
             height: "560px",
@@ -224,6 +277,7 @@ export const OurTeam: React.FC = () => {
         >
           {/* SMALL THUMBNAILS */}
           <div
+            className="team-thumbs no-scrollbar"
             style={{
               width: "100px",
               height: "560px",
@@ -233,12 +287,12 @@ export const OurTeam: React.FC = () => {
               flexShrink: 0,
               overflowY: "auto",
             }}
-            className="no-scrollbar"
           >
             {teamMembers.map((member) => (
               <div
                 key={member.id}
                 onClick={() => setSelectedMember(member)}
+                className="team-thumb-item"
                 style={{
                   width: "100px",
                   height: "100px",
@@ -263,6 +317,7 @@ export const OurTeam: React.FC = () => {
 
           {/* BIG IMAGE */}
           <div
+            className="team-big-img-wrap"
             style={{
               width: "560px",
               height: "560px",
@@ -283,7 +338,7 @@ export const OurTeam: React.FC = () => {
 
           {/* DESCRIPTION */}
           <div
-            className="no-scrollbar"
+            className="team-desc-wrap no-scrollbar"
             style={{
               width: "524px",
               height: "518px",

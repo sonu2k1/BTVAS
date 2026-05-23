@@ -14,8 +14,43 @@ export const CtaBanner: React.FC = () => {
           top: 6px !important;
           background-color: #e03570 !important;
         }
+        @media (max-width: 1024px) {
+          .cta-banner-section {
+            width: 100% !important;
+            height: auto !important;
+            padding: 24px 16px !important;
+          }
+          .cta-banner-wrapper {
+            width: 100% !important;
+            height: auto !important;
+            flex-direction: column !important;
+            gap: 24px !important;
+            align-items: center !important;
+            padding: 0 !important;
+          }
+          .cta-banner-text {
+            width: 100% !important;
+            height: auto !important;
+            text-align: center !important;
+          }
+          .cta-banner-btn-container {
+            width: 100% !important;
+            max-width: 320px !important;
+            height: 50px !important;
+          }
+          .cta-banner-btn-shadow {
+            width: 100% !important;
+          }
+          .cta-banner-btn {
+            width: 100% !important;
+          }
+          .cta-banner-btn span {
+            font-size: 11px !important;
+          }
+        }
       `}</style>
       <section
+        className="cta-banner-section"
         style={{
           width: "1280px",
           height: "114px",
@@ -29,6 +64,7 @@ export const CtaBanner: React.FC = () => {
         }}
       >
         <div
+          className="cta-banner-wrapper"
           style={{
             width: "1280px",
             height: "114px",
@@ -42,6 +78,7 @@ export const CtaBanner: React.FC = () => {
         >
           {/* LEFT TEXT */}
           <div
+            className="cta-banner-text"
             style={{
               width: "660px",
               height: "66px",
@@ -80,6 +117,7 @@ export const CtaBanner: React.FC = () => {
 
           {/* RIGHT BUTTON — 3D drop shadow style */}
           <div
+            className="cta-banner-btn-container"
             style={{
               position: "relative",
               width: "487px",
@@ -89,6 +127,7 @@ export const CtaBanner: React.FC = () => {
           >
             {/* Shadow layer */}
             <div
+              className="cta-banner-btn-shadow"
               style={{
                 position: "absolute",
                 bottom: 0,

@@ -9,8 +9,17 @@ export const VideoBanner: React.FC = () => {
 
   return (
     <section id="video" className="w-full bg-[#FFFDF8]">
+      <style>{`
+        @media (max-width: 1024px) {
+          .video-banner-container {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 2.59 !important;
+          }
+        }
+      `}</style>
       <div
-        className="relative overflow-hidden mx-auto"
+        className="relative overflow-hidden mx-auto video-banner-container"
         style={{ width: "1440px", height: "555px" }}
       >
         {!isPlaying ? (

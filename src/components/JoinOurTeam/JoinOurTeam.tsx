@@ -20,14 +20,31 @@ export const JoinOurTeam: React.FC = () => {
           top: 6px !important;
           background-color: #e03570 !important;
         }
+        @media (max-width: 1024px) {
+          .join-team-section {
+            width: 100% !important;
+            height: auto !important;
+            padding: 48px 16px !important;
+          }
+          .join-team-side-images {
+            display: none !important;
+          }
+          .join-team-middle-content {
+            width: 100% !important;
+            padding: 0 !important;
+          }
+          .join-team-middle-content h2 {
+            font-size: 28px !important;
+          }
+        }
       `}</style>
       <section
-        className="relative bg-white flex items-center justify-between overflow-hidden"
+        className="relative bg-white flex items-center justify-between overflow-hidden join-team-section"
         style={{ width: "1440px", height: "455px", margin: "0 auto" }}
       >
         {/* ── LEFT IMAGE BLOCK ── */}
         <div
-          className="relative flex-shrink-0"
+          className="relative flex-shrink-0 join-team-side-images"
           style={{ width: "240px", height: "100%" }}
         >
           {/* Col 1 — half cut off */}
@@ -106,7 +123,7 @@ export const JoinOurTeam: React.FC = () => {
 
         {/* ── MIDDLE TEXT SECTION ── */}
         <div
-          className="flex flex-col items-center justify-center flex-shrink-0"
+          className="flex flex-col items-center justify-center flex-shrink-0 join-team-middle-content"
           style={{ width: "800px", zIndex: 10 }}
         >
           <p
@@ -207,7 +224,7 @@ export const JoinOurTeam: React.FC = () => {
 
         {/* ── RIGHT IMAGE BLOCK ── */}
         <div
-          className="relative flex-shrink-0"
+          className="relative flex-shrink-0 join-team-side-images"
           style={{ width: "240px", height: "100%" }}
         >
           {/* Col 1 — full */}

@@ -38,17 +38,67 @@ export const Testimonials: React.FC = () => {
 
   return (
     <section
-      className="bg-white flex items-center justify-center"
+      className="bg-white flex items-center justify-center testimonials-section"
       style={{ width: "1440px", height: "727px", margin: "0 auto" }}
     >
+      <style>{`
+        @media (max-width: 1024px) {
+          .testimonials-section {
+            width: 100% !important;
+            height: auto !important;
+            padding: 40px 16px !important;
+          }
+          .testimonials-card {
+            width: 100% !important;
+            height: auto !important;
+            padding: 24px 0 !important;
+          }
+          .testimonials-decor {
+            display: none !important;
+          }
+          .testimonials-row {
+            width: 100% !important;
+            position: relative !important;
+            padding: 0 48px !important;
+          }
+          .testimonials-slider {
+            width: 100% !important;
+            min-height: 240px !important;
+          }
+          .testimonials-quote-text {
+            font-size: 16px !important;
+            text-align: center !important;
+            text-align-last: center !important;
+            line-height: 1.6 !important;
+          }
+          .arrow-btn-left {
+            position: absolute !important;
+            left: 0px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            width: 40px !important;
+            height: 40px !important;
+            z-index: 10 !important;
+          }
+          .arrow-btn-right {
+            position: absolute !important;
+            right: 0px !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            width: 40px !important;
+            height: 40px !important;
+            z-index: 10 !important;
+          }
+        }
+      `}</style>
       {/* Testimonials card */}
       <div
-        className="relative flex flex-col items-center justify-center"
+        className="relative flex flex-col items-center justify-center testimonials-card"
         style={{ width: "1340px", height: "679px" }}
       >
         {/* Decorative squiggle top-left */}
         <svg
-          className="absolute"
+          className="absolute testimonials-decor"
           style={{ top: 40, left: 60 }}
           width="80"
           height="36"
@@ -66,7 +116,7 @@ export const Testimonials: React.FC = () => {
 
         {/* Balloon top-right */}
         <svg
-          className="absolute"
+          className="absolute testimonials-decor"
           style={{ top: 20, right: 60 }}
           width="60"
           height="130"
@@ -101,11 +151,11 @@ export const Testimonials: React.FC = () => {
         </p>
 
         {/* Quote + Nav row */}
-        <div className="relative w-full flex items-center justify-between px-4">
+        <div className="relative w-full flex items-center justify-between px-4 testimonials-row">
           {/* Left arrow */}
           <button
             onClick={() => paginate(-1)}
-            className="flex-shrink-0 w-[62px] h-[62px] rounded-full flex items-center justify-center text-white text-xl transition-transform hover:scale-105 active:scale-95"
+            className="flex-shrink-0 w-[62px] h-[62px] rounded-full flex items-center justify-center text-white text-xl transition-transform hover:scale-105 active:scale-95 arrow-btn-left"
             style={{ background: "#7C3AED" }}
             aria-label="Previous testimonial"
           >
@@ -114,7 +164,7 @@ export const Testimonials: React.FC = () => {
 
           {/* Animated quote */}
           <div
-            className="overflow-hidden flex items-center justify-center"
+            className="overflow-hidden flex items-center justify-center testimonials-slider"
             style={{ width: "1100px", minHeight: "320px" }}
           >
             <AnimatePresence custom={direction} mode="wait">
@@ -126,7 +176,7 @@ export const Testimonials: React.FC = () => {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="text-center text-gray-900 leading-relaxed"
+                className="text-center text-gray-900 leading-relaxed testimonials-quote-text"
                 style={{
                   fontFamily: "'Georgia', serif",
                   fontSize: "26px",
@@ -145,7 +195,7 @@ export const Testimonials: React.FC = () => {
           {/* Right arrow */}
           <button
             onClick={() => paginate(1)}
-            className="flex-shrink-0 w-[62px] h-[62px] rounded-full flex items-center justify-center text-white text-xl transition-transform hover:scale-105 active:scale-95"
+            className="flex-shrink-0 w-[62px] h-[62px] rounded-full flex items-center justify-center text-white text-xl transition-transform hover:scale-105 active:scale-95 arrow-btn-right"
             style={{ background: "#7C3AED" }}
             aria-label="Next testimonial"
           >

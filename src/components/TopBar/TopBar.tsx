@@ -33,9 +33,29 @@ export const TopBar: React.FC = () => {
           0%   { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
+
+        .topbar-mobile {
+          display: none;
+        }
+
+        @media (max-width: 1024px) {
+          .topbar-desktop {
+            display: none !important;
+          }
+          .topbar-mobile {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            width: 100% !important;
+            padding: 0 16px;
+            height: 28px !important;
+          }
+        }
       `}</style>
+      {/* ── DESKTOP TopBar ── */}
       <div
-        className="flex items-center justify-between overflow-hidden shrink-0"
+        className="flex items-center justify-between overflow-hidden shrink-0 topbar-desktop"
         style={{ width: "1400px", height: "33px", padding: "0 10px" }}
       >
         {/* LEFT */}
@@ -108,6 +128,23 @@ export const TopBar: React.FC = () => {
           </a>
 
         </div>
+      </div>
+
+      {/* ── MOBILE TopBar ── */}
+      <div className="topbar-mobile">
+        <a href="tel:4044067339" className="flex items-center gap-1 text-white font-sans text-[11px] decoration-none" style={{ textDecoration: "none" }}>
+          <div className="w-4 h-4 shrink-0 flex items-center justify-center">
+            <Image src="/icons/Phone.svg" alt="Phone" width={16} height={16} className="w-full h-full object-contain" />
+          </div>
+          (404)-406-7339
+        </a>
+        <span className="text-white opacity-30 text-[10px]">|</span>
+        <a href="mailto:intake@btvas.com" className="flex items-center gap-1 text-white font-sans text-[11px] underline">
+          <div className="w-4 h-4 shrink-0 flex items-center justify-center">
+            <Image src="/icons/Email.svg" alt="Email" width={16} height={16} className="w-full h-full object-contain" />
+          </div>
+          intake@btvas.com
+        </a>
       </div>
     </div>
   );

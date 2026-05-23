@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -41,14 +41,28 @@ const services = [
   },
 ];
 
-const VISIBLE = 3;
-
 export const OurServices: React.FC = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setVisibleCount(1);
+      } else if (window.innerWidth < 1024) {
+        setVisibleCount(2);
+      } else {
+        setVisibleCount(3);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const canPrev = startIndex > 0;
-  const canNext = startIndex + VISIBLE < services.length;
+  const canNext = startIndex + visibleCount < services.length;
 
   const paginate = (dir: number) => {
     if (dir === -1 && !canPrev) return;
@@ -57,14 +71,56 @@ export const OurServices: React.FC = () => {
     setStartIndex((prev) => prev + dir);
   };
 
-  const visible = services.slice(startIndex, startIndex + VISIBLE);
+  const visible = services.slice(startIndex, startIndex + visibleCount);
 
   return (
     <section
-      className="bg-white flex flex-col items-center justify-start overflow-hidden relative"
+      className="bg-white flex flex-col items-center justify-start overflow-hidden relative services-section"
       style={{ width: "1440px", height: "704.64px", margin: "0 auto" }}
       id="services"
     >
+      <style>{`
+        @media (max-width: 1024px) {
+          .services-section {
+            width: 100% !important;
+            height: auto !important;
+            padding: 40px 16px !important;
+          }
+          .services-container {
+            width: 100% !important;
+            height: auto !important;
+            position: relative !important;
+            padding: 0 48px !important;
+          }
+          .services-cards-row {
+            width: 100% !important;
+            gap: 16px !important;
+          }
+          .services-card {
+            width: 100% !important;
+            max-width: 320px !important;
+            height: auto !important;
+            padding: 16px !important;
+          }
+          .services-card-img-wrap {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 1.32 !important;
+          }
+          .arrow-services-left {
+            left: 0px !important;
+            width: 40px !important;
+            height: 40px !important;
+            z-index: 10 !important;
+          }
+          .arrow-services-right {
+            right: 0px !important;
+            width: 40px !important;
+            height: 40px !important;
+            z-index: 10 !important;
+          }
+        }
+      `}</style>
       {/* Header */}
       <div className="flex flex-col items-center" style={{ marginBottom: "30px" }}>
         <p
@@ -94,14 +150,14 @@ export const OurServices: React.FC = () => {
 
       {/* Cards container */}
       <div
-        className="relative flex items-center justify-center"
+        className="relative flex items-center justify-center services-container"
         style={{ width: "1290px", height: "474px" }}
       >
         {/* Left Arrow — overlapping left card */}
         <button
           onClick={() => paginate(-1)}
           disabled={!canPrev}
-          className="absolute z-20 flex items-center justify-center rounded-full text-white text-xl transition-transform hover:scale-105 active:scale-95 disabled:opacity-30"
+          className="absolute z-20 flex items-center justify-center rounded-full text-white text-xl transition-transform hover:scale-105 active:scale-95 disabled:opacity-30 arrow-services-left"
           style={{
             width: "62px",
             height: "62px",
@@ -116,7 +172,7 @@ export const OurServices: React.FC = () => {
         </button>
 
         {/* Cards */}
-        <div className="flex gap-[28px] items-center justify-center" style={{ width: "1290px" }}>
+        <div className="flex gap-[28px] items-center justify-center services-cards-row" style={{ width: "1290px" }}>
           <AnimatePresence mode="popLayout" custom={direction}>
             {visible.map((service, i) => (
               <motion.div
@@ -126,7 +182,7 @@ export const OurServices: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: direction > 0 ? -80 : 80 }}
                 transition={{ duration: 0.35, ease: "easeInOut", delay: i * 0.05 }}
-                className="flex flex-col items-center bg-white flex-shrink-0"
+                className="flex flex-col items-center bg-white flex-shrink-0 services-card"
                 style={{
                   width: "410px",
                   height: "474px",
@@ -139,6 +195,7 @@ export const OurServices: React.FC = () => {
               >
                 {/* Image */}
                 <div
+                  className="services-card-img-wrap"
                   style={{
                     width: "374px",
                     height: "283px",
@@ -195,7 +252,7 @@ export const OurServices: React.FC = () => {
         <button
           onClick={() => paginate(1)}
           disabled={!canNext}
-          className="absolute z-20 flex items-center justify-center rounded-full text-white text-xl transition-transform hover:scale-105 active:scale-95 disabled:opacity-30"
+          className="absolute z-20 flex items-center justify-center rounded-full text-white text-xl transition-transform hover:scale-105 active:scale-95 disabled:opacity-30 arrow-services-right"
           style={{
             width: "62px",
             height: "62px",
@@ -212,7 +269,7 @@ export const OurServices: React.FC = () => {
 
       {/* Crocodile toy bottom-right decorative */}
       <div
-        className="absolute pointer-events-none select-none"
+        className="absolute pointer-events-none select-none testimonials-decor"
         style={{ bottom: "8px", right: "48px", zIndex: 30 }}
         aria-hidden
       >

@@ -7,6 +7,7 @@ export const Mission: React.FC = () => {
   return (
     <section
       id="about"
+      className="mission-section"
       style={{
         width: "1440px",
         height: "552px",
@@ -18,8 +19,45 @@ export const Mission: React.FC = () => {
         margin: "0 auto",
       }}
     >
+      <style>{`
+        @media (max-width: 1024px) {
+          .mission-section {
+            width: 100% !important;
+            height: auto !important;
+            padding: 40px 16px !important;
+          }
+          .mission-wrapper {
+            width: 100% !important;
+            height: auto !important;
+            flex-direction: column !important;
+            gap: 40px !important;
+          }
+          .mission-left {
+            width: 100% !important;
+            max-width: 380px !important;
+            height: auto !important;
+            aspect-ratio: 1.14 !important;
+          }
+          .mission-right {
+            width: 100% !important;
+            height: auto !important;
+            align-items: center !important;
+            text-align: center !important;
+          }
+          .mission-bg-circle {
+            display: none !important;
+          }
+          .mission-tags {
+            flex-direction: column !important;
+            gap: 16px !important;
+            align-items: center !important;
+          }
+        }
+      `}</style>
+
       {/* INNER WRAPPER */}
       <div
+        className="mission-wrapper"
         style={{
           width: "1280px",
           height: "478px",
@@ -30,6 +68,7 @@ export const Mission: React.FC = () => {
       >
         {/* LEFT — Image + 25+ badge */}
         <div
+          className="mission-left"
           style={{
             width: "518px",
             height: "454px",
@@ -39,6 +78,7 @@ export const Mission: React.FC = () => {
         >
           {/* Cream circle background */}
           <div
+            className="mission-bg-circle"
             style={{
               position: "absolute",
               top: "70px",
@@ -184,6 +224,7 @@ export const Mission: React.FC = () => {
 
         {/* RIGHT — Description */}
         <div
+          className="mission-right"
           style={{
             width: "580px",
             height: "312px",
@@ -257,6 +298,7 @@ export const Mission: React.FC = () => {
 
           {/* Tags */}
           <div
+            className="mission-tags"
             style={{
               display: "flex",
               alignItems: "center",

@@ -73,10 +73,41 @@ export const CoreValues: React.FC = () => {
           position: relative;
           z-index: 2;
         }
+
+        @media (max-width: 1024px) {
+          .core-values-section {
+            width: 100% !important;
+            height: auto !important;
+            padding: 40px 16px !important;
+          }
+          .core-values-row {
+            width: 100% !important;
+            height: auto !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 20px !important;
+          }
+          .val-card {
+            width: 100% !important;
+            max-width: 320px !important;
+            height: 330px !important;
+          }
+          .val-card .val-img-wrap {
+            height: 160px !important;
+          }
+          .val-card:hover .val-img-wrap {
+            height: 160px !important;
+          }
+          .val-card .val-desc {
+            max-height: 120px !important;
+            opacity: 1 !important;
+          }
+        }
       `}</style>
 
       <section
         id="values"
+        className="core-values-section"
         style={{
           width: "1440px",
           height: "552px",
@@ -122,6 +153,7 @@ export const CoreValues: React.FC = () => {
 
         {/* CARDS ROW */}
         <div
+          className="core-values-row"
           style={{
             width: "1232px",
             height: "365px",

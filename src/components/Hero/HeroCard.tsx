@@ -14,9 +14,40 @@ export const HeroCard: React.FC = () => {
           top: 8px !important;
           background-color: #e6d400 !important;
         }
+        @media (max-width: 1024px) {
+          .hero-card-outer {
+            width: 100% !important;
+            max-width: 90vw !important;
+            height: auto !important;
+            padding: 8px !important;
+            flex-shrink: 1 !important;
+          }
+          .hero-card-inner {
+            width: 100% !important;
+            height: auto !important;
+            padding: 16px !important;
+            gap: 16px !important;
+          }
+          .hero-card-content {
+            width: 100% !important;
+            height: auto !important;
+            gap: 8px !important;
+          }
+          .hero-card-subtitle {
+            font-size: 20px !important;
+          }
+          .hero-card-title {
+            font-size: 32px !important;
+          }
+          .hero-card-quote {
+            font-size: 13px !important;
+            line-height: 1.5 !important;
+          }
+        }
       `}</style>
       {/* OUTER CARD */}
       <div
+        className="hero-card-outer"
         style={{
           width: "756px",
           height: "382px",
@@ -29,6 +60,7 @@ export const HeroCard: React.FC = () => {
       >
         {/* INNER BORDER */}
         <div
+          className="hero-card-inner"
           style={{
             width: "736px",
             height: "362px",
@@ -43,6 +75,7 @@ export const HeroCard: React.FC = () => {
         >
           {/* CONTENT AREA */}
           <div
+            className="hero-card-content"
             style={{
               width: "688px",
               height: "248px",
@@ -54,6 +87,7 @@ export const HeroCard: React.FC = () => {
           >
             {/* Subtitle */}
             <p
+              className="hero-card-subtitle"
               style={{
                 fontFamily: "'Nunito', sans-serif",
                 fontSize: "32px",
@@ -68,6 +102,7 @@ export const HeroCard: React.FC = () => {
 
             {/* Main Heading */}
             <h1
+              className="hero-card-title"
               style={{
                 fontFamily: "'Nunito', sans-serif",
                 fontSize: "52px",
@@ -82,6 +117,7 @@ export const HeroCard: React.FC = () => {
 
             {/* Quote */}
             <p
+              className="hero-card-quote"
               style={{
                 fontFamily: "'Nunito', sans-serif",
                 fontSize: "15px",

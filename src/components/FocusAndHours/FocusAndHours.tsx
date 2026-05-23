@@ -12,6 +12,7 @@ const features = [
 export const FocusAndHours: React.FC = () => {
   return (
     <section
+      className="focus-hours-section"
       style={{
         width: "1440px",
         height: "400px",
@@ -23,8 +24,42 @@ export const FocusAndHours: React.FC = () => {
         margin: "0 auto",
       }}
     >
+      <style>{`
+        @media (max-width: 1024px) {
+          .focus-hours-section {
+            width: 100% !important;
+            height: auto !important;
+            padding: 40px 16px !important;
+          }
+          .focus-hours-wrapper {
+            width: 100% !important;
+            height: auto !important;
+            flex-direction: column !important;
+            gap: 40px !important;
+          }
+          .focus-left {
+            width: 100% !important;
+            height: auto !important;
+            align-items: center !important;
+            text-align: center !important;
+          }
+          .focus-features-grid {
+            grid-template-columns: 1fr !important;
+            gap: 12px !important;
+            width: 100% !important;
+            justify-items: center !important;
+          }
+          .hours-right {
+            width: 100% !important;
+            max-width: 343px !important;
+            height: 235px !important;
+          }
+        }
+      `}</style>
+
       {/* INNER WRAPPER */}
       <div
+        className="focus-hours-wrapper"
         style={{
           width: "1280px",
           height: "235px",
@@ -36,6 +71,7 @@ export const FocusAndHours: React.FC = () => {
       >
         {/* LEFT SECTION */}
         <div
+          className="focus-left"
           style={{
             width: "778px",
             height: "235px",
@@ -78,6 +114,7 @@ export const FocusAndHours: React.FC = () => {
 
           {/* Features grid */}
           <div
+            className="focus-features-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "1fr 1fr",
@@ -127,6 +164,7 @@ export const FocusAndHours: React.FC = () => {
 
         {/* RIGHT — Operation Hours */}
         <div
+          className="hours-right"
           style={{
             width: "343px",
             height: "235px",

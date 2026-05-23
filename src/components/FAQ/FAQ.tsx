@@ -37,19 +37,64 @@ export const FAQ: React.FC = () => {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <div style={{ width: "1440px", margin: "0 auto", display: "flex", flexDirection: "column" }}>
+    <div className="faq-outer-container" style={{ width: "1440px", margin: "0 auto", display: "flex", flexDirection: "column" }}>
+      <style>{`
+        @media (max-width: 1024px) {
+          .faq-outer-container {
+            width: 100% !important;
+          }
+          .faq-section {
+            width: 100% !important;
+            height: auto !important;
+            padding: 40px 16px !important;
+          }
+          .faq-inner-row {
+            width: 100% !important;
+            height: auto !important;
+            flex-direction: column !important;
+            gap: 32px !important;
+            padding: 0 !important;
+          }
+          .faq-img-wrap {
+            width: 100% !important;
+            max-width: 320px !important;
+            height: 200px !important;
+            border-radius: 20px !important;
+            margin: 0 auto !important;
+          }
+          .faq-accordion-wrap {
+            width: 100% !important;
+            padding: 0 !important;
+          }
+          .insurance-banner {
+            width: 100% !important;
+            height: auto !important;
+            padding: 40px 16px !important;
+          }
+          .insurance-logos-row {
+            width: 100% !important;
+            height: auto !important;
+            flex-wrap: wrap !important;
+            gap: 24px !important;
+            justify-content: center !important;
+          }
+          .insurance-logos-row > div {
+            height: auto !important;
+          }
+        }
+      `}</style>
       {/* ── FAQ SECTION ── */}
       <section
-        className="bg-white flex items-center justify-center flex-shrink-0"
+        className="bg-white flex items-center justify-center flex-shrink-0 faq-section"
         style={{ width: "1440px", padding: "60px 0 24px 0" }}
       >
         <div
-          className="flex items-center justify-between"
+          className="flex items-center justify-between faq-inner-row"
           style={{ width: "1440px", paddingRight: "60px", boxSizing: "border-box" }}
         >
           {/* ── LEFT: Image block ── */}
           <div
-            className="relative flex-shrink-0"
+            className="relative flex-shrink-0 faq-img-wrap"
             style={{
               width: "650px", // Takes up the left side
               height: "350px", // Matches the height of the 5 FAQs
@@ -68,7 +113,7 @@ export const FAQ: React.FC = () => {
 
           {/* ── RIGHT: FAQ accordion ── */}
           <div
-            className="flex flex-col justify-center flex-shrink-0"
+            className="flex flex-col justify-center flex-shrink-0 faq-accordion-wrap"
             style={{ width: "660px", gap: "16px" }}
           >
             {faqs.map((faq, i) => (
@@ -160,7 +205,7 @@ export const FAQ: React.FC = () => {
 
       {/* ── ACCEPTED INSURANCE BANNER ── */}
       <div
-        className="flex flex-col items-center bg-white flex-shrink-0"
+        className="flex flex-col items-center bg-white flex-shrink-0 insurance-banner"
         style={{ width: "1440px", height: "300px", justifyContent: "center", paddingTop: "24px", boxSizing: "border-box" }}
       >
         <p
@@ -175,7 +220,7 @@ export const FAQ: React.FC = () => {
           Accepted Insurance
         </p>
         <div
-          className="flex items-center justify-center"
+          className="flex items-center justify-center insurance-logos-row"
           style={{ width: "1440px", height: "74px", gap: "125px" }}
         >
           <div style={{ height: "74px", display: "flex", alignItems: "center" }}>

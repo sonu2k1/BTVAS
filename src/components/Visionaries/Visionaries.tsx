@@ -25,6 +25,7 @@ const visionaries = [
 export const Visionaries: React.FC = () => {
   return (
     <section
+      className="visionaries-section"
       style={{
         width: "1440px",
         height: "552px",
@@ -39,8 +40,49 @@ export const Visionaries: React.FC = () => {
         margin: "0 auto",
       }}
     >
+      <style>{`
+        @media (max-width: 1024px) {
+          .visionaries-section {
+            width: 100% !important;
+            height: auto !important;
+            padding: 40px 16px !important;
+          }
+          .visionaries-heading {
+            width: 100% !important;
+            text-align: center !important;
+          }
+          .visionaries-row {
+            width: 100% !important;
+            height: auto !important;
+            flex-direction: column !important;
+            gap: 24px !important;
+            align-items: center !important;
+          }
+          .visionary-card {
+            width: 100% !important;
+            max-width: 380px !important;
+            height: auto !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+          }
+          .visionary-bg-circle {
+            display: none !important;
+          }
+          .visionary-img-wrap {
+            width: 100% !important;
+            height: 240px !important;
+          }
+          .visionary-text-wrap {
+            width: 100% !important;
+            padding: 20px 16px !important;
+            gap: 16px !important;
+          }
+        }
+      `}</style>
+
       {/* HEADING */}
-      <div style={{ width: "1280px" }}>
+      <div className="visionaries-heading" style={{ width: "1280px" }}>
         <h2
           style={{
             fontFamily: "'Nunito', sans-serif",
@@ -57,6 +99,7 @@ export const Visionaries: React.FC = () => {
 
       {/* CARDS ROW */}
       <div
+        className="visionaries-row"
         style={{
           width: "1280px",
           height: "354px",
@@ -68,6 +111,7 @@ export const Visionaries: React.FC = () => {
         {visionaries.map((person) => (
           <div
             key={person.id}
+            className="visionary-card"
             style={{
               width: "616px",
               height: "300px",
@@ -82,6 +126,7 @@ export const Visionaries: React.FC = () => {
           >
             {/* Circle background behind image */}
             <div
+              className="visionary-bg-circle"
               style={{
                 position: "absolute",
                 left: "-30px",
@@ -97,6 +142,7 @@ export const Visionaries: React.FC = () => {
 
             {/* IMAGE */}
             <div
+              className="visionary-img-wrap"
               style={{
                 width: "200px",
                 height: "300px",
@@ -115,6 +161,7 @@ export const Visionaries: React.FC = () => {
 
             {/* TEXT */}
             <div
+              className="visionary-text-wrap"
               style={{
                 flex: 1,
                 padding: "28px 24px",
