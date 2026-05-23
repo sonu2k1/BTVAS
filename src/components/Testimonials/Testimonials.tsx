@@ -38,15 +38,17 @@ export const Testimonials: React.FC = () => {
 
   return (
     <section
-      className="w-full max-w-[1440px] mx-auto bg-white flex items-center justify-center py-12 md:py-16 px-4 sm:px-8"
+      className="bg-white flex items-center justify-center"
+      style={{ width: "1440px", height: "727px", margin: "0 auto" }}
     >
       {/* Testimonials card */}
       <div
-        className="relative flex flex-col items-center justify-center w-full max-w-[1340px] py-8 md:py-12"
+        className="relative flex flex-col items-center justify-center"
+        style={{ width: "1340px", height: "679px" }}
       >
-        {/* Decorative squiggle top-left — hidden on mobile */}
+        {/* Decorative squiggle top-left */}
         <svg
-          className="absolute hidden md:block"
+          className="absolute"
           style={{ top: 40, left: 60 }}
           width="80"
           height="36"
@@ -62,9 +64,9 @@ export const Testimonials: React.FC = () => {
           />
         </svg>
 
-        {/* Balloon top-right — hidden on mobile */}
+        {/* Balloon top-right */}
         <svg
-          className="absolute hidden md:block"
+          className="absolute"
           style={{ top: 20, right: 60 }}
           width="60"
           height="130"
@@ -92,18 +94,18 @@ export const Testimonials: React.FC = () => {
 
         {/* Subtitle */}
         <p
-          className="text-gray-400 mb-6 md:mb-10 tracking-wide"
+          className="text-gray-400 mb-10 tracking-wide"
           style={{ fontFamily: "'Georgia', serif", fontSize: "18px", fontStyle: "italic" }}
         >
           What parents say about us
         </p>
 
         {/* Quote + Nav row */}
-        <div className="relative w-full flex items-center justify-between px-2 sm:px-4">
+        <div className="relative w-full flex items-center justify-between px-4">
           {/* Left arrow */}
           <button
             onClick={() => paginate(-1)}
-            className="flex-shrink-0 w-[44px] h-[44px] sm:w-[52px] sm:h-[52px] md:w-[62px] md:h-[62px] rounded-full flex items-center justify-center text-white text-xl transition-transform hover:scale-105 active:scale-95"
+            className="flex-shrink-0 w-[62px] h-[62px] rounded-full flex items-center justify-center text-white text-xl transition-transform hover:scale-105 active:scale-95"
             style={{ background: "#7C3AED" }}
             aria-label="Previous testimonial"
           >
@@ -112,8 +114,8 @@ export const Testimonials: React.FC = () => {
 
           {/* Animated quote */}
           <div
-            className="overflow-hidden flex items-center justify-center flex-1 mx-2 sm:mx-4"
-            style={{ minHeight: "180px" }}
+            className="overflow-hidden flex items-center justify-center"
+            style={{ width: "1100px", minHeight: "320px" }}
           >
             <AnimatePresence custom={direction} mode="wait">
               <motion.p
@@ -124,9 +126,10 @@ export const Testimonials: React.FC = () => {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="text-center text-gray-900 leading-relaxed text-[16px] sm:text-[20px] md:text-[26px]"
+                className="text-center text-gray-900 leading-relaxed"
                 style={{
                   fontFamily: "'Georgia', serif",
+                  fontSize: "26px",
                   fontWeight: 400,
                   textAlign: "justify",
                   textAlignLast: "center",
@@ -142,7 +145,7 @@ export const Testimonials: React.FC = () => {
           {/* Right arrow */}
           <button
             onClick={() => paginate(1)}
-            className="flex-shrink-0 w-[44px] h-[44px] sm:w-[52px] sm:h-[52px] md:w-[62px] md:h-[62px] rounded-full flex items-center justify-center text-white text-xl transition-transform hover:scale-105 active:scale-95"
+            className="flex-shrink-0 w-[62px] h-[62px] rounded-full flex items-center justify-center text-white text-xl transition-transform hover:scale-105 active:scale-95"
             style={{ background: "#7C3AED" }}
             aria-label="Next testimonial"
           >
@@ -158,7 +161,7 @@ export const Testimonials: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="mt-6 md:mt-10 font-bold"
+            className="mt-10 font-bold"
             style={{
               fontFamily: "'Georgia', serif",
               fontSize: "24px",

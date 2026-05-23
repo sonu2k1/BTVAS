@@ -41,30 +41,14 @@ const services = [
   },
 ];
 
+const VISIBLE = 3;
+
 export const OurServices: React.FC = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
-  // On mobile show 1, on tablet show 2, on desktop show 3
-  const getVisibleCount = () => {
-    if (typeof window !== "undefined") {
-      if (window.innerWidth < 640) return 1;
-      if (window.innerWidth < 1024) return 2;
-    }
-    return 3;
-  };
-
-  const [visibleCount, setVisibleCount] = React.useState(3);
-
-  React.useEffect(() => {
-    const update = () => setVisibleCount(getVisibleCount());
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
   const canPrev = startIndex > 0;
-  const canNext = startIndex + visibleCount < services.length;
+  const canNext = startIndex + VISIBLE < services.length;
 
   const paginate = (dir: number) => {
     if (dir === -1 && !canPrev) return;
@@ -73,11 +57,12 @@ export const OurServices: React.FC = () => {
     setStartIndex((prev) => prev + dir);
   };
 
-  const visible = services.slice(startIndex, startIndex + visibleCount);
+  const visible = services.slice(startIndex, startIndex + VISIBLE);
 
   return (
     <section
-      className="w-full max-w-[1440px] mx-auto bg-white flex flex-col items-center justify-start overflow-hidden relative py-10 md:py-16 px-4 sm:px-8"
+      className="bg-white flex flex-col items-center justify-start overflow-hidden relative"
+      style={{ width: "1440px", height: "704.64px", margin: "0 auto" }}
       id="services"
     >
       {/* Header */}
@@ -95,9 +80,9 @@ export const OurServices: React.FC = () => {
           What we offer
         </p>
         <h2
-          className="text-[28px] sm:text-[32px] md:text-[38px]"
           style={{
             fontFamily: "'Georgia', serif",
+            fontSize: "38px",
             fontWeight: 800,
             lineHeight: 1.1,
           }}
@@ -109,16 +94,19 @@ export const OurServices: React.FC = () => {
 
       {/* Cards container */}
       <div
-        className="relative flex items-center justify-center w-full max-w-[1290px]"
+        className="relative flex items-center justify-center"
+        style={{ width: "1290px", height: "474px" }}
       >
-        {/* Left Arrow */}
+        {/* Left Arrow — overlapping left card */}
         <button
           onClick={() => paginate(-1)}
           disabled={!canPrev}
-          className="absolute z-20 flex items-center justify-center rounded-full text-white text-xl transition-transform hover:scale-105 active:scale-95 disabled:opacity-30 w-[44px] h-[44px] sm:w-[52px] sm:h-[52px] md:w-[62px] md:h-[62px]"
+          className="absolute z-20 flex items-center justify-center rounded-full text-white text-xl transition-transform hover:scale-105 active:scale-95 disabled:opacity-30"
           style={{
+            width: "62px",
+            height: "62px",
             background: "#1E3A8A",
-            left: "-8px",
+            left: "-18px",
             top: "50%",
             transform: "translateY(-50%)",
           }}
@@ -128,7 +116,7 @@ export const OurServices: React.FC = () => {
         </button>
 
         {/* Cards */}
-        <div className="flex gap-4 sm:gap-5 md:gap-7 items-center justify-center w-full px-8 sm:px-12 md:px-16">
+        <div className="flex gap-[28px] items-center justify-center" style={{ width: "1290px" }}>
           <AnimatePresence mode="popLayout" custom={direction}>
             {visible.map((service, i) => (
               <motion.div
@@ -138,9 +126,10 @@ export const OurServices: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: direction > 0 ? -80 : 80 }}
                 transition={{ duration: 0.35, ease: "easeInOut", delay: i * 0.05 }}
-                className="flex flex-col items-center bg-white w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.33%-20px)] flex-shrink-0"
+                className="flex flex-col items-center bg-white flex-shrink-0"
                 style={{
-                  maxWidth: "410px",
+                  width: "410px",
+                  height: "474px",
                   borderRadius: "20px",
                   border: "1px solid #E5E7EB",
                   boxShadow: "0 2px 16px 0 rgba(0,0,0,0.06)",
@@ -150,20 +139,20 @@ export const OurServices: React.FC = () => {
               >
                 {/* Image */}
                 <div
-                  className="w-full aspect-[374/283]"
                   style={{
+                    width: "374px",
+                    height: "283px",
                     borderRadius: "14px",
                     overflow: "hidden",
                     flexShrink: 0,
-                    position: "relative",
                   }}
                 >
                   <Image
                     src={service.image}
                     alt={service.alt}
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    width={374}
+                    height={283}
+                    className="w-full h-full object-cover object-center"
                   />
                 </div>
 
@@ -202,14 +191,16 @@ export const OurServices: React.FC = () => {
           </AnimatePresence>
         </div>
 
-        {/* Right Arrow */}
+        {/* Right Arrow — overlapping right card */}
         <button
           onClick={() => paginate(1)}
           disabled={!canNext}
-          className="absolute z-20 flex items-center justify-center rounded-full text-white text-xl transition-transform hover:scale-105 active:scale-95 disabled:opacity-30 w-[44px] h-[44px] sm:w-[52px] sm:h-[52px] md:w-[62px] md:h-[62px]"
+          className="absolute z-20 flex items-center justify-center rounded-full text-white text-xl transition-transform hover:scale-105 active:scale-95 disabled:opacity-30"
           style={{
+            width: "62px",
+            height: "62px",
             background: "#1E3A8A",
-            right: "-8px",
+            right: "-18px",
             top: "50%",
             transform: "translateY(-50%)",
           }}
@@ -219,9 +210,9 @@ export const OurServices: React.FC = () => {
         </button>
       </div>
 
-      {/* Crocodile toy bottom-right decorative — hidden on mobile */}
+      {/* Crocodile toy bottom-right decorative */}
       <div
-        className="absolute pointer-events-none select-none hidden md:block"
+        className="absolute pointer-events-none select-none"
         style={{ bottom: "8px", right: "48px", zIndex: 30 }}
         aria-hidden
       >

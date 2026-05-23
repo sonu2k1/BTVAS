@@ -50,13 +50,7 @@ body {
 
 /* Offset for sticky header when scrolling to anchors */
 section[id] {
-  scroll-margin-top: 70px;
-}
-
-@media (min-width: 1024px) {
-  section[id] {
-    scroll-margin-top: 90px;
-  }
+  scroll-margin-top: 90px;
 }
 
 .font-script {

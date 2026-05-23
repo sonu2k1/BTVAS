@@ -12,28 +12,44 @@ const features = [
 export const FocusAndHours: React.FC = () => {
   return (
     <section
-      className="w-full max-w-[1440px] mx-auto py-10 md:py-16 px-4 sm:px-8 md:px-16"
       style={{
+        width: "1440px",
+        height: "400px",
         backgroundColor: "#ffffff",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         boxSizing: "border-box",
+        margin: "0 auto",
       }}
     >
       {/* INNER WRAPPER */}
       <div
-        className="w-full max-w-[1280px] flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 lg:gap-16"
+        style={{
+          width: "1280px",
+          height: "235px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "159px",
+        }}
       >
         {/* LEFT SECTION */}
         <div
-          className="w-full lg:w-[778px] flex flex-col justify-between flex-shrink-0 gap-3"
+          style={{
+            width: "778px",
+            height: "235px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            flexShrink: 0,
+          }}
         >
           {/* Heading */}
           <h2
-            className="text-[28px] sm:text-[32px] md:text-[36px]"
             style={{
               fontFamily: "'Nunito', sans-serif",
+              fontSize: "36px",
               fontWeight: "900",
               color: "#1a1a1a",
               margin: "0 0 12px 0",
@@ -62,7 +78,11 @@ export const FocusAndHours: React.FC = () => {
 
           {/* Features grid */}
           <div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-x-10 sm:gap-y-3"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "12px 40px",
+            }}
           >
             {features.map((feature, i) => (
               <div
@@ -107,8 +127,9 @@ export const FocusAndHours: React.FC = () => {
 
         {/* RIGHT — Operation Hours */}
         <div
-          className="w-full lg:w-[343px]"
           style={{
+            width: "343px",
+            height: "235px",
             borderRadius: "16px",
             backgroundColor: "#010C6F",
             flexShrink: 0,
@@ -117,7 +138,6 @@ export const FocusAndHours: React.FC = () => {
             flexDirection: "column",
             justifyContent: "space-between",
             boxSizing: "border-box",
-            gap: "16px",
           }}
         >
           <h3

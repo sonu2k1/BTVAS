@@ -163,7 +163,7 @@ export const Header: React.FC = () => {
           left: 0;
           width: 198px;
           height: 42px;
-          background: #c93360;
+          background: #b8ab00;
           border-radius: 21px;
         }
 
@@ -173,10 +173,10 @@ export const Header: React.FC = () => {
           left: 0;
           width: 198px;
           height: 42px;
-          background: #FF4880;
-          color: #ffffff;
+          background: #F5E300;
+          color: #5F3B03;
           font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
-          font-size: 18px;
+          font-size: 16px;
           font-weight: 700;
           border: none;
           border-radius: 21px;
@@ -185,19 +185,19 @@ export const Header: React.FC = () => {
           text-decoration: none;
           display: flex;
           align-items: center;
-          justify-content: center;
+          justifyContent: center;
           letter-spacing: 0.2px;
           transition: top 0.1s ease, background-color 0.2s ease;
         }
 
         .cta-btn:hover {
-          background-color: #ff5f95;
+          background-color: #fff233;
           top: 2px;
         }
 
         .cta-btn:active {
           top: 8px;
-          background-color: #e03570;
+          background-color: #e6d400;
         }
 
         @media (max-width: 1024px) {
@@ -250,11 +250,11 @@ export const Header: React.FC = () => {
           <div className="cta-btn-wrapper hidden lg:block">
             <div className="cta-btn-shadow" />
             <a
-              href="#team"
-              onClick={(e) => handleNavClick(e, "#team")}
+              href="#contact"
+              onClick={(e) => handleNavClick(e, "#contact")}
               className="cta-btn"
             >
-              Join Our Team
+              Request Visit Now
             </a>
           </div>
 
@@ -289,12 +289,12 @@ export const Header: React.FC = () => {
               })}
               <li>
                 <a
-                  href="#team"
-                  onClick={(e) => handleNavClick(e, "#team")}
-                  className="block mt-2 text-center bg-[#FF4880] text-white font-bold text-[18px] px-6 py-3 rounded-full"
+                  href="#contact"
+                  onClick={(e) => handleNavClick(e, "#contact")}
+                  className="block mt-2 text-center bg-[#F5E300] text-[#5F3B03] font-bold text-[16px] px-6 py-3 rounded-full"
                   style={{ fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive" }}
                 >
-                  Join Our Team
+                  Request Visit Now
                 </a>
               </li>
             </ul>

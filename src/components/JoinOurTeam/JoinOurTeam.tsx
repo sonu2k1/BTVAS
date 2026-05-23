@@ -22,11 +22,12 @@ export const JoinOurTeam: React.FC = () => {
         }
       `}</style>
       <section
-        className="relative bg-white flex items-center justify-center overflow-hidden w-full max-w-[1440px] mx-auto py-12 md:py-0 md:h-[455px]"
+        className="relative bg-white flex items-center justify-between overflow-hidden"
+        style={{ width: "1440px", height: "455px", margin: "0 auto" }}
       >
-        {/* ── LEFT IMAGE BLOCK — hidden on mobile/tablet ── */}
+        {/* ── LEFT IMAGE BLOCK ── */}
         <div
-          className="relative flex-shrink-0 hidden lg:block"
+          className="relative flex-shrink-0"
           style={{ width: "240px", height: "100%" }}
         >
           {/* Col 1 — half cut off */}
@@ -105,8 +106,8 @@ export const JoinOurTeam: React.FC = () => {
 
         {/* ── MIDDLE TEXT SECTION ── */}
         <div
-          className="flex flex-col items-center justify-center flex-shrink-0 w-full lg:w-[800px] px-4 sm:px-8"
-          style={{ zIndex: 10 }}
+          className="flex flex-col items-center justify-center flex-shrink-0"
+          style={{ width: "800px", zIndex: 10 }}
         >
           <p
             style={{
@@ -122,9 +123,9 @@ export const JoinOurTeam: React.FC = () => {
           </p>
 
           <h2
-            className="text-[28px] sm:text-[32px] md:text-[40px]"
             style={{
               fontFamily: "'Nunito', sans-serif",
+              fontSize: "40px",
               fontWeight: 900,
               lineHeight: 1.2,
               textAlign: "center",
@@ -136,9 +137,9 @@ export const JoinOurTeam: React.FC = () => {
           </h2>
 
           <p
-            className="text-[15px] sm:text-[16px] md:text-[17px]"
             style={{
               fontFamily: "'Nunito', sans-serif",
+              fontSize: "17px",
               fontWeight: 400,
               color: "#4B5563",
               textAlign: "center",
@@ -204,9 +205,9 @@ export const JoinOurTeam: React.FC = () => {
           </div>
         </div>
 
-        {/* ── RIGHT IMAGE BLOCK — hidden on mobile/tablet ── */}
+        {/* ── RIGHT IMAGE BLOCK ── */}
         <div
-          className="relative flex-shrink-0 hidden lg:block"
+          className="relative flex-shrink-0"
           style={{ width: "240px", height: "100%" }}
         >
           {/* Col 1 — full */}

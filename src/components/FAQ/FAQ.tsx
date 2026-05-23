@@ -37,26 +37,28 @@ export const FAQ: React.FC = () => {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <div className="w-full max-w-[1440px] mx-auto flex flex-col">
+    <div style={{ width: "1440px", margin: "0 auto", display: "flex", flexDirection: "column" }}>
       {/* ── FAQ SECTION ── */}
       <section
-        className="bg-white flex items-center justify-center flex-shrink-0 w-full px-4 sm:px-8 md:px-16 py-10 md:py-16"
+        className="bg-white flex items-center justify-center flex-shrink-0"
+        style={{ width: "1440px", padding: "60px 0 24px 0" }}
       >
         <div
-          className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8 w-full"
+          className="flex items-center justify-between"
+          style={{ width: "1440px", paddingRight: "60px", boxSizing: "border-box" }}
         >
-          {/* ── LEFT: Image block — hidden on mobile, shown on lg ── */}
+          {/* ── LEFT: Image block ── */}
           <div
-            className="relative flex-shrink-0 hidden lg:block"
+            className="relative flex-shrink-0"
             style={{
-              width: "650px",
-              height: "350px",
+              width: "650px", // Takes up the left side
+              height: "350px", // Matches the height of the 5 FAQs
               borderRadius: "0 120px 0 0",
               overflow: "hidden",
             }}
           >
             <Image
-              src="/images/FAQimg.png"
+              src="/images/FAQimg.png" // Using the provided FAQ image
               alt="FAQ Section Image"
               fill
               className="object-cover object-center"
@@ -64,25 +66,10 @@ export const FAQ: React.FC = () => {
             />
           </div>
 
-          {/* ── Mobile Image — shown only on mobile/tablet ── */}
-          <div
-            className="relative w-full lg:hidden overflow-hidden"
-            style={{
-              height: "200px",
-              borderRadius: "16px",
-            }}
-          >
-            <Image
-              src="/images/FAQimg.png"
-              alt="FAQ Section Image"
-              fill
-              className="object-cover object-center"
-            />
-          </div>
-
           {/* ── RIGHT: FAQ accordion ── */}
           <div
-            className="flex flex-col justify-center flex-shrink-0 w-full lg:w-[660px] gap-4"
+            className="flex flex-col justify-center flex-shrink-0"
+            style={{ width: "660px", gap: "16px" }}
           >
             {faqs.map((faq, i) => (
               <div
@@ -91,7 +78,7 @@ export const FAQ: React.FC = () => {
                   width: "100%",
                   minHeight: "52px",
                   borderRadius: "8px",
-                  border: "1px solid #D1D5DB",
+                  border: "1px solid #D1D5DB", // Thin grey border
                   overflow: "hidden",
                   background: "#fff",
                   transition: "all 0.2s",
@@ -104,7 +91,7 @@ export const FAQ: React.FC = () => {
                   className="w-full flex items-center justify-between"
                   style={{
                     minHeight: "52px",
-                    padding: "0 16px sm:0 20px",
+                    padding: "0 20px",
                     background: "transparent",
                     border: "none",
                     cursor: "pointer",
@@ -112,9 +99,9 @@ export const FAQ: React.FC = () => {
                   }}
                 >
                   <span
-                    className="text-[14px] sm:text-[15px]"
                     style={{
                       fontFamily: "'Nunito', sans-serif",
+                      fontSize: "15px",
                       fontWeight: 700,
                       color: "#111827",
                       lineHeight: 1.3,
@@ -173,8 +160,8 @@ export const FAQ: React.FC = () => {
 
       {/* ── ACCEPTED INSURANCE BANNER ── */}
       <div
-        className="flex flex-col items-center bg-white flex-shrink-0 w-full py-8 md:py-12 px-4 sm:px-8"
-        style={{ justifyContent: "center", boxSizing: "border-box" }}
+        className="flex flex-col items-center bg-white flex-shrink-0"
+        style={{ width: "1440px", height: "300px", justifyContent: "center", paddingTop: "24px", boxSizing: "border-box" }}
       >
         <p
           style={{
@@ -188,19 +175,20 @@ export const FAQ: React.FC = () => {
           Accepted Insurance
         </p>
         <div
-          className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-16 lg:gap-[125px] w-full"
+          className="flex items-center justify-center"
+          style={{ width: "1440px", height: "74px", gap: "125px" }}
         >
-          <div className="h-[50px] sm:h-[74px] flex items-center">
-            <Image src="/images/logo-georgia-health-Photoroom.svg" alt="Georgia Department of Community Health" width={140} height={74} className="object-contain h-full w-auto" />
+          <div style={{ height: "74px", display: "flex", alignItems: "center" }}>
+            <Image src="/images/logo-georgia-health-Photoroom.svg" alt="Georgia Department of Community Health" width={180} height={74} className="object-contain" />
           </div>
-          <div className="h-[50px] sm:h-[74px] flex items-center">
-            <Image src="/images/logo-bcbs-Photoroom.svg" alt="BlueCross BlueShield" width={140} height={74} className="object-contain h-full w-auto" />
+          <div style={{ height: "74px", display: "flex", alignItems: "center" }}>
+            <Image src="/images/logo-bcbs-Photoroom.svg" alt="BlueCross BlueShield" width={180} height={74} className="object-contain" />
           </div>
-          <div className="h-[50px] sm:h-[74px] flex items-center">
-            <Image src="/images/logo-unitedhealth-Photoroom.svg" alt="UnitedHealth Group" width={140} height={74} className="object-contain h-full w-auto" />
+          <div style={{ height: "74px", display: "flex", alignItems: "center" }}>
+            <Image src="/images/logo-unitedhealth-Photoroom.svg" alt="UnitedHealth Group" width={180} height={74} className="object-contain" />
           </div>
-          <div className="h-[50px] sm:h-[74px] flex items-center">
-            <Image src="/images/logo-caresource-Photoroom.svg" alt="CareSource" width={140} height={74} className="object-contain h-full w-auto" />
+          <div style={{ height: "74px", display: "flex", alignItems: "center" }}>
+            <Image src="/images/logo-caresource-Photoroom.svg" alt="CareSource" width={180} height={74} className="object-contain" />
           </div>
         </div>
       </div>

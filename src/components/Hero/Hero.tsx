@@ -25,8 +25,8 @@ export const Hero: React.FC = () => {
       {/* Subtle dark overlay for better text contrast */}
       <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/20 via-black/5 to-transparent" />
 
-      {/* Content — bottom-left on desktop, centered with padding on mobile */}
-      <div className="absolute z-[2] top-6 left-4 right-4 sm:top-16 sm:left-6 sm:right-auto md:top-26 md:left-10 md:right-auto">
+      {/* Content — bottom-left positioned */}
+      <div className="absolute top-26 left-10 z-[2]">
         <HeroCard />
       </div>
     </section>

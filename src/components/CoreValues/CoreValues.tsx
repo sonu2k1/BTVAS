@@ -73,23 +73,13 @@ export const CoreValues: React.FC = () => {
           position: relative;
           z-index: 2;
         }
-
-        /* On mobile, show descriptions by default since hover isn't available */
-        @media (max-width: 768px) {
-          .val-card .val-desc {
-            max-height: 120px;
-            opacity: 1;
-          }
-          .val-card .val-img-wrap {
-            height: 200px;
-          }
-        }
       `}</style>
 
       <section
         id="values"
-        className="w-full max-w-[1440px] mx-auto py-10 md:py-16 px-4 sm:px-8 md:px-16 lg:px-[104px]"
         style={{
+          width: "1440px",
+          height: "552px",
           backgroundColor: "#faf6f0",
           display: "flex",
           flexDirection: "column",
@@ -97,6 +87,8 @@ export const CoreValues: React.FC = () => {
           justifyContent: "center",
           gap: "24px",
           boxSizing: "border-box",
+          padding: "0 104px",
+          margin: "0 auto",
         }}
       >
         {/* HEADER */}
@@ -115,9 +107,9 @@ export const CoreValues: React.FC = () => {
             Our Core Values
           </p>
           <h2
-            className="text-[32px] sm:text-[40px] md:text-[48px]"
             style={{
               fontFamily: "'Nunito', sans-serif",
+              fontSize: "48px",
               fontWeight: "800",
               color: "#1a1a1a",
               margin: 0,
@@ -128,19 +120,28 @@ export const CoreValues: React.FC = () => {
           </h2>
         </div>
 
-        {/* CARDS ROW — responsive grid */}
+        {/* CARDS ROW */}
         <div
-          className="w-full max-w-[1232px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5"
+          style={{
+            width: "1232px",
+            height: "365px",
+            display: "flex",
+            gap: "20px",
+            flexShrink: 0,
+          }}
         >
           {values.map((val) => (
             <div
               key={val.id}
               className="val-card"
               style={{
+                width: "290px",
+                height: "365px",
                 borderRadius: "22px",
                 border: `2px dashed ${val.borderColor}`,
                 overflow: "hidden",
                 background: "#fff",
+                flexShrink: 0,
                 display: "flex",
                 flexDirection: "column",
                 cursor: "pointer",
