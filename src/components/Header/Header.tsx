@@ -152,7 +152,7 @@ export const Header: React.FC = () => {
         .cta-btn-wrapper {
           position: relative;
           display: inline-block;
-          width: 216px;
+          width: 198px;
           height: 50px;
           flex-shrink: 0;
         }
@@ -161,9 +161,9 @@ export const Header: React.FC = () => {
           position: absolute;
           bottom: 0;
           left: 0;
-          width: 216px;
+          width: 198px;
           height: 42px;
-          background: #c93360;
+          background: #b8ab00;
           border-radius: 21px;
         }
 
@@ -171,13 +171,13 @@ export const Header: React.FC = () => {
           position: absolute;
           top: 0;
           left: 0;
-          width: 216px;
+          width: 198px;
           height: 42px;
-          background: #FF4880;
-          color: #ffffff;
-          font-family: 'Nunito', sans-serif;
-          font-size: 15px;
-          font-weight: 800;
+          background: #F5E300;
+          color: #5F3B03;
+          font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+          font-size: 16px;
+          font-weight: 700;
           border: none;
           border-radius: 21px;
           cursor: pointer;
@@ -185,19 +185,19 @@ export const Header: React.FC = () => {
           text-decoration: none;
           display: flex;
           align-items: center;
-          justify-content: center;
+          justifyContent: center;
           letter-spacing: 0.2px;
-          transition: top 0.1s ease, background 0.2s ease;
+          transition: top 0.1s ease, background-color 0.2s ease;
         }
 
         .cta-btn:hover {
-          background: #ff5f95;
+          background-color: #fff233;
           top: 2px;
         }
 
         .cta-btn:active {
-          top: 6px;
-          background: #e03570;
+          top: 8px;
+          background-color: #e6d400;
         }
 
         @media (max-width: 1024px) {
@@ -254,7 +254,7 @@ export const Header: React.FC = () => {
               onClick={(e) => handleNavClick(e, "#contact")}
               className="cta-btn"
             >
-              Getting Started
+              Request Visit Now
             </a>
           </div>
 
@@ -291,9 +291,10 @@ export const Header: React.FC = () => {
                 <a
                   href="#contact"
                   onClick={(e) => handleNavClick(e, "#contact")}
-                  className="block mt-2 text-center bg-[#FF4880] text-white font-bold text-[16px] px-6 py-3 rounded-full"
+                  className="block mt-2 text-center bg-[#F5E300] text-[#5F3B03] font-bold text-[16px] px-6 py-3 rounded-full"
+                  style={{ fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive" }}
                 >
-                  Getting Started
+                  Request Visit Now
                 </a>
               </li>
             </ul>
