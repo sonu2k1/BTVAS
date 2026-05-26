@@ -124,28 +124,36 @@ export const Header: React.FC = () => {
         .nav-links li a {
           font-family: 'Nunito', sans-serif;
           font-size: 15px;
-          font-weight: 700;
+          font-weight: 800;
           text-decoration: none;
           color: #7b2d8b;
-          padding: 10px 18px;
-          border-radius: 30px;
-          transition: background 0.2s, color 0.2s;
+          padding: 10px 20px;
+          border-radius: 16px;
+          transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, color 0.2s ease;
           white-space: nowrap;
+          display: inline-block;
         }
 
         .nav-links li a:hover {
           background: #753DBE;
           color: #ffffff;
+          transform: scale(1.05);
+        }
+
+        .nav-links li a:active {
+          transform: scale(0.96);
         }
 
         .nav-links li a.active {
           background: #FF4880;
           color: #ffffff;
-          padding: 10px 22px;
+          padding: 10px 20px;
+          border-radius: 16px;
         }
 
         .nav-links li a.active:hover {
           background: #e03570;
+          transform: scale(1.05);
         }
 
         /* CTA BUTTON — 3D drop shadow style */
@@ -304,8 +312,8 @@ export const Header: React.FC = () => {
                       style={{
                         display: "block",
                         padding: "12px 24px",
-                        borderRadius: "30px",
-                        fontWeight: 700,
+                        borderRadius: "16px",
+                        fontWeight: 800,
                         fontSize: "15px",
                         fontFamily: "'Nunito', sans-serif",
                         textDecoration: "none",
