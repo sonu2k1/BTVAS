@@ -316,8 +316,8 @@ export const Mission: React.FC = () => {
                 lineHeight: 1.1,
               }}
             >
-              <span style={{ color: "#753DBE" }}>Beyond </span>
-              <span style={{ color: "#FF4880" }}>The Horizon</span>
+              <span style={{ color: "#1a1a1a", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Beyond</span>{" "}
+              <span style={{ color: "#FF4880" }}>Just Care</span>
             </h2>
           </div>
 

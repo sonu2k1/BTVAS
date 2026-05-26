@@ -149,8 +149,8 @@ export const JoinOurTeam: React.FC = () => {
               marginBottom: "16px",
             }}
           >
-            <span style={{ color: "#111827" }}>Be the Reason </span>
-            <span style={{ color: "#7C3AED" }}>Someone Smiles</span>
+            <span style={{ color: "#111827", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Be the Reason</span>{" "}
+            <span style={{ color: "#FF4880" }}>Someone Smiles</span>
           </h2>
 
           <p

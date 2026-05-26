@@ -113,7 +113,7 @@ export const Visionaries: React.FC = () => {
             margin: 0,
           }}
         >
-          The{" "}
+          <span style={{ textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>The</span>{" "}
           <span style={{ color: "#FF4880" }}>Visionaries</span>
         </h2>
       </div>
