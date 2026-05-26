@@ -30,13 +30,47 @@ export const Mission: React.FC = () => {
             width: 100% !important;
             height: auto !important;
             flex-direction: column !important;
-            gap: 40px !important;
+            gap: 32px !important;
           }
           .mission-left {
             width: 100% !important;
-            max-width: 380px !important;
+            max-width: 360px !important;
             height: auto !important;
             aspect-ratio: 1.14 !important;
+            position: relative !important;
+            margin: 0 auto !important;
+          }
+          .mission-image-container {
+            width: 81% !important;
+            height: 88% !important;
+            left: 15% !important;
+            top: 11% !important;
+            position: absolute !important;
+          }
+          .mission-badge {
+            left: 5% !important;
+            top: 2% !important;
+            position: absolute !important;
+          }
+          .mission-badge-circle {
+            width: 80px !important;
+            height: 80px !important;
+          }
+          .mission-badge-number {
+            font-size: 24px !important;
+          }
+          .mission-badge-pill {
+            width: 120px !important;
+            height: 38px !important;
+            margin-left: -15px !important;
+            padding-left: 12px !important;
+            border-radius: 0 19px 19px 0 !important;
+          }
+          .mission-badge-pill-text {
+            font-size: 10px !important;
+          }
+          .mission-heading {
+            font-size: 32px !important;
           }
           .mission-right {
             width: 100% !important;
@@ -48,8 +82,10 @@ export const Mission: React.FC = () => {
             display: none !important;
           }
           .mission-tags {
-            flex-direction: column !important;
-            gap: 16px !important;
+            flex-direction: row !important;
+            flex-wrap: wrap !important;
+            gap: 20px !important;
+            justify-content: center !important;
             align-items: center !important;
           }
         }
@@ -93,6 +129,7 @@ export const Mission: React.FC = () => {
 
           {/* 25+ badge */}
           <div
+            className="mission-badge"
             style={{
               position: "absolute",
               top: "10px", // Positioned to overlap the image's top-left corner
@@ -105,6 +142,7 @@ export const Mission: React.FC = () => {
           >
             {/* Purple circle */}
             <div
+              className="mission-badge-circle"
               style={{
                 width: "100px",
                 height: "100px",
@@ -131,6 +169,7 @@ export const Mission: React.FC = () => {
                 }}
               >
                 <span
+                  className="mission-badge-number"
                   style={{
                     fontFamily: "'Nunito', sans-serif",
                     fontSize: "30px",
@@ -145,6 +184,7 @@ export const Mission: React.FC = () => {
 
             {/* White pill text container */}
             <div
+              className="mission-badge-pill"
               style={{
                 width: "146px", // User requested width
                 height: "46px", // User requested height
@@ -160,6 +200,7 @@ export const Mission: React.FC = () => {
               }}
             >
               <span
+                className="mission-badge-pill-text"
                 style={{
                   fontFamily: "'Nunito', sans-serif",
                   fontSize: "12.5px",
@@ -175,6 +216,7 @@ export const Mission: React.FC = () => {
 
           {/* Main image */}
           <div
+            className="mission-image-container"
             style={{
               position: "absolute",
               top: "50px",
@@ -252,6 +294,7 @@ export const Mission: React.FC = () => {
           {/* Heading */}
           <div>
             <h2
+              className="mission-heading"
               style={{
                 fontFamily: "'Nunito', sans-serif",
                 fontSize: "38px",
@@ -264,6 +307,7 @@ export const Mission: React.FC = () => {
               Nurturing Growth
             </h2>
             <h2
+              className="mission-heading"
               style={{
                 fontFamily: "'Nunito', sans-serif",
                 fontSize: "38px",

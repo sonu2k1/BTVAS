@@ -62,21 +62,42 @@ export const Visionaries: React.FC = () => {
             width: 100% !important;
             max-width: 380px !important;
             height: auto !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            text-align: center !important;
+            flex-direction: row !important;
+            align-items: stretch !important;
+            text-align: left !important;
           }
           .visionary-bg-circle {
-            display: none !important;
+            display: block !important;
+            width: 150px !important;
+            height: 150px !important;
+            left: -20px !important;
           }
           .visionary-img-wrap {
-            width: 100% !important;
-            height: 240px !important;
+            width: 110px !important;
+            height: auto !important;
+            min-height: 100% !important;
           }
           .visionary-text-wrap {
-            width: 100% !important;
-            padding: 20px 16px !important;
-            gap: 16px !important;
+            width: auto !important;
+            flex: 1 !important;
+            padding: 16px 14px !important;
+            gap: 8px !important;
+          }
+          .visionary-name {
+            font-size: 16px !important;
+            margin-bottom: 2px !important;
+          }
+          .visionary-credentials {
+            font-size: 12px !important;
+            margin-bottom: 0px !important;
+          }
+          .visionary-role {
+            font-size: 11px !important;
+          }
+          .visionary-quote {
+            font-size: 11.5px !important;
+            line-height: 1.45 !important;
+            margin-top: 8px !important;
           }
         }
       `}</style>
@@ -173,6 +194,7 @@ export const Visionaries: React.FC = () => {
             >
               <div>
                 <h3
+                  className="visionary-name"
                   style={{
                     fontFamily: "'Nunito', sans-serif",
                     fontSize: "24px",
@@ -184,6 +206,7 @@ export const Visionaries: React.FC = () => {
                   {person.name}
                 </h3>
                 <p
+                  className="visionary-credentials"
                   style={{
                     fontFamily: "'Nunito', sans-serif",
                     fontSize: "14px",
@@ -195,6 +218,7 @@ export const Visionaries: React.FC = () => {
                   {person.credentials}
                 </p>
                 <p
+                  className="visionary-role"
                   style={{
                     fontFamily: "'Nunito', sans-serif",
                     fontSize: "13px",
@@ -208,6 +232,7 @@ export const Visionaries: React.FC = () => {
               </div>
 
               <p
+                className="visionary-quote"
                 style={{
                   fontFamily: "'Nunito', sans-serif",
                   fontSize: "14px",

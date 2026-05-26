@@ -266,10 +266,17 @@ export const GettingStarted: React.FC = () => {
       </section>
 
       {/* ── MOBILE / TABLET VIEW: DYNAMIC FLUID & RESPONSIVE (Visible below lg) ── */}
-      <section className="flex lg:hidden flex-col w-full px-6 py-12 md:py-16 gap-8">
+      <section 
+        className="flex lg:hidden flex-col w-full"
+        style={{
+          padding: "48px 20px",
+          boxSizing: "border-box",
+          gap: "32px",
+        }}
+      >
         {/* Top Part */}
-        <div className="flex flex-col gap-6 w-full">
-          <div className="flex flex-col justify-center">
+        <div style={{ display: "flex", flexDirection: "column", gap: "24px", width: "100%" }}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
             <p
               style={{
                 fontFamily: "'Georgia', serif",
@@ -295,7 +302,7 @@ export const GettingStarted: React.FC = () => {
             </h2>
           </div>
 
-          <div className="flex items-center">
+          <div style={{ display: "flex", alignItems: "center" }}>
             <p
               style={{
                 fontFamily: "'Georgia', serif",
@@ -353,22 +360,49 @@ export const GettingStarted: React.FC = () => {
         </div>
 
         {/* Separator */}
-        <div className="h-4" />
+        <div style={{ height: "16px" }} />
 
         {/* Mobile Vertical Timeline */}
-        <div className="flex flex-col relative w-full gap-8 pl-8">
+        <div 
+          style={{ 
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            gap: "32px",
+            paddingLeft: "40px",
+            width: "100%",
+            boxSizing: "border-box",
+          }}
+        >
           {/* Vertical connecting line */}
           <div
-            className="absolute left-[13px] top-4 bottom-4 w-0.5"
-            style={{ backgroundColor: "#FF4880" }}
+            style={{ 
+              position: "absolute",
+              left: "19px",
+              top: "14px",
+              bottom: "14px",
+              width: "2px",
+              backgroundColor: "#FF4880" 
+            }}
           />
 
           {steps.map((step) => (
-            <div key={step.number} className="relative flex flex-col gap-1 text-left">
+            <div 
+              key={step.number} 
+              style={{
+                position: "relative",
+                display: "flex",
+                flexDirection: "column",
+                gap: "4px",
+                textAlign: "left",
+              }}
+            >
               {/* Number bubble */}
               <div
-                className="absolute -left-8 flex items-center justify-center"
                 style={{
+                  position: "absolute",
+                  left: "-34px",
+                  top: "0px",
                   width: "28px",
                   height: "28px",
                   borderRadius: "50%",
@@ -379,6 +413,9 @@ export const GettingStarted: React.FC = () => {
                   fontWeight: 700,
                   boxShadow: "0 0 0 3px rgba(255,72,128,0.3)",
                   zIndex: 10,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
                 {step.number}
@@ -391,6 +428,7 @@ export const GettingStarted: React.FC = () => {
                   fontWeight: 700,
                   color: "#ffffff",
                   margin: 0,
+                  lineHeight: "28px",
                 }}
               >
                 {step.title}

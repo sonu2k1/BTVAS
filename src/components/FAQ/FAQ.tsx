@@ -57,9 +57,10 @@ export const FAQ: React.FC = () => {
           }
           .faq-img-wrap {
             width: 100% !important;
-            max-width: 320px !important;
-            height: 200px !important;
-            border-radius: 20px !important;
+            max-width: 100% !important;
+            height: auto !important;
+            aspect-ratio: 1.857 !important;
+            border-radius: 0 120px 0 0 !important;
             margin: 0 auto !important;
           }
           .faq-accordion-wrap {

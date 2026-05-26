@@ -27,9 +27,28 @@ const exploreLinks = [
 export const Footer: React.FC = () => {
   return (
     <>
-      {/* ── DESKTOP VIEW: 100% EXACT ORIGINAL MARKUP & HEIGHT (Visible on lg and larger) ── */}
+      <style>{`
+        @media (min-width: 1025px) {
+          .desktop-footer {
+            display: flex !important;
+          }
+          .mobile-footer {
+            display: none !important;
+          }
+        }
+        @media (max-width: 1024px) {
+          .desktop-footer {
+            display: none !important;
+          }
+          .mobile-footer {
+            display: flex !important;
+          }
+        }
+      `}</style>
+
+      {/* ── DESKTOP VIEW: 100% EXACT ORIGINAL MARKUP & HEIGHT ── */}
       <footer
-        className="hidden lg:flex bg-[#010C6F] text-white justify-center overflow-hidden w-full"
+        className="desktop-footer bg-[#010C6F] text-white justify-center overflow-hidden w-full"
         style={{ height: "445px" }}
       >
         <div
@@ -165,10 +184,19 @@ export const Footer: React.FC = () => {
         </div>
       </footer>
 
-      {/* ── MOBILE / TABLET VIEW: DYNAMIC & FLUID STACK (Visible below lg) ── */}
-      <footer className="flex lg:hidden bg-[#010C6F] text-white flex-col w-full px-6 py-12 md:py-16 gap-10">
+      {/* ── MOBILE / TABLET VIEW: DYNAMIC & FLUID STACK ── */}
+      <footer 
+        className="mobile-footer bg-[#010C6F] text-white flex-col w-full"
+        style={{
+          padding: "48px 24px",
+          boxSizing: "border-box",
+          display: "flex",
+          flexDirection: "column",
+          gap: "40px",
+        }}
+      >
         {/* Upper Logo & Description */}
-        <div className="flex flex-col gap-4">
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
           <div>
             <Image
               src="/logo.svg"
@@ -192,8 +220,8 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Explore Links in Mobile */}
-        <div className="flex flex-col w-full">
-          <h4 style={{ fontSize: "20px", fontWeight: 700, marginBottom: "12px", fontFamily: "'Inter', sans-serif" }}>
+        <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+          <h4 style={{ fontSize: "20px", fontWeight: 700, marginBottom: "12px", fontFamily: "'Inter', sans-serif", margin: "0 0 12px 0" }}>
             Explore
           </h4>
 
@@ -203,13 +231,23 @@ export const Footer: React.FC = () => {
             <div style={{ flex: 1, height: "2.5px", background: "rgba(255, 255, 255, 0.2)", flexShrink: 0 }} />
           </div>
 
-          <ul className="grid grid-cols-2 gap-4 p-0 m-0 list-none">
+          <ul 
+            className="grid grid-cols-2"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: "16px",
+              padding: 0,
+              margin: 0,
+              listStyle: "none",
+            }}
+          >
             {exploreLinks.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
                   className="flex items-center gap-3 text-white transition-colors hover:text-[#FF4880]"
-                  style={{ fontSize: "14px", fontWeight: 500, fontFamily: "'Inter', sans-serif", textDecoration: "none" }}
+                  style={{ fontSize: "14px", fontWeight: 500, fontFamily: "'Inter', sans-serif", textDecoration: "none", display: "flex", alignItems: "center", gap: "12px" }}
                 >
                   <ChevronDoubleRight />
                   {link.label}
@@ -223,18 +261,18 @@ export const Footer: React.FC = () => {
         <div style={{ width: "100%", height: "1px", background: "rgba(255, 255, 255, 0.1)" }} />
 
         {/* Contact info in Mobile */}
-        <div className="flex flex-col gap-6 w-full">
+        <div style={{ display: "flex", flexDirection: "column", gap: "24px", width: "100%" }}>
           {/* Social Row */}
-          <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px]" style={{ width: "32px", height: "32px", flexShrink: 0 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px]" style={{ width: "32px", height: "32px", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <Image src="/icons/Link.svg" alt="Instagram" width={16} height={16} />
               </div>
               <span style={{ fontSize: "12px", color: "rgba(255, 255, 255, 0.9)", wordBreak: "break-all" }}>/Beyondtheviewautismservices</span>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px]" style={{ width: "32px", height: "32px", flexShrink: 0 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px]" style={{ width: "32px", height: "32px", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <Image src="/icons/FB.svg" alt="Facebook" width={16} height={16} />
               </div>
               <span style={{ fontSize: "12px", color: "rgba(255, 255, 255, 0.9)" }}>@beyondtheviewaba</span>
@@ -242,13 +280,13 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Contact Details stack */}
-          <div className="flex flex-col gap-6">
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
             {/* Phone */}
-            <div className="flex items-start gap-3">
-              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "32px", height: "32px" }}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
+              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <Image src="/icons/Phone.svg" alt="Phone" width={16} height={16} />
               </div>
-              <div className="flex flex-col gap-1">
+              <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <span style={{ fontSize: "11px", color: "rgba(255, 255, 255, 0.6)", textTransform: "uppercase", letterSpacing: "0.05em" }}>Call Us</span>
                 <span style={{ fontSize: "13px", fontWeight: 600 }}>(404)-398-2622</span>
                 <span style={{ fontSize: "13px", fontWeight: 600 }}>(404)-406-7339</span>
@@ -256,11 +294,11 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Location */}
-            <div className="flex items-start gap-3">
-              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "32px", height: "32px" }}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
+              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <MapPinIcon />
               </div>
-              <div className="flex flex-col gap-1">
+              <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <span style={{ fontSize: "11px", color: "rgba(255, 255, 255, 0.6)", textTransform: "uppercase", letterSpacing: "0.05em" }}>Clinic Locations</span>
                 <span style={{ fontSize: "13px", fontWeight: 600 }}>7171 Jonesboro Rd, Morrow GA 30260</span>
                 <span style={{ fontSize: "13px", fontWeight: 600 }}>3557 Main St College Park Ga 30337</span>
@@ -268,13 +306,13 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Email */}
-            <div className="flex items-start gap-3">
-              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "32px", height: "32px" }}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
+              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <Image src="/icons/Email.svg" alt="Email" width={16} height={16} />
               </div>
-              <div className="flex flex-col gap-1">
+              <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <span style={{ fontSize: "11px", color: "rgba(255, 255, 255, 0.6)", textTransform: "uppercase", letterSpacing: "0.05em" }}>Email Us</span>
-                <a href="mailto:intake@btvas.com" style={{ fontSize: "13px", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px" }}>intake@btvas.com</a>
+                <a href="mailto:intake@btvas.com" style={{ fontSize: "13px", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "2px", color: "#fff" }}>intake@btvas.com</a>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const values = [
@@ -39,6 +39,8 @@ const values = [
 ];
 
 export const CoreValues: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   return (
     <>
       <style>{`
@@ -46,7 +48,8 @@ export const CoreValues: React.FC = () => {
           height: 290px;
           transition: height 0.4s ease;
         }
-        .val-card:hover .val-img-wrap {
+        .val-card:hover .val-img-wrap,
+        .val-card.is-active .val-img-wrap {
           height: 185px;
         }
         .val-card .val-desc {
@@ -55,7 +58,8 @@ export const CoreValues: React.FC = () => {
           overflow: hidden;
           transition: max-height 0.4s ease, opacity 0.4s ease;
         }
-        .val-card:hover .val-desc {
+        .val-card:hover .val-desc,
+        .val-card.is-active .val-desc {
           max-height: 120px;
           opacity: 1;
         }
@@ -65,7 +69,7 @@ export const CoreValues: React.FC = () => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
+          justifyContent: center;
           flex: 1;
           text-align: center;
           border-radius: 22px 22px 0 0;
@@ -93,12 +97,21 @@ export const CoreValues: React.FC = () => {
             height: 330px !important;
           }
           .val-card .val-img-wrap {
-            height: 160px !important;
+            height: 255px !important;
+            transition: height 0.4s ease !important;
           }
-          .val-card:hover .val-img-wrap {
+          .val-card:hover .val-img-wrap,
+          .val-card.is-active .val-img-wrap {
             height: 160px !important;
           }
           .val-card .val-desc {
+            max-height: 0 !important;
+            opacity: 0 !important;
+            overflow: hidden !important;
+            transition: max-height 0.4s ease, opacity 0.4s ease !important;
+          }
+          .val-card:hover .val-desc,
+          .val-card.is-active .val-desc {
             max-height: 120px !important;
             opacity: 1 !important;
           }
@@ -165,7 +178,8 @@ export const CoreValues: React.FC = () => {
           {values.map((val) => (
             <div
               key={val.id}
-              className="val-card"
+              className={`val-card ${activeIndex === val.id ? "is-active" : ""}`}
+              onClick={() => setActiveIndex(activeIndex === val.id ? null : val.id)}
               style={{
                 width: "290px",
                 height: "365px",

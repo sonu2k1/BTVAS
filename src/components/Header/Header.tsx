@@ -269,8 +269,30 @@ export const Header: React.FC = () => {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg rounded-b-[20px] mt-[-10px] pt-4 overflow-hidden">
-            <ul className="flex flex-col p-4 gap-2">
+          <div 
+            className="lg:hidden"
+            style={{
+              width: "100%",
+              backgroundColor: "#ffffff",
+              borderRadius: "20px",
+              border: "2px solid #2e2e8e18",
+              boxShadow: "0 8px 30px rgba(46, 46, 142, 0.12)",
+              marginTop: "12px",
+              boxSizing: "border-box",
+              overflow: "hidden",
+              zIndex: 99,
+            }}
+          >
+            <ul 
+              style={{ 
+                listStyle: "none", 
+                padding: "20px", 
+                margin: 0, 
+                display: "flex", 
+                flexDirection: "column", 
+                gap: "8px" 
+              }}
+            >
               {links.map((link) => {
                 const isActive = activeSection === link.href.replace("#", "");
                 return (
@@ -278,24 +300,76 @@ export const Header: React.FC = () => {
                     <a
                       href={link.href}
                       onClick={(e) => handleNavClick(e, link.href)}
-                      className={`block px-4 py-3 rounded-xl font-bold text-[15px] ${
-                        isActive ? "bg-[#FF4880] text-white" : "text-[#7b2d8b] hover:bg-[#7b2d8b]/10"
-                      }`}
+                      style={{
+                        display: "block",
+                        padding: "12px 24px",
+                        borderRadius: "30px",
+                        fontWeight: 700,
+                        fontSize: "15px",
+                        fontFamily: "'Nunito', sans-serif",
+                        textDecoration: "none",
+                        backgroundColor: isActive ? "#FF4880" : "transparent",
+                        color: isActive ? "#ffffff" : "#7b2d8b",
+                        transition: "all 0.2s ease",
+                      }}
                     >
                       {link.label}
                     </a>
                   </li>
                 );
               })}
-              <li>
-                <a
-                  href="#team"
-                  onClick={(e) => handleNavClick(e, "#team")}
-                  className="block mt-2 text-center bg-[#FF4880] text-white font-bold text-[18px] px-6 py-3 rounded-full"
-                  style={{ fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive" }}
+              <li style={{ display: "flex", justifyContent: "center", marginTop: "12px" }}>
+                <div 
+                  className="cta-btn-wrapper"
+                  style={{
+                    position: "relative",
+                    width: "198px",
+                    height: "50px",
+                    display: "block",
+                  }}
                 >
-                  Join Our Team
-                </a>
+                  <div 
+                    className="cta-btn-shadow"
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      width: "198px",
+                      height: "42px",
+                      backgroundColor: "#c93360",
+                      borderRadius: "21px",
+                    }}
+                  />
+                  <a
+                    href="#team"
+                    onClick={(e) => handleNavClick(e, "#team")}
+                    className="cta-btn"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "198px",
+                      height: "42px",
+                      backgroundColor: "#FF4880",
+                      color: "#ffffff",
+                      fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive",
+                      fontSize: "18px",
+                      fontWeight: 700,
+                      border: "none",
+                      borderRadius: "21px",
+                      cursor: "pointer",
+                      whiteSpace: "nowrap",
+                      textDecoration: "none",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      letterSpacing: "0.2px",
+                      transition: "top 0.1s ease, background-color 0.2s ease",
+                    }}
+                  >
+                    Join Our Team
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
