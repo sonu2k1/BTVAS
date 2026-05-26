@@ -75,11 +75,21 @@ export const FAQ: React.FC = () => {
           .insurance-logos-row {
             width: 100% !important;
             height: auto !important;
-            flex-wrap: wrap !important;
-            gap: 24px !important;
-            justify-content: center !important;
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 24px 16px !important;
+            justify-items: center !important;
+            align-items: center !important;
           }
           .insurance-logos-row > div {
+            width: 100% !important;
+            height: 60px !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+          }
+          .insurance-logos-row img {
+            max-width: 130px !important;
             height: auto !important;
           }
         }
