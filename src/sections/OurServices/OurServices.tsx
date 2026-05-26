@@ -123,7 +123,7 @@ export const OurServices: React.FC = () => {
       `}</style>
       {/* Header */}
       <div className="flex flex-col items-center" style={{ marginBottom: "30px" }}>
-        <p
+        {/* <p
           className="tracking-widest mb-1"
           style={{
             fontFamily: "'Georgia', serif",
@@ -134,7 +134,7 @@ export const OurServices: React.FC = () => {
           }}
         >
           What we offer
-        </p>
+        </p> */}
         <h2
           style={{
             fontFamily: "'Georgia', serif",
@@ -143,8 +143,8 @@ export const OurServices: React.FC = () => {
             lineHeight: 1.1,
           }}
         >
-          <span style={{ color: "#7C3AED" }}>Our </span>
-          <span style={{ color: "#1a1a1a" }}>Services</span>
+         <span style={{ textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Beyond</span>{" "}
+          <span style={{ color: "#FF4880" }}>Just Care</span>
         </h2>
       </div>
 
@@ -210,6 +210,7 @@ export const OurServices: React.FC = () => {
                     width={374}
                     height={283}
                     className="w-full h-full object-cover object-center"
+                    style={{ width: "100%", height: "100%" }}
                   />
                 </div>
 

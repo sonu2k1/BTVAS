@@ -78,6 +78,7 @@ export const JoinOurTeam: React.FC = () => {
                 width={IMG_SIZE}
                 height={IMG_SIZE}
                 className="w-full h-full object-cover object-center"
+                style={{ width: "auto", height: "auto" }}
               />
             </div>
             <div
@@ -115,6 +116,7 @@ export const JoinOurTeam: React.FC = () => {
                   width={IMG_SIZE}
                   height={IMG_SIZE}
                   className="w-full h-full object-cover object-center"
+                  style={{ width: "auto", height: "auto" }}
                 />
               </div>
             ))}
@@ -252,6 +254,7 @@ export const JoinOurTeam: React.FC = () => {
                   width={IMG_SIZE}
                   height={IMG_SIZE}
                   className="w-full h-full object-cover object-center"
+                  style={{ width: "auto", height: "auto" }}
                 />
               </div>
             ))}
@@ -288,6 +291,7 @@ export const JoinOurTeam: React.FC = () => {
                 width={IMG_SIZE}
                 height={IMG_SIZE}
                 className="w-full h-full object-cover object-center"
+                style={{ width: "auto", height: "auto" }}
               />
             </div>
             <div

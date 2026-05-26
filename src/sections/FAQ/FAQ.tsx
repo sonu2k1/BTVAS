@@ -117,6 +117,7 @@ export const FAQ: React.FC = () => {
               src="/images/FAQimg.png" // Using the provided FAQ image
               alt="FAQ Section Image"
               fill
+              sizes="(max-width: 768px) 100vw, 650px"
               className="object-cover object-center"
               priority
             />
@@ -235,16 +236,16 @@ export const FAQ: React.FC = () => {
           style={{ width: "1440px", height: "74px", gap: "125px" }}
         >
           <div style={{ height: "74px", display: "flex", alignItems: "center" }}>
-            <Image src="/images/logo-georgia-health-Photoroom.svg" alt="Georgia Department of Community Health" width={180} height={74} className="object-contain" />
+            <Image src="/images/logo-georgia-health-Photoroom.svg" alt="Georgia Department of Community Health" width={180} height={74} className="object-contain" style={{ height: "auto" }} />
           </div>
           <div style={{ height: "74px", display: "flex", alignItems: "center" }}>
-            <Image src="/images/logo-bcbs-Photoroom.svg" alt="BlueCross BlueShield" width={180} height={74} className="object-contain" />
+            <Image src="/images/logo-bcbs-Photoroom.svg" alt="BlueCross BlueShield" width={180} height={74} className="object-contain" style={{ height: "auto" }} />
           </div>
           <div style={{ height: "74px", display: "flex", alignItems: "center" }}>
-            <Image src="/images/logo-unitedhealth-Photoroom.svg" alt="UnitedHealth Group" width={180} height={74} className="object-contain" />
+            <Image src="/images/logo-unitedhealth-Photoroom.svg" alt="UnitedHealth Group" width={180} height={74} className="object-contain" style={{ height: "auto" }} />
           </div>
           <div style={{ height: "74px", display: "flex", alignItems: "center" }}>
-            <Image src="/images/logo-caresource-Photoroom.svg" alt="CareSource" width={180} height={74} className="object-contain" />
+            <Image src="/images/logo-caresource-Photoroom.svg" alt="CareSource" width={180} height={74} className="object-contain" style={{ height: "auto" }} />
           </div>
         </div>
       </div>

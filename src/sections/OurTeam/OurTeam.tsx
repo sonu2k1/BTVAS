@@ -225,7 +225,8 @@ export const OurTeam: React.FC = () => {
             textAlign: "center",
           }}
         >
-          Our <span style={{ color: "#FF4880" }}>Team</span>
+          <span style={{ textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Our</span>{" "}
+          <span style={{ color: "#FF4880" }}>Team</span>
         </h2>
 
         {/* TABS */}
@@ -309,6 +310,7 @@ export const OurTeam: React.FC = () => {
                   src={member.thumb}
                   alt={member.name}
                   fill
+                  sizes="100px"
                   className="object-cover"
                 />
               </div>
@@ -331,6 +333,7 @@ export const OurTeam: React.FC = () => {
               src={selectedMember.image}
               alt={selectedMember.name}
               fill
+              sizes="(max-width: 768px) 100vw, 560px"
               className="object-cover object-top"
               priority
             />

@@ -176,6 +176,7 @@ export const Visionaries: React.FC = () => {
                 src={person.image}
                 alt={person.name}
                 fill
+                sizes="(max-width: 768px) 100vw, 200px"
                 className="object-cover object-top"
               />
             </div>

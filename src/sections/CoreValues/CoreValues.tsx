@@ -208,6 +208,7 @@ export const CoreValues: React.FC = () => {
                   alt={val.title}
                   fill
                   style={{ objectPosition: val.objectPosition }}
+                  sizes="(max-width: 768px) 100vw, 290px"
                   className="object-cover"
                 />
               </div>

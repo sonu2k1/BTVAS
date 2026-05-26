@@ -71,9 +71,9 @@ export const Footer: React.FC = () => {
                 <Image
                   src="/logo.svg"
                   alt="Beyond The View Autism Services"
-                  width={107.4}
+                  width={107}
                   height={100}
-                  style={{ width: "107.4px", height: "100px" }}
+                  style={{ width: "107px", height: "auto" }}
                 />
               </div>
               <p
@@ -201,9 +201,9 @@ export const Footer: React.FC = () => {
             <Image
               src="/logo.svg"
               alt="Beyond The View Autism Services"
-              width={107.4}
+              width={107}
               height={100}
-              style={{ width: "107.4px", height: "100px" }}
+              style={{ width: "107px", height: "auto" }}
             />
           </div>
           <p

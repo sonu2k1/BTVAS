@@ -224,6 +224,7 @@ export const Header: React.FC = () => {
               width={180}
               height={80}
               className="logo-img"
+              style={{ width: "auto" }}
               priority
             />
           </div>

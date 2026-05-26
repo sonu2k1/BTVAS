@@ -62,7 +62,7 @@ export const TopBar: React.FC = () => {
         <div className="flex items-center gap-2 whitespace-nowrap">
           {/* Phone icon */}
           <div className="w-6 h-6 shrink-0 flex items-center justify-center">
-            <Image src="/icons/Phone.svg" alt="Phone" width={24} height={24} className="w-full h-full object-contain" />
+            <Image src="/icons/Phone.svg" alt="Phone" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
           </div>
 
           <div className="flex items-center gap-[10px] text-white font-sans text-[12px]">
@@ -73,7 +73,7 @@ export const TopBar: React.FC = () => {
           {/* Email icon */}
           <div className="flex items-center gap-[6px] ml-[10px]">
             <div className="w-6 h-6 shrink-0 flex items-center justify-center">
-              <Image src="/icons/Email.svg" alt="Email" width={24} height={24} className="w-full h-full object-contain" />
+              <Image src="/icons/Email.svg" alt="Email" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
             </div>
             <a className="text-white font-sans text-[12px] underline" href="mailto:intake@btvas.com">
               intake@btvas.com
@@ -120,7 +120,7 @@ export const TopBar: React.FC = () => {
             className="flex items-center gap-[6px]"
           >
             <div className="w-6 h-6 shrink-0 flex items-center justify-center">
-              <Image src="/icons/FB.svg" alt="Facebook" width={24} height={24} className="w-full h-full object-contain" />
+              <Image src="/icons/FB.svg" alt="Facebook" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
             </div>
             <span className="text-white font-sans text-[12px] whitespace-nowrap">
               @beyondtheviewaba
@@ -134,14 +134,14 @@ export const TopBar: React.FC = () => {
       <div className="topbar-mobile">
         <a href="tel:4044067339" className="flex items-center gap-1 text-white font-sans text-[11px] decoration-none" style={{ textDecoration: "none" }}>
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
-            <Image src="/icons/Phone.svg" alt="Phone" width={16} height={16} className="w-full h-full object-contain" />
+            <Image src="/icons/Phone.svg" alt="Phone" width={16} height={16} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
           </div>
           (404)-406-7339
         </a>
         <span className="text-white opacity-30 text-[10px]">|</span>
         <a href="mailto:intake@btvas.com" className="flex items-center gap-1 text-white font-sans text-[11px] underline">
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
-            <Image src="/icons/Email.svg" alt="Email" width={16} height={16} className="w-full h-full object-contain" />
+            <Image src="/icons/Email.svg" alt="Email" width={16} height={16} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
           </div>
           intake@btvas.com
         </a>

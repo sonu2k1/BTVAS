@@ -63,6 +63,7 @@ export default function Home() {
             width={1440}
             height={90}
             className="w-full h-auto object-cover pointer-events-none"
+            style={{ height: "auto" }}
           />
         </div>
 
