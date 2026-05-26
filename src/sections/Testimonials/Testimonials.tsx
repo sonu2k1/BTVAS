@@ -79,43 +79,6 @@ export const Testimonials: React.FC = () => {
         className="relative flex flex-col items-center justify-center testimonials-card"
         style={{ width: "1340px", height: "679px" }}
       >
-        {/* Decorative squiggle top-left */}
-        <svg
-          className="absolute testimonials-decor"
-          style={{ top: 40, left: 60 }}
-          width="80"
-          height="36"
-          viewBox="0 0 80 36"
-          fill="none"
-        >
-          <path
-            d="M4 28 C20 4, 40 4, 60 20 C70 28, 76 28, 78 24"
-            stroke="#FFD740"
-            strokeWidth="3"
-            strokeLinecap="round"
-            fill="none"
-          />
-        </svg>
-
-        {/* Balloon top-right */}
-        <svg
-          className="absolute testimonials-decor"
-          style={{ top: 20, right: 60 }}
-          width="60"
-          height="130"
-          viewBox="0 0 60 130"
-          fill="none"
-        >
-          <ellipse cx="30" cy="38" rx="26" ry="34" fill="#E91E8C" />
-          <path
-            d="M30 72 C28 85, 32 95, 29 110 C27 120, 31 125, 30 128"
-            stroke="#E91E8C"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          <path d="M26 70 L30 76 L34 70" fill="#E91E8C" />
-        </svg>
-
         {/* Quote icon */}
         <div className="flex flex-col items-center mb-3">
           <svg width="52" height="42" viewBox="0 0 52 42" fill="none">

@@ -6,7 +6,34 @@ import Image from "next/image";
 const IMG_SIZE = 130;
 const GAP = 17;
 const HALF_OFFSET = -(IMG_SIZE / 2);
-const TEAM_IMG = "/images/0O3A2462.jpg";
+
+const leftCol1Images = [
+  "/images/0O3A2459.jpg",
+  "/images/0O3A2453.jpg",
+  "/images/0O3A2433.jpg",
+  "/images/0O3A2500.jpg",
+];
+
+const leftCol2Images = [
+  "/images/0O3A2459.jpg",
+  "/images/0O3A2486.jpg",
+  "/images/0O3A2474.jpg",
+  "/images/0O3A2500.jpg",
+];
+
+const rightCol1Images = [
+  "/images/0O3A2462.jpg",
+  "/images/0O3A2453.jpg",
+  "/images/0O3A2433.jpg",
+  "/images/0O3A2459.jpg",
+];
+
+const rightCol2Images = [
+  "/images/0O3A2474.jpg",
+  "/images/0O3A2486.jpg",
+  "/images/0O3A2462.jpg",
+  "/images/0O3A2453.jpg",
+];
 
 export const JoinOurTeam: React.FC = () => {
   return (
@@ -25,6 +52,8 @@ export const JoinOurTeam: React.FC = () => {
             width: 100% !important;
             height: auto !important;
             padding: 48px 16px !important;
+            border-top: 4px solid #7e5cb3 !important;
+            border-bottom: 1px solid #E5E7EB !important;
           }
           .join-team-side-images {
             display: none !important;
@@ -34,74 +63,37 @@ export const JoinOurTeam: React.FC = () => {
             padding: 0 !important;
           }
           .join-team-middle-content h2 {
-            font-size: 28px !important;
+            font-size: 32px !important;
           }
         }
       `}</style>
       <section
         className="relative bg-white flex items-center justify-between overflow-hidden join-team-section"
-        style={{ width: "1440px", height: "455px", margin: "0 auto" }}
+        style={{
+          width: "1440px",
+          height: "455px",
+          margin: "0 auto",
+          borderTop: "6px solid #7e5cb3",
+          borderBottom: "1px solid #E5E7EB",
+        }}
       >
         {/* ── LEFT IMAGE BLOCK ── */}
         <div
           className="relative flex-shrink-0 join-team-side-images"
-          style={{ width: "240px", height: "80%" }}
+          style={{ width: "240px", height: "100%" }}
         >
           {/* Col 1 — half cut off */}
           <div
             className="absolute flex flex-col"
             style={{
               left: `${HALF_OFFSET}px`,
-              top: `${GAP}px`,
+              top: "-95px",
               gap: `${GAP}px`,
             }}
           >
-            <div
-              style={{
-                width: `${IMG_SIZE}px`,
-                height: `${IMG_SIZE}px`,
-                backgroundColor: "#D1D5DB",
-                borderRadius: "16px",
-              }}
-            />
-            <div
-              style={{
-                width: `${IMG_SIZE}px`,
-                height: `${IMG_SIZE}px`,
-                borderRadius: "16px",
-                overflow: "hidden",
-              }}
-            >
-              <Image
-                src={TEAM_IMG}
-                alt="Team"
-                width={IMG_SIZE}
-                height={IMG_SIZE}
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-            <div
-              style={{
-                width: `${IMG_SIZE}px`,
-                height: `${IMG_SIZE}px`,
-                backgroundColor: "#D1D5DB",
-                borderRadius: "16px",
-              }}
-            />
-          </div>
-
-          {/* Col 2 — full */}
-          <div
-            className="absolute flex flex-col"
-            style={{
-              left: `${HALF_OFFSET + IMG_SIZE + GAP}px`,
-              top: `${GAP}px`,
-              gap: `${GAP}px`,
-            }}
-          >
-            {[0, 1, 2].map((i) => (
+            {leftCol1Images.map((src, i) => (
               <div
-                key={`left-full-${i}`}
+                key={`left-col1-${i}`}
                 style={{
                   width: `${IMG_SIZE}px`,
                   height: `${IMG_SIZE}px`,
@@ -110,8 +102,38 @@ export const JoinOurTeam: React.FC = () => {
                 }}
               >
                 <Image
-                  src={TEAM_IMG}
-                  alt="Team"
+                  src={src}
+                  alt={`Team Member ${i}`}
+                  width={IMG_SIZE}
+                  height={IMG_SIZE}
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Col 2 — full */}
+          <div
+            className="absolute flex flex-col"
+            style={{
+              left: `${HALF_OFFSET + IMG_SIZE + GAP}px`,
+              top: "-30px",
+              gap: `${GAP}px`,
+            }}
+          >
+            {leftCol2Images.map((src, i) => (
+              <div
+                key={`left-col2-${i}`}
+                style={{
+                  width: `${IMG_SIZE}px`,
+                  height: `${IMG_SIZE}px`,
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                }}
+              >
+                <Image
+                  src={src}
+                  alt={`Team Member ${i}`}
                   width={IMG_SIZE}
                   height={IMG_SIZE}
                   className="w-full h-full object-cover object-center"
@@ -126,41 +148,28 @@ export const JoinOurTeam: React.FC = () => {
           className="flex flex-col items-center justify-center flex-shrink-0 join-team-middle-content"
           style={{ width: "800px", zIndex: 10 }}
         >
-          <p
-            style={{
-              fontFamily: "'Nunito', sans-serif",
-              fontSize: "17px",
-              fontWeight: "600",
-              color: "#6B7280",
-              marginBottom: "8px",
-              textAlign: "center",
-            }}
-          >
-            Helping Children
-          </p>
-
           <h2
             style={{
               fontFamily: "'Nunito', sans-serif",
-              fontSize: "40px",
+              fontSize: "44px",
               fontWeight: 900,
               lineHeight: 1.2,
               textAlign: "center",
               marginBottom: "16px",
             }}
           >
-            <span style={{ color: "#111827", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Be the Reason</span>{" "}
+            <span style={{ color: "#111827", textDecoration: "underline", textDecorationColor: "#111827", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Be the Reason</span>{" "}
             <span style={{ color: "#FF4880" }}>Someone Smiles</span>
           </h2>
 
           <p
             style={{
               fontFamily: "'Nunito', sans-serif",
-              fontSize: "17px",
-              fontWeight: 400,
+              fontSize: "17.5px",
+              fontWeight: 500,
               color: "#4B5563",
               textAlign: "center",
-              lineHeight: 1.6,
+              lineHeight: "1.6",
               marginBottom: "32px",
               maxWidth: "600px",
             }}
@@ -209,9 +218,9 @@ export const JoinOurTeam: React.FC = () => {
             >
               <span
                 style={{
-                  fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive",
-                  fontSize: "18px",
-                  fontWeight: "700",
+                  fontFamily: "'Nunito', sans-serif",
+                  fontSize: "16px",
+                  fontWeight: "800",
                   color: "#ffffff",
                   whiteSpace: "nowrap",
                 }}
@@ -225,20 +234,20 @@ export const JoinOurTeam: React.FC = () => {
         {/* ── RIGHT IMAGE BLOCK ── */}
         <div
           className="relative flex-shrink-0 join-team-side-images"
-          style={{ width: "240px", height: "80%" }}
+          style={{ width: "240px", height: "100%" }}
         >
           {/* Col 1 — full */}
           <div
             className="absolute flex flex-col"
             style={{
               right: `${HALF_OFFSET + IMG_SIZE + GAP}px`,
-              top: `${GAP}px`,
+              top: "-50px",
               gap: `${GAP}px`,
             }}
           >
-            {[0, 1, 2].map((i) => (
+            {rightCol1Images.map((src, i) => (
               <div
-                key={`right-full-${i}`}
+                key={`right-col1-${i}`}
                 style={{
                   width: `${IMG_SIZE}px`,
                   height: `${IMG_SIZE}px`,
@@ -247,8 +256,8 @@ export const JoinOurTeam: React.FC = () => {
                 }}
               >
                 <Image
-                  src={TEAM_IMG}
-                  alt="Team"
+                  src={src}
+                  alt={`Team Member ${i}`}
                   width={IMG_SIZE}
                   height={IMG_SIZE}
                   className="w-full h-full object-cover object-center"
@@ -262,42 +271,29 @@ export const JoinOurTeam: React.FC = () => {
             className="absolute flex flex-col"
             style={{
               right: `${HALF_OFFSET}px`,
-              top: `${GAP}px`,
+              top: "-85px",
               gap: `${GAP}px`,
             }}
           >
-            <div
-              style={{
-                width: `${IMG_SIZE}px`,
-                height: `${IMG_SIZE}px`,
-                backgroundColor: "#D1D5DB",
-                borderRadius: "16px",
-              }}
-            />
-            <div
-              style={{
-                width: `${IMG_SIZE}px`,
-                height: `${IMG_SIZE}px`,
-                borderRadius: "16px",
-                overflow: "hidden",
-              }}
-            >
-              <Image
-                src={TEAM_IMG}
-                alt="Team"
-                width={IMG_SIZE}
-                height={IMG_SIZE}
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-            <div
-              style={{
-                width: `${IMG_SIZE}px`,
-                height: `${IMG_SIZE}px`,
-                backgroundColor: "#D1D5DB",
-                borderRadius: "16px",
-              }}
-            />
+            {rightCol2Images.map((src, i) => (
+              <div
+                key={`right-col2-${i}`}
+                style={{
+                  width: `${IMG_SIZE}px`,
+                  height: `${IMG_SIZE}px`,
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                }}
+              >
+                <Image
+                  src={src}
+                  alt={`Team Member ${i}`}
+                  width={IMG_SIZE}
+                  height={IMG_SIZE}
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
