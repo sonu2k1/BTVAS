@@ -94,7 +94,7 @@ export const CtaBanner: React.FC = () => {
                 fontFamily: "'Nunito', sans-serif",
                 fontSize: "24px",
                 fontWeight: "900",
-                color: "#ffffff",
+                color: "#000000ff",
                 margin: 0,
                 lineHeight: 1.2,
               }}
@@ -106,12 +106,13 @@ export const CtaBanner: React.FC = () => {
                 fontFamily: "'Nunito', sans-serif",
                 fontSize: "14px",
                 fontWeight: "400",
-                color: "rgba(255,255,255,0.85)",
+                color: "rgba(39, 37, 37, 0.85)",
                 margin: 0,
                 lineHeight: 1.4,
               }}
             >
-              Experience our compassionate environment firsthand with a guided clinic tour.
+              <b>
+              Experience our compassionate environment firsthand with a guided clinic tour.</b>
             </p>
           </div>
 
