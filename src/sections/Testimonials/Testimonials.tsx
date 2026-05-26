@@ -2,24 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const testimonials = [
-  {
-    quote:
-      "I am motivated each day by the opportunity to be part of every client's journey and to witness their growth and progress. My work is also driven by a desire to model dedication and purpose for my own children, showing them the value of meaningful work. Above all, I am committed to creating lasting change for my family by breaking generational barriers and building a stronger future.",
-    name: "Evette",
-  },
-  {
-    quote:
-      "The team here truly cares about every child's development. We have seen incredible growth in our son over the past year, and we couldn't be more grateful for the dedication and warmth shown by everyone involved.",
-    name: "Marcus",
-  },
-  {
-    quote:
-      "From the very first session, we felt welcomed and understood. The progress our daughter has made is beyond what we ever imagined. This place has changed our family's life.",
-    name: "Priya",
-  },
-];
+import { TESTIMONIALS } from "@/constants";
 
 export const Testimonials: React.FC = () => {
   const [current, setCurrent] = useState(0);
@@ -27,7 +10,7 @@ export const Testimonials: React.FC = () => {
 
   const paginate = (newDirection: number) => {
     setDirection(newDirection);
-    setCurrent((prev) => (prev + newDirection + testimonials.length) % testimonials.length);
+    setCurrent((prev) => (prev + newDirection + TESTIMONIALS.length) % TESTIMONIALS.length);
   };
 
   const variants = {
@@ -168,7 +151,7 @@ export const Testimonials: React.FC = () => {
             style={{ width: "1100px", minHeight: "320px" }}
           >
             <AnimatePresence custom={direction} mode="wait">
-              <motion.p
+              <motion.div
                 key={current}
                 custom={direction}
                 variants={variants}
@@ -176,19 +159,32 @@ export const Testimonials: React.FC = () => {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="text-center text-gray-900 leading-relaxed testimonials-quote-text"
-                style={{
-                  fontFamily: "'Georgia', serif",
-                  fontSize: "26px",
-                  fontWeight: 400,
-                  textAlign: "justify",
-                  textAlignLast: "center",
-                  maxWidth: "900px",
-                  margin: "0 auto",
-                }}
+                className="flex flex-col items-center justify-center w-full"
               >
-                {testimonials[current].quote}
-              </motion.p>
+                {/* 5 Stars */}
+                <div className="flex gap-1.5 justify-center mb-6 text-[#FFD740]" style={{ fontSize: "32px", lineHeight: 1 }}>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                </div>
+
+                <p
+                  className="text-center text-gray-900 leading-relaxed testimonials-quote-text"
+                  style={{
+                    fontFamily: "'Georgia', serif",
+                    fontSize: "26px",
+                    fontWeight: 400,
+                    textAlign: "justify",
+                    textAlignLast: "center",
+                    maxWidth: "900px",
+                    margin: "0 auto",
+                  }}
+                >
+                  {TESTIMONIALS[current].quote}
+                </p>
+              </motion.div>
             </AnimatePresence>
           </div>
 
@@ -205,26 +201,28 @@ export const Testimonials: React.FC = () => {
 
         {/* Author name */}
         <AnimatePresence mode="wait">
-          <motion.p
-            key={`name-${current}`}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.3 }}
-            className="mt-10 font-bold"
-            style={{
-              fontFamily: "'Georgia', serif",
-              fontSize: "24px",
-              color: "#E91E8C",
-            }}
-          >
-            - {testimonials[current].name}
-          </motion.p>
+          {TESTIMONIALS[current].name && (
+            <motion.p
+              key={`name-${current}`}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="mt-10 font-bold"
+              style={{
+                fontFamily: "'Georgia', serif",
+                fontSize: "24px",
+                color: "#E91E8C",
+              }}
+            >
+              - {TESTIMONIALS[current].name}
+            </motion.p>
+          )}
         </AnimatePresence>
 
         {/* Dot indicators */}
         <div className="flex gap-2 mt-6">
-          {testimonials.map((_, i) => (
+          {TESTIMONIALS.map((_, i) => (
             <button
               key={i}
               onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}

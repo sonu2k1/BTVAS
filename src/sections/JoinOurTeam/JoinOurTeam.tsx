@@ -45,7 +45,7 @@ export const JoinOurTeam: React.FC = () => {
         {/* ── LEFT IMAGE BLOCK ── */}
         <div
           className="relative flex-shrink-0 join-team-side-images"
-          style={{ width: "240px", height: "100%" }}
+          style={{ width: "240px", height: "80%" }}
         >
           {/* Col 1 — half cut off */}
           <div
@@ -225,7 +225,7 @@ export const JoinOurTeam: React.FC = () => {
         {/* ── RIGHT IMAGE BLOCK ── */}
         <div
           className="relative flex-shrink-0 join-team-side-images"
-          style={{ width: "240px", height: "100%" }}
+          style={{ width: "240px", height: "80%" }}
         >
           {/* Col 1 — full */}
           <div
