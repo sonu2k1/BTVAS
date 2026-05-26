@@ -22,7 +22,7 @@ export const Testimonials: React.FC = () => {
   return (
     <section
       className="bg-white flex items-center justify-center testimonials-section"
-      style={{ width: "1440px", height: "727px", margin: "0 auto" }}
+      style={{ width: "1440px", height: "550px", margin: "0 auto" }}
     >
       <style>{`
         @media (max-width: 1024px) {
@@ -77,7 +77,7 @@ export const Testimonials: React.FC = () => {
       {/* Testimonials card */}
       <div
         className="relative flex flex-col items-center justify-center testimonials-card"
-        style={{ width: "1340px", height: "679px" }}
+        style={{ width: "1340px", height: "500px" }}
       >
         {/* Quote icon */}
         <div className="flex flex-col items-center mb-3">
@@ -111,7 +111,7 @@ export const Testimonials: React.FC = () => {
           {/* Animated quote */}
           <div
             className="overflow-hidden flex items-center justify-center testimonials-slider"
-            style={{ width: "1100px", minHeight: "320px" }}
+            style={{ width: "1100px", minHeight: "180px" }}
           >
             <AnimatePresence custom={direction} mode="wait">
               <motion.div
