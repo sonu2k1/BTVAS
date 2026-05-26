@@ -90,3 +90,16 @@ a[href^="#"] {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-pink);
 }
+
+/* Page Layout responsive fixes for production-level architecture */
+@media (max-width: 1024px) {
+  .hero-bg-img {
+    height: 500px !important;
+  }
+  .hero-container {
+    min-height: calc(500px - 100px) !important;
+  }
+  .footer-divider {
+    margin-top: -14px !important;
+  }
+}

@@ -1,38 +1,27 @@
-import { TopBar } from "@/components/TopBar/TopBar";
-import { Header } from "@/components/Header/Header";
-import { Hero } from "@/components/Hero/Hero";
-import { CoreValues } from "@/components/CoreValues/CoreValues";
-import { Mission } from "@/components/Mission/Mission";
-import { Visionaries } from "@/components/Visionaries/Visionaries";
-import { FocusAndHours } from "@/components/FocusAndHours/FocusAndHours";
-import { CtaBanner } from "@/components/CtaBanner/CtaBanner";
-import { OurTeam } from "@/components/OurTeam/OurTeam";
-import { VideoBanner } from "@/components/VideoBanner/VideoBanner";
-import { Testimonials } from "@/components/Testimonials/Testimonials";
-import { OurServices } from "@/components/OurServices/OurServices";
-import { GettingStarted } from "@/components/GettingStarted/GettingStarted";
-import { JoinOurTeam } from "@/components/JoinOurTeam/JoinOurTeam";
-import { FAQ } from "@/components/FAQ/FAQ";
-import { Footer } from "@/components/Footer/Footer";
+import { TopBar } from "@/layout/TopBar";
+import { Header } from "@/layout/Header";
+import { Hero } from "@/sections/Hero";
+import { CoreValues } from "@/sections/CoreValues";
+import { Mission } from "@/sections/Mission";
+import { Visionaries } from "@/sections/Visionaries";
+import { FocusAndHours } from "@/sections/FocusAndHours";
+import { CtaBanner } from "@/sections/CtaBanner";
+import { OurTeam } from "@/sections/OurTeam";
+import { VideoBanner } from "@/sections/VideoBanner";
+import { Testimonials } from "@/sections/Testimonials";
+import { OurServices } from "@/sections/OurServices";
+import { GettingStarted } from "@/sections/GettingStarted";
+import { JoinOurTeam } from "@/sections/JoinOurTeam";
+import { FAQ } from "@/sections/FAQ";
+import { Footer } from "@/layout/Footer";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-cream relative">
-      <style>{`
-        @media (max-width: 1024px) {
-          .hero-bg-img {
-            height: 500px !important;
-          }
-          .hero-container {
-            min-height: calc(500px - 100px) !important;
-          }
-        }
-      `}</style>
-
       {/* Absolute background layer for the Hero section */}
       <div className="absolute top-0 left-0 w-full bg-navy-deep z-0 overflow-hidden flex justify-center">
-        <div 
+        <div
           className="w-full max-w-[1688px] hero-bg-img"
           style={{
             height: "912px",
@@ -57,27 +46,27 @@ export default function Home() {
         </div>
 
         <CoreValues />
-      <Mission />
-      <Visionaries />
-      <FocusAndHours />
-      <CtaBanner />
-      <OurTeam />
-      <VideoBanner />
-      <Testimonials />
-      <OurServices />
-      <GettingStarted />
-      <JoinOurTeam />
-      <FAQ />
+        <Mission />
+        <Visionaries />
+        <FocusAndHours />
+        <CtaBanner />
+        <OurTeam />
+        <VideoBanner />
+        <Testimonials />
+        <OurServices />
+        <GettingStarted />
+        <JoinOurTeam />
+        <FAQ />
 
-      <div style={{ width: "100%", display: "flex", justifyContent: "center", position: "relative", zIndex: 20, marginBottom: "-25px", top: "-14px" }}>
-        <Image 
-          src="/divider.webp" 
-          alt="Divider" 
-          width={1440} 
-          height={90} 
-          className="w-full h-auto object-cover pointer-events-none"
-        />
-      </div>
+        <div className="footer-divider" style={{ width: "100%", display: "flex", justifyContent: "center", position: "relative", zIndex: 20, marginBottom: "-25px", top: "-14px" }}>
+          <Image
+            src="/divider.webp"
+            alt="Divider"
+            width={1440}
+            height={90}
+            className="w-full h-auto object-cover pointer-events-none"
+          />
+        </div>
 
         <Footer />
       </div>
