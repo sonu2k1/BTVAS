@@ -7,7 +7,6 @@ import { Visionaries } from "@/sections/Visionaries";
 import { FocusAndHours } from "@/sections/FocusAndHours";
 import { CtaBanner } from "@/sections/CtaBanner";
 import { OurTeam } from "@/sections/OurTeam";
-import { VideoBanner } from "@/sections/VideoBanner";
 import { Testimonials } from "@/sections/Testimonials";
 import { OurServices } from "@/sections/OurServices";
 import { GettingStarted } from "@/sections/GettingStarted";
@@ -53,7 +52,6 @@ export default function Home() {
         <OurTeam />
         <OurServices />
         <Testimonials />
-        <VideoBanner />
         <GettingStarted />
         <JoinOurTeam />
         <FAQ />
