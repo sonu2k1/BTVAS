@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { Dancing_Script, Nunito } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 
 const nunito = Nunito({
   variable: "--font-nunito",
   subsets: ["latin"],
   weight: ["400", "600", "700", "800", "900"],
-});
-
-const dancingScript = Dancing_Script({
-  variable: "--font-script",
-  subsets: ["latin"],
-  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${nunito.variable} ${dancingScript.variable}`}>
+    <html lang="en" className={`${nunito.variable}`}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );
