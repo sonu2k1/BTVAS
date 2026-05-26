@@ -374,7 +374,7 @@ export const Mission: React.FC = () => {
                   color: "#1a1a1a",
                 }}
               >
-                Clinic & Community (Day)
+                Clinic & Community (Day Care)
               </span>
             </div>
           </div>

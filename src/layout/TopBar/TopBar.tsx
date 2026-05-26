@@ -84,8 +84,8 @@ export const TopBar: React.FC = () => {
         {/* CENTER MARQUEE */}
         <div className="marquee-wrapper" style={{ width: "498px", height: "22px" }}>
           <div className="marquee-track">
-            <span>Enrollment for the new year will begin from April 25 to August 19.&nbsp;&nbsp;&nbsp;the new year will begin from April 25 to August 19.&nbsp;&nbsp;&nbsp;Enrollment for the new year will begin from April 25 to August 19.&nbsp;&nbsp;&nbsp;the new year will begin from April 25 to August 19.&nbsp;&nbsp;&nbsp;</span>
-            <span>Enrollment for the new year will begin from April 25 to August 19.&nbsp;&nbsp;&nbsp;the new year will begin from April 25 to August 19.&nbsp;&nbsp;&nbsp;Enrollment for the new year will begin from April 25 to August 19.&nbsp;&nbsp;&nbsp;the new year will begin from April 25 to August 19.&nbsp;&nbsp;&nbsp;</span>
+            <span>Enrolling Now for the new year.&nbsp;&nbsp;&nbsp;Enrolling Now for the new year.&nbsp;&nbsp;&nbsp;</span>
+            <span>Enrolling Now for the new year.&nbsp;&nbsp;&nbsp;Enrolling Now for the new year.&nbsp;&nbsp;&nbsp;</span>
           </div>
         </div>
 
