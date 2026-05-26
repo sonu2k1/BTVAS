@@ -40,13 +40,14 @@ export const FocusAndHours: React.FC = () => {
           .focus-left {
             width: 100% !important;
             height: auto !important;
-            align-items: flex-start !important;
-            text-align: left !important;
+            align-items: center !important;
+            text-align: center !important;
           }
           .focus-features-grid {
             grid-template-columns: 1fr !important;
             gap: 12px !important;
-            width: 100% !important;
+            width: fit-content !important;
+            margin: 0 auto !important;
             justify-items: start !important;
           }
           .hours-right {
