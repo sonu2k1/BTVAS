@@ -5,7 +5,7 @@ import React from "react";
 const features = [
   "Individualised Plans",
   "Early Intervention Focus",
-  "Individualised Plans",
+  "Comprehensive Assessments",
   "Caregivers & Providers",
 ];
 
@@ -40,14 +40,14 @@ export const FocusAndHours: React.FC = () => {
           .focus-left {
             width: 100% !important;
             height: auto !important;
-            align-items: center !important;
-            text-align: center !important;
+            align-items: flex-start !important;
+            text-align: left !important;
           }
           .focus-features-grid {
             grid-template-columns: 1fr !important;
             gap: 12px !important;
             width: 100% !important;
-            justify-items: center !important;
+            justify-items: start !important;
           }
           .hours-right {
             width: 100% !important;
