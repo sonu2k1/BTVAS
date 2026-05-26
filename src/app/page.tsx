@@ -51,9 +51,9 @@ export default function Home() {
         <FocusAndHours />
         <CtaBanner />
         <OurTeam />
-        <VideoBanner />
-        <Testimonials />
         <OurServices />
+        <Testimonials />
+        <VideoBanner />
         <GettingStarted />
         <JoinOurTeam />
         <FAQ />
