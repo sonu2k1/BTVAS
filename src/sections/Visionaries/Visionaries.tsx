@@ -18,7 +18,7 @@ const visionaries = [
     credentials: "BCBA, LBA",
     role: "Co-Founder",
     quote: '"Empowering families through structured, compassionate intervention strategies…"',
-    image: "/images/visionary.png",
+    image: "/images/visionary-2.png",
   },
 ];
 
