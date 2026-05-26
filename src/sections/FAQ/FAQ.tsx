@@ -31,6 +31,16 @@ const faqs = [
   },
 ];
 
+const insuranceLogos = [
+  { src: "/images/logo-georgia-health-Photoroom.svg", alt: "Georgia Department of Community Health", width: 180, height: 74 },
+  { src: "/images/logo-bcbs-Photoroom.svg", alt: "BlueCross BlueShield", width: 180, height: 74 },
+  { src: "/images/logo-unitedhealth-Photoroom.svg", alt: "UnitedHealth Group", width: 180, height: 74 },
+  { src: "/images/logo-caresource-Photoroom.svg", alt: "CareSource", width: 180, height: 74 },
+  { src: "/images/Molina.png", alt: "Molina Healthcare", width: 230, height: 75 },
+  { src: "/images/Georgie.png", alt: "Georgie", width: 153, height: 74 },
+  { src: "/images/Amerigroup.png", alt: "Amerigroup", width: 240, height: 75 },
+];
+
 export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -39,6 +49,35 @@ export const FAQ: React.FC = () => {
   return (
     <div className="faq-outer-container" style={{ width: "1440px", margin: "0 auto", display: "flex", flexDirection: "column" }}>
       <style>{`
+        .insurance-marquee-container {
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+          display: flex;
+          align-items: center;
+        }
+        .insurance-marquee-track {
+          display: flex;
+          align-items: center;
+          animation: insurance-marquee-scroll 35s linear infinite;
+          width: max-content;
+        }
+        .insurance-logo-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          height: 74px;
+          margin-right: 75px;
+        }
+        @keyframes insurance-marquee-scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
         @media (max-width: 1024px) {
           .faq-outer-container {
             width: 100% !important;
@@ -70,27 +109,14 @@ export const FAQ: React.FC = () => {
           .insurance-banner {
             width: 100% !important;
             height: auto !important;
-            padding: 40px 16px !important;
+            padding: 40px 0 !important;
           }
-          .insurance-logos-row {
-            width: 100% !important;
-            height: auto !important;
-            display: grid !important;
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 24px 16px !important;
-            justify-items: center !important;
-            align-items: center !important;
+          .insurance-logo-wrapper {
+            height: 50px !important;
           }
-          .insurance-logos-row > div {
-            width: 100% !important;
-            height: 60px !important;
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-          }
-          .insurance-logos-row img {
-            max-width: 130px !important;
-            height: auto !important;
+          .insurance-logo-wrapper img {
+            height: 50px !important;
+            width: auto !important;
           }
         }
       `}</style>
@@ -231,21 +257,34 @@ export const FAQ: React.FC = () => {
         >
           Accepted Insurance
         </p>
-        <div
-          className="flex items-center justify-center insurance-logos-row"
-          style={{ width: "1440px", height: "74px", gap: "125px" }}
-        >
-          <div style={{ height: "74px", display: "flex", alignItems: "center" }}>
-            <Image src="/images/logo-georgia-health-Photoroom.svg" alt="Georgia Department of Community Health" width={180} height={74} className="object-contain" style={{ height: "auto" }} />
-          </div>
-          <div style={{ height: "74px", display: "flex", alignItems: "center" }}>
-            <Image src="/images/logo-bcbs-Photoroom.svg" alt="BlueCross BlueShield" width={180} height={74} className="object-contain" style={{ height: "auto" }} />
-          </div>
-          <div style={{ height: "74px", display: "flex", alignItems: "center" }}>
-            <Image src="/images/logo-unitedhealth-Photoroom.svg" alt="UnitedHealth Group" width={180} height={74} className="object-contain" style={{ height: "auto" }} />
-          </div>
-          <div style={{ height: "74px", display: "flex", alignItems: "center" }}>
-            <Image src="/images/logo-caresource-Photoroom.svg" alt="CareSource" width={180} height={74} className="object-contain" style={{ height: "auto" }} />
+        <div className="insurance-marquee-container">
+          <div className="insurance-marquee-track">
+            {/* First copy of logos */}
+            {insuranceLogos.map((logo, index) => (
+              <div key={`logo-1-${index}`} className="insurance-logo-wrapper">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.width}
+                  height={logo.height}
+                  className="object-contain"
+                  style={{ height: "auto" }}
+                />
+              </div>
+            ))}
+            {/* Second copy of logos for seamless marquee loop */}
+            {insuranceLogos.map((logo, index) => (
+              <div key={`logo-2-${index}`} className="insurance-logo-wrapper">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.width}
+                  height={logo.height}
+                  className="object-contain"
+                  style={{ height: "auto" }}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

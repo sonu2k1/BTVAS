@@ -34,7 +34,7 @@ const services = [
   {
     title: "Behavioral Support",
     titleColor1: "#7C3AED",
-    titleColor2: "#1a1a1a",
+    titleColor2: "#FF4880",
     description: "Comprehensive behavioral support strategies for children and families.",
     image: "/images/0O3A2609.jpg",
     alt: "Child in behavioral support session",

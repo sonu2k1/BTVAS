@@ -6,7 +6,7 @@ import Image from "next/image";
 const IMG_SIZE = 130;
 const GAP = 17;
 const HALF_OFFSET = -(IMG_SIZE / 2);
-const TEAM_IMG = "/images/0O3A2433.jpg";
+const TEAM_IMG = "/images/0O3A2462.jpg";
 
 export const JoinOurTeam: React.FC = () => {
   return (
