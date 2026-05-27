@@ -46,8 +46,8 @@ export const Footer: React.FC = () => {
       {/* ── DESKTOP VIEW: 100% EXACT ORIGINAL MARKUP & HEIGHT ── */}
       <footer
         id="contact"
-        className="desktop-footer bg-[#010C6F] text-white justify-center overflow-hidden w-full scroll-mt-6"
-        style={{ height: "445px" }}
+        className="desktop-footer bg-[#010C6F] text-white justify-center w-full scroll-mt-6"
+        style={{ minHeight: "445px", display: "flex", alignItems: "center" }}
       >
         <div
           className="relative flex items-start w-full"
@@ -199,7 +199,7 @@ export const Footer: React.FC = () => {
         id="contact"
         className="mobile-footer bg-[#010C6F] text-white flex-col w-full scroll-mt-6"
         style={{
-          padding: "36px 24px",
+          padding: "48px 24px 36px 24px",
           boxSizing: "border-box",
           display: "flex",
           flexDirection: "column",
