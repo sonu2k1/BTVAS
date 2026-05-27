@@ -105,20 +105,42 @@ export const HeroCard: React.FC = () => {
           top: 6px !important;
           background-color: #cbd5e1 !important;
         }
+        .custom-visit-modal {
+          background-color: #fffdf8 !important;
+          border: 2.5px solid rgba(126, 92, 179, 0.18) !important;
+          border-radius: 28px !important;
+          box-shadow: 0 25px 60px rgba(46, 46, 142, 0.15) !important;
+        }
         .custom-visit-modal > div:first-child {
           padding: 24px 28px 16px 28px !important;
+          border-bottom: 2px dashed rgba(126, 92, 179, 0.15) !important;
+          background-color: #fffdf8 !important;
+        }
+        .custom-visit-modal form > div:last-child {
+          border-top: 2px dashed rgba(126, 92, 179, 0.15) !important;
+        }
+        .custom-visit-modal label {
+          font-family: 'Prompt', sans-serif !important;
+          font-weight: 600 !important;
+          color: #00084b !important;
+          font-size: 14px !important;
         }
         .custom-visit-modal input,
         .custom-visit-modal textarea {
-          background-color: #fffdf8 !important;
-          border: 1.5px solid rgba(126, 92, 179, 0.25) !important;
+          background-color: #ffffff !important;
+          border: 2px solid rgba(126, 92, 179, 0.15) !important;
           color: #00084b !important;
-          border-radius: 12px !important;
+          border-radius: 16px !important;
+          padding: 12px 16px !important;
+          font-family: 'Prompt', sans-serif !important;
+          font-size: 15px !important;
           transition: all 0.2s ease-in-out !important;
         }
         .custom-visit-modal input::placeholder,
         .custom-visit-modal textarea::placeholder {
-          color: #a09cb0 !important;
+          color: #94a3b8 !important;
+          font-family: 'Prompt', sans-serif !important;
+          font-size: 14px !important;
         }
         .custom-visit-modal input:focus,
         .custom-visit-modal textarea:focus {
@@ -126,6 +148,17 @@ export const HeroCard: React.FC = () => {
           box-shadow: 0 0 0 4px rgba(126, 92, 179, 0.15) !important;
           outline: none !important;
           background-color: #ffffff !important;
+        }
+        .custom-visit-modal button[aria-label="Close modal"] {
+          color: #7e5cb3 !important;
+          background-color: rgba(126, 92, 179, 0.05) !important;
+          border: 1px solid rgba(126, 92, 179, 0.1) !important;
+          transition: all 0.2s ease !important;
+        }
+        .custom-visit-modal button[aria-label="Close modal"]:hover {
+          background-color: #f94a8a !important;
+          color: #ffffff !important;
+          transform: rotate(90deg) !important;
         }
         @media (min-width: 1025px) {
           .custom-visit-modal {
@@ -137,6 +170,8 @@ export const HeroCard: React.FC = () => {
           }
           .custom-visit-modal > div:first-child {
             padding: 28px 36px 16px 36px !important;
+            border-bottom: 2px dashed rgba(126, 92, 179, 0.15) !important;
+            background-color: #fffdf8 !important;
           }
           .custom-visit-modal .overflow-y-auto {
             padding: 28px 36px !important;
@@ -338,11 +373,11 @@ export const HeroCard: React.FC = () => {
         isOpen={isOpen}
         onClose={handleClose}
         title={
-          <div className="flex flex-col gap-1 text-left">
-            <span style={{ fontSize: "12px", fontWeight: 800, color: "#f94a8a", textTransform: "uppercase", letterSpacing: "1px" }}>
+          <div className="flex flex-col gap-0.5 text-left">
+            <span style={{ fontFamily: "'Prompt', sans-serif", fontSize: "13px", fontWeight: 800, color: "#f94a8a", textTransform: "uppercase", letterSpacing: "1.5px" }}>
               Welcome to BTVAS
             </span>
-            <span style={{ fontFamily: "'Nunito', sans-serif", fontSize: "22px", fontWeight: 900, color: "#00084b" }}>
+            <span style={{ fontFamily: "'Baloo 2', sans-serif", fontSize: "28px", fontWeight: 800, color: "#00084b", lineHeight: 1.1 }}>
               Schedule a Tour
             </span>
           </div>
