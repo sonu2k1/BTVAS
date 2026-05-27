@@ -26,8 +26,8 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: "Team Member 3",
-    credentials: "BCBA",
+    name: "Shanika Marks",
+    credentials: "RBT Lead",
     role: "Clinical Lead",
     image: "/images/team/Member-3.jpg",
     thumb: "/images/team/Member-3.jpg",
@@ -35,8 +35,8 @@ const teamMembers = [
   },
   {
     id: 4,
-    name: "Team Member 4",
-    credentials: "LBA",
+    name: "Sheckeema Taylor",
+    credentials: "Director of Operations",
     role: "Specialist",
     image: "/images/team/Member-4.jpg",
     thumb: "/images/team/Member-4.jpg",
@@ -44,81 +44,81 @@ const teamMembers = [
   },
   {
     id: 5,
-    name: "Team Member 5",
-    credentials: "BCBA",
-    role: "Team Lead",
+    name: "Alexander Jones",
+    credentials: "RBT Lead",
+    role: "Trainer",
     image: "/images/team/Member-5.jpg",
     thumb: "/images/team/Member-5.jpg",
     quote: `"Building bridges between families and progress."`,
   },
   {
     id: 6,
-    name: "Team Member 6",
+    name: "Eternia Richmond",
     credentials: "RBT",
-    role: "Therapist",
+    role: "Morrow Clinic Operations Manager",
     image: "/images/team/Member-6.jpg",
     thumb: "/images/team/Member-6.jpg",
     quote: `"Committed to celebrating every small victory."`,
   },
   {
     id: 7,
-    name: "Team Member 7",
-    credentials: "RBT",
-    role: "Therapist",
+    name: "Aliciante Parker",
+    credentials: "BCBA, LBA",
+    role: " ",
     image: "/images/team/Member-7.jpg",
     thumb: "/images/team/Member-7.jpg",
     quote: `"Compassion is at the heart of what we do."`,
   },
   {
     id: 8,
-    name: "Team Member 8",
-    credentials: "RBT",
-    role: "Therapist",
+    name: "Keajia Campbell",
+    credentials: "BCBA, LBA",
+    role: " ",
     image: "/images/team/Member-8.jpg",
     thumb: "/images/team/Member-8.jpg",
     quote: `"Helping children reach their full potential."`,
   },
   {
     id: 9,
-    name: "Team Member 9",
-    credentials: "BCBA",
-    role: "Clinical Lead",
+    name: "Kianna Jemison",
+    credentials: "College Park Clinic Coordinator",
+    role: " ",
     image: "/images/team/Member-9.jpg",
     thumb: "/images/team/Member-9.jpg",
     quote: `"Creating welcoming spaces where all abilities are celebrated."`,
   },
   {
     id: 10,
-    name: "Team Member 10",
-    credentials: "RBT",
-    role: "Therapist",
+    name: "Terricka Comer",
+    credentials: "RBT Leader",
+    role: "Trainer and Clinical Specialist",
     image: "/images/team/Member-10.jpg",
     thumb: "/images/team/Member-10.jpg",
     quote: `"Every family deserves compassionate care."`,
   },
   {
     id: 11,
-    name: "Team Member 11",
-    credentials: "RBT",
-    role: "Therapist",
+    name: "Evette Sims",
+    credentials: "BCBA",
+    role: " ",
     image: "/images/team/Member-11.jpg",
     thumb: "/images/team/Member-11.jpg",
     quote: `"We work together with families to achieve the best outcomes."`,
   },
   {
     id: 12,
-    name: "Team Member 12",
+    name: "Catarras Black",
     credentials: "RBT",
-    role: "Therapist",
+    role: "Clinical Specialist",
     image: "/images/team/Member-12.jpg",
     thumb: "/images/team/Member-12.jpg",
     quote: `"Acting with honesty and transparency in everything we do."`,
   },
   {
     id: 13,
-    name: "Team Member 13",
-    credentials: "RBT",
-    role: "Therapist",
+    name: "Jeff Jean-Baptiste",
+    credentials: "BCBA, LBA",
+    role: " ",
     image: "/images/team/Member-13.jpg",
     thumb: "/images/team/Member-13.jpg",
     quote: `"Nurturing growth beyond the horizon."`,
@@ -236,199 +236,199 @@ export const OurTeam: React.FC = () => {
         >
           {/* HEADING */}
           <h2
-          style={{
-            fontFamily: "'Mochiy Pop One', sans-serif",
-            fontSize: "36px",
-            fontWeight: "400",
-            color: "#1a1a1a",
-            margin: 0,
-            textAlign: "center",
-            lineHeight: 1.2,
-          }}
-        >
-          <span style={{ textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Our</span>{" "}
-          <span style={{ color: "#FF4880" }}>Team</span>
-        </h2>
-
-        {/* TABS */}
-        <div
-          className="team-tabs no-scrollbar"
-          style={{
-            width: "968px",
-            height: "36px",
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-            flexShrink: 0,
-          }}
-        >
-          {tabs.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              style={{
-                height: "36px",
-                padding: "0 20px",
-                borderRadius: "40px",
-                border: activeTab === tab ? "none" : "1px solid #ddd",
-                backgroundColor: activeTab === tab ? "#010C6F" : "transparent",
-                color: activeTab === tab ? "#ffffff" : "#555",
-                fontFamily: "'Nunito', sans-serif",
-                fontSize: "14px",
-                fontWeight: activeTab === tab ? "800" : "600",
-                cursor: "pointer",
-                whiteSpace: "nowrap",
-                flexShrink: 0,
-              }}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
-
-        {/* MAIN CONTENT */}
-        <div
-          className="team-content-row"
-          style={{
-            width: "1232px",
-            height: "560px",
-            display: "flex",
-            gap: "24px",
-            flexShrink: 0,
-          }}
-        >
-          {/* SMALL THUMBNAILS */}
-          <div
-            className="team-thumbs no-scrollbar"
             style={{
-              width: "100px",
-              height: "560px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "16px",
-              flexShrink: 0,
-              overflowY: "auto",
+              fontFamily: "'Mochiy Pop One', sans-serif",
+              fontSize: "36px",
+              fontWeight: "400",
+              color: "#1a1a1a",
+              margin: 0,
+              textAlign: "center",
+              lineHeight: 1.2,
             }}
           >
-            {teamMembers.map((member) => (
-              <div
-                key={member.id}
-                onClick={() => setSelectedMember(member)}
-                className="team-thumb-item"
+            <span style={{ textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Our</span>{" "}
+            <span style={{ color: "#FF4880" }}>Team</span>
+          </h2>
+
+          {/* TABS */}
+          <div
+            className="team-tabs no-scrollbar"
+            style={{
+              width: "968px",
+              height: "36px",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+              flexShrink: 0,
+            }}
+          >
+            {tabs.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
                 style={{
-                  width: "100px",
-                  height: "100px",
-                  borderRadius: "12px",
-                  overflow: "hidden",
+                  height: "36px",
+                  padding: "0 20px",
+                  borderRadius: "40px",
+                  border: activeTab === tab ? "none" : "1px solid #ddd",
+                  backgroundColor: activeTab === tab ? "#010C6F" : "transparent",
+                  color: activeTab === tab ? "#ffffff" : "#555",
+                  fontFamily: "'Nunito', sans-serif",
+                  fontSize: "14px",
+                  fontWeight: activeTab === tab ? "800" : "600",
                   cursor: "pointer",
+                  whiteSpace: "nowrap",
                   flexShrink: 0,
-                  border: selectedMember.id === member.id ? "3px solid #753DBE" : "3px solid transparent",
-                  boxSizing: "border-box",
-                  position: "relative",
                 }}
               >
-                <Image
-                  src={`${member.thumb}?v=2`}
-                  alt={member.name}
-                  fill
-                  sizes="100px"
-                  className="object-cover object-top"
-                />
-                <div
-                  className="team-thumb-overlay"
-                  style={{
-                    opacity: selectedMember.id === member.id ? 0 : 1,
-                  }}
-                />
-              </div>
+                {tab}
+              </button>
             ))}
           </div>
 
-          {/* BIG IMAGE */}
+          {/* MAIN CONTENT */}
           <div
-            className="team-big-img-wrap"
+            className="team-content-row"
             style={{
-              width: "560px",
+              width: "1232px",
               height: "560px",
-              borderRadius: "16px",
-              overflow: "hidden",
-              flexShrink: 0,
-              position: "relative",
-            }}
-          >
-            <Image
-              src={`${selectedMember.image}?v=2`}
-              alt={selectedMember.name}
-              fill
-              sizes="(max-width: 768px) 100vw, 560px"
-              className="object-cover object-top"
-              priority
-            />
-          </div>
-
-          {/* DESCRIPTION */}
-          <div
-            className="team-desc-wrap no-scrollbar"
-            style={{
-              width: "524px",
-              height: "518px",
               display: "flex",
-              flexDirection: "column",
-              gap: "8px",
+              gap: "24px",
               flexShrink: 0,
-              overflowY: "auto",
             }}
           >
-            <h3
+            {/* SMALL THUMBNAILS */}
+            <div
+              className="team-thumbs no-scrollbar"
               style={{
-                fontFamily: "'Nunito', sans-serif",
-                fontSize: "32px",
-                fontWeight: "900",
-                color: "#1a1a1a",
-                margin: "0 0 4px 0",
+                width: "100px",
+                height: "560px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "16px",
+                flexShrink: 0,
+                overflowY: "auto",
               }}
             >
-              {selectedMember.name}
-            </h3>
-            <p
+              {teamMembers.map((member) => (
+                <div
+                  key={member.id}
+                  onClick={() => setSelectedMember(member)}
+                  className="team-thumb-item"
+                  style={{
+                    width: "100px",
+                    height: "100px",
+                    borderRadius: "12px",
+                    overflow: "hidden",
+                    cursor: "pointer",
+                    flexShrink: 0,
+                    border: selectedMember.id === member.id ? "3px solid #753DBE" : "3px solid transparent",
+                    boxSizing: "border-box",
+                    position: "relative",
+                  }}
+                >
+                  <Image
+                    src={`${member.thumb}?v=2`}
+                    alt={member.name}
+                    fill
+                    sizes="100px"
+                    className="object-cover object-top"
+                  />
+                  <div
+                    className="team-thumb-overlay"
+                    style={{
+                      opacity: selectedMember.id === member.id ? 0 : 1,
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* BIG IMAGE */}
+            <div
+              className="team-big-img-wrap"
               style={{
-                fontFamily: "'Nunito', sans-serif",
-                fontSize: "15px",
-                fontWeight: "700",
-                color: "#333",
-                margin: 0,
+                width: "560px",
+                height: "560px",
+                borderRadius: "16px",
+                overflow: "hidden",
+                flexShrink: 0,
+                position: "relative",
               }}
             >
-              {selectedMember.credentials}
-            </p>
-            <p
+              <Image
+                src={`${selectedMember.image}?v=2`}
+                alt={selectedMember.name}
+                fill
+                sizes="(max-width: 768px) 100vw, 560px"
+                className="object-cover object-top"
+                priority
+              />
+            </div>
+
+            {/* DESCRIPTION */}
+            <div
+              className="team-desc-wrap no-scrollbar"
               style={{
-                fontFamily: "'Nunito', sans-serif",
-                fontSize: "13px",
-                fontWeight: "400",
-                color: "#777",
-                margin: "0 0 12px 0",
+                width: "524px",
+                height: "518px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "8px",
+                flexShrink: 0,
+                overflowY: "auto",
               }}
             >
-              {selectedMember.role}
-            </p>
-            <p
-              style={{
-                fontFamily: "'Nunito', sans-serif",
-                fontSize: "14px",
-                fontWeight: "400",
-                fontStyle: "italic",
-                color: "#333",
-                lineHeight: "1.8",
-                margin: 0,
-                whiteSpace: "pre-line",
-              }}
-            >
-              {selectedMember.quote}
-            </p>
+              <h3
+                style={{
+                  fontFamily: "'Nunito', sans-serif",
+                  fontSize: "32px",
+                  fontWeight: "900",
+                  color: "#1a1a1a",
+                  margin: "0 0 4px 0",
+                }}
+              >
+                {selectedMember.name}
+              </h3>
+              <p
+                style={{
+                  fontFamily: "'Nunito', sans-serif",
+                  fontSize: "15px",
+                  fontWeight: "700",
+                  color: "#333",
+                  margin: 0,
+                }}
+              >
+                {selectedMember.credentials}
+              </p>
+              <p
+                style={{
+                  fontFamily: "'Nunito', sans-serif",
+                  fontSize: "13px",
+                  fontWeight: "400",
+                  color: "#777",
+                  margin: "0 0 12px 0",
+                }}
+              >
+                {selectedMember.role}
+              </p>
+              <p
+                style={{
+                  fontFamily: "'Nunito', sans-serif",
+                  fontSize: "14px",
+                  fontWeight: "400",
+                  fontStyle: "italic",
+                  color: "#333",
+                  lineHeight: "1.8",
+                  margin: 0,
+                  whiteSpace: "pre-line",
+                }}
+              >
+                {selectedMember.quote}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
       </section>
     </>
   );
