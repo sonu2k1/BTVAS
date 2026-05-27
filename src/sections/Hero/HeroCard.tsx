@@ -94,7 +94,7 @@ export const HeroCard: React.FC = () => {
           top: 2px !important;
         }
         .modal-submit-3d-btn:active {
-          top: 4px !important;
+          top: 5px !important;
           background-color: #e03570 !important;
         }
         .modal-cancel-3d-btn:hover {
@@ -102,7 +102,7 @@ export const HeroCard: React.FC = () => {
           top: 2px !important;
         }
         .modal-cancel-3d-btn:active {
-          top: 4px !important;
+          top: 5px !important;
           background-color: #cbd5e1 !important;
         }
         .custom-visit-modal {
@@ -534,6 +534,7 @@ export const HeroCard: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleClose}
+                  onTouchStart={() => {}}
                   disabled={loading}
                   className="modal-cancel-3d-btn"
                   style={{
@@ -583,6 +584,7 @@ export const HeroCard: React.FC = () => {
                 {/* Button layer */}
                 <button
                   type="submit"
+                  onTouchStart={() => {}}
                   disabled={loading}
                   className="modal-submit-3d-btn"
                   style={{
