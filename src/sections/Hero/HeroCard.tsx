@@ -94,7 +94,7 @@ export const HeroCard: React.FC = () => {
           top: 2px !important;
         }
         .modal-submit-3d-btn:active {
-          top: 6px !important;
+          top: 4px !important;
           background-color: #e03570 !important;
         }
         .modal-cancel-3d-btn:hover {
@@ -102,7 +102,7 @@ export const HeroCard: React.FC = () => {
           top: 2px !important;
         }
         .modal-cancel-3d-btn:active {
-          top: 6px !important;
+          top: 4px !important;
           background-color: #cbd5e1 !important;
         }
         .custom-visit-modal {
@@ -508,13 +508,13 @@ export const HeroCard: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-4 flex gap-4 justify-end items-center border-t border-gray-100 pt-4">
+            <div className="mt-4 pb-2 flex gap-4 justify-end items-center border-t border-gray-100 pt-4">
               {/* 3D Cancel Button wrapper */}
               <div
                 style={{
                   position: "relative",
                   width: "110px",
-                  height: "48px",
+                  height: "45px",
                   flexShrink: 0,
                 }}
               >
@@ -564,7 +564,7 @@ export const HeroCard: React.FC = () => {
                 style={{
                   position: "relative",
                   width: "168px",
-                  height: "48px", // 40px height + 8px shadow offset
+                  height: "45px", // 40px height + 5px shadow offset
                   flexShrink: 0,
                 }}
               >
