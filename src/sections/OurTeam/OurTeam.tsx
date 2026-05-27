@@ -125,13 +125,22 @@ const teamMembers = [
   },
   {
     id: 14,
-    name: "Kendall Davis",
-    credentials: "RBT Lead",
-    role: " ",
+    name: "Omega Springer",
+    credentials: "RBT",
+    role: "Clinical Specialist ",
     image: "/images/team/Member-14.jpeg",
     thumb: "/images/team/Member-14.jpeg",
     quote: `"Nurturing growth beyond the horizon."`,
   },
+  {
+    id: 15,
+    name: "Kendall Davis",
+    credentials: "RBT Lead",
+    role: " ",
+    image: "/images/team/Member-15.png",
+    thumb: "/images/team/Member-15.png",
+    quote: `"Nurturing growth beyond the horizon."`,
+  }
 ];
 
 export const OurTeam: React.FC = () => {
