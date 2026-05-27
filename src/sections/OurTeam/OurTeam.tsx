@@ -329,7 +329,7 @@ export const OurTeam: React.FC = () => {
                   alt={member.name}
                   fill
                   sizes="100px"
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
                 <div
                   className="team-thumb-overlay"
