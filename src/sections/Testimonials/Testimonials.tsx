@@ -24,7 +24,7 @@ export const Testimonials: React.FC = () => {
   const variants = {
     enter: (dir: number) => ({
       opacity: 0,
-      x: dir > 0 ? 120 : -120,
+      x: dir > 0 ? 282 : -282,
       scale: 0.96,
     }),
     center: {
@@ -34,7 +34,7 @@ export const Testimonials: React.FC = () => {
     },
     exit: (dir: number) => ({
       opacity: 0,
-      x: dir > 0 ? -120 : 120,
+      x: dir > 0 ? -282 : 282,
       scale: 0.96,
     }),
   };
@@ -165,10 +165,11 @@ export const Testimonials: React.FC = () => {
                 </div>
 
                 <p
-                  className="text-center text-[#010C6F] leading-relaxed testimonials-quote-text font-bold"
+                  className="text-center text-[#010C6F] testimonials-quote-text font-bold"
                   style={{
-                    fontFamily: "'Georgia', serif",
-                    fontSize: "26px",
+                    fontFamily: "'Prompt', sans-serif",
+                    fontSize: "24px",
+                    lineHeight: "32px",
                     fontWeight: 700,
                     textAlign: "justify",
                     textAlignLast: "center",

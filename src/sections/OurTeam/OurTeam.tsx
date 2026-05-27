@@ -229,6 +229,8 @@ export const OurTeam: React.FC = () => {
                   : m.category === activeTab
               );
 
+  const isGroup = selectedMember.id.toString().includes("group");
+
   return (
     <>
       <style>{`
@@ -244,6 +246,16 @@ export const OurTeam: React.FC = () => {
         .team-thumb-item {
           position: relative;
           transition: all 0.3s ease;
+        }
+        .team-thumb-item:not(.is-group-thumb) {
+          width: 100px !important;
+          height: 100px !important;
+          border-radius: 12px !important;
+        }
+        .team-thumb-item.is-group-thumb {
+          width: 100px !important;
+          height: 67px !important;
+          border-radius: 20px !important;
         }
         .team-thumb-overlay {
           position: absolute;
@@ -287,19 +299,34 @@ export const OurTeam: React.FC = () => {
             width: 100% !important;
             height: auto !important;
             flex-direction: row !important;
+            align-items: center !important;
             overflow-x: auto !important;
             gap: 12px !important;
             padding-bottom: 8px !important;
           }
-          .team-thumb-item {
+          .team-thumb-item:not(.is-group-thumb) {
             width: 80px !important;
             height: 80px !important;
+            border-radius: 12px !important;
+          }
+          .team-thumb-item.is-group-thumb {
+            width: 80px !important;
+            height: 53px !important;
+            border-radius: 20px !important;
           }
           .team-big-img-wrap {
             width: 100% !important;
             max-width: 320px !important;
-            height: 320px !important;
             margin: 0 auto !important;
+            transition: height 0.3s ease, border-radius 0.3s ease;
+          }
+          .team-big-img-wrap:not(.is-group) {
+            height: 320px !important;
+            border-radius: 16px !important;
+          }
+          .team-big-img-wrap.is-group {
+            height: 213px !important;
+            border-radius: 20px !important;
           }
           .team-desc-wrap {
             width: 100% !important;
@@ -427,55 +454,61 @@ export const OurTeam: React.FC = () => {
                 height: "560px",
                 display: "flex",
                 flexDirection: "column",
+                alignItems: "center",
                 gap: "16px",
                 flexShrink: 0,
                 overflowY: "auto",
               }}
             >
-              {filteredMembers.map((member) => (
-                <div
-                  key={member.id}
-                  onClick={() => setSelectedMember(member)}
-                  className="team-thumb-item"
-                  style={{
-                    width: "100px",
-                    height: "100px",
-                    borderRadius: "12px",
-                    overflow: "hidden",
-                    cursor: "pointer",
-                    flexShrink: 0,
-                    border: selectedMember.id === member.id ? "3px solid #753DBE" : "3px solid transparent",
-                    boxSizing: "border-box",
-                    position: "relative",
-                  }}
-                >
-                  <Image
-                    src={`${member.thumb}?v=2`}
-                    alt={member.name}
-                    fill
-                    sizes="100px"
-                    className={member.id.toString().includes("group") ? "object-contain" : "object-cover object-top"}
-                  />
+              {filteredMembers.map((member) => {
+                const isMemberGroup = member.id.toString().includes("group");
+                return (
                   <div
-                    className="team-thumb-overlay"
+                    key={member.id}
+                    onClick={() => setSelectedMember(member)}
+                    className={`team-thumb-item ${isMemberGroup ? "is-group-thumb" : ""}`}
                     style={{
-                      opacity: selectedMember.id === member.id ? 0 : 1,
+                      width: "100px",
+                      height: isMemberGroup ? "67px" : "100px",
+                      borderRadius: isMemberGroup ? "20px" : "12px",
+                      overflow: "hidden",
+                      cursor: "pointer",
+                      flexShrink: 0,
+                      border: selectedMember.id === member.id ? "3px solid #753DBE" : "3px solid transparent",
+                      boxSizing: "border-box",
+                      position: "relative",
+                      transition: "height 0.3s ease, border-radius 0.3s ease",
                     }}
-                  />
-                </div>
-              ))}
+                  >
+                    <Image
+                      src={`${member.thumb}?v=2`}
+                      alt={member.name}
+                      fill
+                      sizes="100px"
+                      className={isMemberGroup ? "object-cover object-center" : "object-cover object-top"}
+                    />
+                    <div
+                      className="team-thumb-overlay"
+                      style={{
+                        opacity: selectedMember.id === member.id ? 0 : 1,
+                      }}
+                    />
+                  </div>
+                );
+              })}
             </div>
 
             {/* BIG IMAGE */}
             <div
-              className="team-big-img-wrap"
+              className={`team-big-img-wrap ${isGroup ? "is-group" : ""}`}
               style={{
                 width: "560px",
-                height: "560px",
-                borderRadius: "16px",
+                height: isGroup ? "373px" : "560px",
+                borderRadius: isGroup ? "20px" : "16px",
                 overflow: "hidden",
                 flexShrink: 0,
                 position: "relative",
+                transition: "height 0.3s ease, border-radius 0.3s ease",
               }}
             >
               <Image
@@ -483,7 +516,7 @@ export const OurTeam: React.FC = () => {
                 alt={selectedMember.name}
                 fill
                 sizes="(max-width: 768px) 100vw, 560px"
-                className={selectedMember.id.toString().includes("group") ? "object-contain" : "object-cover object-top"}
+                className={isGroup ? "object-cover object-center" : "object-cover object-top"}
                 priority
               />
             </div>
