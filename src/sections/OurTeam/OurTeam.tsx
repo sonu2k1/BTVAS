@@ -17,7 +17,7 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "Team Member 2",
+    name: "Sheneice Willis Lewis",
     credentials: "BCBA, LBA",
     role: "Co-Founder",
     image: "/images/team/Member-2.jpg",
@@ -328,7 +328,7 @@ export const OurTeam: React.FC = () => {
                 }}
               >
                 <Image
-                  src={member.thumb}
+                  src={`${member.thumb}?v=2`}
                   alt={member.name}
                   fill
                   sizes="100px"
@@ -357,7 +357,7 @@ export const OurTeam: React.FC = () => {
             }}
           >
             <Image
-              src={selectedMember.image}
+              src={`${selectedMember.image}?v=2`}
               alt={selectedMember.name}
               fill
               sizes="(max-width: 768px) 100vw, 560px"
