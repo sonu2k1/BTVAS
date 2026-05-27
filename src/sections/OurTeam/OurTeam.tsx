@@ -128,8 +128,8 @@ const teamMembers = [
     name: "Kendall Davis",
     credentials: "RBT Lead",
     role: " ",
-    image: "/images/team/Member-14.png",
-    thumb: "/images/team/Member-14.png",
+    image: "/images/team/Member-14.jpeg",
+    thumb: "/images/team/Member-14.jpeg",
     quote: `"Nurturing growth beyond the horizon."`,
   },
 ];
