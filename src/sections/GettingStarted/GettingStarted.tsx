@@ -242,7 +242,8 @@ export const GettingStarted: React.FC = () => {
                   style={{
                     fontFamily: "'Prompt', sans-serif",
                     fontSize: "12.5px",
-                    color: "rgba(226, 217, 217, 0.85)",
+                    fontWeight: 500,
+                    color: "#ffffff",
                     lineHeight: 1.5,
                     margin: 0,
                     textAlign: "center",
@@ -400,7 +401,8 @@ export const GettingStarted: React.FC = () => {
                 style={{
                   fontFamily: "'Prompt', sans-serif",
                   fontSize: "13px",
-                  color: "rgba(255,255,255,0.85)",
+                  fontWeight: 500,
+                  color: "#ffffff",
                   lineHeight: 1.5,
                   margin: 0,
                 }}
