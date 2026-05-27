@@ -8,31 +8,31 @@ const GAP = 17;
 const HALF_OFFSET = -(IMG_SIZE / 2);
 
 const leftCol1Images = [
-  "/images/0O3A2459.jpg",
-  "/images/0O3A2453.jpg",
-  "/images/0O3A2433.jpg",
-  "/images/0O3A2500.jpg",
+  "/images/Groups/0O3A2433.jpg",
+  "/images/Groups/0O3A2453.jpg",
+  "/images/Groups/0O3A2459.jpg",
+  "/images/Groups/0O3A2462.jpg",
 ];
 
 const leftCol2Images = [
-  "/images/0O3A2459.jpg",
-  "/images/0O3A2486.jpg",
-  "/images/0O3A2474.jpg",
-  "/images/0O3A2500.jpg",
+  "/images/Groups/0O3A2474.jpg",
+  "/images/Groups/0O3A2486.jpg",
+  "/images/Groups/0O3A2500.jpg",
+  "/images/Groups/0O3A2503.jpg",
 ];
 
 const rightCol1Images = [
-  "/images/0O3A2462.jpg",
-  "/images/0O3A2453.jpg",
-  "/images/0O3A2433.jpg",
-  "/images/0O3A2459.jpg",
+  "/images/Groups/0O3A2503.jpg",
+  "/images/Groups/0O3A2500.jpg",
+  "/images/Groups/0O3A2486.jpg",
+  "/images/Groups/0O3A2474.jpg",
 ];
 
 const rightCol2Images = [
-  "/images/0O3A2474.jpg",
-  "/images/0O3A2486.jpg",
-  "/images/0O3A2462.jpg",
-  "/images/0O3A2453.jpg",
+  "/images/Groups/0O3A2462.jpg",
+  "/images/Groups/0O3A2459.jpg",
+  "/images/Groups/0O3A2453.jpg",
+  "/images/Groups/0O3A2433.jpg",
 ];
 
 export const JoinOurTeam: React.FC = () => {
