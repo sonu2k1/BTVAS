@@ -11,7 +11,7 @@ const services = [
     titleColor2: "#FF4880",
     description:
       "Evidence-based Applied behaviour Analysis tailored to each child's unique profile and goals",
-    image: "/images/service-aba.png",
+    image: "/images/aba.png",
     alt: "Child doing ABA therapy activity",
   },
   {
@@ -20,7 +20,7 @@ const services = [
     titleColor2: "#FF4880",
     description:
       "Building communication skills through expert speech language intervention and practice.",
-    image: "/images/service-speech.png",
+    image: "/images/Speech.png",
     alt: "Child with speech therapy number board",
   },
   {
@@ -28,7 +28,7 @@ const services = [
     titleColor1: "#753DBE",
     titleColor2: "#FF4880",
     description: "More detail coming soon",
-    image: "/images/service-occupational.png",
+    image: "/images/occu.png",
     alt: "Children doing occupational therapy on playground",
   },
   {
