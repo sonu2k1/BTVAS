@@ -41,6 +41,16 @@ export const Visionaries: React.FC = () => {
       }}
     >
       <style>{`
+        .visionary-card {
+          cursor: pointer;
+        }
+        .visionary-img-wrap img {
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        .visionary-card:hover .visionary-img-wrap img {
+          transform: scale(1.08) !important;
+        }
+
         @media (max-width: 1024px) {
           .visionaries-section {
             width: 100% !important;
@@ -170,6 +180,7 @@ export const Visionaries: React.FC = () => {
                 position: "relative",
                 flexShrink: 0,
                 zIndex: 1,
+                overflow: "hidden",
               }}
             >
               <Image
