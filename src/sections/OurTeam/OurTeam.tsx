@@ -445,12 +445,12 @@ export const OurTeam: React.FC = () => {
                       bottom: 0,
                       backgroundColor: "#010C6F",
                       borderRadius: "40px",
-                      zIndex: -1,
+                      zIndex: 1,
                     }}
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
-                <span style={{ position: "relative", zIndex: 1 }}>{tab}</span>
+                <span style={{ position: "relative", zIndex: 2 }}>{tab}</span>
               </button>
             ))}
           </div>
