@@ -508,7 +508,7 @@ export const HeroCard: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-4 pb-2 flex gap-4 justify-end items-center border-t border-gray-100 pt-4">
+            <div className="mt-8 pb-2 flex gap-4 justify-end items-center border-t border-gray-100 pt-6">
               {/* 3D Cancel Button wrapper */}
               <div
                 style={{
