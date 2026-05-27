@@ -13,6 +13,7 @@ import { GettingStarted } from "@/sections/GettingStarted";
 import { JoinOurTeam } from "@/sections/JoinOurTeam";
 import { FAQ } from "@/sections/FAQ";
 import { Footer } from "@/layout/Footer";
+import { AcceptedInsuranceFloatBadge } from "@/components/AcceptedInsuranceFloatBadge";
 import Image from "next/image";
 
 export default function Home() {
@@ -69,6 +70,8 @@ export default function Home() {
 
         <Footer />
       </div>
+
+      <AcceptedInsuranceFloatBadge />
     </main>
   );
 }

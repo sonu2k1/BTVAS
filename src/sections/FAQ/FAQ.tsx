@@ -2,18 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { faqs } from "@/constants";
-
-
-const insuranceLogos = [
-  // { src: "/images/logo-georgia-health-Photoroom.svg", alt: "Georgia Department of Community Health", width: 120, height: 74 },
-  { src: "/images/logo-bcbs-Photoroom.svg", alt: "BlueCross BlueShield", width: 180, height: 74 },
-  { src: "/images/United.png", alt: "UnitedHealth Group", width: 100, height: 30 },
-  { src: "/images/CareSource.png", alt: "CareSource", width: 150, height: 74 },
-  { src: "/images/Molina.png", alt: "Molina Healthcare", width: 200, height: 75 },
-  { src: "/images/Georgie.png", alt: "Georgie", width: 153, height: 74 },
-  { src: "/images/Amerigroup.png", alt: "Amerigroup", width: 200, height: 75 },
-];
+import { faqs, INSURANCE_LOGOS } from "@/constants";
 
 export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -219,7 +208,8 @@ export const FAQ: React.FC = () => {
 
       {/* ── ACCEPTED INSURANCE BANNER ── */}
       <div
-        className="flex flex-col items-center bg-white flex-shrink-0 insurance-banner"
+        id="accepted-insurance"
+        className="flex flex-col items-center bg-white flex-shrink-0 insurance-banner scroll-mt-6"
         style={{ width: "1440px", padding: "24px 0 48px 0", boxSizing: "border-box" }}
       >
         <p
@@ -236,7 +226,7 @@ export const FAQ: React.FC = () => {
         <div className="insurance-marquee-container">
           <div className="insurance-marquee-track">
             {/* First copy of logos */}
-            {insuranceLogos.map((logo, index) => (
+            {INSURANCE_LOGOS.map((logo, index) => (
               <div key={`logo-1-${index}`} className="insurance-logo-wrapper">
                 <Image
                   src={logo.src}
@@ -249,7 +239,7 @@ export const FAQ: React.FC = () => {
               </div>
             ))}
             {/* Second copy of logos for seamless marquee loop */}
-            {insuranceLogos.map((logo, index) => (
+            {INSURANCE_LOGOS.map((logo, index) => (
               <div key={`logo-2-${index}`} className="insurance-logo-wrapper">
                 <Image
                   src={logo.src}

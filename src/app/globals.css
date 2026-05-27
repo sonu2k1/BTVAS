@@ -46,7 +46,8 @@ body {
 section[id],
 footer[id],
 div[id="contact"],
-div[id="getting-started"] {
+div[id="getting-started"],
+div[id="accepted-insurance"] {
   scroll-margin-top: 90px;
 }
 
