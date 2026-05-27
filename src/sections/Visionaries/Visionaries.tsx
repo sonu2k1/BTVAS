@@ -41,6 +41,8 @@ export const Visionaries: React.FC = () => {
       }}
     >
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
         .visionary-card {
           cursor: pointer;
         }
@@ -116,11 +118,12 @@ export const Visionaries: React.FC = () => {
       <div className="visionaries-heading" style={{ width: "1280px" }}>
         <h2
           style={{
-            fontFamily: "'Nunito', sans-serif",
+            fontFamily: "'Mochiy Pop One', sans-serif",
             fontSize: "36px",
-            fontWeight: "900",
+            fontWeight: "400",
             color: "#1a1a1a",
             margin: 0,
+            lineHeight: 1.2,
           }}
         >
           <span style={{ textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>The</span>{" "}

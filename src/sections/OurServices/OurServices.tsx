@@ -143,10 +143,10 @@ export const OurServices: React.FC = () => {
       <div className="flex flex-col items-center" style={{ marginBottom: "30px" }}>
         <h2
           style={{
-            fontFamily: "'Georgia', serif",
+            fontFamily: "'Mochiy Pop One', sans-serif",
             fontSize: "38px",
-            fontWeight: 800,
-            lineHeight: 1.1,
+            fontWeight: 400,
+            lineHeight: 1.2,
           }}
         >
           <span

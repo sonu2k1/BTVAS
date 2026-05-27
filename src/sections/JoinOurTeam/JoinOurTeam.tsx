@@ -39,6 +39,8 @@ export const JoinOurTeam: React.FC = () => {
   return (
     <>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
         .join-team-btn:hover {
           background-color: #ff5f95 !important;
           top: 2px !important;
@@ -151,9 +153,9 @@ export const JoinOurTeam: React.FC = () => {
         >
           <h2
             style={{
-              fontFamily: "'Nunito', sans-serif",
-              fontSize: "44px",
-              fontWeight: 900,
+              fontFamily: "'Mochiy Pop One', sans-serif",
+              fontSize: "36px",
+              fontWeight: 400,
               lineHeight: 1.2,
               textAlign: "center",
               marginBottom: "16px",

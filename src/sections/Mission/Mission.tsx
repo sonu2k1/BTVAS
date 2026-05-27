@@ -20,6 +20,8 @@ export const Mission: React.FC = () => {
       }}
     >
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
         @media (max-width: 1024px) {
           .mission-section {
             width: 100% !important;
@@ -297,12 +299,12 @@ export const Mission: React.FC = () => {
             <h2
               className="mission-heading"
               style={{
-                fontFamily: "'Nunito', sans-serif",
+                fontFamily: "'Mochiy Pop One', sans-serif",
                 fontSize: "38px",
-                fontWeight: "900",
+                fontWeight: "400",
                 color: "#1a1a1a",
                 margin: "0 0 4px 0",
-                lineHeight: 1.1,
+                lineHeight: 1.2,
               }}
             >
               Nurturing Growth
@@ -310,11 +312,11 @@ export const Mission: React.FC = () => {
             <h2
               className="mission-heading"
               style={{
-                fontFamily: "'Nunito', sans-serif",
+                fontFamily: "'Mochiy Pop One', sans-serif",
                 fontSize: "38px",
-                fontWeight: "900",
+                fontWeight: "400",
                 margin: 0,
-                lineHeight: 1.1,
+                lineHeight: 1.2,
               }}
             >
               <span style={{ color: "#753DBE" }}>Beyond </span>

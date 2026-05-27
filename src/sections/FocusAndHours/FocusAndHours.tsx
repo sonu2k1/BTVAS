@@ -25,6 +25,8 @@ export const FocusAndHours: React.FC = () => {
       }}
     >
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
         @media (max-width: 1024px) {
           .focus-hours-section {
             width: 100% !important;
@@ -85,12 +87,12 @@ export const FocusAndHours: React.FC = () => {
           {/* Heading */}
           <h2
             style={{
-              fontFamily: "'Nunito', sans-serif",
+              fontFamily: "'Mochiy Pop One', sans-serif",
               fontSize: "36px",
-              fontWeight: "900",
+              fontWeight: "400",
               color: "#1a1a1a",
               margin: "0 0 12px 0",
-              lineHeight: 1.1,
+              lineHeight: 1.2,
             }}
           >
             <span style={{ textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Our</span>{" "}

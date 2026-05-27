@@ -132,6 +132,8 @@ export const OurTeam: React.FC = () => {
   return (
     <>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
         .no-scrollbar::-webkit-scrollbar {
           display: none;
         }
@@ -235,12 +237,13 @@ export const OurTeam: React.FC = () => {
           {/* HEADING */}
           <h2
           style={{
-            fontFamily: "'Nunito', sans-serif",
+            fontFamily: "'Mochiy Pop One', sans-serif",
             fontSize: "36px",
-            fontWeight: "900",
+            fontWeight: "400",
             color: "#1a1a1a",
             margin: 0,
             textAlign: "center",
+            lineHeight: 1.2,
           }}
         >
           <span style={{ textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Our</span>{" "}

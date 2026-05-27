@@ -92,9 +92,9 @@ export const GettingStarted: React.FC = () => {
             <p
               style={{
                 fontFamily: "'Prompt', sans-serif",
-                fontSize: "14px",
+                fontSize: "20px",
                 color: "rgba(255, 255, 255, 0.6)",
-                width: "306px",
+                width: "326px",
                 height: "26px",
                 marginBottom: "4px",
                 letterSpacing: "0.02em",
@@ -127,7 +127,7 @@ export const GettingStarted: React.FC = () => {
                 fontFamily: "'Prompt', sans-serif",
                 fontSize: "17px",
                 fontWeight: 700,
-                color: "#ffffff",
+                color: "#f3e8e8ff",
                 lineHeight: 1.3,
                 margin: 0,
               }}
@@ -242,7 +242,7 @@ export const GettingStarted: React.FC = () => {
                   style={{
                     fontFamily: "'Prompt', sans-serif",
                     fontSize: "12.5px",
-                    color: "rgba(255,255,255,0.85)",
+                    color: "rgba(226, 217, 217, 0.85)",
                     lineHeight: 1.5,
                     margin: 0,
                     textAlign: "center",

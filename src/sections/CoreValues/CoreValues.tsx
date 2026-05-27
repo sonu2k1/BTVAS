@@ -44,6 +44,8 @@ export const CoreValues: React.FC = () => {
   return (
     <>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
         .val-card .val-img-wrap {
           height: 290px;
           transition: height 0.4s ease;
@@ -152,12 +154,12 @@ export const CoreValues: React.FC = () => {
           </p>
           <h2
             style={{
-              fontFamily: "'Nunito', sans-serif",
+              fontFamily: "'Mochiy Pop One', sans-serif",
               fontSize: "48px",
-              fontWeight: "800",
+              fontWeight: "400",
               color: "#1a1a1a",
               margin: 0,
-              lineHeight: 1.1,
+              lineHeight: 1.2,
             }}
           >
             <span style={{ color: "#1a1a1a", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Care</span> <span style={{ color: "#FF4880" }}>That Matters</span>
