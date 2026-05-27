@@ -14,7 +14,7 @@ const teamMembers = [
     image: "/images/team/Member-1.jpg",
     thumb: "/images/team/Member-1.jpg",
     quote: `"Seeing beyond the diagnosis means looking at each child for who they truly are not just their challenges, but their strengths and possibilities. I focus on what a child can achieve, not just where they are today. I'm here to support them every step of the way while helping families feel hopeful about their child's future. A diagnosis is just one part of their story; it does not define who they are or all that they can achieve. With every small success is a big celebration not just for us, but for the families we service. Being a part of a child's growth and development will always be something I am so proud to be a part of. We not only create relationships with our kiddos, but also the families we service. It gives the family a sense of hope. The word beyond is what you can only imagine and we put that back into the work that we do to ensure we show up daily by going beyond working on skills, but building life long skills that will continue once they go on to school and into adulthood.\nWith the right support, they can grow, succeed, and thrive here at Beyond The View Autism services."`,
-    category: ["Core Leadership Team", "Operations Leadership Team"],
+    category: ["Core Leadership Team", "Operations Leadership Team", "Team Leads & Specialists"],
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const teamMembers = [
     image: "/images/team/Member-2.jpg",
     thumb: "/images/team/Member-2.jpg",
     quote: `"Empowering families through structured, compassionate intervention strategies."`,
-    category: ["Core Leadership Team", "Operations Leadership Team"],
+    category: ["Core Leadership Team", "Operations Leadership Team", "Team Leads & Specialists"],
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ const teamMembers = [
     image: "/images/team/Member-4.jpg",
     thumb: "/images/team/Member-4.jpg",
     quote: `"Dedicated to making a difference every day."`,
-    category: ["Operations Leadership Team", "Core Leadership Team"],
+    category: ["Operations Leadership Team", "Core Leadership Team", "Team Leads & Specialists"],
   },
   {
     id: 5,
@@ -64,7 +64,7 @@ const teamMembers = [
     image: "/images/team/Member-6.jpg",
     thumb: "/images/team/Member-6.jpg",
     quote: `"Committed to celebrating every small victory."`,
-    category: "Operations Leadership Team",
+    category: ["Operations Leadership Team", "Team Leads & Specialists"],
   },
   {
     id: 7,
@@ -74,7 +74,7 @@ const teamMembers = [
     image: "/images/team/Member-7.jpg",
     thumb: "/images/team/Member-7.jpg",
     quote: `"Compassion is at the heart of what we do."`,
-    category: "Clinical Excellence Team",
+    category: ["Clinical Excellence Team", "Team Leads & Specialists"],
   },
   {
     id: 8,
@@ -84,7 +84,7 @@ const teamMembers = [
     image: "/images/team/Member-8.jpg",
     thumb: "/images/team/Member-8.jpg",
     quote: `"Helping children reach their full potential."`,
-    category: "Clinical Excellence Team",
+    category: ["Clinical Excellence Team", "Team Leads & Specialists"],
   },
   {
     id: 9,
@@ -94,7 +94,7 @@ const teamMembers = [
     image: "/images/team/Member-9.jpg",
     thumb: "/images/team/Member-9.jpg",
     quote: `"Creating welcoming spaces where all abilities are celebrated."`,
-    category: "Operations Leadership Team",
+    category: ["Operations Leadership Team", "Team Leads & Specialists"],
   },
   {
     id: 10,
@@ -114,7 +114,7 @@ const teamMembers = [
     image: "/images/team/Member-11.jpg",
     thumb: "/images/team/Member-11.jpg",
     quote: `"We work together with families to achieve the best outcomes."`,
-    category: "Clinical Excellence Team",
+    category: ["Clinical Excellence Team", "Team Leads & Specialists"],
   },
   {
     id: 12,
@@ -134,7 +134,7 @@ const teamMembers = [
     image: "/images/team/Member-13.jpg",
     thumb: "/images/team/Member-13.jpg",
     quote: `"Nurturing growth beyond the horizon."`,
-    category: "Clinical Excellence Team",
+    category: ["Clinical Excellence Team", "Team Leads & Specialists"],
   }
 ];
 
@@ -145,7 +145,7 @@ const coreLeadershipGroup = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2459.jpg",
   thumb: "/images/Groups/0O3A2459.jpg",
-  quote: `"Our core leadership team is dedicated to meeting each child's individual needs, creating limitless opportunities for learning, and supporting each child on their journey to reach their full potential."`,
+  quote: `Our core leadership team is dedicated to meeting each child's individual needs, creating limitless opportunities for learning, and supporting each child on their journey to reach their full potential.\n\nTeam Members:\n• Danielle Strickland (Co-Founder, BCBA, LBA)\n• Sheneice Willis Lewis (Co-Founder, BCBA, LBA)\n• Sheckeema Taylor (Director of Operations)`,
   category: "Core Leadership Team",
 };
 
@@ -156,7 +156,7 @@ const operationsLeadershipGroup = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2462.jpg",
   thumb: "/images/Groups/0O3A2462.jpg",
-  quote: `"Our operations leadership team coordinates daily administrative functions, ensures compliance and safety, and manages scheduling so that children receive seamless, high-quality care."`,
+  quote: `Our operations leadership team coordinates daily administrative functions, ensures compliance and safety, and manages scheduling so that children receive seamless, high-quality care.\n\nTeam Members:\n• Danielle Strickland (Co-Founder)\n• Sheneice Willis Lewis (Co-Founder)\n• Sheckeema Taylor (Director of Operations)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Kianna Jemison (College Park Clinic Coordinator)`,
   category: "Operations Leadership Team",
 };
 
@@ -167,7 +167,7 @@ const clinicalExcellenceGroup1 = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2474.jpg",
   thumb: "/images/Groups/0O3A2474.jpg",
-  quote: `"Our clinical excellence team of Board Certified Behavior Analysts (BCBAs) holds themselves to the highest standards of evidence-based practice, conducting thorough developmental assessments and tailoring individualized programs to nurture every child's full potential."`,
+  quote: `Our clinical excellence team of Board Certified Behavior Analysts (BCBAs) holds themselves to the highest standards of evidence-based practice, conducting thorough developmental assessments and tailoring individualized programs to nurture every child's full potential.\n\nTeam Members:\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Alexander Jones (RBT Lead, Trainer)\n• Aliciante Parker (BCBA, LBA)\n• Keajia Campbell (BCBA, LBA)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• Catarras Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
   category: "Clinical Excellence Team",
 };
 
@@ -178,7 +178,7 @@ const clinicalExcellenceGroup2 = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2486.jpg",
   thumb: "/images/Groups/0O3A2486.jpg",
-  quote: `"We collaborate closely with caregivers and providers to ensure that learning is integrated, comprehensive, and consistent across home, clinic, and community environments."`,
+  quote: `We collaborate closely with caregivers and providers to ensure that learning is integrated, comprehensive, and consistent across home, clinic, and community environments.\n\nTeam Members:\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Alexander Jones (RBT Lead, Trainer)\n• Aliciante Parker (BCBA, LBA)\n• Keajia Campbell (BCBA, LBA)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• Catarras Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
   category: "Clinical Excellence Team",
 };
 
@@ -189,7 +189,7 @@ const teamLeadsGroup = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2500.jpg",
   thumb: "/images/Groups/0O3A2500.jpg",
-  quote: `"Our dedicated team of RBT Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy."`,
+  quote: `Our dedicated team of RBT Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy.\n\nTeam Members:\n• Danielle Strickland (Co-Founder, BCBA, LBA)\n• Sheneice Willis Lewis (Co-Founder, BCBA, LBA)\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Sheckeema Taylor (Director of Operations, Specialist)\n• Alexander Jones (RBT Lead, Trainer)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Aliciante Parker (Clinical Excellence)\n• Keajia Campbell (Clinical Excellence)\n• Kianna Jemison (College Park Clinic Coordinator)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• Catarras Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
   category: "Team Leads & Specialists",
 };
 
