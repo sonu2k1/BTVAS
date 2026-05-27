@@ -154,14 +154,14 @@ export const JoinOurTeam: React.FC = () => {
           <h2
             style={{
               fontFamily: "'Mochiy Pop One', sans-serif",
-              fontSize: "36px",
+              fontSize: "32px",
               fontWeight: 400,
-              lineHeight: 1.2,
+              lineHeight: "40px",
               textAlign: "center",
               marginBottom: "16px",
             }}
           >
-            <span style={{ color: "#111827", textDecoration: "underline", textDecorationColor: "#111827", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Ready to Start Your</span>{" "}
+            <span style={{ color: "#111827", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Ready to Start Your</span>{" "}
             <span style={{ color: "#FF4880" }}>Career with Beyond the View?</span>
           </h2>
 
