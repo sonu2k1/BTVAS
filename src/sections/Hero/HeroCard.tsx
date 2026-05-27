@@ -89,6 +89,22 @@ export const HeroCard: React.FC = () => {
           top: 8px !important;
           background-color: #e6d400 !important;
         }
+        .modal-submit-3d-btn:hover {
+          background-color: #ff5f95 !important;
+          top: 2px !important;
+        }
+        .modal-submit-3d-btn:active {
+          top: 6px !important;
+          background-color: #e03570 !important;
+        }
+        .modal-cancel-3d-btn:hover {
+          background-color: #f1f5f9 !important;
+          top: 2px !important;
+        }
+        .modal-cancel-3d-btn:active {
+          top: 6px !important;
+          background-color: #cbd5e1 !important;
+        }
         .custom-visit-modal > div:first-child {
           padding: 24px 28px 16px 28px !important;
         }
@@ -457,13 +473,115 @@ export const HeroCard: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-4 flex gap-3 justify-end border-t border-gray-100 pt-4">
-              <Button type="button" variant="outline" onClick={handleClose} disabled={loading} className="!py-2 !px-5 !text-sm font-semibold">
-                Cancel
-              </Button>
-              <Button type="submit" variant="secondary" loading={loading} className="!py-2 !px-5 !text-sm font-semibold">
-                Schedule Tour
-              </Button>
+            <div className="mt-4 flex gap-4 justify-end items-center border-t border-gray-100 pt-4">
+              {/* 3D Cancel Button wrapper */}
+              <div
+                style={{
+                  position: "relative",
+                  width: "110px",
+                  height: "48px",
+                  flexShrink: 0,
+                }}
+              >
+                {/* Shadow layer */}
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    width: "110px",
+                    height: "40px",
+                    backgroundColor: "#cbd5e1",
+                    borderRadius: "20px",
+                  }}
+                />
+                {/* Button layer */}
+                <button
+                  type="button"
+                  onClick={handleClose}
+                  disabled={loading}
+                  className="modal-cancel-3d-btn"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "110px",
+                    height: "40px",
+                    borderRadius: "20px",
+                    backgroundColor: "#f8fafc",
+                    color: "#475569",
+                    border: "1.5px solid #cbd5e1",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transition: "top 0.1s ease, background-color 0.2s ease",
+                    fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive",
+                    fontSize: "15px",
+                    fontWeight: "700",
+                  }}
+                >
+                  Cancel
+                </button>
+              </div>
+              {/* 3D Button wrapper */}
+              <div
+                style={{
+                  position: "relative",
+                  width: "168px",
+                  height: "48px", // 40px height + 8px shadow offset
+                  flexShrink: 0,
+                }}
+              >
+                {/* Shadow layer */}
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    width: "168px",
+                    height: "40px",
+                    backgroundColor: "#c93360",
+                    borderRadius: "20px",
+                  }}
+                />
+                {/* Button layer */}
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="modal-submit-3d-btn"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "168px",
+                    height: "40px",
+                    borderRadius: "20px",
+                    backgroundColor: "#FF4880",
+                    color: "#ffffff",
+                    border: "none",
+                    cursor: loading ? "default" : "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    transition: "top 0.1s ease, background-color 0.2s ease",
+                    fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive",
+                    fontSize: "15px",
+                    fontWeight: "700",
+                  }}
+                >
+                  {loading ? (
+                    <span className="flex items-center justify-center">
+                      <svg className="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                      </svg>
+                    </span>
+                  ) : (
+                    "Schedule Tour"
+                  )}
+                </button>
+              </div>
             </div>
           </form>
         )}
