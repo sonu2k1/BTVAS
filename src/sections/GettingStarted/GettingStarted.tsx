@@ -10,7 +10,7 @@ export const GettingStarted: React.FC = () => {
   return (
     <div style={{ width: "100%", backgroundColor: "#753DBE" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Prompt:wght@400;500;600;700;800&display=swap');
 
         .get-started-btn-wrapper {
           position: relative;
@@ -91,7 +91,7 @@ export const GettingStarted: React.FC = () => {
           >
             <p
               style={{
-                fontFamily: "'Georgia', serif",
+                fontFamily: "'Prompt', sans-serif",
                 fontSize: "14px",
                 color: "rgba(255,255,255,0.75)",
                 marginBottom: "4px",
@@ -121,7 +121,7 @@ export const GettingStarted: React.FC = () => {
           >
             <p
               style={{
-                fontFamily: "'Georgia', serif",
+                fontFamily: "'Prompt', sans-serif",
                 fontSize: "17px",
                 fontWeight: 700,
                 color: "#ffffff",
@@ -162,7 +162,7 @@ export const GettingStarted: React.FC = () => {
               >
                 <p
                   style={{
-                    fontFamily: "'Georgia', serif",
+                    fontFamily: "'Prompt', sans-serif",
                     fontSize: "13.5px",
                     fontWeight: 700,
                     color: "#ffffff",
@@ -209,7 +209,7 @@ export const GettingStarted: React.FC = () => {
                     borderRadius: "50%",
                     background: "#FF4880",
                     color: "#ffffff",
-                    fontFamily: "'Georgia', serif",
+                    fontFamily: "'Prompt', sans-serif",
                     fontSize: "13px",
                     fontWeight: 700,
                     boxShadow: "0 0 0 3px rgba(255,72,128,0.3)",
@@ -237,7 +237,7 @@ export const GettingStarted: React.FC = () => {
               >
                 <p
                   style={{
-                    fontFamily: "'Georgia', serif",
+                    fontFamily: "'Prompt', sans-serif",
                     fontSize: "12.5px",
                     color: "rgba(255,255,255,0.85)",
                     lineHeight: 1.5,
@@ -267,7 +267,7 @@ export const GettingStarted: React.FC = () => {
           <div style={{ display: "flex", flexDirection: "column" }}>
             <p
               style={{
-                fontFamily: "'Georgia', serif",
+                fontFamily: "'Prompt', sans-serif",
                 fontSize: "14px",
                 color: "rgba(255,255,255,0.75)",
                 marginBottom: "4px",
@@ -293,7 +293,7 @@ export const GettingStarted: React.FC = () => {
           <div style={{ display: "flex", alignItems: "center" }}>
             <p
               style={{
-                fontFamily: "'Georgia', serif",
+                fontFamily: "'Prompt', sans-serif",
                 fontSize: "16px",
                 fontWeight: 700,
                 color: "#ffffff",
@@ -365,7 +365,7 @@ export const GettingStarted: React.FC = () => {
                   borderRadius: "50%",
                   background: "#FF4880",
                   color: "#ffffff",
-                  fontFamily: "'Georgia', serif",
+                  fontFamily: "'Prompt', sans-serif",
                   fontSize: "13px",
                   fontWeight: 700,
                   boxShadow: "0 0 0 3px rgba(255,72,128,0.3)",
@@ -380,7 +380,7 @@ export const GettingStarted: React.FC = () => {
 
               <h4
                 style={{
-                  fontFamily: "'Georgia', serif",
+                  fontFamily: "'Prompt', sans-serif",
                   fontSize: "15px",
                   fontWeight: 700,
                   color: "#ffffff",
@@ -392,7 +392,7 @@ export const GettingStarted: React.FC = () => {
               </h4>
               <p
                 style={{
-                  fontFamily: "'Georgia', serif",
+                  fontFamily: "'Prompt', sans-serif",
                   fontSize: "13px",
                   color: "rgba(255,255,255,0.85)",
                   lineHeight: 1.5,
