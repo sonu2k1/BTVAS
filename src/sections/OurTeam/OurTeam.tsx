@@ -139,6 +139,24 @@ export const OurTeam: React.FC = () => {
           -ms-overflow-style: none;
           scrollbar-width: none;
         }
+        .team-thumb-item {
+          position: relative;
+          transition: all 0.3s ease;
+        }
+        .team-thumb-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(1, 12, 111, 0.55);
+          z-index: 2;
+          transition: opacity 0.3s ease;
+          pointer-events: none;
+        }
+        .team-thumb-item:hover .team-thumb-overlay {
+          opacity: 0.15;
+        }
         @media (max-width: 1024px) {
           .team-section {
             width: 100% !important;
@@ -312,6 +330,12 @@ export const OurTeam: React.FC = () => {
                   fill
                   sizes="100px"
                   className="object-cover"
+                />
+                <div
+                  className="team-thumb-overlay"
+                  style={{
+                    opacity: selectedMember.id === member.id ? 0 : 1,
+                  }}
                 />
               </div>
             ))}
