@@ -123,6 +123,15 @@ const teamMembers = [
     thumb: "/images/team/Member-13.jpg",
     quote: `"Nurturing growth beyond the horizon."`,
   },
+  {
+    id: 14,
+    name: "Kendall Davis",
+    credentials: "RBT Lead",
+    role: " ",
+    image: "/images/team/Member-14.png",
+    thumb: "/images/team/Member-14.png",
+    quote: `"Nurturing growth beyond the horizon."`,
+  },
 ];
 
 export const OurTeam: React.FC = () => {
