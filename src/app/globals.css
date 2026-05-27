@@ -43,7 +43,10 @@ body {
 }
 
 /* Offset for sticky header when scrolling to anchors */
-section[id] {
+section[id],
+footer[id],
+div[id="contact"],
+div[id="getting-started"] {
   scroll-margin-top: 90px;
 }
 
