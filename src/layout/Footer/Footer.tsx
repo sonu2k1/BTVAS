@@ -2,10 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 const MapPinIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-    <circle cx="12" cy="10" r="3" />
-  </svg>
+  <Image src="/icons/location.svg" alt="Location" width={16} height={16} />
 );
 
 const ChevronDoubleRight = () => (
@@ -198,7 +195,7 @@ export const Footer: React.FC = () => {
       </footer>
 
       {/* ── MOBILE / TABLET VIEW: DYNAMIC & FLUID STACK ── */}
-      <footer 
+      <footer
         id="contact"
         className="mobile-footer bg-[#010C6F] text-white flex-col w-full scroll-mt-6"
         style={{
@@ -245,7 +242,7 @@ export const Footer: React.FC = () => {
             <div style={{ flex: 1, height: "2.5px", background: "rgba(255, 255, 255, 0.2)", flexShrink: 0 }} />
           </div>
 
-          <ul 
+          <ul
             className="grid grid-cols-2"
             style={{
               display: "grid",
