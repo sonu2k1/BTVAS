@@ -199,7 +199,7 @@ export const Footer: React.FC = () => {
         id="contact"
         className="mobile-footer bg-[#010C6F] text-white flex-col w-full scroll-mt-6"
         style={{
-          padding: "48px 24px",
+          padding: "36px 24px",
           boxSizing: "border-box",
           display: "flex",
           flexDirection: "column",
