@@ -139,19 +139,7 @@ export const CoreValues: React.FC = () => {
       >
         {/* HEADER */}
         <div style={{ textAlign: "center" }}>
-          <p
-            style={{
-              fontFamily: "'Nunito', sans-serif",
-              fontSize: "15px",
-              fontWeight: "600",
-              color: "#888",
-              letterSpacing: "2px",
-              textTransform: "uppercase",
-              margin: "0 0 6px 0",
-            }}
-          >
-            Our Core Values
-          </p>
+
           <h2
             style={{
               fontFamily: "'Mochiy Pop One', sans-serif",

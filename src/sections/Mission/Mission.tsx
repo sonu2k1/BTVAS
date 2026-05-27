@@ -280,19 +280,7 @@ export const Mission: React.FC = () => {
             flexShrink: 0,
           }}
         >
-          {/* Our Mission label */}
-          <p
-            style={{
-              fontFamily: "'Nunito', sans-serif",
-              fontSize: "15px",
-              fontWeight: "600",
-              color: "#888",
-              margin: 0,
-              letterSpacing: "1px",
-            }}
-          >
-            Our Mission
-          </p>
+
 
           {/* Heading */}
           <div>
