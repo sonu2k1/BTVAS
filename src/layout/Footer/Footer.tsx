@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 const MapPinIcon = () => (
-  <Image src="/icons/location.svg" alt="Location" width={16} height={16} />
+  <Image src="/icons/location.svg" alt="Location" width={32} height={32} />
 );
 
 const ChevronDoubleRight = () => (
@@ -100,7 +100,7 @@ export const Footer: React.FC = () => {
                     className="flex items-center justify-center bg-[#FF4880] rounded-[10px] transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#e03570]"
                     style={{ width: "44px", height: "44px" }}
                   >
-                    <Image src="/icons/Link.svg" alt="Instagram" width={22} height={22} />
+                    <Image src="/icons/Link.svg" alt="Instagram" width={32} height={32} />
                   </a>
                   <span style={{ fontSize: "13px", fontWeight: 500, color: "rgba(255, 255, 255, 0.95)" }}>/Beyondtheviewautismservices</span>
                 </div>
@@ -115,7 +115,7 @@ export const Footer: React.FC = () => {
                     className="flex items-center justify-center bg-[#FF4880] rounded-[10px] transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#e03570]"
                     style={{ width: "44px", height: "44px" }}
                   >
-                    <Image src="/icons/FB.svg" alt="Facebook" width={22} height={22} />
+                    <Image src="/icons/FB.svg" alt="Facebook" width={32} height={32} />
                   </a>
                   <span style={{ fontSize: "13px", fontWeight: 500, color: "rgba(255, 255, 255, 0.95)" }}>@beyondtheviewaba</span>
                 </div>
@@ -125,8 +125,8 @@ export const Footer: React.FC = () => {
               <div className="flex items-start" style={{ gap: "40px" }}>
                 {/* Phone */}
                 <div className="flex items-start gap-3">
-                  <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "32px", height: "32px" }}>
-                    <Image src="/icons/Phone.svg" alt="Phone" width={16} height={16} />
+                  <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "44px", height: "44px" }}>
+                    <Image src="/icons/Phone.svg" alt="Phone" width={32} height={32} />
                   </div>
                   <div className="flex flex-col gap-1">
                     <span style={{ fontSize: "11px", color: "rgba(255, 255, 255, 0.6)", textTransform: "uppercase", letterSpacing: "0.05em" }}>Call Us</span>
@@ -137,7 +137,7 @@ export const Footer: React.FC = () => {
 
                 {/* Location */}
                 <div className="flex items-start gap-3">
-                  <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "32px", height: "32px" }}>
+                  <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "44px", height: "44px" }}>
                     <MapPinIcon />
                   </div>
                   <div className="flex flex-col gap-1">
@@ -149,8 +149,8 @@ export const Footer: React.FC = () => {
 
                 {/* Email */}
                 <div className="flex items-start gap-3">
-                  <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "32px", height: "32px" }}>
-                    <Image src="/icons/Email.svg" alt="Email" width={16} height={16} />
+                  <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "44px", height: "44px" }}>
+                    <Image src="/icons/Email.svg" alt="Email" width={32} height={32} />
                   </div>
                   <div className="flex flex-col gap-1">
                     <span style={{ fontSize: "11px", color: "rgba(255, 255, 255, 0.6)", textTransform: "uppercase", letterSpacing: "0.05em" }}>Email Us</span>
@@ -283,7 +283,7 @@ export const Footer: React.FC = () => {
                 className="flex items-center justify-center bg-[#FF4880] rounded-[10px] transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#e03570]"
                 style={{ width: "44px", height: "44px", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}
               >
-                <Image src="/icons/Link.svg" alt="Instagram" width={22} height={22} />
+                <Image src="/icons/Link.svg" alt="Instagram" width={32} height={32} />
               </a>
               <span style={{ fontSize: "13px", fontWeight: 500, color: "rgba(255, 255, 255, 0.95)", wordBreak: "break-all" }}>/Beyondtheviewautismservices</span>
             </div>
@@ -296,7 +296,7 @@ export const Footer: React.FC = () => {
                 className="flex items-center justify-center bg-[#FF4880] rounded-[10px] transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#e03570]"
                 style={{ width: "44px", height: "44px", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}
               >
-                <Image src="/icons/FB.svg" alt="Facebook" width={22} height={22} />
+                <Image src="/icons/FB.svg" alt="Facebook" width={32} height={32} />
               </a>
               <span style={{ fontSize: "13px", fontWeight: 500, color: "rgba(255, 255, 255, 0.95)" }}>@beyondtheviewaba</span>
             </div>
@@ -306,8 +306,8 @@ export const Footer: React.FC = () => {
           <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
             {/* Phone */}
             <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <Image src="/icons/Phone.svg" alt="Phone" width={16} height={16} />
+              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "44px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <Image src="/icons/Phone.svg" alt="Phone" width={32} height={32} />
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <span style={{ fontSize: "11px", color: "rgba(255, 255, 255, 0.6)", textTransform: "uppercase", letterSpacing: "0.05em" }}>Call Us</span>
@@ -318,7 +318,7 @@ export const Footer: React.FC = () => {
 
             {/* Location */}
             <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "44px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <MapPinIcon />
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
@@ -330,8 +330,8 @@ export const Footer: React.FC = () => {
 
             {/* Email */}
             <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "32px", height: "32px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <Image src="/icons/Email.svg" alt="Email" width={16} height={16} />
+              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px] flex-shrink-0" style={{ width: "44px", height: "44px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <Image src="/icons/Email.svg" alt="Email" width={32} height={32} />
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: "4px" }}>
                 <span style={{ fontSize: "11px", color: "rgba(255, 255, 255, 0.6)", textTransform: "uppercase", letterSpacing: "0.05em" }}>Email Us</span>
