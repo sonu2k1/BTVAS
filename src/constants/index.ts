@@ -25,7 +25,54 @@ export const TESTIMONIALS = [
   {
     quote:
       "Been great thus far. My son is very excited every time we're pulling into the center. He's eager to go right along with his therapist. I appreciate you all.",
-    name: "",
   },
 ];
+
+export const GETTING_STARTED_STEPS = [
+  {
+    number: 1,
+    title: "Intake Form",
+    description:
+      "Complete our intake form so we can learn more about your child & your family's needs",
+  },
+  {
+    number: 2,
+    title: "Submit Required Document",
+    description:
+      "Provide your child's psychological evaluation, insurance card, & any supporting medical documentation",
+  },
+  {
+    number: 3,
+    title: "Insurance Verification",
+    description:
+      "Our team verifies your insurance benefits & confirm ABA coverage",
+  },
+  {
+    number: 4,
+    title: "Autism Behavior Screening Survey",
+    description:
+      "Autism screening to assess your child's support needs.",
+  },
+  {
+    number: 5,
+    title: "Initial Assessment",
+    description:
+      "A Board Certified Behaviour Analyst (BCBA) conducts comprehensive assessment with your child",
+  },
+  {
+    number: 6,
+    title: "Treatment Plan",
+    description:
+      "An Individualized treatment plan is created based on the assessment & submitted for insurance approval",
+  },
+  {
+    number: 7,
+    title: "Begin Therapy",
+    description:
+      "Once approved services are scheduled & your child begins ABA therapy",
+  },
+];
+
+export const steps = GETTING_STARTED_STEPS;
+
 
