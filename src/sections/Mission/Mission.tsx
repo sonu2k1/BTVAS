@@ -342,7 +342,7 @@ export const Mission: React.FC = () => {
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontSize: "22px" }}>🧸</span>
+              <Image src="/images/Baby.svg" alt="Baby Icon" width={24} height={24} />
               <span
                 style={{
                   fontFamily: "'Nunito', sans-serif",
@@ -355,7 +355,7 @@ export const Mission: React.FC = () => {
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ fontSize: "22px", color: "#FF4880" }}>📍</span>
+              <Image src="/images/Loc.svg" alt="Location Icon" width={24} height={24} />
               <span
                 style={{
                   fontFamily: "'Nunito', sans-serif",

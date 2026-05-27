@@ -194,19 +194,21 @@ export const OurServices: React.FC = () => {
           <AnimatePresence mode="popLayout" custom={direction}>
             {visible.map((service, i) => (
                <motion.div
+                layout
                 key={service.title}
                 custom={direction}
-                initial={{ opacity: 0, x: direction > 0 ? 80 : -80 }}
+                initial={{ opacity: 0, x: direction > 0 ? 100 : -100 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: direction > 0 ? -80 : 80 }}
+                exit={{ opacity: 0, x: direction > 0 ? -100 : 100 }}
                 whileHover={{
                   y: -10,
                   scale: 1.02,
                   filter: "drop-shadow(0px 16px 32px rgba(0, 0, 0, 0.10))",
                 }}
                 transition={{
-                  x: { duration: 0.35, ease: "easeInOut", delay: i * 0.05 },
-                  opacity: { duration: 0.35, ease: "easeInOut", delay: i * 0.05 },
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.28, ease: "easeInOut" },
+                  layout: { type: "spring", stiffness: 300, damping: 30 },
                   default: { type: "spring", stiffness: 300, damping: 20 }
                 }}
                 className="flex flex-col items-center bg-transparent flex-shrink-0 services-card relative overflow-visible"
