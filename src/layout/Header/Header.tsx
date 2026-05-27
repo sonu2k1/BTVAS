@@ -300,7 +300,7 @@ export const Header: React.FC = () => {
               onClick={(e) => handleNavClick(e, "#career")}
               className="cta-btn"
             >
-              Join Our Team
+              Getting Started
             </a>
           </div>
 

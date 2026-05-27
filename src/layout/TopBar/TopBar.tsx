@@ -5,8 +5,20 @@ import Image from "next/image";
 
 export const TopBar: React.FC = () => {
   return (
-    <div className="w-full flex justify-center bg-transparent py-[6px]">
+    <div className="w-full flex justify-center bg-transparent" style={{ padding: "12px 0" }}>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&display=swap');
+
+        .topbar-desktop, 
+        .topbar-desktop a, 
+        .topbar-desktop span, 
+        .topbar-mobile, 
+        .topbar-mobile a, 
+        .topbar-mobile span {
+          font-family: 'Prompt', sans-serif !important;
+          font-size: 14px !important;
+        }
+
         .marquee-wrapper {
           flex: 1;
           overflow: hidden;
@@ -24,8 +36,8 @@ export const TopBar: React.FC = () => {
 
         .marquee-track span {
           color: white;
-          font-family: Arial, sans-serif;
-          font-size: 12.5px;
+          font-family: 'Prompt', sans-serif !important;
+          font-size: 14px !important;
           padding-right: 60px;
         }
 

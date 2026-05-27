@@ -79,6 +79,8 @@ export const HeroCard: React.FC = () => {
   return (
     <>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Baloo+2:wght@400;500;600;700;800&family=Prompt:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+
         .hero-visit-btn:hover {
           background-color: #fff233 !important;
           top: 2px !important;
@@ -151,14 +153,16 @@ export const HeroCard: React.FC = () => {
             gap: 8px !important;
           }
           .hero-card-subtitle {
-            font-size: 20px !important;
+            font-size: 28px !important;
           }
           .hero-card-title {
-            font-size: 32px !important;
+            font-size: 40px !important;
           }
           .hero-card-quote {
-            font-size: 13px !important;
+            font-size: 15px !important;
             line-height: 1.5 !important;
+            width: auto !important;
+            height: auto !important;
           }
         }
       `}</style>
@@ -167,7 +171,8 @@ export const HeroCard: React.FC = () => {
         className="hero-card-outer"
         style={{
           width: "756px",
-          height: "382px",
+          height: "auto",
+          minHeight: "382px",
           borderRadius: "20px",
           backgroundColor: "rgba(117, 61, 190, 0.6)",
           padding: "10px",
@@ -180,7 +185,8 @@ export const HeroCard: React.FC = () => {
           className="hero-card-inner"
           style={{
             width: "736px",
-            height: "362px",
+            height: "auto",
+            minHeight: "362px",
             borderRadius: "20px",
             border: "1.5px dashed rgba(255, 255, 255, 0.4)",
             boxSizing: "border-box",
@@ -188,6 +194,7 @@ export const HeroCard: React.FC = () => {
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
+            gap: "20px",
           }}
         >
           {/* CONTENT AREA */}
@@ -195,7 +202,7 @@ export const HeroCard: React.FC = () => {
             className="hero-card-content"
             style={{
               width: "688px",
-              height: "248px",
+              height: "auto",
               display: "flex",
               flexDirection: "column",
               justifyContent: "flex-start",
@@ -206,8 +213,8 @@ export const HeroCard: React.FC = () => {
             <p
               className="hero-card-subtitle"
               style={{
-                fontFamily: "'Nunito', sans-serif",
-                fontSize: "32px",
+                fontFamily: "'Annie Use Your Telescope', cursive",
+                fontSize: "45px",
                 fontWeight: "400",
                 color: "#ffffff",
                 margin: 0,
@@ -221,9 +228,9 @@ export const HeroCard: React.FC = () => {
             <h1
               className="hero-card-title"
               style={{
-                fontFamily: "'Nunito', sans-serif",
-                fontSize: "52px",
-                fontWeight: "900",
+                fontFamily: "'Baloo 2', sans-serif",
+                fontSize: "64px",
+                fontWeight: "800",
                 color: "#FFE600",
                 margin: 0,
                 lineHeight: 1.1,
@@ -236,13 +243,16 @@ export const HeroCard: React.FC = () => {
             <p
               className="hero-card-quote"
               style={{
-                fontFamily: "'Nunito', sans-serif",
-                fontSize: "15px",
-                fontWeight: "600",
+                fontFamily: "'Prompt', sans-serif",
+                fontSize: "18px",
+                fontWeight: "500",
                 fontStyle: "italic",
                 color: "#ffffff",
-                lineHeight: "1.75",
+                lineHeight: "1.4",
                 margin: 0,
+                marginTop: "4px",
+                width: "602px",
+                height: "112px",
               }}
             >
               &ldquo;Every child deserves a champion-an adult who will never give up on

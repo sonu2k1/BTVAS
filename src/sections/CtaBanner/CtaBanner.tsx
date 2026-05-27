@@ -36,14 +36,20 @@ export const CtaBanner: React.FC = () => {
           }
           .cta-banner-btn-container {
             width: 100% !important;
-            max-width: 360px !important;
+            max-width: 460px !important;
           }
           .cta-banner-btn-shadow,
           .cta-banner-btn {
             width: 100% !important;
           }
           .cta-banner-btn span {
-            font-size: 12px !important;
+            font-size: 10px !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .cta-banner-btn span {
+            font-size: 10px !important;
           }
         }
       `}</style>

@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../../utils/cn";
 
@@ -21,14 +22,23 @@ export const Modal: React.FC<ModalProps> = ({
   className,
   size = "md",
 }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Lock body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
+      document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
     } else {
+      document.documentElement.style.overflow = "unset";
       document.body.style.overflow = "unset";
     }
     return () => {
+      document.documentElement.style.overflow = "unset";
       document.body.style.overflow = "unset";
     };
   }, [isOpen]);
@@ -40,7 +50,9 @@ export const Modal: React.FC<ModalProps> = ({
     xl: "max-w-4xl",
   };
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 overflow-y-auto">
@@ -50,7 +62,11 @@ export const Modal: React.FC<ModalProps> = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-navy-deep/40 backdrop-blur-sm cursor-pointer"
+            className="fixed inset-0 bg-navy-deep/40 cursor-pointer"
+            style={{
+              backdropFilter: "blur(8px)",
+              WebkitBackdropFilter: "blur(8px)",
+            }}
           />
 
           {/* Modal Container */}
@@ -102,6 +118,7 @@ export const Modal: React.FC<ModalProps> = ({
           </motion.div>
         </div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };
