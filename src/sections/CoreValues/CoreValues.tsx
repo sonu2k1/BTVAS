@@ -143,7 +143,7 @@ export const CoreValues: React.FC = () => {
           <h2
             style={{
               fontFamily: "'Mochiy Pop One', sans-serif",
-              fontSize: "48px",
+              fontSize: "24px",
               fontWeight: "400",
               color: "#1a1a1a",
               margin: 0,

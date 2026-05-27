@@ -144,7 +144,7 @@ export const OurServices: React.FC = () => {
         <h2
           style={{
             fontFamily: "'Mochiy Pop One', sans-serif",
-            fontSize: "38px",
+            fontSize: "24px",
             fontWeight: 400,
             lineHeight: 1.2,
           }}
