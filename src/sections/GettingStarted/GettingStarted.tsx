@@ -48,6 +48,52 @@ const steps = [
 export const GettingStarted: React.FC = () => {
   return (
     <div style={{ width: "100%", backgroundColor: "#753DBE" }}>
+      <style>{`
+        .get-started-btn-wrapper {
+          position: relative;
+          width: 216px;
+          height: 50px;
+          flex-shrink: 0;
+        }
+        .get-started-btn-shadow {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 216px;
+          height: 42px;
+          background: #c93360;
+          border-radius: 21px;
+        }
+        .get-started-btn {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 216px;
+          height: 42px;
+          background: #FF4880;
+          border-radius: 21px;
+          border: none;
+          color: #ffffff;
+          font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+          font-size: 16px;
+          font-weight: 700;
+          cursor: pointer;
+          letter-spacing: 0.01em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: top 0.1s ease, background-color 0.2s ease;
+          text-decoration: none;
+        }
+        .get-started-btn:hover {
+          background-color: #ff5f95;
+          top: 2px;
+        }
+        .get-started-btn:active {
+          top: 8px;
+          background-color: #e03570;
+        }
+      `}</style>
       {/* ── DESKTOP VIEW: 100% EXACT ORIGINAL LAYOUT & PIXELS (Visible on lg and larger) ── */}
       <section
         className="hidden lg:flex relative overflow-hidden flex-col"
@@ -115,42 +161,11 @@ export const GettingStarted: React.FC = () => {
           </div>
 
           {/* Right: Get Started button — 3D drop shadow style (Pure CSS Hover) */}
-          <div style={{ position: "relative", width: "216px", height: "50px", flexShrink: 0 }}>
+          <div className="get-started-btn-wrapper">
             {/* Shadow layer */}
-            <div
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                width: "216px",
-                height: "42px",
-                background: "#c93360",
-                borderRadius: "21px",
-              }}
-            />
+            <div className="get-started-btn-shadow" />
             {/* Button layer */}
-            <button
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "216px",
-                height: "42px",
-                background: "#FF4880",
-                borderRadius: "21px",
-                border: "none",
-                color: "#ffffff",
-                fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive",
-                fontSize: "16px",
-                fontWeight: 700,
-                cursor: "pointer",
-                letterSpacing: "0.01em",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-              className="transition-all duration-100 ease-in-out hover:top-[2px] hover:bg-[#ff5f95] active:top-[6px] active:bg-[#e03570]"
-            >
+            <button className="get-started-btn">
               Get Started
             </button>
           </div>
@@ -318,42 +333,11 @@ export const GettingStarted: React.FC = () => {
           </div>
 
           {/* Button wrapper */}
-          <div style={{ position: "relative", width: "216px", height: "50px", flexShrink: 0 }}>
+          <div className="get-started-btn-wrapper">
             {/* Shadow layer */}
-            <div
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                width: "216px",
-                height: "42px",
-                background: "#c93360",
-                borderRadius: "21px",
-              }}
-            />
+            <div className="get-started-btn-shadow" />
             {/* Button layer */}
-            <button
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "216px",
-                height: "42px",
-                background: "#FF4880",
-                borderRadius: "21px",
-                border: "none",
-                color: "#ffffff",
-                fontFamily: "'Comic Sans MS', 'Chalkboard SE', cursive",
-                fontSize: "16px",
-                fontWeight: 700,
-                cursor: "pointer",
-                letterSpacing: "0.01em",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-              className="transition-all duration-100 ease-in-out hover:top-[2px] hover:bg-[#ff5f95] active:top-[6px] active:bg-[#e03570]"
-            >
+            <button className="get-started-btn">
               Get Started
             </button>
           </div>
