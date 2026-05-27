@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TESTIMONIALS } from "@/constants";
 
@@ -13,16 +13,36 @@ export const Testimonials: React.FC = () => {
     setCurrent((prev) => (prev + newDirection + TESTIMONIALS.length) % TESTIMONIALS.length);
   };
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      paginate(1);
+    }, 6000); // Changes testimonial every 6 seconds
+
+    return () => clearInterval(timer);
+  }, [current]);
+
   const variants = {
-    enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 60 : -60 }),
-    center: { opacity: 1, x: 0 },
-    exit: (dir: number) => ({ opacity: 0, x: dir > 0 ? -60 : 60 }),
+    enter: (dir: number) => ({
+      opacity: 0,
+      x: dir > 0 ? 120 : -120,
+      scale: 0.96,
+    }),
+    center: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+    },
+    exit: (dir: number) => ({
+      opacity: 0,
+      x: dir > 0 ? -120 : 120,
+      scale: 0.96,
+    }),
   };
 
   return (
     <section
       className="bg-white flex items-center justify-center testimonials-section"
-      style={{ width: "1440px", height: "550px", margin: "0 auto" }}
+      style={{ width: "1440px", height: "630px", margin: "0 auto" }}
     >
       <style>{`
         @media (max-width: 1024px) {
@@ -77,10 +97,10 @@ export const Testimonials: React.FC = () => {
       {/* Testimonials card */}
       <div
         className="relative flex flex-col items-center justify-center testimonials-card"
-        style={{ width: "1340px", height: "500px" }}
+        style={{ width: "1340px", height: "580px" }}
       >
         {/* Quote icon */}
-        <div className="flex flex-col items-center mb-3">
+        <div className="flex flex-col items-center">
           <svg width="52" height="42" viewBox="0 0 52 42" fill="none">
             <text x="0" y="40" fontSize="52" fill="#E91E8C" fontFamily="Georgia, serif">
               ❝
@@ -90,8 +110,14 @@ export const Testimonials: React.FC = () => {
 
         {/* Subtitle */}
         <p
-          className="text-gray-400 mb-10 tracking-wide"
-          style={{ fontFamily: "'Georgia', serif", fontSize: "18px", fontStyle: "italic" }}
+          className="text-gray-400 tracking-wide"
+          style={{
+            fontFamily: "'Georgia', serif",
+            fontSize: "18px",
+            fontStyle: "italic",
+            marginTop: "64px",
+            marginBottom: "64px"
+          }}
         >
           What parents say about us
         </p>
@@ -121,7 +147,11 @@ export const Testimonials: React.FC = () => {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ duration: 0.4, ease: "easeInOut" }}
+                transition={{
+                  x: { type: "spring", stiffness: 90, damping: 18, mass: 0.8 },
+                  opacity: { duration: 0.35, ease: "easeInOut" },
+                  scale: { duration: 0.35, ease: "easeInOut" }
+                }}
                 className="flex flex-col items-center justify-center w-full"
               >
                 {/* 5 Stars */}
@@ -183,18 +213,6 @@ export const Testimonials: React.FC = () => {
           )}
         </AnimatePresence>
 
-        {/* Dot indicators */}
-        <div className="flex gap-2 mt-6">
-          {TESTIMONIALS.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
-              className="w-2 h-2 rounded-full transition-all"
-              style={{ background: i === current ? "#E91E8C" : "#D1D5DB" }}
-              aria-label={`Go to testimonial ${i + 1}`}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );

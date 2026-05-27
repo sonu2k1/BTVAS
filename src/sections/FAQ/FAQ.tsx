@@ -91,7 +91,7 @@ export const FAQ: React.FC = () => {
             width: 100% !important;
             height: auto !important;
             flex-direction: column !important;
-            gap: 32px !important;
+            gap: 24px !important;
             padding: 0 !important;
           }
           .faq-img-wrap {
@@ -123,27 +123,28 @@ export const FAQ: React.FC = () => {
       {/* ── FAQ SECTION ── */}
       <section
         className="bg-white flex items-center justify-center flex-shrink-0 faq-section"
-        style={{ width: "1440px", padding: "60px 0 24px 0" }}
+        style={{ width: "1440px", padding: "60px 0 0 0", borderBottom: "1px solid #E5E7EB" }}
       >
         <div
-          className="flex items-center justify-between faq-inner-row"
-          style={{ width: "1440px", paddingRight: "60px", boxSizing: "border-box" }}
+          className="flex items-center justify-start faq-inner-row"
+          style={{ width: "1440px", paddingRight: "60px", boxSizing: "border-box", gap: "24px" }}
         >
           {/* ── LEFT: Image block ── */}
           <div
             className="relative flex-shrink-0 faq-img-wrap"
             style={{
-              width: "650px", // Takes up the left side
-              height: "350px", // Matches the height of the 5 FAQs
+              width: "700px", // Takes up the left side
+              height: "377px", // Matches the height of the 5 FAQs
               borderRadius: "0 120px 0 0",
               overflow: "hidden",
+              marginLeft: "-12px"
             }}
           >
             <Image
               src="/images/FAQimg.png" // Using the provided FAQ image
               alt="FAQ Section Image"
               fill
-              sizes="(max-width: 768px) 100vw, 650px"
+              sizes="(max-width: 768px) 100vw, 700px"
               className="object-cover object-center"
               priority
             />
@@ -152,7 +153,7 @@ export const FAQ: React.FC = () => {
           {/* ── RIGHT: FAQ accordion ── */}
           <div
             className="flex flex-col justify-center flex-shrink-0 faq-accordion-wrap"
-            style={{ width: "660px", gap: "16px" }}
+            style={{ width: "668px", gap: "16px" }}
           >
             {faqs.map((faq, i) => (
               <div
@@ -244,7 +245,7 @@ export const FAQ: React.FC = () => {
       {/* ── ACCEPTED INSURANCE BANNER ── */}
       <div
         className="flex flex-col items-center bg-white flex-shrink-0 insurance-banner"
-        style={{ width: "1440px", height: "300px", justifyContent: "center", paddingTop: "24px", boxSizing: "border-box" }}
+        style={{ width: "1440px", padding: "24px 0 48px 0", boxSizing: "border-box" }}
       >
         <p
           style={{

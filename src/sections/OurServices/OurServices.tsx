@@ -7,8 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 const services = [
   {
     title: "ABA Therapy",
-    titleColor1: "#7C3AED",
-    titleColor2: "#1a1a1a",
+    titleColor1: "#753DBE",
+    titleColor2: "#FF4880",
     description:
       "Evidence-based Applied behaviour Analysis tailored to each child's unique profile and goals",
     image: "/images/service-aba.png",
@@ -16,8 +16,8 @@ const services = [
   },
   {
     title: "Speech Therapy",
-    titleColor1: "#7C3AED",
-    titleColor2: "#E91E8C",
+    titleColor1: "#753DBE",
+    titleColor2: "#FF4880",
     description:
       "Building communication skills through expert speech language intervention and practice.",
     image: "/images/service-speech.png",
@@ -25,15 +25,15 @@ const services = [
   },
   {
     title: "Occupational Therapy",
-    titleColor1: "#7C3AED",
-    titleColor2: "#E91E8C",
+    titleColor1: "#753DBE",
+    titleColor2: "#FF4880",
     description: "More detail coming soon",
     image: "/images/service-occupational.png",
     alt: "Children doing occupational therapy on playground",
   },
   {
     title: "Behavioral Support",
-    titleColor1: "#7C3AED",
+    titleColor1: "#753DBE",
     titleColor2: "#FF4880",
     description: "Comprehensive behavioral support strategies for children and families.",
     image: "/images/0O3A2609.jpg",
@@ -80,6 +80,8 @@ export const OurServices: React.FC = () => {
       id="services"
     >
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Prompt&display=swap');
+
         @media (max-width: 1024px) {
           .services-section {
             width: 100% !important;
@@ -100,12 +102,17 @@ export const OurServices: React.FC = () => {
             width: 100% !important;
             max-width: 320px !important;
             height: auto !important;
-            padding: 16px !important;
+            padding: 0 !important;
+          }
+          .services-card-body {
+            height: auto !important;
+            min-height: 380px !important;
+            padding: 16px 16px 40px 16px !important;
           }
           .services-card-img-wrap {
             width: 100% !important;
             height: auto !important;
-            aspect-ratio: 1.32 !important;
+            aspect-ratio: 1.57 !important;
           }
           .arrow-services-left {
             left: 0px !important;
@@ -121,20 +128,9 @@ export const OurServices: React.FC = () => {
           }
         }
       `}</style>
+
       {/* Header */}
       <div className="flex flex-col items-center" style={{ marginBottom: "30px" }}>
-        {/* <p
-          className="tracking-widest mb-1"
-          style={{
-            fontFamily: "'Georgia', serif",
-            fontSize: "15px",
-            color: "#9CA3AF",
-            fontStyle: "italic",
-            letterSpacing: "0.15em",
-          }}
-        >
-          What we offer
-        </p> */}
         <h2
           style={{
             fontFamily: "'Georgia', serif",
@@ -143,7 +139,16 @@ export const OurServices: React.FC = () => {
             lineHeight: 1.1,
           }}
         >
-         <span style={{ textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Beyond</span>{" "}
+          <span
+            style={{
+              textDecoration: "underline",
+              textDecorationColor: "#FF4880",
+              textUnderlineOffset: "8px",
+              textDecorationThickness: "4px",
+            }}
+          >
+            Beyond
+          </span>{" "}
           <span style={{ color: "#FF4880" }}>Just Care</span>
         </h2>
       </div>
@@ -153,7 +158,7 @@ export const OurServices: React.FC = () => {
         className="relative flex items-center justify-center services-container"
         style={{ width: "1290px", height: "474px" }}
       >
-        {/* Left Arrow — overlapping left card */}
+        {/* Left Arrow */}
         <button
           onClick={() => paginate(-1)}
           disabled={!canPrev}
@@ -172,7 +177,10 @@ export const OurServices: React.FC = () => {
         </button>
 
         {/* Cards */}
-        <div className="flex gap-[28px] items-center justify-center services-cards-row" style={{ width: "1290px" }}>
+        <div
+          className="flex gap-[28px] items-center justify-center services-cards-row"
+          style={{ width: "1290px" }}
+        >
           <AnimatePresence mode="popLayout" custom={direction}>
             {visible.map((service, i) => (
               <motion.div
@@ -182,74 +190,148 @@ export const OurServices: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: direction > 0 ? -80 : 80 }}
                 transition={{ duration: 0.35, ease: "easeInOut", delay: i * 0.05 }}
-                className="flex flex-col items-center bg-white flex-shrink-0 services-card"
+                className="flex flex-col items-center bg-transparent flex-shrink-0 services-card relative overflow-visible"
                 style={{
                   width: "410px",
                   height: "474px",
-                  borderRadius: "20px",
-                  border: "1px solid #E5E7EB",
-                  boxShadow: "0 2px 16px 0 rgba(0,0,0,0.06)",
-                  padding: "18px 18px 24px 18px",
                   boxSizing: "border-box",
+                  filter: "drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.06))",
                 }}
               >
-                {/* Image */}
+                {/* Main Card Body */}
                 <div
-                  className="services-card-img-wrap"
+                  className="flex flex-col items-center bg-white w-full border-t border-l border-r border-[#E2E8F0] services-card-body"
                   style={{
-                    width: "374px",
-                    height: "283px",
-                    borderRadius: "14px",
-                    overflow: "hidden",
-                    flexShrink: 0,
+                    height: "434px",
+                    borderRadius: "20px 20px 0 0",
+                    padding: "18px 18px 0px 18px",
+                    boxSizing: "border-box",
                   }}
                 >
-                  <Image
-                    src={service.image}
-                    alt={service.alt}
-                    width={374}
-                    height={283}
-                    className="w-full h-full object-cover object-center"
-                    style={{ width: "100%", height: "100%" }}
-                  />
+                  {/* Image */}
+                  <div
+                    className="services-card-img-wrap"
+                    style={{
+                      width: "374px",
+                      height: "238px",
+                      borderRadius: "14px",
+                      overflow: "hidden",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Image
+                      src={service.image}
+                      alt={service.alt}
+                      width={374}
+                      height={238}
+                      className="w-full h-full object-cover object-center"
+                      style={{ width: "100%", height: "100%" }}
+                    />
+                  </div>
+
+                  {/* Title */}
+                  <h3
+                    className="text-center"
+                    style={{
+                      fontFamily: "'Mochiy Pop One', sans-serif",
+                      fontSize: "22px",
+                      fontWeight: 400,
+                      lineHeight: "27.3px",
+                      marginTop: "20px",
+                      marginBottom: "12px",
+                      width: "187px",
+                      height: "28px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    <span style={{ color: service.titleColor1 }}>
+                      {service.title.split(" ")[0]}{" "}
+                    </span>
+                    <span style={{ color: service.titleColor2 }}>
+                      {service.title.split(" ").slice(1).join(" ")}
+                    </span>
+                  </h3>
+
+                  {/* Description */}
+                  <p
+                    className="text-center"
+                    style={{
+                      fontFamily: "'Prompt', sans-serif",
+                      fontSize: "14px",
+                      lineHeight: "26px",
+                      color: "#666666",
+                      width: "310px",
+                      height: "76px",
+                      margin: 0,
+                      overflow: "hidden",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {service.description}
+                  </p>
                 </div>
 
-                {/* Title */}
-                <h3
-                  className="mt-6 mb-3 text-center"
-                  style={{
-                    fontFamily: "'Georgia', serif",
-                    fontSize: "22px",
-                    fontWeight: 700,
-                    fontStyle: "italic",
-                  }}
-                >
-                  <span style={{ color: "#7C3AED" }}>
-                    {service.title.split(" ")[0]}{" "}
-                  </span>
-                  <span style={{ color: "#1a1a1a" }}>
-                    {service.title.split(" ").slice(1).join(" ")}
-                  </span>
-                </h3>
+                {/* Custom Scooped Bottom Bar */}
+                <div className="absolute bottom-0 left-0 right-0 h-[40px] flex w-full select-none pointer-events-none">
+                  {/* Left SVG Corner */}
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ flexShrink: 0 }}
+                  >
+                    <path
+                      d="M 0 0 C 0 15, 8 30, 24 40 L 40 40 L 40 0 Z"
+                      fill="#ffffff"
+                    />
+                    <path
+                      d="M 0 0 C 0 15, 8 30, 24 40 L 40 40"
+                      stroke="#E2E8F0"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
 
-                {/* Description */}
-                <p
-                  className="text-center leading-relaxed"
-                  style={{
-                    fontFamily: "'Georgia', serif",
-                    fontSize: "15px",
-                    color: "#4B5563",
-                    maxWidth: "340px",
-                  }}
-                >
-                  {service.description}
-                </p>
+                  {/* Center Spacer */}
+                  <div
+                    className="flex-grow bg-white h-[40px]"
+                    style={{ borderBottom: "1.2px solid #E2E8F0" }}
+                  />
+
+                  {/* Right SVG Corner */}
+                  <svg
+                    width="40"
+                    height="40"
+                    viewBox="0 0 40 40"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ flexShrink: 0 }}
+                  >
+                    <path
+                      d="M 40 0 C 40 15, 32 30, 16 40 L 0 40 L 0 0 Z"
+                      fill="#ffffff"
+                    />
+                    <path
+                      d="M 40 0 C 40 15, 32 30, 16 40 L 0 40"
+                      stroke="#E2E8F0"
+                      strokeWidth="1.2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </div>
               </motion.div>
             ))}
           </AnimatePresence>
         </div>
 
-        {/* Right Arrow — overlapping right card */}
+        {/* Right Arrow */}
         <button
           onClick={() => paginate(1)}
           disabled={!canNext}
