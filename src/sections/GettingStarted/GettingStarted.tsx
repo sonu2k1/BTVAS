@@ -1,8 +1,12 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { steps } from "@/constants";
 
 
 export const GettingStarted: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <div style={{ width: "100%", backgroundColor: "#753DBE" }}>
       <style>{`
@@ -49,6 +53,16 @@ export const GettingStarted: React.FC = () => {
         .get-started-btn:active {
           top: 8px;
           background-color: #e03570;
+        }
+        @keyframes modalFadeIn {
+          from {
+            opacity: 0;
+            transform: scale(0.95) translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
         }
       `}</style>
       {/* ── DESKTOP VIEW: 100% EXACT ORIGINAL LAYOUT & PIXELS (Visible on lg and larger) ── */}
@@ -122,7 +136,7 @@ export const GettingStarted: React.FC = () => {
             {/* Shadow layer */}
             <div className="get-started-btn-shadow" />
             {/* Button layer */}
-            <button className="get-started-btn">
+            <button className="get-started-btn" onClick={() => setIsOpen(true)}>
               Get Started
             </button>
           </div>
@@ -294,7 +308,7 @@ export const GettingStarted: React.FC = () => {
             {/* Shadow layer */}
             <div className="get-started-btn-shadow" />
             {/* Button layer */}
-            <button className="get-started-btn">
+            <button className="get-started-btn" onClick={() => setIsOpen(true)}>
               Get Started
             </button>
           </div>
@@ -389,6 +403,131 @@ export const GettingStarted: React.FC = () => {
           ))}
         </div>
       </section>
+
+      {/* ── RESPONSIVE GOOGLE FORM MODAL ── */}
+      {isOpen && (
+        <div
+          onClick={() => setIsOpen(false)}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(1, 12, 111, 0.45)",
+            backdropFilter: "blur(8px)",
+            zIndex: 9999,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "20px",
+            boxSizing: "border-box",
+          }}
+        >
+          {/* Modal Container */}
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: "relative",
+              width: "100%",
+              maxWidth: "680px",
+              height: "90vh",
+              maxHeight: "800px",
+              backgroundColor: "#ffffff",
+              borderRadius: "24px",
+              overflow: "hidden",
+              boxShadow: "0 24px 64px rgba(1, 12, 111, 0.25)",
+              display: "flex",
+              flexDirection: "column",
+              border: "2px solid rgba(117, 61, 190, 0.15)",
+              animation: "modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+            }}
+          >
+            {/* Modal Header */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                padding: "16px 24px",
+                borderBottom: "1px solid #E5E7EB",
+                backgroundColor: "#F9FAFB",
+                gap: "12px",
+              }}
+            >
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <h3
+                  style={{
+                    fontFamily: "'Nunito', sans-serif",
+                    fontSize: "20px",
+                    fontWeight: 900,
+                    color: "#010C6F",
+                    margin: 0,
+                  }}
+                >
+                  Intake & Registration Form
+                </h3>
+                <span style={{ fontSize: "12px", color: "#666", fontWeight: 500 }}>
+                  Please fill out the intake form to get started.
+                </span>
+              </div>
+              
+              {/* Close Button */}
+              <button
+                onClick={() => setIsOpen(false)}
+                style={{
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  color: "#9CA3AF",
+                  padding: "6px",
+                  borderRadius: "50%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  transition: "all 0.2s ease",
+                  marginLeft: "auto",
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.backgroundColor = "#F3F4F6";
+                  e.currentTarget.style.color = "#FF4880";
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.backgroundColor = "transparent";
+                  e.currentTarget.style.color = "#9CA3AF";
+                }}
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Iframe Area */}
+            <div style={{ flex: 1, position: "relative", width: "100%", height: "100%", backgroundColor: "#ffffff" }}>
+              <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfP-G19gE8Z2-Z0N67q1kRNDh6g05g_ZqFv6L0aHn4-vNszhA/viewform?embedded=true"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                marginHeight={0}
+                marginWidth={0}
+                style={{
+                  border: "none",
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
+              >
+                Loading…
+              </iframe>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
