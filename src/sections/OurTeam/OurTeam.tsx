@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 const tabs = ["All", "Core Leadership Team", "Operations Leadership Team", "Clinical Excellence Team", "Team Leads & Specialists"];
 
@@ -419,8 +420,9 @@ export const OurTeam: React.FC = () => {
                   height: "36px",
                   padding: "0 20px",
                   borderRadius: "40px",
-                  border: activeTab === tab ? "none" : "1px solid #ddd",
-                  backgroundColor: activeTab === tab ? "#010C6F" : "transparent",
+                  border: "1px solid",
+                  borderColor: activeTab === tab ? "transparent" : "#ddd",
+                  backgroundColor: "transparent",
                   color: activeTab === tab ? "#ffffff" : "#555",
                   fontFamily: "'Nunito', sans-serif",
                   fontSize: "14px",
@@ -428,9 +430,27 @@ export const OurTeam: React.FC = () => {
                   cursor: "pointer",
                   whiteSpace: "nowrap",
                   flexShrink: 0,
+                  position: "relative",
+                  transition: "color 0.2s ease, border-color 0.2s ease",
                 }}
               >
-                {tab}
+                {activeTab === tab && (
+                  <motion.div
+                    layoutId="activeTabPill"
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      backgroundColor: "#010C6F",
+                      borderRadius: "40px",
+                      zIndex: -1,
+                    }}
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span style={{ position: "relative", zIndex: 1 }}>{tab}</span>
               </button>
             ))}
           </div>
@@ -460,42 +480,51 @@ export const OurTeam: React.FC = () => {
                 overflowY: "auto",
               }}
             >
-              {filteredMembers.map((member) => {
-                const isMemberGroup = member.id.toString().includes("group");
-                return (
-                  <div
-                    key={member.id}
-                    onClick={() => setSelectedMember(member)}
-                    className={`team-thumb-item ${isMemberGroup ? "is-group-thumb" : ""}`}
-                    style={{
-                      width: "100px",
-                      height: isMemberGroup ? "67px" : "100px",
-                      borderRadius: isMemberGroup ? "20px" : "12px",
-                      overflow: "hidden",
-                      cursor: "pointer",
-                      flexShrink: 0,
-                      border: selectedMember.id === member.id ? "3px solid #753DBE" : "3px solid transparent",
-                      boxSizing: "border-box",
-                      position: "relative",
-                      transition: "height 0.3s ease, border-radius 0.3s ease",
-                    }}
-                  >
-                    <Image
-                      src={`${member.thumb}?v=2`}
-                      alt={member.name}
-                      fill
-                      sizes="100px"
-                      className={isMemberGroup ? "object-cover object-center" : "object-cover object-top"}
-                    />
-                    <div
-                      className="team-thumb-overlay"
+              <AnimatePresence mode="popLayout">
+                {filteredMembers.map((member) => {
+                  const isMemberGroup = member.id.toString().includes("group");
+                  return (
+                    <motion.div
+                      layout
+                      initial={{ opacity: 0, y: 12, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ type: "spring", stiffness: 450, damping: 32 }}
+                      key={member.id}
+                      onClick={() => setSelectedMember(member)}
+                      className={`team-thumb-item ${isMemberGroup ? "is-group-thumb" : ""}`}
                       style={{
-                        opacity: selectedMember.id === member.id ? 0 : 1,
+                        width: "100px",
+                        height: isMemberGroup ? "67px" : "100px",
+                        borderRadius: isMemberGroup ? "20px" : "12px",
+                        overflow: "hidden",
+                        cursor: "pointer",
+                        flexShrink: 0,
+                        border: selectedMember.id === member.id ? "3px solid #753DBE" : "3px solid transparent",
+                        boxSizing: "border-box",
+                        position: "relative",
+                        transition: "height 0.3s ease, border-radius 0.3s ease, border-color 0.2s ease",
                       }}
-                    />
-                  </div>
-                );
-              })}
+                    >
+                      <Image
+                        src={`${member.thumb}?v=2`}
+                        alt={member.name}
+                        fill
+                        sizes="100px"
+                        className={isMemberGroup ? "object-cover object-center" : "object-cover object-top"}
+                      />
+                      <div
+                        className="team-thumb-overlay"
+                        style={{
+                          opacity: selectedMember.id === member.id ? 0 : 1,
+                        }}
+                      />
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
             </div>
 
             {/* BIG IMAGE */}
@@ -511,76 +540,105 @@ export const OurTeam: React.FC = () => {
                 transition: "height 0.3s ease, border-radius 0.3s ease",
               }}
             >
-              <Image
-                src={`${selectedMember.image}?v=2`}
-                alt={selectedMember.name}
-                fill
-                sizes="(max-width: 768px) 100vw, 560px"
-                className={isGroup ? "object-cover object-center" : "object-cover object-top"}
-                priority
-              />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedMember.id}
+                  initial={{ opacity: 0, scale: 0.96, filter: "blur(4px)" }}
+                  animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, scale: 0.98, filter: "blur(4px)" }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  style={{ width: "100%", height: "100%", position: "relative" }}
+                >
+                  <Image
+                    src={`${selectedMember.image}?v=2`}
+                    alt={selectedMember.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 560px"
+                    className={isGroup ? "object-cover object-center" : "object-cover object-top"}
+                    priority
+                  />
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             {/* DESCRIPTION */}
             <div
-              className="team-desc-wrap no-scrollbar"
               style={{
                 width: "524px",
                 height: "518px",
-                display: "flex",
-                flexDirection: "column",
-                gap: "8px",
                 flexShrink: 0,
-                overflowY: "auto",
+                position: "relative",
               }}
             >
-              <h3
-                style={{
-                  fontFamily: "'Nunito', sans-serif",
-                  fontSize: "32px",
-                  fontWeight: "900",
-                  color: "#1a1a1a",
-                  margin: "0 0 4px 0",
-                }}
-              >
-                {selectedMember.name}
-              </h3>
-              <p
-                style={{
-                  fontFamily: "'Nunito', sans-serif",
-                  fontSize: "15px",
-                  fontWeight: "700",
-                  color: "#333",
-                  margin: 0,
-                }}
-              >
-                {selectedMember.credentials}
-              </p>
-              <p
-                style={{
-                  fontFamily: "'Nunito', sans-serif",
-                  fontSize: "13px",
-                  fontWeight: "400",
-                  color: "#777",
-                  margin: "0 0 12px 0",
-                }}
-              >
-                {selectedMember.role}
-              </p>
-              <p
-                style={{
-                  fontFamily: "'Nunito', sans-serif",
-                  fontSize: "14px",
-                  fontWeight: "400",
-                  fontStyle: "italic",
-                  color: "#333",
-                  lineHeight: "1.8",
-                  margin: 0,
-                  whiteSpace: "pre-line",
-                }}
-              >
-                {selectedMember.quote}
-              </p>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedMember.id}
+                  initial={{ opacity: 0, x: 12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -8 }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  className="team-desc-wrap no-scrollbar"
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "8px",
+                    overflowY: "auto",
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontFamily: "'Nunito', sans-serif",
+                      fontSize: "32px",
+                      fontWeight: "900",
+                      color: "#1a1a1a",
+                      margin: "0 0 4px 0",
+                    }}
+                  >
+                    {selectedMember.name}
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: "'Nunito', sans-serif",
+                      fontSize: "15px",
+                      fontWeight: "700",
+                      color: "#333",
+                      margin: 0,
+                    }}
+                  >
+                    {selectedMember.credentials}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "'Nunito', sans-serif",
+                      fontSize: "13px",
+                      fontWeight: "400",
+                      color: "#777",
+                      margin: "0 0 12px 0",
+                    }}
+                  >
+                    {selectedMember.role}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "'Nunito', sans-serif",
+                      fontSize: "14px",
+                      fontWeight: "400",
+                      fontStyle: "italic",
+                      color: "#333",
+                      lineHeight: "1.8",
+                      margin: 0,
+                      whiteSpace: "pre-line",
+                    }}
+                  >
+                    {selectedMember.quote}
+                  </p>
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </div>
