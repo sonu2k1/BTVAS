@@ -242,7 +242,7 @@ export const Mission: React.FC = () => {
               }}
             >
               <Image
-                src="/images/Groups/0O3A2503.jpg"
+                src="/images/0O3A2503.jpg"
                 alt="Beyond The View team"
                 fill
                 sizes="(max-width: 768px) 100vw, 420px"
