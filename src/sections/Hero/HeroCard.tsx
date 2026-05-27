@@ -116,9 +116,7 @@ export const HeroCard: React.FC = () => {
           border-bottom: 2px dashed rgba(126, 92, 179, 0.15) !important;
           background-color: #fffdf8 !important;
         }
-        .custom-visit-modal form > div:last-child {
-          border-top: 2px dashed rgba(126, 92, 179, 0.15) !important;
-        }
+
         .custom-visit-modal label {
           font-family: 'Prompt', sans-serif !important;
           font-weight: 600 !important;
@@ -508,7 +506,15 @@ export const HeroCard: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-8 pb-2 flex gap-4 justify-end items-center border-t border-gray-100 pt-6">
+            <div
+              className="flex gap-4 justify-end items-center"
+              style={{
+                marginTop: "32px",
+                paddingTop: "24px",
+                paddingBottom: "8px",
+                borderTop: "2px dashed rgba(126, 92, 179, 0.15)",
+              }}
+            >
               {/* 3D Cancel Button wrapper */}
               <div
                 style={{
