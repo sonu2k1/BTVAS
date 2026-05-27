@@ -2,34 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { faqs } from "@/constants";
 
-const faqs = [
-  {
-    question: "Does Speech and OT require a separate referral from ABA?",
-    answer:
-      "No, our team will coordinate all necessary referrals and documentation as part of your child's comprehensive care plan.",
-  },
-  {
-    question: "How long is the process to begin services?",
-    answer:
-      "The process typically takes 2–4 weeks from initial intake to starting therapy, depending on insurance verification and assessment scheduling.",
-  },
-  {
-    question: "Will my child need ABA therapy forever?",
-    answer:
-      "ABA therapy is goal-oriented. As your child meets their targets and develops skills, services are gradually reduced. The goal is always independence.",
-  },
-  {
-    question: "How many hours of ABA therapy will my child receive?",
-    answer:
-      "Hours are individualized based on your child's assessment and insurance approval, typically ranging from 10 to 40 hours per week.",
-  },
-  {
-    question: "Can parents be involved in therapy?",
-    answer:
-      "Absolutely. Parent involvement is a core part of our approach. We provide training and regular updates so you can support your child's progress at home.",
-  },
-];
 
 const insuranceLogos = [
   // { src: "/images/logo-georgia-health-Photoroom.svg", alt: "Georgia Department of Community Health", width: 120, height: 74 },
