@@ -8,32 +8,36 @@ const GAP = 17;
 const HALF_OFFSET = -(IMG_SIZE / 2);
 
 const leftCol1Images = [
-  "/images/0O3A2459.jpg",
-  "/images/0O3A2453.jpg",
-  "/images/0O3A2433.jpg",
-  "/images/0O3A2500.jpg",
+  "/images/Groups/0O3A2433.jpg",
+  "/images/Groups/0O3A2453.jpg",
+  "/images/Groups/0O3A2459.jpg",
+  "/images/Groups/0O3A2462.jpg",
 ];
+const leftCol1Repeated = [...leftCol1Images, ...leftCol1Images];
 
 const leftCol2Images = [
-  "/images/0O3A2459.jpg",
-  "/images/0O3A2486.jpg",
-  "/images/0O3A2474.jpg",
-  "/images/0O3A2500.jpg",
+  "/images/Groups/0O3A2474.jpg",
+  "/images/Groups/0O3A2486.jpg",
+  "/images/Groups/0O3A2500.jpg",
+  "/images/Groups/0O3A2503.jpg",
 ];
+const leftCol2Repeated = [...leftCol2Images, ...leftCol2Images];
 
 const rightCol1Images = [
-  "/images/0O3A2462.jpg",
-  "/images/0O3A2453.jpg",
-  "/images/0O3A2433.jpg",
-  "/images/0O3A2459.jpg",
+  "/images/Groups/0O3A2503.jpg",
+  "/images/Groups/0O3A2500.jpg",
+  "/images/Groups/0O3A2486.jpg",
+  "/images/Groups/0O3A2474.jpg",
 ];
+const rightCol1Repeated = [...rightCol1Images, ...rightCol1Images];
 
 const rightCol2Images = [
-  "/images/0O3A2474.jpg",
-  "/images/0O3A2486.jpg",
-  "/images/0O3A2462.jpg",
-  "/images/0O3A2453.jpg",
+  "/images/Groups/0O3A2462.jpg",
+  "/images/Groups/0O3A2459.jpg",
+  "/images/Groups/0O3A2453.jpg",
+  "/images/Groups/0O3A2433.jpg",
 ];
+const rightCol2Repeated = [...rightCol2Images, ...rightCol2Images];
 
 export const JoinOurTeam: React.FC = () => {
   return (
@@ -48,6 +52,28 @@ export const JoinOurTeam: React.FC = () => {
         .join-team-btn:active {
           top: 6px !important;
           background-color: #e03570 !important;
+        }
+        @keyframes scrollUp {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(calc(-50% - 8.5px));
+          }
+        }
+        @keyframes scrollDown {
+          0% {
+            transform: translateY(calc(-50% - 8.5px));
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
+        .scroll-up-col {
+          animation: scrollUp 25s linear infinite;
+        }
+        .scroll-down-col {
+          animation: scrollDown 25s linear infinite;
         }
         @media (max-width: 1024px) {
           .join-team-section {
@@ -87,14 +113,14 @@ export const JoinOurTeam: React.FC = () => {
         >
           {/* Col 1 — half cut off */}
           <div
-            className="absolute flex flex-col"
+            className="absolute flex flex-col scroll-down-col"
             style={{
               left: `${HALF_OFFSET}px`,
               top: "-95px",
               gap: `${GAP}px`,
             }}
           >
-            {leftCol1Images.map((src, i) => (
+            {leftCol1Repeated.map((src, i) => (
               <div
                 key={`left-col1-${i}`}
                 style={{
@@ -117,14 +143,14 @@ export const JoinOurTeam: React.FC = () => {
 
           {/* Col 2 — full */}
           <div
-            className="absolute flex flex-col"
+            className="absolute flex flex-col scroll-up-col"
             style={{
               left: `${HALF_OFFSET + IMG_SIZE + GAP}px`,
               top: "-30px",
               gap: `${GAP}px`,
             }}
           >
-            {leftCol2Images.map((src, i) => (
+            {leftCol2Repeated.map((src, i) => (
               <div
                 key={`left-col2-${i}`}
                 style={{
@@ -154,15 +180,15 @@ export const JoinOurTeam: React.FC = () => {
           <h2
             style={{
               fontFamily: "'Mochiy Pop One', sans-serif",
-              fontSize: "36px",
+              fontSize: "32px",
               fontWeight: 400,
-              lineHeight: 1.2,
+              lineHeight: "40px",
               textAlign: "center",
               marginBottom: "16px",
             }}
           >
-            <span style={{ color: "#111827", textDecoration: "underline", textDecorationColor: "#111827", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Ready to Start Your</span>{" "}
-            <span style={{ color: "#FF4880" }}>Career with Beyond the View?</span>
+            <span style={{ color: "#111827", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Ready to Start</span>{" "}
+            <span style={{ color: "#FF4880" }}>Your Career with Beyond the View?</span>
           </h2>
 
           <p
@@ -241,14 +267,14 @@ export const JoinOurTeam: React.FC = () => {
         >
           {/* Col 1 — full */}
           <div
-            className="absolute flex flex-col"
+            className="absolute flex flex-col scroll-down-col"
             style={{
               right: `${HALF_OFFSET + IMG_SIZE + GAP}px`,
               top: "-50px",
               gap: `${GAP}px`,
             }}
           >
-            {rightCol1Images.map((src, i) => (
+            {rightCol1Repeated.map((src, i) => (
               <div
                 key={`right-col1-${i}`}
                 style={{
@@ -271,14 +297,14 @@ export const JoinOurTeam: React.FC = () => {
 
           {/* Col 2 — half cut off */}
           <div
-            className="absolute flex flex-col"
+            className="absolute flex flex-col scroll-up-col"
             style={{
               right: `${HALF_OFFSET}px`,
               top: "-85px",
               gap: `${GAP}px`,
             }}
           >
-            {rightCol2Images.map((src, i) => (
+            {rightCol2Repeated.map((src, i) => (
               <div
                 key={`right-col2-${i}`}
                 style={{
