@@ -110,11 +110,12 @@ export const Testimonials: React.FC = () => {
 
         {/* Subtitle */}
         <p
-          className="text-gray-400 tracking-wide"
+          className="text-gray-500 tracking-wide font-bold"
           style={{
             fontFamily: "'Georgia', serif",
             fontSize: "18px",
             fontStyle: "italic",
+            fontWeight: 700,
             marginTop: "64px",
             marginBottom: "64px"
           }}
@@ -164,11 +165,11 @@ export const Testimonials: React.FC = () => {
                 </div>
 
                 <p
-                  className="text-center text-gray-900 leading-relaxed testimonials-quote-text"
+                  className="text-center text-[#010C6F] leading-relaxed testimonials-quote-text font-bold"
                   style={{
                     fontFamily: "'Georgia', serif",
                     fontSize: "26px",
-                    fontWeight: 400,
+                    fontWeight: 700,
                     textAlign: "justify",
                     textAlignLast: "center",
                     maxWidth: "900px",

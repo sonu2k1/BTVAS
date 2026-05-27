@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
 
 const links = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "#about" },
   { label: "Our Services", href: "#services" },
-  { label: "Career", href: "#team" },
+  { label: "Career", href: "#career" },
   { label: "Resources", href: "#faq" },
   { label: "Contact Us", href: "#contact" },
 ];
@@ -32,9 +32,30 @@ export const Header: React.FC = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
+  const isScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      if (isScrollingRef.current) return;
+
+      const isBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 120;
+
+      if (isBottom) {
+        const bottomIds = ["contact", "faq", "career"];
+        for (const id of bottomIds) {
+          const el = document.getElementById(id);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+              setActiveSection(id);
+              return;
+            }
+          }
+        }
+      }
 
       const sections = links.map((l) => l.href.replace("#", ""));
       let current = sections[0];
@@ -42,7 +63,7 @@ export const Header: React.FC = () => {
         const el = document.getElementById(id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          if (rect.top <= 120) current = id;
+          if (rect.top <= 180) current = id;
         }
       }
       setActiveSection(current);
@@ -50,7 +71,10 @@ export const Header: React.FC = () => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    };
   }, []);
 
   const handleNavClick = useCallback(
@@ -58,6 +82,19 @@ export const Header: React.FC = () => {
       e.preventDefault();
       setMobileOpen(false);
       const id = href.replace("#", "");
+
+      // Immediately highlight the clicked nav item
+      setActiveSection(id);
+
+      // Disable scroll spy updating active section during smooth scrolling transition
+      isScrollingRef.current = true;
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+      scrollTimeoutRef.current = setTimeout(() => {
+        isScrollingRef.current = false;
+      }, 1000);
+
       const el = document.getElementById(id);
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -259,8 +296,8 @@ export const Header: React.FC = () => {
           <div className="cta-btn-wrapper hidden lg:block">
             <div className="cta-btn-shadow" />
             <a
-              href="#team"
-              onClick={(e) => handleNavClick(e, "#team")}
+              href="#career"
+              onClick={(e) => handleNavClick(e, "#career")}
               className="cta-btn"
             >
               Join Our Team
@@ -350,8 +387,8 @@ export const Header: React.FC = () => {
                     }}
                   />
                   <a
-                    href="#team"
-                    onClick={(e) => handleNavClick(e, "#team")}
+                    href="#career"
+                    onClick={(e) => handleNavClick(e, "#career")}
                     className="cta-btn"
                     style={{
                       position: "absolute",

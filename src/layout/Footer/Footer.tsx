@@ -18,10 +18,10 @@ const ChevronDoubleRight = () => (
 const exploreLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Service", href: "#service" },
+  { label: "Services", href: "#services" },
   { label: "Contact", href: "#contact" },
   { label: "Career", href: "#career" },
-  { label: "Help Center", href: "#help" },
+  { label: "Help Center", href: "#faq" },
 ];
 
 export const Footer: React.FC = () => {
@@ -48,7 +48,8 @@ export const Footer: React.FC = () => {
 
       {/* ── DESKTOP VIEW: 100% EXACT ORIGINAL MARKUP & HEIGHT ── */}
       <footer
-        className="desktop-footer bg-[#010C6F] text-white justify-center overflow-hidden w-full"
+        id="contact"
+        className="desktop-footer bg-[#010C6F] text-white justify-center overflow-hidden w-full scroll-mt-6"
         style={{ height: "445px" }}
       >
         <div
@@ -94,20 +95,32 @@ export const Footer: React.FC = () => {
             <div className="flex flex-col" style={{ gap: "32px" }}>
               {/* Row 1: Social */}
               <div className="flex items-center" style={{ gap: "40px" }}>
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px]" style={{ width: "32px", height: "32px" }}>
-                    <Image src="/icons/Link.svg" alt="Instagram" width={16} height={16} />
-                  </div>
-                  <span style={{ fontSize: "12px", color: "rgba(255, 255, 255, 0.9)" }}>/Beyondtheviewautismservices</span>
+                <div className="flex items-center gap-4">
+                  <a
+                    href="https://www.instagram.com/Beyondtheviewautismservices"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center bg-[#FF4880] rounded-[10px] transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#e03570]"
+                    style={{ width: "44px", height: "44px" }}
+                  >
+                    <Image src="/icons/Link.svg" alt="Instagram" width={22} height={22} />
+                  </a>
+                  <span style={{ fontSize: "13px", fontWeight: 500, color: "rgba(255, 255, 255, 0.95)" }}>/Beyondtheviewautismservices</span>
                 </div>
 
-                <div style={{ width: "1px", height: "24px", background: "rgba(255, 255, 255, 0.2)" }} />
+                <div style={{ width: "1px", height: "32px", background: "rgba(255, 255, 255, 0.2)" }} />
 
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px]" style={{ width: "32px", height: "32px" }}>
-                    <Image src="/icons/FB.svg" alt="Facebook" width={16} height={16} />
-                  </div>
-                  <span style={{ fontSize: "12px", color: "rgba(255, 255, 255, 0.9)" }}>@beyondtheviewaba</span>
+                <div className="flex items-center gap-4">
+                  <a
+                    href="https://www.facebook.com/beyondtheviewaba"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center bg-[#FF4880] rounded-[10px] transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#e03570]"
+                    style={{ width: "44px", height: "44px" }}
+                  >
+                    <Image src="/icons/FB.svg" alt="Facebook" width={22} height={22} />
+                  </a>
+                  <span style={{ fontSize: "13px", fontWeight: 500, color: "rgba(255, 255, 255, 0.95)" }}>@beyondtheviewaba</span>
                 </div>
               </div>
 
@@ -186,7 +199,8 @@ export const Footer: React.FC = () => {
 
       {/* ── MOBILE / TABLET VIEW: DYNAMIC & FLUID STACK ── */}
       <footer 
-        className="mobile-footer bg-[#010C6F] text-white flex-col w-full"
+        id="contact"
+        className="mobile-footer bg-[#010C6F] text-white flex-col w-full scroll-mt-6"
         style={{
           padding: "48px 24px",
           boxSizing: "border-box",
@@ -263,19 +277,31 @@ export const Footer: React.FC = () => {
         {/* Contact info in Mobile */}
         <div style={{ display: "flex", flexDirection: "column", gap: "24px", width: "100%" }}>
           {/* Social Row */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px]" style={{ width: "32px", height: "32px", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <Image src="/icons/Link.svg" alt="Instagram" width={16} height={16} />
-              </div>
-              <span style={{ fontSize: "12px", color: "rgba(255, 255, 255, 0.9)", wordBreak: "break-all" }}>/Beyondtheviewautismservices</span>
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+              <a
+                href="https://www.instagram.com/Beyondtheviewautismservices"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center bg-[#FF4880] rounded-[10px] transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#e03570]"
+                style={{ width: "44px", height: "44px", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}
+              >
+                <Image src="/icons/Link.svg" alt="Instagram" width={22} height={22} />
+              </a>
+              <span style={{ fontSize: "13px", fontWeight: 500, color: "rgba(255, 255, 255, 0.95)", wordBreak: "break-all" }}>/Beyondtheviewautismservices</span>
             </div>
 
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <div className="flex items-center justify-center bg-[#FF4880] rounded-[8px]" style={{ width: "32px", height: "32px", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <Image src="/icons/FB.svg" alt="Facebook" width={16} height={16} />
-              </div>
-              <span style={{ fontSize: "12px", color: "rgba(255, 255, 255, 0.9)" }}>@beyondtheviewaba</span>
+            <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+              <a
+                href="https://www.facebook.com/beyondtheviewaba"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center bg-[#FF4880] rounded-[10px] transition-all duration-300 hover:scale-110 active:scale-95 hover:bg-[#e03570]"
+                style={{ width: "44px", height: "44px", flexShrink: 0, display: "flex", alignItems: "center", justifyContent: "center" }}
+              >
+                <Image src="/icons/FB.svg" alt="Facebook" width={22} height={22} />
+              </a>
+              <span style={{ fontSize: "13px", fontWeight: 500, color: "rgba(255, 255, 255, 0.95)" }}>@beyondtheviewaba</span>
             </div>
           </div>
 

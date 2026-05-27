@@ -32,13 +32,13 @@ const faqs = [
 ];
 
 const insuranceLogos = [
-  { src: "/images/logo-georgia-health-Photoroom.svg", alt: "Georgia Department of Community Health", width: 180, height: 74 },
+  // { src: "/images/logo-georgia-health-Photoroom.svg", alt: "Georgia Department of Community Health", width: 120, height: 74 },
   { src: "/images/logo-bcbs-Photoroom.svg", alt: "BlueCross BlueShield", width: 180, height: 74 },
-  { src: "/images/logo-unitedhealth-Photoroom.svg", alt: "UnitedHealth Group", width: 180, height: 74 },
-  { src: "/images/logo-caresource-Photoroom.svg", alt: "CareSource", width: 180, height: 74 },
-  { src: "/images/Molina.png", alt: "Molina Healthcare", width: 230, height: 75 },
+  { src: "/images/United.png", alt: "UnitedHealth Group", width: 100, height: 30 },
+  { src: "/images/CareSource.png", alt: "CareSource", width: 150, height: 74 },
+  { src: "/images/Molina.png", alt: "Molina Healthcare", width: 200, height: 75 },
   { src: "/images/Georgie.png", alt: "Georgie", width: 153, height: 74 },
-  { src: "/images/Amerigroup.png", alt: "Amerigroup", width: 240, height: 75 },
+  { src: "/images/Amerigroup.png", alt: "Amerigroup", width: 200, height: 75 },
 ];
 
 export const FAQ: React.FC = () => {
@@ -122,7 +122,8 @@ export const FAQ: React.FC = () => {
       `}</style>
       {/* ── FAQ SECTION ── */}
       <section
-        className="bg-white flex items-center justify-center flex-shrink-0 faq-section"
+        id="faq"
+        className="bg-white flex items-center justify-center flex-shrink-0 faq-section scroll-mt-6"
         style={{ width: "1440px", padding: "60px 0 0 0", borderBottom: "1px solid #E5E7EB" }}
       >
         <div

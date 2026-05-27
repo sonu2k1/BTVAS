@@ -266,7 +266,7 @@ export const GettingStarted: React.FC = () => {
       </section>
 
       {/* ── MOBILE / TABLET VIEW: DYNAMIC FLUID & RESPONSIVE (Visible below lg) ── */}
-      <section 
+      <section
         className="flex lg:hidden flex-col w-full"
         style={{
           padding: "48px 20px",
@@ -363,8 +363,8 @@ export const GettingStarted: React.FC = () => {
         <div style={{ height: "16px" }} />
 
         {/* Mobile Vertical Timeline */}
-        <div 
-          style={{ 
+        <div
+          style={{
             position: "relative",
             display: "flex",
             flexDirection: "column",
@@ -376,19 +376,19 @@ export const GettingStarted: React.FC = () => {
         >
           {/* Vertical connecting line */}
           <div
-            style={{ 
+            style={{
               position: "absolute",
               left: "19px",
               top: "14px",
               bottom: "14px",
               width: "2px",
-              backgroundColor: "#FF4880" 
+              backgroundColor: "#FF4880"
             }}
           />
 
           {steps.map((step) => (
-            <div 
-              key={step.number} 
+            <div
+              key={step.number}
               style={{
                 position: "relative",
                 display: "flex",

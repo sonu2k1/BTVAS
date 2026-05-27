@@ -68,7 +68,8 @@ export const JoinOurTeam: React.FC = () => {
         }
       `}</style>
       <section
-        className="relative bg-white flex items-center justify-between overflow-hidden join-team-section"
+        id="career"
+        className="relative bg-white flex items-center justify-between overflow-hidden join-team-section scroll-mt-6"
         style={{
           width: "1440px",
           height: "455px",
@@ -158,8 +159,8 @@ export const JoinOurTeam: React.FC = () => {
               marginBottom: "16px",
             }}
           >
-            <span style={{ color: "#111827", textDecoration: "underline", textDecorationColor: "#111827", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Be the Reason</span>{" "}
-            <span style={{ color: "#FF4880" }}>Someone Smiles</span>
+            <span style={{ color: "#111827", textDecoration: "underline", textDecorationColor: "#111827", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Ready to Start Your</span>{" "}
+            <span style={{ color: "#FF4880" }}>Career with Beyond the View?</span>
           </h2>
 
           <p
@@ -197,7 +198,7 @@ export const JoinOurTeam: React.FC = () => {
               }}
             />
             <a
-              href="#team"
+              href="#career"
               className="join-team-btn"
               style={{
                 position: "absolute",
