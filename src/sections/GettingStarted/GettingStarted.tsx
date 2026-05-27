@@ -10,6 +10,8 @@ export const GettingStarted: React.FC = () => {
   return (
     <div style={{ width: "100%", backgroundColor: "#753DBE" }}>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
         .get-started-btn-wrapper {
           position: relative;
           width: 216px;
@@ -100,10 +102,10 @@ export const GettingStarted: React.FC = () => {
             </p>
             <h2
               style={{
-                fontFamily: "'Georgia', serif",
+                fontFamily: "'Mochiy Pop One', sans-serif",
                 fontSize: "36px",
-                fontWeight: 800,
-                lineHeight: 1,
+                fontWeight: 400,
+                lineHeight: 1.2,
                 margin: 0,
               }}
             >
@@ -276,10 +278,10 @@ export const GettingStarted: React.FC = () => {
             </p>
             <h2
               style={{
-                fontFamily: "'Georgia', serif",
+                fontFamily: "'Mochiy Pop One', sans-serif",
                 fontSize: "32px",
-                fontWeight: 800,
-                lineHeight: 1.1,
+                fontWeight: 400,
+                lineHeight: 1.2,
                 margin: 0,
               }}
             >
