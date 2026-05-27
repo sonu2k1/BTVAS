@@ -82,6 +82,16 @@ export const OurServices: React.FC = () => {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Prompt&display=swap');
 
+        .services-card {
+          cursor: pointer;
+        }
+        .services-card-img-wrap img {
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        .services-card:hover .services-card-img-wrap img {
+          transform: scale(1.06) !important;
+        }
+
         @media (max-width: 1024px) {
           .services-section {
             width: 100% !important;
@@ -183,13 +193,22 @@ export const OurServices: React.FC = () => {
         >
           <AnimatePresence mode="popLayout" custom={direction}>
             {visible.map((service, i) => (
-              <motion.div
+               <motion.div
                 key={service.title}
                 custom={direction}
                 initial={{ opacity: 0, x: direction > 0 ? 80 : -80 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: direction > 0 ? -80 : 80 }}
-                transition={{ duration: 0.35, ease: "easeInOut", delay: i * 0.05 }}
+                whileHover={{
+                  y: -10,
+                  scale: 1.02,
+                  filter: "drop-shadow(0px 16px 32px rgba(0, 0, 0, 0.10))",
+                }}
+                transition={{
+                  x: { duration: 0.35, ease: "easeInOut", delay: i * 0.05 },
+                  opacity: { duration: 0.35, ease: "easeInOut", delay: i * 0.05 },
+                  default: { type: "spring", stiffness: 300, damping: 20 }
+                }}
                 className="flex flex-col items-center bg-transparent flex-shrink-0 services-card relative overflow-visible"
                 style={{
                   width: "410px",
