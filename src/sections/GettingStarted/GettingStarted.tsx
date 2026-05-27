@@ -93,9 +93,12 @@ export const GettingStarted: React.FC = () => {
               style={{
                 fontFamily: "'Prompt', sans-serif",
                 fontSize: "14px",
-                color: "rgba(255,255,255,0.75)",
+                color: "rgba(255, 255, 255, 0.6)",
+                width: "306px",
+                height: "26px",
                 marginBottom: "4px",
                 letterSpacing: "0.02em",
+                margin: 0,
               }}
             >
               {"Steps Toward Your Child's Care"}
@@ -269,9 +272,12 @@ export const GettingStarted: React.FC = () => {
               style={{
                 fontFamily: "'Prompt', sans-serif",
                 fontSize: "14px",
-                color: "rgba(255,255,255,0.75)",
+                color: "rgba(255, 255, 255, 0.6)",
+                width: "306px",
+                height: "26px",
                 marginBottom: "4px",
                 letterSpacing: "0.02em",
+                margin: 0,
               }}
             >
               {"Steps Toward Your Child's Care"}
