@@ -70,7 +70,7 @@ export const FAQ: React.FC = () => {
         .insurance-logo-wrapper img {
           width: auto !important;
           height: 44px !important;
-          max-width: 110px;
+          max-width: 180px;
           object-fit: contain;
         }
 
@@ -96,7 +96,7 @@ export const FAQ: React.FC = () => {
 
           .insurance-logo-wrapper img {
             height: 52px !important;
-            max-width: 130px;
+            max-width: 220px;
           }
 
           .insurance-marquee-track {
@@ -121,7 +121,7 @@ export const FAQ: React.FC = () => {
 
           .insurance-logo-wrapper img {
             height: 60px !important;
-            max-width: 150px;
+            max-width: 260px;
           }
         }
 
@@ -141,7 +141,7 @@ export const FAQ: React.FC = () => {
 
           .insurance-logo-wrapper img {
             height: 68px !important;
-            max-width: 170px;
+            max-width: 300px;
           }
         }
 
@@ -580,37 +580,37 @@ export const FAQ: React.FC = () => {
             {faqs.map((faq, i) => {
               const isOpen = openIndex === i;
               return (
-              <div
-                key={i}
-                className={`faq-accordion-item${isOpen ? " is-open" : ""}`}
-              >
-                <button
-                  type="button"
-                  onClick={() => toggle(i)}
-                  className="faq-question-btn"
-                  aria-expanded={isOpen}
-                >
-                  <span className="faq-question-text">{faq.question}</span>
-                  <span className={`faq-toggle-icon${isOpen ? " is-open" : ""}`} aria-hidden>
-                    +
-                  </span>
-                </button>
-
                 <div
-                  className="faq-answer-wrap"
-                  style={{
-                    gridTemplateRows: isOpen ? "1fr" : "0fr",
-                  }}
+                  key={i}
+                  className={`faq-accordion-item${isOpen ? " is-open" : ""}`}
                 >
-                  <div className="faq-answer-inner">
-                    <div className="faq-answer-divider" aria-hidden="true" />
-                    <div className={`faq-answer-text${isOpen ? "" : " is-closed"}`}>
-                      {faq.answer}
+                  <button
+                    type="button"
+                    onClick={() => toggle(i)}
+                    className="faq-question-btn"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="faq-question-text">{faq.question}</span>
+                    <span className={`faq-toggle-icon${isOpen ? " is-open" : ""}`} aria-hidden>
+                      +
+                    </span>
+                  </button>
+
+                  <div
+                    className="faq-answer-wrap"
+                    style={{
+                      gridTemplateRows: isOpen ? "1fr" : "0fr",
+                    }}
+                  >
+                    <div className="faq-answer-inner">
+                      <div className="faq-answer-divider" aria-hidden="true" />
+                      <div className={`faq-answer-text${isOpen ? "" : " is-closed"}`}>
+                        {faq.answer}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
+              );
             })}
           </div>
         </div>
@@ -632,8 +632,7 @@ export const FAQ: React.FC = () => {
                   width={logo.width}
                   height={logo.height}
                   className="object-contain"
-                  style={logo.src.includes("bcbs") ? { transform: "scale(2.3)", transformOrigin: "center" } : undefined}
-                  sizes="(max-width: 480px) 110px, (max-width: 768px) 130px, 170px"
+                  sizes="(max-width: 480px) 150px, (max-width: 768px) 200px, 300px"
                 />
               </div>
             ))}
@@ -645,8 +644,7 @@ export const FAQ: React.FC = () => {
                   width={logo.width}
                   height={logo.height}
                   className="object-contain"
-                  style={logo.src.includes("bcbs") ? { transform: "scale(2.3)", transformOrigin: "center" } : undefined}
-                  sizes="(max-width: 480px) 110px, (max-width: 768px) 130px, 170px"
+                  sizes="(max-width: 480px) 150px, (max-width: 768px) 200px, 300px"
                 />
               </div>
             ))}
