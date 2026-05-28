@@ -337,19 +337,7 @@ export const OurServices: React.FC = () => {
         </div>
       </div>
 
-      <div
-        className="absolute pointer-events-none select-none testimonials-decor"
-        style={{ bottom: "8px", right: "48px", zIndex: 30 }}
-        aria-hidden
-      >
-        <Image
-          src="/images/toy-crocodile.png"
-          alt="Decorative toy crocodile"
-          width={195}
-          height={83}
-          style={{ width: "194.43px", height: "82.01px" }}
-        />
-      </div>
+
 
       <ServiceDetailModal
         isOpen={isModalOpen}
