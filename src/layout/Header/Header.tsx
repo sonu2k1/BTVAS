@@ -262,7 +262,12 @@ export const Header: React.FC = () => {
       <div className="w-full flex flex-col items-center">
         <nav className={`custom-navbar mx-auto w-full ${scrolled ? 'scrolled' : ''}`}>
           {/* LOGO */}
-          <div className="logo-area">
+          <a
+            href="#home"
+            onClick={(e) => handleNavClick(e, "#home")}
+            className="logo-area"
+            style={{ textDecoration: "none", cursor: "pointer" }}
+          >
             <Image
               src="/logo.png"
               alt="Beyond the View Autism Services"
@@ -272,7 +277,7 @@ export const Header: React.FC = () => {
               style={{ width: "auto" }}
               priority
             />
-          </div>
+          </a>
 
           {/* NAV LINKS */}
           <ul className="nav-links">
