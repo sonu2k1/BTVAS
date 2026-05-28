@@ -75,6 +75,7 @@ export const Modal: React.FC<ModalProps> = ({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.82, y: 40 }}
             transition={{ type: "spring", stiffness: 220, damping: 20 }}
+            onClick={(e) => e.stopPropagation()}
             className={cn(
               "relative w-full bg-white rounded-[28px] shadow-2xl border border-gray-100 overflow-hidden z-10 flex flex-col max-h-[90vh]",
               sizes[size],
