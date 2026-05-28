@@ -24,7 +24,7 @@ export default function Home() {
         <div
           className="w-full max-w-[1688px] hero-bg-img"
           style={{
-            height: "912px",
+            height: "850px",
             backgroundImage: "url('/images/background.webp')",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
@@ -41,7 +41,7 @@ export default function Home() {
           <Header />
         </div>
 
-        <div className="relative w-full flex justify-center hero-container" style={{ minHeight: "calc(912px - 140px)" }}>
+        <div className="relative w-full flex justify-center hero-container" style={{ minHeight: "calc(850px - 140px)" }}>
           <Hero />
         </div>
 
