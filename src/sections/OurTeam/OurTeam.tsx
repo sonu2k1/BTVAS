@@ -69,12 +69,12 @@ const teamMembers = [
   },
   {
     id: 7,
-    name: "Aliciante Parker",
+    name: "Alicante Parker",
     credentials: "BCBA, LBA",
     role: " ",
     image: "/images/team/Member-7.jpg",
     thumb: "/images/team/Member-7.jpg",
-    quote: `"Compassion is at the heart of what we do."`,
+    quote: `"Becoming a BCBA is more than a career for me—it’s a purposeful commitment to supporting meaningful growth and improving quality of life for others. I am passionate about helping individuals with autism and other developmental differences build skills, reach milestones, and access opportunities within their communities. Seeing that progress is what drives my work and reinforces my commitment to making a lasting, positive impact.\n\nWhitney Davis My “why” for becoming a BCBA is rooted in my passion for helping children grow into their fullest potential, no matter what path they choose. I want to provide them with the tools, support, and encouragement they need to thrive in ways that are meaningful to them. Being part of their progress and celebrating their success is what drives me every day."`,
     category: ["Clinical Excellence Team", "Team Leads & Specialists"],
   },
   {
@@ -188,7 +188,7 @@ const clinicalExcellenceGroup1 = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2474.jpg",
   thumb: "/images/Groups/0O3A2474.jpg",
-  quote: `Our clinical excellence team of Board Certified Behavior Analysts (BCBAs) holds themselves to the highest standards of evidence-based practice, conducting thorough developmental assessments and tailoring individualized programs to nurture every child's full potential.\n\nTeam Members:\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Alexander Jones (RBT Lead, Trainer)\n• Aliciante Parker (BCBA, LBA)\n• Keajia Campbell (BCBA, LBA)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• Catarras Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
+  quote: `Our clinical excellence team of Board Certified Behavior Analysts (BCBAs) holds themselves to the highest standards of evidence-based practice, conducting thorough developmental assessments and tailoring individualized programs to nurture every child's full potential.\n\nTeam Members:\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Alexander Jones (RBT Lead, Trainer)\n• Alicante Parker (BCBA, LBA)\n• Keajia Campbell (BCBA, LBA)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• Catarras Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
   category: "Clinical Excellence Team",
 };
 
@@ -199,7 +199,7 @@ const clinicalExcellenceGroup2 = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2486.jpg",
   thumb: "/images/Groups/0O3A2486.jpg",
-  quote: `We collaborate closely with caregivers and providers to ensure that learning is integrated, comprehensive, and consistent across home, clinic, and community environments.\n\nTeam Members:\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Alexander Jones (RBT Lead, Trainer)\n• Aliciante Parker (BCBA, LBA)\n• Keajia Campbell (BCBA, LBA)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• Catarras Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
+  quote: `We collaborate closely with caregivers and providers to ensure that learning is integrated, comprehensive, and consistent across home, clinic, and community environments.\n\nTeam Members:\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Alexander Jones (RBT Lead, Trainer)\n• Alicante Parker (BCBA, LBA)\n• Keajia Campbell (BCBA, LBA)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• Catarras Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
   category: "Clinical Excellence Team",
 };
 
@@ -210,7 +210,7 @@ const teamLeadsGroup = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2500.jpg",
   thumb: "/images/Groups/0O3A2500.jpg",
-  quote: `Our dedicated team of RBT Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy.\n\nTeam Members:\n• Danielle Strickland (Co-Founder, BCBA, LBA)\n• Sheneice Willis Lewis (Co-Founder, BCBA, LBA)\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Sheckeema Taylor (Director of Operations, Specialist)\n• Alexander Jones (RBT Lead, Trainer)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Aliciante Parker (Clinical Excellence)\n• Keajia Campbell (Clinical Excellence)\n• Kianna Jemison (College Park Clinic Coordinator)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• Catarras Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
+  quote: `Our dedicated team of RBT Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy.\n\nTeam Members:\n• Danielle Strickland (Co-Founder, BCBA, LBA)\n• Sheneice Willis Lewis (Co-Founder, BCBA, LBA)\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Sheckeema Taylor (Director of Operations, Specialist)\n• Alexander Jones (RBT Lead, Trainer)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Alicante Parker (Clinical Excellence)\n• Keajia Campbell (Clinical Excellence)\n• Kianna Jemison (College Park Clinic Coordinator)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• Catarras Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
   category: "Team Leads & Specialists",
 };
 
