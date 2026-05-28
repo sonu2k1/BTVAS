@@ -42,19 +42,19 @@ export const Testimonials: React.FC = () => {
   return (
     <section
       className="bg-white flex items-center justify-center testimonials-section"
-      style={{ width: "1440px", height: "630px", margin: "0 auto" }}
+      style={{ width: "1440px", height: "auto", margin: "0 auto", paddingTop: "0px", paddingBottom: "40px" }}
     >
       <style>{`
         @media (max-width: 1024px) {
           .testimonials-section {
             width: 100% !important;
             height: auto !important;
-            padding: 40px 16px !important;
+            padding: 20px 16px 40px !important;
           }
           .testimonials-card {
             width: 100% !important;
             height: auto !important;
-            padding: 24px 0 !important;
+            padding: 10px 0 !important;
           }
           .testimonials-decor {
             display: none !important;
@@ -97,17 +97,17 @@ export const Testimonials: React.FC = () => {
       {/* Testimonials card */}
       <div
         className="relative flex flex-col items-center justify-center testimonials-card"
-        style={{ width: "1340px", height: "580px" }}
+        style={{ width: "1340px", height: "auto", paddingTop: "0px" }}
       >
         {/* Quote icon */}
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center" style={{ marginTop: "10px" }}>
           <svg width="52" height="42" viewBox="0 0 52 42" fill="none">
             <text x="0" y="40" fontSize="52" fill="#E91E8C" fontFamily="Georgia, serif">
               ❝
             </text>
           </svg>
         </div>
-
+ 
         {/* Subtitle */}
         <p
           className="text-gray-500 tracking-wide font-bold"
@@ -116,8 +116,8 @@ export const Testimonials: React.FC = () => {
             fontSize: "18px",
             fontStyle: "italic",
             fontWeight: 700,
-            marginTop: "64px",
-            marginBottom: "64px"
+            marginTop: "16px",
+            marginBottom: "24px"
           }}
         >
           What parents say about us

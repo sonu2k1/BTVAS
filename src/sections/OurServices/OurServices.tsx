@@ -169,7 +169,7 @@ export const OurServices: React.FC = () => {
   return (
     <section
       className="bg-white flex flex-col items-center justify-start overflow-hidden relative services-section"
-      style={{ width: "100%", maxWidth: "1440px", height: "704.64px", margin: "0 auto" }}
+      style={{ width: "100%", maxWidth: "1440px", height: "540px", margin: "0 auto" }}
       id="services"
     >
       <style>{`
