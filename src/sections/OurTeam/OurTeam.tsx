@@ -44,7 +44,7 @@ const teamMembers = [
     role: "Specialist",
     image: "/images/team/Member-4.jpg",
     thumb: "/images/team/Member-4.jpg",
-    quote: `"Dedicated to making a difference every day."`,
+    quote: `"One of the most impactful moments in my ABA career was witnessing our very first graduation ceremony. It was incredibly meaningful because it represented the culmination of consistent, collaborative effort from an entire support system of caregivers, loved ones, BCBAs, RBTs, and administrators all working toward a child’s individualized goals. In that moment, it was impossible not to reflect on where each child began, the barriers they overcame, and the progress they achieved over time. It was a powerful reminder that if followed through, ABA works, especially here at Beyond The View Autism Services!"`,
     category: ["Operations Leadership Team", "Core Leadership Team", "Team Leads & Specialists"],
   },
   {
