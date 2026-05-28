@@ -83,7 +83,7 @@ export const FAQ: React.FC = () => {
           .insurance-banner {
             width: 100% !important;
             height: auto !important;
-            padding: 40px 0 !important;
+            padding: 40px 0 80px 0 !important;
           }
           .insurance-logo-wrapper {
             height: 50px !important;
