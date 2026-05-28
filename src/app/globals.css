@@ -91,5 +91,14 @@ a[href^="#"] {
   }
   .footer-divider {
     margin-top: -14px !important;
+    height: 35px !important;
+    overflow: hidden !important;
+  }
+  .footer-divider img {
+    width: 1440px !important;
+    max-width: none !important;
+    height: 90px !important;
+    object-fit: cover !important;
+    object-position: center top !important;
   }
 }
