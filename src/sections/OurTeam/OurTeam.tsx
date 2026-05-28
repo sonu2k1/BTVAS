@@ -136,7 +136,27 @@ const teamMembers = [
     thumb: "/images/team/Member-13.jpg",
     quote: `"Nurturing growth beyond the horizon."`,
     category: ["Clinical Excellence Team", "Team Leads & Specialists"],
-  }
+  },
+  {
+    id: 14,
+    name: "Omega Springer",
+    credentials: "RBT",
+    role: "Clinical Specialist ",
+    image: "/images/team/Member-14.jpeg",
+    thumb: "/images/team/Member-14.jpeg",
+    quote: `"Dedicated to helping every child thrive."`,
+    category: ["Team Leads & Specialists", "Clinical Excellence Team"],
+  },
+  {
+    id: 15,
+    name: "Kendall Davis",
+    credentials: "RBT Lead",
+    role: " ",
+    image: "/images/team/Member-15.png",
+    thumb: "/images/team/Member-15.png",
+    quote: `"Every step forward is a victory worth celebrating."`,
+    category: ["Team Leads & Specialists", "Clinical Excellence Team"],
+  },
 ];
 
 const coreLeadershipGroup = {
