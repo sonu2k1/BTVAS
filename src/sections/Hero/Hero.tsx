@@ -1,22 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import React from "react";
 import { HeroCard } from "./HeroCard";
 
-const IMAGES = ["/images/Hero-1.png", "/images/Hero-2.png"];
-
 export const Hero: React.FC = () => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % IMAGES.length);
-    }, 6000); // Changes image every 6 seconds
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section
       id="home"
@@ -43,27 +30,19 @@ export const Hero: React.FC = () => {
         }
       `}</style>
 
-      {/* Background Image Slideshow */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        {IMAGES.map((src, idx) => (
-          <motion.div
-            key={src}
-            initial={false}
-            animate={{ opacity: idx === index ? 1 : 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute inset-0 w-full h-full"
-            style={{ pointerEvents: "none" }}
-          >
-            <Image
-              src={src}
-              alt={`Hero background ${idx + 1}`}
-              fill
-              priority={idx === 0}
-              className="object-cover object-center"
-              sizes="100vw"
-            />
-          </motion.div>
-        ))}
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover object-center"
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        >
+          <source src="/Hero-Video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       {/* Subtle dark overlay for better text contrast */}
