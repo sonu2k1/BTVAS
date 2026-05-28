@@ -189,8 +189,8 @@ export const OurServices: React.FC = () => {
 
   return (
     <section
-      className="bg-white flex flex-col items-center justify-start overflow-hidden relative services-section"
-      style={{ width: "100%", maxWidth: "1440px", height: "540px", margin: "0 auto" }}
+      className="bg-white flex flex-col items-center justify-start overflow-hidden relative services-section site-section-root"
+      style={{ width: "100%", maxWidth: "1440px", height: "540px", margin: "0 auto", boxSizing: "border-box" }}
       id="services"
     >
       <style>{`
@@ -279,6 +279,24 @@ export const OurServices: React.FC = () => {
         @keyframes services-marquee-scroll {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
+        }
+
+        @media (min-width: 1025px) and (max-width: 1439px) {
+          .services-section {
+            height: auto !important;
+            padding: 32px clamp(16px, 3vw, 40px) 40px !important;
+          }
+          .services-card {
+            width: min(360px, 88vw) !important;
+            max-width: 360px !important;
+          }
+          .services-card-body {
+            width: 100% !important;
+          }
+          .services-card-img-wrap {
+            width: 100% !important;
+            max-width: 100% !important;
+          }
         }
 
         @media (max-width: 1024px) {

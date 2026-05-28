@@ -80,6 +80,23 @@ export const CoreValues: React.FC = () => {
           z-index: 2;
         }
 
+        @media (min-width: 1025px) and (max-width: 1439px) {
+          .core-values-section {
+            height: auto !important;
+            padding: 48px clamp(24px, 4vw, 56px) !important;
+          }
+          .core-values-row {
+            width: 100% !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 20px !important;
+          }
+          .val-card {
+            width: calc(50% - 12px) !important;
+            max-width: 290px !important;
+          }
+        }
+
         @media (max-width: 1024px) {
           .core-values-section {
             width: 100% !important;
@@ -122,9 +139,10 @@ export const CoreValues: React.FC = () => {
 
       <section
         id="values"
-        className="core-values-section"
+        className="core-values-section site-section-root"
         style={{
-          width: "1440px",
+          width: "100%",
+          maxWidth: "1440px",
           height: "552px",
           backgroundColor: "#faf6f0",
           display: "flex",
@@ -133,7 +151,7 @@ export const CoreValues: React.FC = () => {
           justifyContent: "center",
           gap: "24px",
           boxSizing: "border-box",
-          padding: "0 104px",
+          padding: "0 clamp(16px, 7vw, 104px)",
           margin: "0 auto",
         }}
       >
@@ -156,9 +174,10 @@ export const CoreValues: React.FC = () => {
 
         {/* CARDS ROW */}
         <div
-          className="core-values-row"
+          className="core-values-row site-inner-root"
           style={{
-            width: "1232px",
+            width: "100%",
+            maxWidth: "1232px",
             height: "365px",
             display: "flex",
             gap: "20px",

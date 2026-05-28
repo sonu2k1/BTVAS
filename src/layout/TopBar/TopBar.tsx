@@ -87,6 +87,21 @@ export const TopBar: React.FC = () => {
           display: none;
         }
 
+        .topbar-desktop {
+          width: 100%;
+          max-width: 1400px;
+        }
+
+        @media (min-width: 1025px) and (max-width: 1279px) {
+          .topbar-desktop {
+            padding: 0 16px !important;
+          }
+          .marquee-wrapper {
+            max-width: 360px !important;
+            flex: 1 1 auto !important;
+          }
+        }
+
         @media (max-width: 1024px) {
           .topbar-desktop {
             display: none !important;
@@ -105,7 +120,7 @@ export const TopBar: React.FC = () => {
       {/* ── DESKTOP TopBar ── */}
       <div
         className="flex items-center justify-between overflow-hidden shrink-0 topbar-desktop"
-        style={{ width: "1400px", height: "33px", padding: "0 10px" }}
+        style={{ height: "33px", padding: "0 10px" }}
       >
         {/* LEFT */}
         <div className="flex items-center gap-2 whitespace-nowrap">

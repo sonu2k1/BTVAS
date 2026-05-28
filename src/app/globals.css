@@ -82,14 +82,85 @@ a[href^="#"] {
 }
 
 
-/* Page Layout responsive fixes for production-level architecture */
+/* ── Site-wide responsive layout ── */
+.site-section-root {
+  width: 100% !important;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.site-inner-root {
+  width: 100% !important;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.site-inner-root--1340 {
+  max-width: 1340px;
+}
+
+.site-inner-root--wide {
+  max-width: 1380px;
+}
+
+/* Tablet landscape / small desktop — fluid inner wrappers */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .site-section-root {
+    padding-left: clamp(24px, 4vw, 56px);
+    padding-right: clamp(24px, 4vw, 56px);
+  }
+
+  .mission-wrapper,
+  .focus-hours-wrapper,
+  .team-wrapper,
+  .visionaries-heading,
+  .visionaries-row,
+  .core-values-row,
+  .testimonials-card,
+  .testimonials-row,
+  .testimonials-slider,
+  .join-team-middle-content,
+  .hero-card-outer,
+  .hero-card-inner,
+  .hero-card-content {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .focus-hours-wrapper {
+    gap: clamp(32px, 5vw, 80px) !important;
+  }
+
+  .focus-left {
+    width: auto !important;
+    flex: 1 1 420px !important;
+    min-width: 0 !important;
+  }
+
+  .cta-banner-section {
+    width: calc(100% - 48px) !important;
+    max-width: 1280px !important;
+    margin-inline: auto !important;
+  }
+
+  .topbar-desktop {
+    width: calc(100% - 32px) !important;
+    max-width: 1400px !important;
+  }
+}
+
+/* Page Layout responsive fixes */
 @media (max-width: 1024px) {
   .hero-bg-img {
-    height: 650px !important;
+    height: clamp(520px, 70vh, 650px) !important;
   }
 
   .hero-container {
-    min-height: 480px !important;
+    min-height: clamp(420px, 55vh, 520px) !important;
   }
 
   .footer-divider {
@@ -97,5 +168,29 @@ a[href^="#"] {
     margin-top: -14px;
     margin-bottom: 0px;
     top: 0px;
+  }
+
+  .site-section-root,
+  .site-inner-root {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-bg-img {
+    height: clamp(480px, 65vh, 580px) !important;
+  }
+
+  .hero-container {
+    min-height: clamp(380px, 50vh, 480px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-section-root,
+  .site-inner-root {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }

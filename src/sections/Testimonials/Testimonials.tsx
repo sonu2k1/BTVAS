@@ -24,7 +24,7 @@ export const Testimonials: React.FC = () => {
   const variants = {
     enter: (dir: number) => ({
       opacity: 0,
-      x: dir > 0 ? 282 : -282,
+      x: dir > 0 ? 120 : -120,
       scale: 0.96,
     }),
     center: {
@@ -34,15 +34,15 @@ export const Testimonials: React.FC = () => {
     },
     exit: (dir: number) => ({
       opacity: 0,
-      x: dir > 0 ? -282 : 282,
+      x: dir > 0 ? -120 : 120,
       scale: 0.96,
     }),
   };
 
   return (
     <section
-      className="bg-white flex items-center justify-center testimonials-section"
-      style={{ width: "1440px", height: "auto", margin: "0 auto", paddingTop: "0px", paddingBottom: "40px" }}
+      className="bg-white flex items-center justify-center testimonials-section site-section-root"
+      style={{ width: "100%", maxWidth: "1440px", height: "auto", margin: "0 auto", paddingTop: "0px", paddingBottom: "40px", boxSizing: "border-box" }}
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:wght@100..400&family=Prompt:wght@400&display=swap');
@@ -105,6 +105,22 @@ export const Testimonials: React.FC = () => {
           align-items: flex-start;
           justify-content: center;
           width: 100%;
+        }
+
+        @media (min-width: 1025px) and (max-width: 1439px) {
+          .testimonials-card {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            min-height: 520px !important;
+          }
+          .testimonials-slider {
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+          .testimonials-quote-text {
+            max-width: 100% !important;
+          }
         }
 
         @media (max-width: 1024px) {
@@ -170,8 +186,8 @@ export const Testimonials: React.FC = () => {
       `}</style>
       {/* Testimonials card */}
       <div
-        className="relative flex flex-col items-center testimonials-card"
-        style={{ width: "1340px", height: "580px" }}
+        className="relative flex flex-col items-center testimonials-card site-inner-root site-inner-root--1340"
+        style={{ width: "100%", maxWidth: "1340px", height: "580px" }}
       >
         <div className="testimonials-header">
           <div className="flex flex-col items-center">
@@ -201,8 +217,8 @@ export const Testimonials: React.FC = () => {
 
           {/* Animated quote */}
           <div
-            className="overflow-hidden testimonials-slider"
-            style={{ width: "1100px" }}
+            className="overflow-hidden testimonials-slider flex-1 min-w-0"
+            style={{ width: "100%", maxWidth: "1100px" }}
           >
             <AnimatePresence custom={direction} mode="wait">
               <motion.div
