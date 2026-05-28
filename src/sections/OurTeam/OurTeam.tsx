@@ -329,7 +329,13 @@ export const OurTeam: React.FC = () => {
             height: 213px !important;
             border-radius: 20px !important;
           }
+          .team-desc-container {
+            width: 100% !important;
+            height: auto !important;
+            flex-shrink: 1 !important;
+          }
           .team-desc-wrap {
+            position: relative !important;
             width: 100% !important;
             height: auto !important;
             text-align: center !important;
@@ -563,6 +569,7 @@ export const OurTeam: React.FC = () => {
 
             {/* DESCRIPTION */}
             <div
+              className="team-desc-container"
               style={{
                 width: "524px",
                 height: "518px",
