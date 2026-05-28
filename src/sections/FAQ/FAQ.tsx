@@ -632,7 +632,7 @@ export const FAQ: React.FC = () => {
                   width={logo.width}
                   height={logo.height}
                   className="object-contain"
-                  style={logo.src.includes("bcbs") ? { transform: "scale(1.85)", transformOrigin: "center" } : undefined}
+                  style={logo.src.includes("bcbs") ? { transform: "scale(2.3)", transformOrigin: "center" } : undefined}
                   sizes="(max-width: 480px) 110px, (max-width: 768px) 130px, 170px"
                 />
               </div>
@@ -645,7 +645,7 @@ export const FAQ: React.FC = () => {
                   width={logo.width}
                   height={logo.height}
                   className="object-contain"
-                  style={logo.src.includes("bcbs") ? { transform: "scale(1.85)", transformOrigin: "center" } : undefined}
+                  style={logo.src.includes("bcbs") ? { transform: "scale(2.3)", transformOrigin: "center" } : undefined}
                   sizes="(max-width: 480px) 110px, (max-width: 768px) 130px, 170px"
                 />
               </div>
