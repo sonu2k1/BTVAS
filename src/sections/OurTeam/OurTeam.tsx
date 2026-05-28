@@ -34,7 +34,7 @@ const teamMembers = [
     role: "Clinical Lead",
     image: "/images/team/Member-3.jpg",
     thumb: "/images/team/Member-3.jpg",
-    quote: `"Every child deserves a champion."`,
+    quote: `"What excites me the most about ABA is being able to make a positive difference. I love supporting children and families in reaching goals that matter in their everyday lives."`,
     category: ["Team Leads & Specialists", "Clinical Excellence Team"],
   },
   {
@@ -54,7 +54,7 @@ const teamMembers = [
     role: "Trainer",
     image: "/images/team/Member-5.jpg",
     thumb: "/images/team/Member-5.jpg",
-    quote: `"Building bridges between families and progress."`,
+    quote: `"ABA allows me to help develop young minds while making a difference for those who need it. Being given the opportunity to make an impact big or small excites me most about ABA."`,
     category: ["Team Leads & Specialists", "Clinical Excellence Team"],
   },
   {
@@ -104,7 +104,7 @@ const teamMembers = [
     role: "Trainer and Clinical Specialist",
     image: "/images/team/Member-10.jpg",
     thumb: "/images/team/Member-10.jpg",
-    quote: `"Every family deserves compassionate care."`,
+    quote: `"What excites me the most about ABA is that I am able to spend every day living my purpose to make a difference in individuals lives and advocate for those who could not advocate for themselves. They didn’t choose this life, the life chose them."`,
     category: ["Team Leads & Specialists", "Clinical Excellence Team"],
   },
   {
@@ -154,7 +154,17 @@ const teamMembers = [
     role: " ",
     image: "/images/team/Member-15.png",
     thumb: "/images/team/Member-15.png",
-    quote: `"Every step forward is a victory worth celebrating."`,
+    quote: `"What excites most about ABA is getting to work closely with my clients, no matter where they’re starting from. I really love seeing those moments when things start to click, especially when they begin interacting with their peers in more natural and meaningful ways."`,
+    category: ["Team Leads & Specialists", "Clinical Excellence Team"],
+  },
+  {
+    id: 16,
+    name: "Jakini Worthy",
+    credentials: "RBT",
+    role: " ",
+    image: "/images/team/Member-16.png",
+    thumb: "/images/team/Member-16.png",
+    quote: `"What I love most about Applied Behavior Analysis is seeing the progress in my clients and always believing in them. It’s incredibly rewarding to support their growth and watch them gain confidence and independence."`,
     category: ["Team Leads & Specialists", "Clinical Excellence Team"],
   },
 ];
@@ -210,7 +220,7 @@ const teamLeadsGroup = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2500.jpg",
   thumb: "/images/Groups/0O3A2500.jpg",
-  quote: `Our dedicated team of RBT Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy.\n\nTeam Members:\n• Danielle Strickland (Co-Founder, BCBA, LBA)\n• Sheneice Willis Lewis (Co-Founder, BCBA, LBA)\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Sheckeema Taylor (Director of Operations, Specialist)\n• Alexander Jones (RBT Lead, Trainer)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Alicante Parker (Clinical Excellence)\n• Keajia Campbell (Clinical Excellence)\n• Kianna Jamison (College Park Clinic Coordinator)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• CaTarrus Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
+  quote: `Our dedicated team of RBT Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy.\n\nTeam Members:\n• Danielle Strickland (Co-Founder, BCBA, LBA)\n• Sheneice Willis Lewis (Co-Founder, BCBA, LBA)\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Sheckeema Taylor (Director of Operations, Specialist)\n• Alexander Jones (RBT Lead, Trainer)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Alicante Parker (Clinical Excellence)\n• Keajia Campbell (Clinical Excellence)\n• Kianna Jamison (College Park Clinic Coordinator)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• CaTarrus Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)\n• Jakini Worthy (RBT)`,
   category: "Team Leads & Specialists",
 };
 
