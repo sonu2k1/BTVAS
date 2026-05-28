@@ -114,7 +114,7 @@ const teamMembers = [
     role: " ",
     image: "/images/team/Member-11.jpg",
     thumb: "/images/team/Member-11.jpg",
-    quote: `"We work together with families to achieve the best outcomes."`,
+    quote: `"I am motivated each day by the opportunity to be part of every client’s journey and to witness their growth and progress. My work is also driven by a desire to model dedication and purpose for my own children, showing them the value of meaningful work. Above all, I am committed to creating lasting change for my family by breaking generational barriers and building a stronger future."`,
     category: ["Clinical Excellence Team", "Team Leads & Specialists"],
   },
   {
