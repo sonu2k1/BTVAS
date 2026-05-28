@@ -34,7 +34,7 @@ const teamMembers = [
     role: "Clinical Lead",
     image: "/images/team/Member-3.jpg",
     thumb: "/images/team/Member-3.jpg",
-    quote: `"Every child deserves a champion."`,
+    quote: `"What excites me the most about ABA is being able to make a positive difference. I love supporting children and families in reaching goals that matter in their everyday lives."`,
     category: ["Team Leads & Specialists", "Clinical Excellence Team"],
   },
   {
