@@ -151,6 +151,13 @@ export const TopBar: React.FC = () => {
           (404)-406-7339
         </a>
         <span className="text-white opacity-30 text-[10px]">|</span>
+        <div className="marquee-wrapper" style={{ width: "200px", flexShrink: 0 }}>
+          <div className="marquee-track">
+            <span style={{ fontSize: "11px !important", fontWeight: "bold" }}>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;</span>
+            <span style={{ fontSize: "11px !important", fontWeight: "bold" }}>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;</span>
+          </div>
+        </div>
+        <span className="text-white opacity-30 text-[10px]">|</span>
         <a href="mailto:intake@btvas.com" className="flex items-center gap-1 text-white font-sans text-[11px] underline">
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
             <Image src="/icons/Email.svg" alt="Email" width={16} height={16} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
