@@ -104,7 +104,7 @@ const teamMembers = [
     role: "Trainer and Clinical Specialist",
     image: "/images/team/Member-10.jpg",
     thumb: "/images/team/Member-10.jpg",
-    quote: `"Every family deserves compassionate care."`,
+    quote: `"What excites me the most about ABA is that I am able to spend every day living my purpose to make a difference in individuals lives and advocate for those who could not advocate for themselves. They didn’t choose this life, the life chose them."`,
     category: ["Team Leads & Specialists", "Clinical Excellence Team"],
   },
   {
