@@ -42,7 +42,7 @@ export const Testimonials: React.FC = () => {
   return (
     <section
       className="bg-white flex items-center justify-center testimonials-section"
-      style={{ width: "1440px", height: "630px", margin: "0 auto" }}
+      style={{ width: "1440px", height: "auto", margin: "0 auto", paddingTop: "0px", paddingBottom: "40px" }}
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:wght@100..400&family=Prompt:wght@400&display=swap');
@@ -111,12 +111,12 @@ export const Testimonials: React.FC = () => {
           .testimonials-section {
             width: 100% !important;
             height: auto !important;
-            padding: 40px 16px !important;
+            padding: 20px 16px 40px !important;
           }
           .testimonials-card {
             width: 100% !important;
             height: auto !important;
-            padding: 24px 0 !important;
+            padding: 10px 0 !important;
           }
           .testimonials-decor {
             display: none !important;

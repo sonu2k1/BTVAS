@@ -24,7 +24,7 @@ const teamMembers = [
     role: "Co-Founder",
     image: "/images/team/Member-2.jpg",
     thumb: "/images/team/Member-2.jpg",
-    quote: `"Empowering families through structured, compassionate intervention strategies."`,
+    quote: `"As a CEO, what does “seeing beyond the diagnosis” mean to me? In one word—Faith.\n\nFaith is the ability to see beyond what is immediately in front of you. It is choosing to believe in a child’s potential, even when progress feels slow, uncertain, or unseen. It is recognizing that a diagnosis does not define a child’s future—it is only one part of their story.\n\nTo me, seeing beyond the diagnosis means holding a vision for who that child is destined to become. It means showing up every day, committed to the small steps that lead to meaningful growth—steps that may not always be visible in the moment, but are powerful over time.\n\nThere is a unique kind of joy in this work. Not just in the milestones we can measure, but in the belief that we are part of something bigger. We are helping shape confidence, independence, and possibility—one interaction, one breakthrough, one moment at a time.\n\nThis mindset is rooted in both hope and faith. Hope for what is possible, and faith in the journey it takes to get there.\n\nI also recognize that for many families, a diagnosis can feel overwhelming. It can come with fear, uncertainty, and questions about the future. But what I want families to understand is this: their child is not limited by a diagnosis. They are filled with potential, purpose, and GREATNESS.\n\nIn many ways, these families are raising individuals who will defy expectations, rewrite narratives, and show the world new perspectives—true superheroes in their own right.\n\nAnd our role is to walk alongside them—to believe when it’s hard, to support when it’s needed, and to never lose sight of what’s possible.\n\nBecause seeing beyond the diagnosis is not just what we do—it’s who we are."`,
     category: ["Core Leadership Team", "Operations Leadership Team", "Team Leads & Specialists"],
   },
   {
@@ -34,7 +34,7 @@ const teamMembers = [
     role: "Clinical Lead",
     image: "/images/team/Member-3.jpg",
     thumb: "/images/team/Member-3.jpg",
-    quote: `"Every child deserves a champion."`,
+    quote: `"What excites me the most about ABA is being able to make a positive difference. I love supporting children and families in reaching goals that matter in their everyday lives."`,
     category: ["Team Leads & Specialists", "Clinical Excellence Team"],
   },
   {
@@ -44,7 +44,7 @@ const teamMembers = [
     role: "Specialist",
     image: "/images/team/Member-4.jpg",
     thumb: "/images/team/Member-4.jpg",
-    quote: `"Dedicated to making a difference every day."`,
+    quote: `"One of the most impactful moments in my ABA career was witnessing our very first graduation ceremony. It was incredibly meaningful because it represented the culmination of consistent, collaborative effort from an entire support system of caregivers, loved ones, BCBAs, RBTs, and administrators all working toward a child’s individualized goals. In that moment, it was impossible not to reflect on where each child began, the barriers they overcame, and the progress they achieved over time. It was a powerful reminder that if followed through, ABA works, especially here at Beyond The View Autism Services!"`,
     category: ["Operations Leadership Team", "Core Leadership Team", "Team Leads & Specialists"],
   },
   {
@@ -54,7 +54,7 @@ const teamMembers = [
     role: "Trainer",
     image: "/images/team/Member-5.jpg",
     thumb: "/images/team/Member-5.jpg",
-    quote: `"Building bridges between families and progress."`,
+    quote: `"ABA allows me to help develop young minds while making a difference for those who need it. Being given the opportunity to make an impact big or small excites me most about ABA."`,
     category: ["Team Leads & Specialists", "Clinical Excellence Team"],
   },
   {
@@ -64,17 +64,17 @@ const teamMembers = [
     role: "Morrow Clinic Operations Manager",
     image: "/images/team/Member-6.jpg",
     thumb: "/images/team/Member-6.jpg",
-    quote: `"Committed to celebrating every small victory."`,
+    quote: `"The moment that impacted me the most was when a child with severe behaviors had a breakthrough. Seeing their parents' relief showed me that I’m making a difference for the whole family."`,
     category: ["Operations Leadership Team", "Team Leads & Specialists"],
   },
   {
     id: 7,
-    name: "Aliciante Parker",
+    name: "Alicante Parker",
     credentials: "BCBA, LBA",
     role: " ",
     image: "/images/team/Member-7.jpg",
     thumb: "/images/team/Member-7.jpg",
-    quote: `"Compassion is at the heart of what we do."`,
+    quote: `"Becoming a BCBA is more than a career for me—it’s a purposeful commitment to supporting meaningful growth and improving quality of life for others. I am passionate about helping individuals with autism and other developmental differences build skills, reach milestones, and access opportunities within their communities. Seeing that progress is what drives my work and reinforces my commitment to making a lasting, positive impact.\n\nWhitney Davis My “why” for becoming a BCBA is rooted in my passion for helping children grow into their fullest potential, no matter what path they choose. I want to provide them with the tools, support, and encouragement they need to thrive in ways that are meaningful to them. Being part of their progress and celebrating their success is what drives me every day."`,
     category: ["Clinical Excellence Team", "Team Leads & Specialists"],
   },
   {
@@ -84,17 +84,17 @@ const teamMembers = [
     role: " ",
     image: "/images/team/Member-8.jpg",
     thumb: "/images/team/Member-8.jpg",
-    quote: `"Helping children reach their full potential."`,
+    quote: `"I became a BCBA because I love supporting children and celebrating the progress they make as they grow! I am dedicated to leading with compassion and focusing on meaningful change."`,
     category: ["Clinical Excellence Team", "Team Leads & Specialists"],
   },
   {
     id: 9,
-    name: "Kianna Jemison",
+    name: "Kianna Jamison",
     credentials: "College Park Clinic Coordinator",
     role: " ",
     image: "/images/team/Member-9.jpg",
     thumb: "/images/team/Member-9.jpg",
-    quote: `"Creating welcoming spaces where all abilities are celebrated."`,
+    quote: `"What is one moment in ABA that has impacted you the most? A moment where parents feel supported and truly heard by their child’s team working through challenging skills and behaviors."`,
     category: ["Operations Leadership Team", "Team Leads & Specialists"],
   },
   {
@@ -104,7 +104,7 @@ const teamMembers = [
     role: "Trainer and Clinical Specialist",
     image: "/images/team/Member-10.jpg",
     thumb: "/images/team/Member-10.jpg",
-    quote: `"Every family deserves compassionate care."`,
+    quote: `"What excites me the most about ABA is that I am able to spend every day living my purpose to make a difference in individuals lives and advocate for those who could not advocate for themselves. They didn’t choose this life, the life chose them."`,
     category: ["Team Leads & Specialists", "Clinical Excellence Team"],
   },
   {
@@ -114,17 +114,17 @@ const teamMembers = [
     role: " ",
     image: "/images/team/Member-11.jpg",
     thumb: "/images/team/Member-11.jpg",
-    quote: `"We work together with families to achieve the best outcomes."`,
+    quote: `"I am motivated each day by the opportunity to be part of every client’s journey and to witness their growth and progress. My work is also driven by a desire to model dedication and purpose for my own children, showing them the value of meaningful work. Above all, I am committed to creating lasting change for my family by breaking generational barriers and building a stronger future."`,
     category: ["Clinical Excellence Team", "Team Leads & Specialists"],
   },
   {
     id: 12,
-    name: "Catarras Black",
+    name: "CaTarrus Black",
     credentials: "RBT",
     role: "Clinical Specialist",
     image: "/images/team/Member-12.jpg",
     thumb: "/images/team/Member-12.jpg",
-    quote: `"Acting with honesty and transparency in everything we do."`,
+    quote: `"My drive and inspiration each day stem from observing the gradual progression and development of those I am helping. Noticing the changes in their abilities and general wellbeing makes me see the importance of my job. This motivates me to continue caring for others through compassionate means."`,
     category: ["Team Leads & Specialists", "Clinical Excellence Team"],
   },
   {
@@ -134,9 +134,29 @@ const teamMembers = [
     role: " ",
     image: "/images/team/Member-13.jpg",
     thumb: "/images/team/Member-13.jpg",
-    quote: `"Nurturing growth beyond the horizon."`,
+    quote: `"I chose to work in the field of ABA as a BCBA because I’m passionate about helping individuals reach their full potential and improve their quality of life. Seeing meaningful progress, no matter how small, is incredibly rewarding and motivates me to keep growing in this field. I also value the opportunity to use evidence-based strategies to create positive, lasting change for both clients and their families"`,
     category: ["Clinical Excellence Team", "Team Leads & Specialists"],
-  }
+  },
+  {
+    id: 14,
+    name: "Omega Springer",
+    credentials: "RBT",
+    role: "Clinical Specialist ",
+    image: "/images/team/Member-14.jpeg",
+    thumb: "/images/team/Member-14.jpeg",
+    quote: `"I’m passionate about ABA because I genuinely love working with the kids and building meaningful connections with them each day. Watching them reach small but powerful milestones is incredibly rewarding and reminds me why this work matters. Seeing them grow in their independence in their own unique ways makes me proud to be part of their journey."`,
+    category: ["Team Leads & Specialists", "Clinical Excellence Team"],
+  },
+  {
+    id: 15,
+    name: "Kendall Davis",
+    credentials: "RBT Lead",
+    role: " ",
+    image: "/images/team/Member-15.png",
+    thumb: "/images/team/Member-15.png",
+    quote: `"What excites me most about ABA is getting to work closely with my clients, no matter where they’re starting from. I really love seeing those moments when things start to click, especially when they begin interacting with their peers in more natural and meaningful ways."`,
+    category: ["Team Leads & Specialists", "Clinical Excellence Team"],
+  },
 ];
 
 const coreLeadershipGroup = {
@@ -157,7 +177,7 @@ const operationsLeadershipGroup = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2462.jpg",
   thumb: "/images/Groups/0O3A2462.jpg",
-  quote: `Our operations leadership team coordinates daily administrative functions, ensures compliance and safety, and manages scheduling so that children receive seamless, high-quality care.\n\nTeam Members:\n• Danielle Strickland (Co-Founder)\n• Sheneice Willis Lewis (Co-Founder)\n• Sheckeema Taylor (Director of Operations)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Kianna Jemison (College Park Clinic Coordinator)`,
+  quote: `Our operations leadership team coordinates daily administrative functions, ensures compliance and safety, and manages scheduling so that children receive seamless, high-quality care.\n\nTeam Members:\n• Danielle Strickland (Co-Founder)\n• Sheneice Willis Lewis (Co-Founder)\n• Sheckeema Taylor (Director of Operations)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Kianna Jamison (College Park Clinic Coordinator)`,
   category: "Operations Leadership Team",
 };
 
@@ -168,7 +188,7 @@ const clinicalExcellenceGroup1 = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2474.jpg",
   thumb: "/images/Groups/0O3A2474.jpg",
-  quote: `Our clinical excellence team of Board Certified Behavior Analysts (BCBAs) holds themselves to the highest standards of evidence-based practice, conducting thorough developmental assessments and tailoring individualized programs to nurture every child's full potential.\n\nTeam Members:\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Alexander Jones (RBT Lead, Trainer)\n• Aliciante Parker (BCBA, LBA)\n• Keajia Campbell (BCBA, LBA)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• Catarras Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
+  quote: `Our clinical excellence team of Board Certified Behavior Analysts (BCBAs) holds themselves to the highest standards of evidence-based practice, conducting thorough developmental assessments and tailoring individualized programs to nurture every child's full potential.\n\nTeam Members:\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Alexander Jones (RBT Lead, Trainer)\n• Alicante Parker (BCBA, LBA)\n• Keajia Campbell (BCBA, LBA)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• CaTarrus Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
   category: "Clinical Excellence Team",
 };
 
@@ -179,7 +199,7 @@ const clinicalExcellenceGroup2 = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2486.jpg",
   thumb: "/images/Groups/0O3A2486.jpg",
-  quote: `We collaborate closely with caregivers and providers to ensure that learning is integrated, comprehensive, and consistent across home, clinic, and community environments.\n\nTeam Members:\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Alexander Jones (RBT Lead, Trainer)\n• Aliciante Parker (BCBA, LBA)\n• Keajia Campbell (BCBA, LBA)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• Catarras Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
+  quote: `We collaborate closely with caregivers and providers to ensure that learning is integrated, comprehensive, and consistent across home, clinic, and community environments.\n\nTeam Members:\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Alexander Jones (RBT Lead, Trainer)\n• Alicante Parker (BCBA, LBA)\n• Keajia Campbell (BCBA, LBA)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• CaTarrus Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
   category: "Clinical Excellence Team",
 };
 
@@ -190,7 +210,7 @@ const teamLeadsGroup = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2500.jpg",
   thumb: "/images/Groups/0O3A2500.jpg",
-  quote: `Our dedicated team of RBT Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy.\n\nTeam Members:\n• Danielle Strickland (Co-Founder, BCBA, LBA)\n• Sheneice Willis Lewis (Co-Founder, BCBA, LBA)\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Sheckeema Taylor (Director of Operations, Specialist)\n• Alexander Jones (RBT Lead, Trainer)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Aliciante Parker (Clinical Excellence)\n• Keajia Campbell (Clinical Excellence)\n• Kianna Jemison (College Park Clinic Coordinator)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• Catarras Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
+  quote: `Our dedicated team of RBT Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy.\n\nTeam Members:\n• Danielle Strickland (Co-Founder, BCBA, LBA)\n• Sheneice Willis Lewis (Co-Founder, BCBA, LBA)\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Sheckeema Taylor (Director of Operations, Specialist)\n• Alexander Jones (RBT Lead, Trainer)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Alicante Parker (Clinical Excellence)\n• Keajia Campbell (Clinical Excellence)\n• Kianna Jamison (College Park Clinic Coordinator)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• CaTarrus Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
   category: "Team Leads & Specialists",
 };
 
@@ -201,34 +221,34 @@ export const OurTeam: React.FC = () => {
   const filteredMembers = activeTab === "All"
     ? teamMembers
     : activeTab === "Core Leadership Team"
-      ? [coreLeadershipGroup, ...teamMembers.filter((m) => 
-          Array.isArray(m.category) 
-            ? m.category.includes(activeTab) 
+      ? [coreLeadershipGroup, ...teamMembers.filter((m) =>
+        Array.isArray(m.category)
+          ? m.category.includes(activeTab)
+          : m.category === activeTab
+      )]
+      : activeTab === "Operations Leadership Team"
+        ? [operationsLeadershipGroup, ...teamMembers.filter((m) =>
+          Array.isArray(m.category)
+            ? m.category.includes(activeTab)
             : m.category === activeTab
         )]
-      : activeTab === "Operations Leadership Team"
-        ? [operationsLeadershipGroup, ...teamMembers.filter((m) => 
-            Array.isArray(m.category) 
-              ? m.category.includes(activeTab) 
+        : activeTab === "Clinical Excellence Team"
+          ? [clinicalExcellenceGroup1, clinicalExcellenceGroup2, ...teamMembers.filter((m) =>
+            Array.isArray(m.category)
+              ? m.category.includes(activeTab)
               : m.category === activeTab
           )]
-        : activeTab === "Clinical Excellence Team"
-          ? [clinicalExcellenceGroup1, clinicalExcellenceGroup2, ...teamMembers.filter((m) => 
-              Array.isArray(m.category) 
-                ? m.category.includes(activeTab) 
+          : activeTab === "Team Leads & Specialists"
+            ? [teamLeadsGroup, ...teamMembers.filter((m) =>
+              Array.isArray(m.category)
+                ? m.category.includes(activeTab)
                 : m.category === activeTab
             )]
-          : activeTab === "Team Leads & Specialists"
-            ? [teamLeadsGroup, ...teamMembers.filter((m) => 
-                Array.isArray(m.category) 
-                  ? m.category.includes(activeTab) 
-                  : m.category === activeTab
-              )]
-            : teamMembers.filter((m) => 
-                Array.isArray(m.category) 
-                  ? m.category.includes(activeTab) 
-                  : m.category === activeTab
-              );
+            : teamMembers.filter((m) =>
+              Array.isArray(m.category)
+                ? m.category.includes(activeTab)
+                : m.category === activeTab
+            );
 
   const isGroup = selectedMember.id.toString().includes("group");
 
@@ -412,11 +432,11 @@ export const OurTeam: React.FC = () => {
                   } else {
                     const filtered = tab === "All"
                       ? teamMembers
-                      : teamMembers.filter((m) => 
-                          Array.isArray(m.category) 
-                            ? m.category.includes(tab) 
-                            : m.category === tab
-                        );
+                      : teamMembers.filter((m) =>
+                        Array.isArray(m.category)
+                          ? m.category.includes(tab)
+                          : m.category === tab
+                      );
                     if (filtered.length > 0) {
                       setSelectedMember(filtered[0]);
                     }
