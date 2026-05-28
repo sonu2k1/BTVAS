@@ -64,7 +64,7 @@ const teamMembers = [
     role: "Morrow Clinic Operations Manager",
     image: "/images/team/Member-6.jpg",
     thumb: "/images/team/Member-6.jpg",
-    quote: `"Committed to celebrating every small victory."`,
+    quote: `"The moment that impacted me the most was when a child with severe behaviors had a breakthrough. Seeing their parents' relief showed me that I’m making a difference for the whole family."`,
     category: ["Operations Leadership Team", "Team Leads & Specialists"],
   },
   {
