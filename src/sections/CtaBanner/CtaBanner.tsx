@@ -26,6 +26,7 @@ export const CtaBanner: React.FC = () => {
             flex-direction: column !important;
             gap: 20px !important;
             align-items: center !important;
+            padding: 0 !important;
           }
           .cta-banner-left {
             align-items: center !important;
@@ -42,14 +43,17 @@ export const CtaBanner: React.FC = () => {
           .cta-banner-btn {
             width: 100% !important;
           }
+          .cta-banner-btn {
+            padding: 0 12px !important;
+          }
           .cta-banner-btn span {
-            font-size: 10px !important;
+            font-size: 11px !important;
           }
         }
 
         @media (max-width: 480px) {
           .cta-banner-btn span {
-            font-size: 10px !important;
+            font-size: 9.5px !important;
           }
         }
       `}</style>
@@ -106,7 +110,7 @@ export const CtaBanner: React.FC = () => {
                 lineHeight: 1.2,
               }}
             >
-              Join 100+ Happy Parents
+              Joined 100+ Happy Parents
               <br />
               Who Trust BTVAS
             </h2>
