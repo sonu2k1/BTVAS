@@ -134,7 +134,7 @@ const teamMembers = [
     role: " ",
     image: "/images/team/Member-13.jpg",
     thumb: "/images/team/Member-13.jpg",
-    quote: `"Nurturing growth beyond the horizon."`,
+    quote: `"I chose to work in the field of ABA as a BCBA because I’m passionate about helping individuals reach their full potential and improve their quality of life. Seeing meaningful progress, no matter how small, is incredibly rewarding and motivates me to keep growing in this field. I also value the opportunity to use evidence-based strategies to create positive, lasting change for both clients and their families"`,
     category: ["Clinical Excellence Team", "Team Leads & Specialists"],
   },
   {
