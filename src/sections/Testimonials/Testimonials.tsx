@@ -128,11 +128,14 @@ export const Testimonials: React.FC = () => {
             width: 100% !important;
             height: auto !important;
             padding: 20px 16px 40px !important;
+            overflow: visible !important;
           }
           .testimonials-card {
             width: 100% !important;
             height: auto !important;
+            min-height: 0 !important;
             padding: 10px 0 !important;
+            overflow: visible !important;
           }
           .testimonials-decor {
             display: none !important;
@@ -140,13 +143,26 @@ export const Testimonials: React.FC = () => {
           .testimonials-row {
             width: 100% !important;
             position: relative !important;
-            padding: 0 48px !important;
+            padding: 0 44px !important;
+            align-items: flex-start !important;
           }
           .testimonials-slider {
             width: 100% !important;
-            height: 260px !important;
-            min-height: 260px !important;
-            max-height: 260px !important;
+            height: auto !important;
+            min-height: 0 !important;
+            max-height: none !important;
+            overflow: visible !important;
+          }
+          .testimonials-slide {
+            position: relative !important;
+            inset: auto !important;
+            overflow: visible !important;
+            height: auto !important;
+            padding: 8px 4px !important;
+          }
+          .testimonials-stars {
+            margin-bottom: 12px !important;
+            font-size: 24px !important;
           }
 
           .testimonials-subtitle-wrap {
@@ -167,8 +183,8 @@ export const Testimonials: React.FC = () => {
           .arrow-btn-left {
             position: absolute !important;
             left: 0px !important;
-            top: 50% !important;
-            transform: translateY(-50%) !important;
+            top: 72px !important;
+            transform: none !important;
             width: 40px !important;
             height: 40px !important;
             z-index: 10 !important;
@@ -176,8 +192,8 @@ export const Testimonials: React.FC = () => {
           .arrow-btn-right {
             position: absolute !important;
             right: 0px !important;
-            top: 50% !important;
-            transform: translateY(-50%) !important;
+            top: 72px !important;
+            transform: none !important;
             width: 40px !important;
             height: 40px !important;
             z-index: 10 !important;
@@ -236,7 +252,7 @@ export const Testimonials: React.FC = () => {
                 className="testimonials-slide w-full"
               >
                 {/* 5 Stars */}
-                <div className="flex gap-1.5 justify-center mb-6 text-[#FFD740]" style={{ fontSize: "32px", lineHeight: 1 }}>
+                <div className="testimonials-stars flex gap-1.5 justify-center mb-6 text-[#FFD740]" style={{ fontSize: "32px", lineHeight: 1 }}>
                   <span>★</span>
                   <span>★</span>
                   <span>★</span>

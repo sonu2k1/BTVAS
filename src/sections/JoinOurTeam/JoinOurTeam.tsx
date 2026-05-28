@@ -196,10 +196,13 @@ export const JoinOurTeam: React.FC = () => {
               lineHeight: "40px",
               textAlign: "center",
               marginBottom: "16px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "8px",
             }}
           >
             <span style={{ color: "#111827", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Ready to Make an Impact?</span>
-            <br />
             <span style={{ color: "#FF4880" }}>Join Beyond the View</span>
           </h2>
 
