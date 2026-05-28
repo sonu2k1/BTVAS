@@ -285,7 +285,7 @@ export const AcceptedInsuranceFloatBadge: React.FC = () => {
                 height={logo.height}
                 className="object-contain"
                 sizes="(max-width: 380px) 76px, (max-width: 640px) 88px, 92px"
-                style={logo.src.includes("bcbs") ? { width: "auto", height: "auto", transform: "scale(1.5)", transformOrigin: "center" } : { width: "auto", height: "auto" }}
+                style={logo.src.includes("bcbs") ? { width: "auto", height: "auto", transform: "scale(1.8)", transformOrigin: "center" } : { width: "auto", height: "auto" }}
               />
             </div>
           ))}
