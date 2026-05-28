@@ -154,7 +154,7 @@ const teamMembers = [
     role: " ",
     image: "/images/team/Member-15.png",
     thumb: "/images/team/Member-15.png",
-    quote: `"Every step forward is a victory worth celebrating."`,
+    quote: `"What excites me most about ABA is getting to work closely with my clients, no matter where they’re starting from. I really love seeing those moments when things start to click, especially when they begin interacting with their peers in more natural and meaningful ways."`,
     category: ["Team Leads & Specialists", "Clinical Excellence Team"],
   },
 ];
