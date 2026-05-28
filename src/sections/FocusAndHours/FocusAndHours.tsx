@@ -12,9 +12,10 @@ const features = [
 export const FocusAndHours: React.FC = () => {
   return (
     <section
-      className="focus-hours-section"
+      className="focus-hours-section site-section-root"
       style={{
-        width: "1440px",
+        width: "100%",
+        maxWidth: "1440px",
         height: "400px",
         backgroundColor: "#ffffff",
         display: "flex",
@@ -26,6 +27,24 @@ export const FocusAndHours: React.FC = () => {
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+        @media (min-width: 1025px) and (max-width: 1439px) {
+          .focus-hours-section {
+            height: auto !important;
+            padding: 40px clamp(24px, 4vw, 56px) !important;
+          }
+          .focus-hours-wrapper {
+            gap: clamp(24px, 4vw, 64px) !important;
+          }
+          .focus-left {
+            width: auto !important;
+            flex: 1 1 50% !important;
+            min-width: 0 !important;
+          }
+          .hours-right {
+            flex-shrink: 0 !important;
+          }
+        }
 
         @media (max-width: 1024px) {
           .focus-hours-section {
@@ -62,9 +81,10 @@ export const FocusAndHours: React.FC = () => {
 
       {/* INNER WRAPPER */}
       <div
-        className="focus-hours-wrapper"
+        className="focus-hours-wrapper site-inner-root"
         style={{
-          width: "1280px",
+          width: "100%",
+          maxWidth: "1280px",
           height: "235px",
           display: "flex",
           alignItems: "center",

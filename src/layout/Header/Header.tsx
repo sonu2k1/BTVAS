@@ -2,15 +2,7 @@
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
-
-const links = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Our Services", href: "#services" },
-  { label: "Career", href: "#career" },
-  { label: "Resources", href: "#faq" },
-  { label: "Contact Us", href: "#contact" },
-];
+import { siteNavLinks } from "@/data/navigation";
 
 const MenuIcon = () => (
   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -44,7 +36,7 @@ export const Header: React.FC = () => {
       const isBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 120;
 
       if (isBottom) {
-        const bottomIds = ["contact", "faq", "career"];
+        const bottomIds = ["contact", "faq", "career", "getting-started"];
         for (const id of bottomIds) {
           const el = document.getElementById(id);
           if (el) {
@@ -57,7 +49,7 @@ export const Header: React.FC = () => {
         }
       }
 
-      const sections = links.map((l) => l.href.replace("#", ""));
+      const sections = siteNavLinks.map((l) => l.href.replace("#", ""));
       let current = sections[0];
       for (const id of sections) {
         const el = document.getElementById(id);
@@ -281,7 +273,7 @@ export const Header: React.FC = () => {
 
           {/* NAV LINKS */}
           <ul className="nav-links">
-            {links.map((link) => {
+            {siteNavLinks.map((link) => {
               const isActive = activeSection === link.href.replace("#", "");
               return (
                 <li key={link.label}>
@@ -301,8 +293,8 @@ export const Header: React.FC = () => {
           <div className="cta-btn-wrapper hidden lg:block">
             <div className="cta-btn-shadow" />
             <a
-              href="#career"
-              onClick={(e) => handleNavClick(e, "#career")}
+              href="#getting-started"
+              onClick={(e) => handleNavClick(e, "#getting-started")}
               className="cta-btn"
             >
               Getting Started
@@ -344,7 +336,7 @@ export const Header: React.FC = () => {
                 gap: "8px" 
               }}
             >
-              {links.map((link) => {
+              {siteNavLinks.map((link) => {
                 const isActive = activeSection === link.href.replace("#", "");
                 return (
                   <li key={link.label}>
@@ -392,8 +384,8 @@ export const Header: React.FC = () => {
                     }}
                   />
                   <a
-                    href="#career"
-                    onClick={(e) => handleNavClick(e, "#career")}
+                    href="#getting-started"
+                    onClick={(e) => handleNavClick(e, "#getting-started")}
                     className="cta-btn"
                     style={{
                       position: "absolute",
@@ -418,7 +410,7 @@ export const Header: React.FC = () => {
                       transition: "top 0.1s ease, background-color 0.2s ease",
                     }}
                   >
-                    Join Our Team
+                    Getting Started
                   </a>
                 </div>
               </li>

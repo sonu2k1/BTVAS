@@ -91,15 +91,26 @@ export const JoinOurTeam: React.FC = () => {
             padding: 0 !important;
           }
           .join-team-middle-content h2 {
-            font-size: 32px !important;
+            font-size: clamp(24px, 5vw, 32px) !important;
+            line-height: 1.25 !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .join-team-section {
+            padding: 32px 12px !important;
+          }
+          .join-team-middle-content h2 {
+            font-size: 22px !important;
           }
         }
       `}</style>
       <section
         id="career"
-        className="relative bg-white flex items-center justify-between overflow-hidden join-team-section scroll-mt-6"
+        className="relative bg-white flex items-center justify-between overflow-hidden join-team-section site-section-root scroll-mt-6"
         style={{
-          width: "1440px",
+          width: "100%",
+          maxWidth: "1440px",
           height: "455px",
           margin: "0 auto",
           borderTop: "6px solid #7e5cb3",
@@ -185,10 +196,14 @@ export const JoinOurTeam: React.FC = () => {
               lineHeight: "40px",
               textAlign: "center",
               marginBottom: "16px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "8px",
             }}
           >
-            <span style={{ color: "#111827", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Ready to Start</span>{" "}
-            <span style={{ color: "#FF4880" }}>Your Career with Beyond the View?</span>
+            <span style={{ color: "#111827", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Ready to Make an Impact?</span>
+            <span style={{ color: "#FF4880" }}>Join Beyond the View</span>
           </h2>
 
           <p

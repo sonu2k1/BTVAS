@@ -25,9 +25,10 @@ const visionaries = [
 export const Visionaries: React.FC = () => {
   return (
     <section
-      className="visionaries-section"
+      className="visionaries-section site-section-root"
       style={{
-        width: "1440px",
+        width: "100%",
+        maxWidth: "1440px",
         height: "552px",
         backgroundColor: "#ffffff",
         display: "flex",
@@ -115,7 +116,7 @@ export const Visionaries: React.FC = () => {
       `}</style>
 
       {/* HEADING */}
-      <div className="visionaries-heading" style={{ width: "1280px" }}>
+      <div className="visionaries-heading site-inner-root" style={{ width: "100%", maxWidth: "1280px" }}>
         <h2
           style={{
             fontFamily: "'Mochiy Pop One', sans-serif",
@@ -133,9 +134,10 @@ export const Visionaries: React.FC = () => {
 
       {/* CARDS ROW */}
       <div
-        className="visionaries-row"
+        className="visionaries-row site-inner-root"
         style={{
-          width: "1280px",
+          width: "100%",
+          maxWidth: "1280px",
           height: "354px",
           display: "flex",
           gap: "48px",

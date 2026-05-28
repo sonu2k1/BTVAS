@@ -49,7 +49,7 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 z-[1] bg-gradient-to-r from-black/20 via-black/5 to-transparent" />
 
       {/* Content — bottom-left positioned */}
-      <div className="absolute top-26 left-10 z-[2] hero-content-wrapper">
+      <div className="absolute top-26 left-4 md:left-8 lg:left-10 z-[2] hero-content-wrapper w-full max-w-[756px] px-4 md:px-0 box-border">
         <HeroCard />
       </div>
     </section>

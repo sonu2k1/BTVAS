@@ -84,7 +84,7 @@ export const faqs = [
   {
     question: "How long is the process to begin services?",
     answer:
-      "The process typically takes 2–4 weeks from initial intake to starting therapy, depending on insurance verification and assessment scheduling.",
+      "It depends on insurance approval, which for some families can take up to 30 days.",
   },
   {
     question: "Will my child need ABA therapy forever?",

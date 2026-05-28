@@ -66,22 +66,41 @@ export const GettingStarted: React.FC = () => {
             transform: scale(1) translateY(0);
           }
         }
+
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .getting-started-top {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            height: auto !important;
+            gap: 20px !important;
+            margin-top: 32px !important;
+          }
+          .getting-started-steps-wrap {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 8px;
+          }
+        }
       `}</style>
       {/* ── DESKTOP VIEW: 100% EXACT ORIGINAL LAYOUT & PIXELS (Visible on lg and larger) ── */}
       <section
-        className="hidden lg:flex relative overflow-hidden flex-col"
+        className="hidden lg:flex relative overflow-hidden flex-col site-section-root"
         style={{
+          width: "100%",
           maxWidth: "1440px",
-          height: "455.36px",
+          height: "auto",
+          minHeight: "455.36px",
           backgroundColor: "#753DBE",
-          paddingLeft: "50px",
-          paddingRight: "50px",
+          paddingLeft: "clamp(24px, 4vw, 50px)",
+          paddingRight: "clamp(24px, 4vw, 50px)",
           margin: "0 auto",
+          boxSizing: "border-box",
         }}
       >
         {/* ── TOP PART ── */}
         <div
-          className="flex items-center justify-between flex-shrink-0"
+          className="flex items-center justify-between flex-shrink-0 getting-started-top"
           style={{ marginTop: "50px", height: "72px" }}
         >
           {/* Left: heading block — 373×72 */}
@@ -151,12 +170,13 @@ export const GettingStarted: React.FC = () => {
         <div style={{ height: "60px", flexShrink: 0 }} />
 
         {/* ── BOTTOM PART — 1380×223.36 ── */}
+        <div className="getting-started-steps-wrap w-full">
         <div
           className="relative flex flex-col"
-          style={{ width: "1380px", height: "223.36px", flexShrink: 0 }}
+          style={{ width: "100%", maxWidth: "1380px", minWidth: "900px", height: "223.36px", flexShrink: 0 }}
         >
           {/* Step titles row */}
-          <div className="flex" style={{ width: "1380px" }}>
+          <div className="flex w-full" style={{ maxWidth: "1380px" }}>
             {steps.map((step) => (
               <div
                 key={step.number}
@@ -254,6 +274,7 @@ export const GettingStarted: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
         </div>
       </section>
 

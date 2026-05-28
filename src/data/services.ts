@@ -8,6 +8,7 @@ export interface Service {
   overview: string;
   highlights: string[];
   whoItsFor: string;
+  comingSoon?: boolean;
 }
 
 export const services: Service[] = [
@@ -53,10 +54,11 @@ export const services: Service[] = [
   },
   {
     title: "Occupational Therapy",
+    comingSoon: true,
     titleColor1: "#753DBE",
     titleColor2: "#FF4880",
     description:
-      "Hands-on support for fine motor skills, sensory processing, and daily independence.",
+      "Hands-on support for fine motor skills, sensory processing, and daily independence — launching soon.",
     image: "/images/occu.png",
     alt: "Children doing occupational therapy on playground",
     overview:

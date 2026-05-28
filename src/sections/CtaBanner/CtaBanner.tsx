@@ -16,6 +16,22 @@ export const CtaBanner: React.FC = () => {
           top: 5px !important;
         }
 
+        @media (min-width: 1025px) and (max-width: 1279px) {
+          .cta-banner-section {
+            width: calc(100% - 48px) !important;
+            height: auto !important;
+            min-height: 114px !important;
+            padding: 20px 24px !important;
+          }
+          .cta-banner-btn-container {
+            width: min(460px, 100%) !important;
+          }
+          .cta-banner-btn-shadow,
+          .cta-banner-btn {
+            width: 100% !important;
+          }
+        }
+
         @media (max-width: 1024px) {
           .cta-banner-section {
             width: 100% !important;
@@ -80,9 +96,10 @@ export const CtaBanner: React.FC = () => {
       `}</style>
 
       <section
-        className="cta-banner-section"
+        className="cta-banner-section site-section-root"
         style={{
-          width: "1280px",
+          width: "100%",
+          maxWidth: "1280px",
           height: "114px",
           background:
             "linear-gradient(180deg, #FFFFFF 0%, #fbfbfbff 14%, #dbc1f9ff 60%, #dac3f9ff 86%, #cdbce2ff 100%)",

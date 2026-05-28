@@ -19,6 +19,19 @@ export const HeroCard: React.FC = () => {
           top: 8px !important;
           background-color: #e6d400 !important;
         }
+        @media (min-width: 1025px) and (max-width: 1439px) {
+          .hero-card-outer,
+          .hero-card-inner,
+          .hero-card-content {
+            width: 100% !important;
+            max-width: min(756px, 92vw) !important;
+          }
+          .hero-card-quote {
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+        }
+
         @media (max-width: 1024px) {
           .hero-card-outer {
             width: 100% !important;
@@ -56,7 +69,8 @@ export const HeroCard: React.FC = () => {
       <div
         className="hero-card-outer"
         style={{
-          width: "756px",
+          width: "100%",
+          maxWidth: "756px",
           height: "auto",
           minHeight: "382px",
           borderRadius: "20px",
@@ -70,7 +84,8 @@ export const HeroCard: React.FC = () => {
         <div
           className="hero-card-inner"
           style={{
-            width: "736px",
+            width: "100%",
+            maxWidth: "736px",
             height: "auto",
             minHeight: "362px",
             borderRadius: "20px",
@@ -87,7 +102,8 @@ export const HeroCard: React.FC = () => {
           <div
             className="hero-card-content"
             style={{
-              width: "688px",
+              width: "100%",
+              maxWidth: "688px",
               height: "auto",
               display: "flex",
               flexDirection: "column",
@@ -137,8 +153,10 @@ export const HeroCard: React.FC = () => {
                 lineHeight: "1.4",
                 margin: 0,
                 marginTop: "4px",
-                width: "602px",
-                height: "112px",
+                width: "100%",
+                maxWidth: "602px",
+                height: "auto",
+                minHeight: "112px",
               }}
             >
               &ldquo;Every child deserves a champion-an adult who will never give up on

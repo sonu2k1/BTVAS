@@ -7,9 +7,10 @@ export const Mission: React.FC = () => {
   return (
     <section
       id="about"
-      className="mission-section"
+      className="mission-section site-section-root"
       style={{
-        width: "1440px",
+        width: "100%",
+        maxWidth: "1440px",
         height: "552px",
         backgroundColor: "#faf6f0",
         display: "flex",
@@ -95,9 +96,10 @@ export const Mission: React.FC = () => {
 
       {/* INNER WRAPPER */}
       <div
-        className="mission-wrapper"
+        className="mission-wrapper site-inner-root"
         style={{
-          width: "1280px",
+          width: "100%",
+          maxWidth: "1280px",
           height: "478px",
           display: "flex",
           alignItems: "center",

@@ -292,6 +292,34 @@ export const OurTeam: React.FC = () => {
         .team-thumb-item:hover .team-thumb-overlay {
           opacity: 0.15;
         }
+        @media (min-width: 1025px) and (max-width: 1439px) {
+          .team-section {
+            height: auto !important;
+            padding: 40px clamp(24px, 4vw, 56px) !important;
+          }
+          .team-wrapper {
+            height: auto !important;
+          }
+          .team-content-row {
+            width: 100% !important;
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+          }
+          .team-thumbs {
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow-x: auto !important;
+            flex-direction: row !important;
+          }
+          .team-big-img-wrap {
+            max-width: 280px !important;
+          }
+          .team-desc-container {
+            width: 100% !important;
+            max-width: 480px !important;
+          }
+        }
+
         @media (max-width: 1024px) {
           .team-section {
             width: 100% !important;
@@ -364,9 +392,10 @@ export const OurTeam: React.FC = () => {
         }
       `}</style>
       <section
-        className="team-section"
+        className="team-section site-section-root"
         style={{
-          width: "1440px",
+          width: "100%",
+          maxWidth: "1440px",
           height: "800px",
           backgroundColor: "#ffffff",
           display: "flex",
@@ -378,9 +407,10 @@ export const OurTeam: React.FC = () => {
       >
         {/* INNER WRAPPER */}
         <div
-          className="team-wrapper"
+          className="team-wrapper site-inner-root"
           style={{
-            width: "1280px",
+            width: "100%",
+            maxWidth: "1280px",
             height: "750px",
             display: "flex",
             flexDirection: "column",
