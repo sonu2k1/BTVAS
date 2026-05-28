@@ -144,7 +144,7 @@ const teamMembers = [
     role: "Clinical Specialist ",
     image: "/images/team/Member-14.jpeg",
     thumb: "/images/team/Member-14.jpeg",
-    quote: `"Dedicated to helping every child thrive."`,
+    quote: `"I’m passionate about ABA because I genuinely love working with the kids and building meaningful connections with them each day. Watching them reach small but powerful milestones is incredibly rewarding and reminds me why this work matters. Seeing them grow in their independence in their own unique ways makes me proud to be part of their journey."`,
     category: ["Team Leads & Specialists", "Clinical Excellence Team"],
   },
   {
