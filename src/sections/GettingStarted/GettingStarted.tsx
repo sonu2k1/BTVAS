@@ -8,7 +8,7 @@ export const GettingStarted: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div style={{ width: "100%", backgroundColor: "#753DBE" }}>
+    <div id="getting-started" className="scroll-mt-6" style={{ width: "100%", backgroundColor: "#753DBE" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Prompt:wght@400;500;600;700;800&display=swap');
 
