@@ -29,7 +29,7 @@ export const FAQ: React.FC = () => {
           max-width: 1440px;
           margin: 0 auto;
           box-sizing: border-box;
-          padding: 24px 16px 32px;
+          padding: 24px 16px 80px;
         }
 
         .insurance-banner-title {
@@ -81,7 +81,7 @@ export const FAQ: React.FC = () => {
 
         @media (min-width: 480px) {
           .insurance-banner {
-            padding: 28px 20px 36px;
+            padding: 28px 20px 84px;
           }
 
           .insurance-banner-title {
@@ -106,7 +106,7 @@ export const FAQ: React.FC = () => {
 
         @media (min-width: 768px) {
           .insurance-banner {
-            padding: 28px 24px 40px;
+            padding: 28px 24px 88px;
           }
 
           .insurance-banner-title {
@@ -127,7 +127,7 @@ export const FAQ: React.FC = () => {
 
         @media (min-width: 1024px) {
           .insurance-banner {
-            padding: 24px 32px 44px;
+            padding: 24px 32px 92px;
           }
 
           .insurance-banner-title {
@@ -147,7 +147,7 @@ export const FAQ: React.FC = () => {
 
         @media (min-width: 1280px) {
           .insurance-banner {
-            padding: 24px 0 48px;
+            padding: 24px 0 96px;
           }
 
           .insurance-banner-title {
