@@ -234,20 +234,16 @@ export const Footer: React.FC = () => {
         .footer-brand {
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
-          text-align: left;
           gap: 16px;
         }
 
         .footer-logo {
           width: 140px;
           height: auto;
-          align-self: flex-start;
         }
 
         .footer-description {
           max-width: 600px;
-          text-align: left;
         }
 
         .footer-contact-block {
@@ -258,10 +254,8 @@ export const Footer: React.FC = () => {
 
         .footer-social-row {
           display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-          align-items: center;
-          gap: 16px 24px;
+          flex-direction: column;
+          gap: 16px;
         }
 
         .footer-social-item {
@@ -277,8 +271,7 @@ export const Footer: React.FC = () => {
 
         .footer-contact-grid {
           display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
+          flex-direction: column;
           gap: 24px;
         }
 
@@ -286,8 +279,7 @@ export const Footer: React.FC = () => {
           display: flex;
           align-items: flex-start;
           gap: 12px;
-          min-width: 140px;
-          flex: 1 1 140px;
+          min-width: 0;
         }
 
         .footer-contact-column {
@@ -463,7 +455,6 @@ export const Footer: React.FC = () => {
 
           .footer-contact-item {
             flex: 1 1 180px;
-            min-width: 180px;
             max-width: 280px;
           }
 

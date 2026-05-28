@@ -86,19 +86,30 @@ a[href^="#"] {
   .hero-bg-img {
     height: 500px !important;
   }
+
   .hero-container {
     min-height: calc(500px - 100px) !important;
   }
+
   .footer-divider {
     margin-top: -14px !important;
-    height: 35px !important;
-    overflow: hidden !important;
   }
-  .footer-divider img {
-    width: 1440px !important;
-    max-width: none !important;
-    height: 90px !important;
-    object-fit: cover !important;
-    object-position: center top !important;
+}
+
+/* Page Layout responsive fixes for production-level architecture */
+@media (max-width: 1024px) {
+  .hero-bg-img {
+    height: 500px !important;
+  }
+
+  .hero-container {
+    min-height: calc(500px - 100px) !important;
+  }
+
+  .footer-divider {
+    height: 30px;
+    margin-top: -14px;
+    margin-bottom: 0px;
+    top: 0px;
   }
 }
