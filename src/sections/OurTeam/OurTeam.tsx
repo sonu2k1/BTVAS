@@ -145,7 +145,7 @@ const teamMembers = [
     image: "/images/team/Member-14.jpeg",
     thumb: "/images/team/Member-14.jpeg",
     quote: `"I’m passionate about ABA because I genuinely love working with the kids and building meaningful connections with them each day. Watching them reach small but powerful milestones is incredibly rewarding and reminds me why this work matters. Seeing them grow in their independence in their own unique ways makes me proud to be part of their journey."`,
-    category: ["Team Leads & Specialists", "Clinical Excellence Team"],
+    category: ["Clinical Excellence Team"],
   },
   {
     id: 15,
@@ -155,7 +155,7 @@ const teamMembers = [
     image: "/images/team/Member-15.png",
     thumb: "/images/team/Member-15.png",
     quote: `"What excites me most about ABA is getting to work closely with my clients, no matter where they’re starting from. I really love seeing those moments when things start to click, especially when they begin interacting with their peers in more natural and meaningful ways."`,
-    category: ["Team Leads & Specialists", "Clinical Excellence Team"],
+    category: ["Clinical Excellence Team"],
   },
 ];
 
