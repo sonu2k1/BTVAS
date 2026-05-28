@@ -26,6 +26,7 @@ export const CtaBanner: React.FC = () => {
             flex-direction: column !important;
             gap: 20px !important;
             align-items: center !important;
+            padding: 0 !important;
           }
           .cta-banner-left {
             align-items: center !important;
@@ -37,19 +38,43 @@ export const CtaBanner: React.FC = () => {
           .cta-banner-btn-container {
             width: 100% !important;
             max-width: 460px !important;
+            height: 64px !important;
           }
           .cta-banner-btn-shadow,
           .cta-banner-btn {
             width: 100% !important;
           }
+          .cta-banner-btn-shadow {
+            height: 58px !important;
+            border-radius: 29px !important;
+          }
+          .cta-banner-btn {
+            height: 58px !important;
+            border-radius: 29px !important;
+            padding: 6px 16px !important;
+          }
           .cta-banner-btn span {
-            font-size: 10px !important;
+            font-size: 13.5px !important;
+            white-space: normal !important;
+            text-align: center !important;
+            line-height: 1.35 !important;
           }
         }
 
         @media (max-width: 480px) {
+          .cta-banner-btn-container {
+            height: 60px !important;
+          }
+          .cta-banner-btn-shadow {
+            height: 54px !important;
+            border-radius: 27px !important;
+          }
+          .cta-banner-btn {
+            height: 54px !important;
+            border-radius: 27px !important;
+          }
           .cta-banner-btn span {
-            font-size: 10px !important;
+            font-size: 12px !important;
           }
         }
       `}</style>
@@ -106,7 +131,7 @@ export const CtaBanner: React.FC = () => {
                 lineHeight: 1.2,
               }}
             >
-              Join 100+ Happy Parents
+              Joined 100+ Happy Parents
               <br />
               Who Trust BTVAS
             </h2>
