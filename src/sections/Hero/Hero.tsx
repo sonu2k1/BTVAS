@@ -13,9 +13,9 @@ export const Hero: React.FC = () => {
       <style>{`
         @media (max-width: 1024px) {
           .hero-section {
-            min-height: 400px !important;
+            min-height: 480px !important;
             border-radius: 0px !important;
-            -top: 0px !important;
+            top: 0px !important;
           }
           .hero-content-wrapper {
             position: relative !important;
