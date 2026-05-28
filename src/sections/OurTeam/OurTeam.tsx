@@ -89,12 +89,12 @@ const teamMembers = [
   },
   {
     id: 9,
-    name: "Kianna Jemison",
+    name: "Kianna Jamison",
     credentials: "College Park Clinic Coordinator",
     role: " ",
     image: "/images/team/Member-9.jpg",
     thumb: "/images/team/Member-9.jpg",
-    quote: `"Creating welcoming spaces where all abilities are celebrated."`,
+    quote: `"What is one moment in ABA that has impacted you the most? A moment where parents feel supported and truly heard by their child’s team working through challenging skills and behaviors."`,
     category: ["Operations Leadership Team", "Team Leads & Specialists"],
   },
   {
@@ -177,7 +177,7 @@ const operationsLeadershipGroup = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2462.jpg",
   thumb: "/images/Groups/0O3A2462.jpg",
-  quote: `Our operations leadership team coordinates daily administrative functions, ensures compliance and safety, and manages scheduling so that children receive seamless, high-quality care.\n\nTeam Members:\n• Danielle Strickland (Co-Founder)\n• Sheneice Willis Lewis (Co-Founder)\n• Sheckeema Taylor (Director of Operations)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Kianna Jemison (College Park Clinic Coordinator)`,
+  quote: `Our operations leadership team coordinates daily administrative functions, ensures compliance and safety, and manages scheduling so that children receive seamless, high-quality care.\n\nTeam Members:\n• Danielle Strickland (Co-Founder)\n• Sheneice Willis Lewis (Co-Founder)\n• Sheckeema Taylor (Director of Operations)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Kianna Jamison (College Park Clinic Coordinator)`,
   category: "Operations Leadership Team",
 };
 
@@ -210,7 +210,7 @@ const teamLeadsGroup = {
   role: "Beyond The View Autism Services",
   image: "/images/Groups/0O3A2500.jpg",
   thumb: "/images/Groups/0O3A2500.jpg",
-  quote: `Our dedicated team of RBT Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy.\n\nTeam Members:\n• Danielle Strickland (Co-Founder, BCBA, LBA)\n• Sheneice Willis Lewis (Co-Founder, BCBA, LBA)\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Sheckeema Taylor (Director of Operations, Specialist)\n• Alexander Jones (RBT Lead, Trainer)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Alicante Parker (Clinical Excellence)\n• Keajia Campbell (Clinical Excellence)\n• Kianna Jemison (College Park Clinic Coordinator)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• Catarras Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
+  quote: `Our dedicated team of RBT Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy.\n\nTeam Members:\n• Danielle Strickland (Co-Founder, BCBA, LBA)\n• Sheneice Willis Lewis (Co-Founder, BCBA, LBA)\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Sheckeema Taylor (Director of Operations, Specialist)\n• Alexander Jones (RBT Lead, Trainer)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Alicante Parker (Clinical Excellence)\n• Keajia Campbell (Clinical Excellence)\n• Kianna Jamison (College Park Clinic Coordinator)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• Catarras Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
   category: "Team Leads & Specialists",
 };
 
