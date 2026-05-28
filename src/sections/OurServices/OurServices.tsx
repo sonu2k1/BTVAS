@@ -12,25 +12,36 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden }) => {
+  const isComingSoon = service.comingSoon === true;
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (isComingSoon) return;
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       onSelect(service);
     }
   };
 
+  const isInteractive = !ariaHidden && !isComingSoon;
+
   return (
     <div
       className="services-marquee-item"
-      aria-hidden={ariaHidden}
+      aria-hidden={ariaHidden || undefined}
+      style={ariaHidden ? { pointerEvents: "none" } : undefined}
     >
-      <div
-        role="button"
-        tabIndex={ariaHidden ? -1 : 0}
-        aria-label={`Learn more about ${service.title}`}
-        onClick={() => !ariaHidden && onSelect(service)}
+      <button
+        type="button"
+        disabled={!isInteractive}
+        tabIndex={isInteractive ? 0 : -1}
+        aria-label={
+          isComingSoon
+            ? `${service.title} — coming soon`
+            : `Learn more about ${service.title}`
+        }
+        onClick={() => isInteractive && onSelect(service)}
         onKeyDown={handleKeyDown}
-        className="flex flex-col items-center bg-transparent services-card relative overflow-visible"
+        className={`flex flex-col items-center bg-transparent services-card relative overflow-visible border-0 p-0 text-left${isComingSoon ? " services-card--coming-soon" : ""}`}
         style={{
           width: "410px",
           height: "474px",
@@ -48,7 +59,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
           }}
         >
           <div
-            className="services-card-img-wrap"
+            className="services-card-img-wrap relative"
             style={{
               width: "374px",
               height: "238px",
@@ -63,8 +74,17 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
               width={374}
               height={238}
               className="w-full h-full object-cover object-center"
-              style={{ width: "100%", height: "100%" }}
+              style={{
+                width: "100%",
+                height: "100%",
+                ...(isComingSoon ? { filter: "grayscale(0.35) brightness(0.92)" } : {}),
+              }}
             />
+            {isComingSoon && (
+              <span className="services-coming-soon-badge" aria-hidden>
+                Coming Soon
+              </span>
+            )}
           </div>
 
           <h3
@@ -147,7 +167,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
             />
           </svg>
         </div>
-      </div>
+      </button>
     </div>
   );
 };
@@ -157,13 +177,14 @@ export const OurServices: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openServiceModal = (service: Service) => {
+    if (service.comingSoon) return;
     setSelectedService(service);
     setIsModalOpen(true);
   };
 
   const closeServiceModal = () => {
     setIsModalOpen(false);
-    setTimeout(() => setSelectedService(null), 300);
+    window.setTimeout(() => setSelectedService(null), 300);
   };
 
   return (
@@ -178,6 +199,37 @@ export const OurServices: React.FC = () => {
         .services-card {
           cursor: pointer;
           transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+          appearance: none;
+          -webkit-appearance: none;
+        }
+        .services-card:disabled {
+          cursor: default;
+        }
+        .services-card--coming-soon {
+          cursor: default;
+        }
+        .services-card--coming-soon:hover {
+          transform: none;
+          filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.06));
+        }
+        .services-card--coming-soon:hover .services-card-img-wrap img {
+          transform: none !important;
+        }
+        .services-coming-soon-badge {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          padding: 8px 14px;
+          border-radius: 999px;
+          background: linear-gradient(135deg, #753DBE 0%, #FF4880 100%);
+          color: #fff;
+          font-family: 'Prompt', sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+          box-shadow: 0 4px 14px rgba(117, 61, 190, 0.35);
+          z-index: 2;
         }
         .services-card:hover {
           transform: translateY(-10px) scale(1.02);
@@ -217,6 +269,11 @@ export const OurServices: React.FC = () => {
         .services-marquee-item {
           flex-shrink: 0;
           margin-right: 28px;
+        }
+
+        .services-marquee-item[aria-hidden="true"] {
+          pointer-events: none;
+          user-select: none;
         }
 
         @keyframes services-marquee-scroll {

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { siteNavLinks } from "@/data/navigation";
 
 const iconBoxStyle: React.CSSProperties = {
   width: 32,
@@ -69,16 +70,6 @@ const ChevronDoubleRight = () => (
     <path d="M6 1l5.5 6.5L6 14" stroke="#FF4880" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
-
-const exploreLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Getting Started", href: "#getting-started" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
-  { label: "Career", href: "#career" },
-];
 
 const contactTextStyle: React.CSSProperties = {
   fontFamily: "'Prompt', sans-serif",
@@ -188,7 +179,7 @@ const ExploreSection: React.FC = () => (
       <div className="footer-explore-divider-muted" />
     </div>
     <ul className="footer-explore-links">
-      {exploreLinks.map((link) => (
+      {siteNavLinks.map((link) => (
         <li key={link.label}>
           <a href={link.href} className="footer-explore-link">
             <ChevronDoubleRight />
