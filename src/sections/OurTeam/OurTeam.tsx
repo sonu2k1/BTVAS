@@ -84,7 +84,7 @@ const teamMembers = [
     role: " ",
     image: "/images/team/Member-8.jpg",
     thumb: "/images/team/Member-8.jpg",
-    quote: `"Helping children reach their full potential."`,
+    quote: `"I became a BCBA because I love supporting children and celebrating the progress they make as they grow! I am dedicated to leading with compassion and focusing on meaningful change."`,
     category: ["Clinical Excellence Team", "Team Leads & Specialists"],
   },
   {
