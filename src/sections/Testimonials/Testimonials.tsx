@@ -45,6 +45,68 @@ export const Testimonials: React.FC = () => {
       style={{ width: "1440px", height: "630px", margin: "0 auto" }}
     >
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:wght@100..400&family=Prompt:wght@400&display=swap');
+
+        .testimonials-subtitle {
+          font-family: 'Playwrite GB S', cursive;
+          font-size: 22px;
+          line-height: 28px;
+          font-weight: 400;
+          font-style: normal;
+        }
+
+        .testimonials-card {
+          justify-content: flex-start !important;
+        }
+
+        .testimonials-header {
+          flex-shrink: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+
+        .testimonials-subtitle-wrap {
+          flex-shrink: 0;
+          margin-top: 64px;
+          margin-bottom: 64px;
+        }
+
+        .testimonials-row {
+          flex-shrink: 0;
+          align-items: center !important;
+        }
+
+        .testimonials-slider {
+          height: 300px;
+          min-height: 300px;
+          max-height: 300px;
+          position: relative;
+        }
+
+        .testimonials-slide {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          overflow-y: auto;
+          padding: 0 8px;
+          box-sizing: border-box;
+        }
+
+        .testimonials-author-slot {
+          flex-shrink: 0;
+          min-height: 56px;
+          margin-top: 40px;
+          display: flex;
+          align-items: flex-start;
+          justify-content: center;
+          width: 100%;
+        }
+
         @media (max-width: 1024px) {
           .testimonials-section {
             width: 100% !important;
@@ -66,13 +128,25 @@ export const Testimonials: React.FC = () => {
           }
           .testimonials-slider {
             width: 100% !important;
-            min-height: 240px !important;
+            height: 260px !important;
+            min-height: 260px !important;
+            max-height: 260px !important;
+          }
+
+          .testimonials-subtitle-wrap {
+            margin-top: 32px !important;
+            margin-bottom: 32px !important;
+          }
+
+          .testimonials-author-slot {
+            margin-top: 24px !important;
+            min-height: 40px !important;
           }
           .testimonials-quote-text {
-            font-size: 16px !important;
+            font-size: 18px !important;
+            line-height: 26px !important;
             text-align: center !important;
             text-align-last: center !important;
-            line-height: 1.6 !important;
           }
           .arrow-btn-left {
             position: absolute !important;
@@ -96,32 +170,22 @@ export const Testimonials: React.FC = () => {
       `}</style>
       {/* Testimonials card */}
       <div
-        className="relative flex flex-col items-center justify-center testimonials-card"
+        className="relative flex flex-col items-center testimonials-card"
         style={{ width: "1340px", height: "580px" }}
       >
-        {/* Quote icon */}
-        <div className="flex flex-col items-center">
-          <svg width="52" height="42" viewBox="0 0 52 42" fill="none">
-            <text x="0" y="40" fontSize="52" fill="#E91E8C" fontFamily="Georgia, serif">
-              ❝
-            </text>
-          </svg>
-        </div>
+        <div className="testimonials-header">
+          <div className="flex flex-col items-center">
+            <svg width="52" height="42" viewBox="0 0 52 42" fill="none">
+              <text x="0" y="40" fontSize="52" fill="#E91E8C" fontFamily="Georgia, serif">
+                ❝
+              </text>
+            </svg>
+          </div>
 
-        {/* Subtitle */}
-        <p
-          className="text-gray-500 tracking-wide font-bold"
-          style={{
-            fontFamily: "'Georgia', serif",
-            fontSize: "18px",
-            fontStyle: "italic",
-            fontWeight: 700,
-            marginTop: "64px",
-            marginBottom: "64px"
-          }}
-        >
-          What parents say about us
-        </p>
+          <p className="testimonials-subtitle testimonials-subtitle-wrap text-gray-500">
+            What parents say about us
+          </p>
+        </div>
 
         {/* Quote + Nav row */}
         <div className="relative w-full flex items-center justify-between px-4 testimonials-row">
@@ -137,8 +201,8 @@ export const Testimonials: React.FC = () => {
 
           {/* Animated quote */}
           <div
-            className="overflow-hidden flex items-center justify-center testimonials-slider"
-            style={{ width: "1100px", minHeight: "180px" }}
+            className="overflow-hidden testimonials-slider"
+            style={{ width: "1100px" }}
           >
             <AnimatePresence custom={direction} mode="wait">
               <motion.div
@@ -153,7 +217,7 @@ export const Testimonials: React.FC = () => {
                   opacity: { duration: 0.35, ease: "easeInOut" },
                   scale: { duration: 0.35, ease: "easeInOut" }
                 }}
-                className="flex flex-col items-center justify-center w-full"
+                className="testimonials-slide w-full"
               >
                 {/* 5 Stars */}
                 <div className="flex gap-1.5 justify-center mb-6 text-[#FFD740]" style={{ fontSize: "32px", lineHeight: 1 }}>
@@ -165,12 +229,12 @@ export const Testimonials: React.FC = () => {
                 </div>
 
                 <p
-                  className="text-center text-[#010C6F] testimonials-quote-text font-bold"
+                  className="text-center text-[#010C6F] testimonials-quote-text"
                   style={{
                     fontFamily: "'Prompt', sans-serif",
                     fontSize: "24px",
                     lineHeight: "32px",
-                    fontWeight: 700,
+                    fontWeight: 400,
                     textAlign: "justify",
                     textAlignLast: "center",
                     maxWidth: "900px",
@@ -194,26 +258,27 @@ export const Testimonials: React.FC = () => {
           </button>
         </div>
 
-        {/* Author name */}
-        <AnimatePresence mode="wait">
-          {TESTIMONIALS[current].name && (
-            <motion.p
-              key={`name-${current}`}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
-              className="mt-10 font-bold"
-              style={{
-                fontFamily: "'Georgia', serif",
-                fontSize: "24px",
-                color: "#E91E8C",
-              }}
-            >
-              - {TESTIMONIALS[current].name}
-            </motion.p>
-          )}
-        </AnimatePresence>
+        <div className="testimonials-author-slot">
+          <AnimatePresence mode="wait">
+            {TESTIMONIALS[current].name && (
+              <motion.p
+                key={`name-${current}`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                className="font-bold m-0"
+                style={{
+                  fontFamily: "'Georgia', serif",
+                  fontSize: "24px",
+                  color: "#E91E8C",
+                }}
+              >
+                - {TESTIMONIALS[current].name}
+              </motion.p>
+            )}
+          </AnimatePresence>
+        </div>
 
       </div>
     </section>

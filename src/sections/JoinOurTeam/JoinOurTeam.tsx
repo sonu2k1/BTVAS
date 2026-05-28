@@ -187,8 +187,9 @@ export const JoinOurTeam: React.FC = () => {
               marginBottom: "16px",
             }}
           >
-            <span style={{ color: "#111827", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Ready to Start</span>{" "}
-            <span style={{ color: "#FF4880" }}>Your Career with Beyond the View?</span>
+            <span style={{ color: "#111827", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Ready to Make an Impact?</span>
+            <br />
+            <span style={{ color: "#FF4880" }}>Join Beyond the View</span>
           </h2>
 
           <p
