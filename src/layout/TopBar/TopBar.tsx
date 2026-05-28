@@ -31,7 +31,7 @@ export const TopBar: React.FC = () => {
         .marquee-track {
           display: flex;
           white-space: nowrap;
-          animation: marquee 20s linear infinite;
+          animation: marquee 10s linear infinite;
         }
 
         .marquee-wrapper:hover .marquee-track {
@@ -148,8 +148,8 @@ export const TopBar: React.FC = () => {
         {/* CENTER MARQUEE */}
         <div className="marquee-wrapper" style={{ width: "498px", height: "22px" }}>
           <div className="marquee-track">
-            <span>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;</span>
-            <span>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;</span>
+            <span>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.</span>
+            <span>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.</span>
           </div>
         </div>
 
@@ -205,8 +205,8 @@ export const TopBar: React.FC = () => {
         <span className="text-white opacity-30 text-[10px]">|</span>
         <div className="marquee-wrapper" style={{ width: "200px", flexShrink: 0 }}>
           <div className="marquee-track">
-            <span style={{ fontSize: "11px !important", fontWeight: "bold" }}>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;</span>
-            <span style={{ fontSize: "11px !important", fontWeight: "bold" }}>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;</span>
+            <span style={{ fontSize: "11px", fontWeight: "bold", fontFamily: "'Prompt', sans-serif" }}>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;</span>
+            <span style={{ fontSize: "11px", fontWeight: "bold", fontFamily: "'Prompt', sans-serif" }}>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;</span>
           </div>
         </div>
         <span className="text-white opacity-30 text-[10px]">|</span>
