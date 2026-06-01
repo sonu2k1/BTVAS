@@ -551,7 +551,7 @@ export const FAQ: React.FC = () => {
           {/* ── LEFT: Image block ── */}
           <div className="faq-img-wrap">
             <Image
-              src="/images/0O3A2539.jpg"
+              src="https://ik.imagekit.io/sonu2k1/TEst/0O3A2539.jpg"
               alt="Children at Beyond The View Autism Services"
               fill
               sizes="(max-width: 1024px) 100vw, 700px"
