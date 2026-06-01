@@ -8,34 +8,34 @@ const GAP = 17;
 const HALF_OFFSET = -(IMG_SIZE / 2);
 
 const leftCol1Images = [
-  "/images/Groups/0O3A2433.jpg",
-  "/images/Groups/0O3A2453.jpg",
-  "/images/Groups/0O3A2459.jpg",
-  "/images/Groups/0O3A2462.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2433.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2453.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
 ];
 const leftCol1Repeated = [...leftCol1Images, ...leftCol1Images];
 
 const leftCol2Images = [
-  "/images/Groups/0O3A2474.jpg",
-  "/images/Groups/0O3A2486.jpg",
-  "/images/Groups/0O3A2500.jpg",
-  "/images/Groups/0O3A2503.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2474.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
 ];
 const leftCol2Repeated = [...leftCol2Images, ...leftCol2Images];
 
 const rightCol1Images = [
-  "/images/Groups/0O3A2503.jpg",
-  "/images/Groups/0O3A2500.jpg",
-  "/images/Groups/0O3A2486.jpg",
-  "/images/Groups/0O3A2474.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2474.jpg",
 ];
 const rightCol1Repeated = [...rightCol1Images, ...rightCol1Images];
 
 const rightCol2Images = [
-  "/images/Groups/0O3A2462.jpg",
-  "/images/Groups/0O3A2459.jpg",
-  "/images/Groups/0O3A2453.jpg",
-  "/images/Groups/0O3A2433.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2453.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2433.jpg",
 ];
 const rightCol2Repeated = [...rightCol2Images, ...rightCol2Images];
 
