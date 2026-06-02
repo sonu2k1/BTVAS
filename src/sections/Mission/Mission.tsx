@@ -353,7 +353,7 @@ export const Mission: React.FC = () => {
                   color: "#1a1a1a",
                 }}
               >
-                Ages 2–6 Years
+                Ages 2–7 Years
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>

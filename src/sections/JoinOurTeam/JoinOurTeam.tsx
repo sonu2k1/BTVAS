@@ -3,9 +3,9 @@
 import React from "react";
 import Image from "next/image";
 
-const IMG_SIZE = 130;
-const GAP = 17;
-const HALF_OFFSET = -(IMG_SIZE / 2);
+const IMG_WIDTH = 165;
+const IMG_HEIGHT = 110;
+const GAP = 16;
 
 const leftCol1Images = [
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2433.jpg",
@@ -58,12 +58,12 @@ export const JoinOurTeam: React.FC = () => {
             transform: translateY(0);
           }
           100% {
-            transform: translateY(calc(-50% - 8.5px));
+            transform: translateY(calc(-50% - ${GAP / 2}px));
           }
         }
         @keyframes scrollDown {
           0% {
-            transform: translateY(calc(-50% - 8.5px));
+            transform: translateY(calc(-50% - ${GAP / 2}px));
           }
           100% {
             transform: translateY(0);
@@ -120,13 +120,13 @@ export const JoinOurTeam: React.FC = () => {
         {/* ── LEFT IMAGE BLOCK ── */}
         <div
           className="relative flex-shrink-0 join-team-side-images"
-          style={{ width: "240px", height: "100%" }}
+          style={{ width: `${IMG_WIDTH * 2 + GAP}px`, height: "100%" }}
         >
-          {/* Col 1 — half cut off */}
+          {/* Col 1 — full */}
           <div
             className="absolute flex flex-col scroll-down-col"
             style={{
-              left: `${HALF_OFFSET}px`,
+              left: "0px",
               top: "-95px",
               gap: `${GAP}px`,
             }}
@@ -135,8 +135,8 @@ export const JoinOurTeam: React.FC = () => {
               <div
                 key={`left-col1-${i}`}
                 style={{
-                  width: `${IMG_SIZE}px`,
-                  height: `${IMG_SIZE}px`,
+                  width: `${IMG_WIDTH}px`,
+                  height: `${IMG_HEIGHT}px`,
                   borderRadius: "16px",
                   overflow: "hidden",
                 }}
@@ -144,8 +144,8 @@ export const JoinOurTeam: React.FC = () => {
                 <Image
                   src={src}
                   alt={`Team Member ${i}`}
-                  width={IMG_SIZE}
-                  height={IMG_SIZE}
+                  width={IMG_WIDTH}
+                  height={IMG_HEIGHT}
                   className="w-full h-full object-cover object-center"
                 />
               </div>
@@ -156,7 +156,7 @@ export const JoinOurTeam: React.FC = () => {
           <div
             className="absolute flex flex-col scroll-up-col"
             style={{
-              left: `${HALF_OFFSET + IMG_SIZE + GAP}px`,
+              left: `${IMG_WIDTH + GAP}px`,
               top: "-30px",
               gap: `${GAP}px`,
             }}
@@ -165,8 +165,8 @@ export const JoinOurTeam: React.FC = () => {
               <div
                 key={`left-col2-${i}`}
                 style={{
-                  width: `${IMG_SIZE}px`,
-                  height: `${IMG_SIZE}px`,
+                  width: `${IMG_WIDTH}px`,
+                  height: `${IMG_HEIGHT}px`,
                   borderRadius: "16px",
                   overflow: "hidden",
                 }}
@@ -174,8 +174,8 @@ export const JoinOurTeam: React.FC = () => {
                 <Image
                   src={src}
                   alt={`Team Member ${i}`}
-                  width={IMG_SIZE}
-                  height={IMG_SIZE}
+                  width={IMG_WIDTH}
+                  height={IMG_HEIGHT}
                   className="w-full h-full object-cover object-center"
                 />
               </div>
@@ -185,8 +185,8 @@ export const JoinOurTeam: React.FC = () => {
 
         {/* ── MIDDLE TEXT SECTION ── */}
         <div
-          className="flex flex-col items-center justify-center flex-shrink-0 join-team-middle-content"
-          style={{ width: "800px", zIndex: 10 }}
+          className="flex flex-col items-center justify-center join-team-middle-content"
+          style={{ width: "100%", maxWidth: "800px", padding: "0 24px", zIndex: 10 }}
         >
           <h2
             style={{
@@ -278,13 +278,13 @@ export const JoinOurTeam: React.FC = () => {
         {/* ── RIGHT IMAGE BLOCK ── */}
         <div
           className="relative flex-shrink-0 join-team-side-images"
-          style={{ width: "240px", height: "100%" }}
+          style={{ width: `${IMG_WIDTH * 2 + GAP}px`, height: "100%" }}
         >
           {/* Col 1 — full */}
           <div
             className="absolute flex flex-col scroll-down-col"
             style={{
-              right: `${HALF_OFFSET + IMG_SIZE + GAP}px`,
+              right: `${IMG_WIDTH + GAP}px`,
               top: "-50px",
               gap: `${GAP}px`,
             }}
@@ -293,8 +293,8 @@ export const JoinOurTeam: React.FC = () => {
               <div
                 key={`right-col1-${i}`}
                 style={{
-                  width: `${IMG_SIZE}px`,
-                  height: `${IMG_SIZE}px`,
+                  width: `${IMG_WIDTH}px`,
+                  height: `${IMG_HEIGHT}px`,
                   borderRadius: "16px",
                   overflow: "hidden",
                 }}
@@ -302,19 +302,19 @@ export const JoinOurTeam: React.FC = () => {
                 <Image
                   src={src}
                   alt={`Team Member ${i}`}
-                  width={IMG_SIZE}
-                  height={IMG_SIZE}
+                  width={IMG_WIDTH}
+                  height={IMG_HEIGHT}
                   className="w-full h-full object-cover object-center"
                 />
               </div>
             ))}
           </div>
 
-          {/* Col 2 — half cut off */}
+          {/* Col 2 — full */}
           <div
             className="absolute flex flex-col scroll-up-col"
             style={{
-              right: `${HALF_OFFSET}px`,
+              right: "0px",
               top: "-85px",
               gap: `${GAP}px`,
             }}
@@ -323,8 +323,8 @@ export const JoinOurTeam: React.FC = () => {
               <div
                 key={`right-col2-${i}`}
                 style={{
-                  width: `${IMG_SIZE}px`,
-                  height: `${IMG_SIZE}px`,
+                  width: `${IMG_WIDTH}px`,
+                  height: `${IMG_HEIGHT}px`,
                   borderRadius: "16px",
                   overflow: "hidden",
                 }}
@@ -332,8 +332,8 @@ export const JoinOurTeam: React.FC = () => {
                 <Image
                   src={src}
                   alt={`Team Member ${i}`}
-                  width={IMG_SIZE}
-                  height={IMG_SIZE}
+                  width={IMG_WIDTH}
+                  height={IMG_HEIGHT}
                   className="w-full h-full object-cover object-center"
                 />
               </div>

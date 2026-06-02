@@ -132,7 +132,7 @@ export const FocusAndHours: React.FC = () => {
             }}
           >
             Our comprehensive early intervention program provides specialized ABA therapy for children
-            ages 2-6. We focus on functional communication, social integration, and developmental
+            ages 2-7. We focus on functional communication, social integration, and developmental
             milestones through evidence-based, compassionate care.
           </p>
 
@@ -211,7 +211,7 @@ export const FocusAndHours: React.FC = () => {
               margin: "0 0 20px 0",
             }}
           >
-            Operation Hours
+            Hours of Operation
           </h3>
 
           {/* Mon - Fri */}

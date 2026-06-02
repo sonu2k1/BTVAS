@@ -4,6 +4,17 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
+interface TeamMember {
+  id: number | string;
+  name: string;
+  credentials: string;
+  role: string;
+  image: string;
+  thumb: string;
+  quote: string;
+  category: string | string[];
+}
+
 const tabs = ["All", "Core Leadership Team", "Operations Leadership Team", "Clinical Excellence Team", "Team Leads & Specialists"];
 
 const teamMembers = [
@@ -216,7 +227,7 @@ const teamLeadsGroup = {
 
 export const OurTeam: React.FC = () => {
   const [activeTab, setActiveTab] = useState("All");
-  const [selectedMember, setSelectedMember] = useState<any>(teamMembers[0]);
+  const [selectedMember, setSelectedMember] = useState<TeamMember>(teamMembers[0]);
 
   const filteredMembers = activeTab === "All"
     ? teamMembers

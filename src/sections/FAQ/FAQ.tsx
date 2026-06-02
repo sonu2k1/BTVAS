@@ -74,6 +74,10 @@ export const FAQ: React.FC = () => {
           object-fit: contain;
         }
 
+        .insurance-logo-wrapper.bcbs img {
+          height: 30px !important;
+        }
+
         @keyframes insurance-marquee-scroll {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -97,6 +101,10 @@ export const FAQ: React.FC = () => {
           .insurance-logo-wrapper img {
             height: 52px !important;
             max-width: 220px;
+          }
+
+          .insurance-logo-wrapper.bcbs img {
+            height: 35px !important;
           }
 
           .insurance-marquee-track {
@@ -123,6 +131,10 @@ export const FAQ: React.FC = () => {
             height: 60px !important;
             max-width: 260px;
           }
+
+          .insurance-logo-wrapper.bcbs img {
+            height: 41px !important;
+          }
         }
 
         @media (min-width: 1024px) {
@@ -143,6 +155,10 @@ export const FAQ: React.FC = () => {
             height: 68px !important;
             max-width: 300px;
           }
+
+          .insurance-logo-wrapper.bcbs img {
+            height: 46px !important;
+          }
         }
 
         @media (min-width: 1280px) {
@@ -162,6 +178,10 @@ export const FAQ: React.FC = () => {
           .insurance-logo-wrapper img {
             height: 74px !important;
             max-width: none;
+          }
+
+          .insurance-logo-wrapper.bcbs img {
+            height: 50px !important;
           }
         }
 
@@ -625,7 +645,10 @@ export const FAQ: React.FC = () => {
         <div className="insurance-marquee-container">
           <div className="insurance-marquee-track">
             {INSURANCE_LOGOS.map((logo, index) => (
-              <div key={`logo-1-${index}`} className="insurance-logo-wrapper">
+              <div 
+                key={`logo-1-${index}`} 
+                className={`insurance-logo-wrapper ${logo.alt === "BlueCross BlueShield" ? "bcbs" : ""}`}
+              >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
@@ -637,7 +660,11 @@ export const FAQ: React.FC = () => {
               </div>
             ))}
             {INSURANCE_LOGOS.map((logo, index) => (
-              <div key={`logo-2-${index}`} className="insurance-logo-wrapper" aria-hidden="true">
+              <div 
+                key={`logo-2-${index}`} 
+                className={`insurance-logo-wrapper ${logo.alt === "BlueCross BlueShield" ? "bcbs" : ""}`}
+                aria-hidden="true"
+              >
                 <Image
                   src={logo.src}
                   alt=""

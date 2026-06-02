@@ -22,16 +22,16 @@ const values = [
   },
   {
     id: 3,
-    title: "Collaboration",
-    description: "We work together with families, caregivers and professionals to achieve the best outcomes.",
+    title: "Hope",
+    description: "Hope is the belief that growth is possible, progress matters, and brighter futures can be built through perseverance, partnership, and purpose. It is the driving force behind our commitment to supporting every child and family we serve.",
     image: "https://ik.imagekit.io/sonu2k1/TEst/card-3.webp",
     borderColor: "#a5d6a7",
     objectPosition: "center 5%",
   },
   {
     id: 4,
-    title: "Inclusion",
-    description: "Every child belongs. We create welcoming spaces where all abilities are celebrated.",
+    title: "Growth",
+    description: "Growth is the belief that every step forward matters. We meet individuals where they are, recognize their unique strengths, and create opportunities for them to thrive beyond expectations.",
     image: "https://ik.imagekit.io/sonu2k1/TEst/card-4.webp",
     borderColor: "#ce93d8",
     objectPosition: "center 5%",
@@ -62,7 +62,7 @@ export const CoreValues: React.FC = () => {
         }
         .val-card:hover .val-desc,
         .val-card.is-active .val-desc {
-          max-height: 120px;
+          max-height: 160px;
           opacity: 1;
         }
         .val-text-box {
@@ -113,7 +113,7 @@ export const CoreValues: React.FC = () => {
           .val-card {
             width: 100% !important;
             max-width: 320px !important;
-            height: 330px !important;
+            height: 350px !important;
           }
           .val-card .val-img-wrap {
             height: 255px !important;
@@ -131,7 +131,7 @@ export const CoreValues: React.FC = () => {
           }
           .val-card:hover .val-desc,
           .val-card.is-active .val-desc {
-            max-height: 120px !important;
+            max-height: 160px !important;
             opacity: 1 !important;
           }
         }
@@ -178,7 +178,7 @@ export const CoreValues: React.FC = () => {
           style={{
             width: "100%",
             maxWidth: "1232px",
-            height: "365px",
+            height: "390px",
             display: "flex",
             gap: "20px",
             flexShrink: 0,
@@ -191,7 +191,7 @@ export const CoreValues: React.FC = () => {
               onClick={() => setActiveIndex(activeIndex === val.id ? null : val.id)}
               style={{
                 width: "290px",
-                height: "365px",
+                height: "390px",
                 borderRadius: "22px",
                 border: `2px dashed ${val.borderColor}`,
                 overflow: "hidden",

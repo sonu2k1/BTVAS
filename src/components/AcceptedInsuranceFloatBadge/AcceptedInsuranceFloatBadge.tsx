@@ -140,6 +140,10 @@ export const AcceptedInsuranceFloatBadge: React.FC = () => {
           object-fit: contain;
         }
 
+        .insurance-float-badge-logo.bcbs img {
+          height: 19px !important;
+        }
+
         @media (min-width: 380px) {
           .insurance-float-badge {
             bottom: max(18px, env(safe-area-inset-bottom, 0px));
@@ -163,6 +167,10 @@ export const AcceptedInsuranceFloatBadge: React.FC = () => {
           .insurance-float-badge-logo img {
             height: 32px !important;
             max-width: 84px;
+          }
+
+          .insurance-float-badge-logo.bcbs img {
+            height: 22px !important;
           }
         }
 
@@ -190,6 +198,10 @@ export const AcceptedInsuranceFloatBadge: React.FC = () => {
             height: 34px !important;
             max-width: 88px;
           }
+
+          .insurance-float-badge-logo.bcbs img {
+            height: 23px !important;
+          }
         }
 
         @media (min-width: 640px) {
@@ -212,6 +224,10 @@ export const AcceptedInsuranceFloatBadge: React.FC = () => {
           .insurance-float-badge-logo img {
             height: 36px !important;
             max-width: 92px;
+          }
+
+          .insurance-float-badge-logo.bcbs img {
+            height: 24px !important;
           }
         }
 
@@ -275,7 +291,7 @@ export const AcceptedInsuranceFloatBadge: React.FC = () => {
           {INSURANCE_LOGOS.map((logo, index) => (
             <div
               key={logo.src}
-              className={`insurance-float-badge-logo${index === activeIndex ? " is-active" : ""}`}
+              className={`insurance-float-badge-logo${index === activeIndex ? " is-active" : ""}${logo.alt === "BlueCross BlueShield" ? " bcbs" : ""}`}
               aria-hidden={index !== activeIndex}
             >
               <Image
