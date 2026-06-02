@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
           className="w-full h-full object-cover object-center"
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         >
-          <source src="https://ik.imagekit.io/sonu2k1/TEst/Hero-Video.mp4" type="video/mp4" />
+          <source src="https://ik.imagekit.io/sonu2k1/TEst/Hero-Vids.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
