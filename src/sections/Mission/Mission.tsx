@@ -244,7 +244,7 @@ export const Mission: React.FC = () => {
               }}
             >
               <Image
-                src="/images/0O3A2503.jpg"
+                src="https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg"
                 alt="Beyond The View team"
                 fill
                 sizes="(max-width: 768px) 100vw, 420px"
@@ -353,7 +353,7 @@ export const Mission: React.FC = () => {
                   color: "#1a1a1a",
                 }}
               >
-                Ages 2–6 Years
+                Ages 2–7 Years
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>

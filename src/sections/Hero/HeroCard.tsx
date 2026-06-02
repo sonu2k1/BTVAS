@@ -52,16 +52,33 @@ export const HeroCard: React.FC = () => {
             gap: 8px !important;
           }
           .hero-card-subtitle {
-            font-size: 28px !important;
+            font-size: 30px !important;
           }
           .hero-card-title {
-            font-size: 40px !important;
+            font-size: 44px !important;
+          }
+          .hero-card-title span {
+            font-size: 24px !important;
+            margin-top: 4px !important;
           }
           .hero-card-quote {
             font-size: 15px !important;
             line-height: 1.5 !important;
             width: auto !important;
             height: auto !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-card-title {
+            font-size: 34px !important;
+          }
+          .hero-card-title span {
+            font-size: 18px !important;
+            margin-top: 3px !important;
+          }
+          .hero-card-subtitle {
+            font-size: 24px !important;
           }
         }
       `}</style>
@@ -111,35 +128,38 @@ export const HeroCard: React.FC = () => {
               gap: "12px",
             }}
           >
-            {/* Subtitle */}
-            <p
-              className="hero-card-subtitle"
-              style={{
-                fontFamily: "'Annie Use Your Telescope', cursive",
-                fontSize: "45px",
-                fontWeight: "400",
-                color: "#ffffff",
-                margin: 0,
-                lineHeight: 1.2,
-              }}
-            >
-              Seeing Every Child
-            </p>
-
-            {/* Main Heading */}
+            {/* Main Heading — Company Name */}
             <h1
               className="hero-card-title"
               style={{
                 fontFamily: "'Baloo 2', sans-serif",
-                fontSize: "64px",
+                fontSize: "72px",
                 fontWeight: "800",
                 color: "#FFE600",
                 margin: 0,
-                lineHeight: 1.1,
+                lineHeight: 1.05,
               }}
             >
-              Beyond Their Diagnosis
+              Beyond The View
+              <span style={{ display: "block", fontSize: "38px", fontWeight: "700", color: "#ffffff", marginTop: "6px", letterSpacing: "0.5px" }}>
+                Autism Services
+              </span>
             </h1>
+
+            {/* Tagline */}
+            <p
+              className="hero-card-subtitle"
+              style={{
+                fontFamily: "'Annie Use Your Telescope', cursive",
+                fontSize: "42px",
+                fontWeight: "400",
+                color: "#ffffff",
+                margin: "4px 0 0 0",
+                lineHeight: 1.2,
+              }}
+            >
+              Seeing Every Child Beyond Their Diagnosis
+            </p>
 
             {/* Quote */}
             <p

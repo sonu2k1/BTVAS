@@ -261,7 +261,7 @@ export const Header: React.FC = () => {
             style={{ textDecoration: "none", cursor: "pointer" }}
           >
             <Image
-              src="/logo.png"
+              src="https://ik.imagekit.io/sonu2k1/TEst/Logos/logo.webp"
               alt="Beyond the View Autism Services"
               width={180}
               height={80}

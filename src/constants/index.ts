@@ -106,11 +106,11 @@ export const faqs = [
 export const FAQS = faqs;
 
 export const INSURANCE_LOGOS = [
-  { src: "/images/logo-bcbs-Photoroom.svg", alt: "BlueCross BlueShield", width: 355, height: 74 },
-  { src: "/images/Unitedhealthcare.svg", alt: "UnitedHealthcare", width: 200, height: 74 },
-  { src: "/images/CareSource.png", alt: "CareSource", width: 150, height: 74 },
-  { src: "/images/Molina.png", alt: "Molina Healthcare", width: 200, height: 75 },
-  { src: "/images/Georgie.png", alt: "Georgie", width: 153, height: 74 },
-  { src: "/images/Amerigroup.png", alt: "Amerigroup", width: 200, height: 75 },
+  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/logo-bcbs-Photoroom.svg", alt: "BlueCross BlueShield", width: 355, height: 74 },
+  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/Unitedhealthcare.svg", alt: "UnitedHealthcare", width: 200, height: 74 },
+  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/CareSource.png", alt: "CareSource", width: 150, height: 74 },
+  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/Molina.png", alt: "Molina Healthcare", width: 200, height: 75 },
+  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/Georgie.png", alt: "Georgie", width: 153, height: 74 },
+  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/Amerigroup.png", alt: "Amerigroup", width: 200, height: 75 },
 ] as const;
 

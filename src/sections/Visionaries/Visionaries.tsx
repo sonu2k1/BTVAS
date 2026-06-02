@@ -10,7 +10,7 @@ const visionaries = [
     credentials: "BCBA, LBA",
     role: "Co-Founder",
     quote: '"Dedicated to the science of behavior and the art of human connection…"',
-    image: "/images/visionary.png",
+    image: "https://ik.imagekit.io/sonu2k1/TEst/Team/visionary.png",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const visionaries = [
     credentials: "BCBA, LBA",
     role: "Co-Founder",
     quote: '"Empowering families through structured, compassionate intervention strategies…"',
-    image: "/images/visionary-2.png",
+    image: "https://ik.imagekit.io/sonu2k1/TEst/Team/visionary-2.png",
   },
 ];
 

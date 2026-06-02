@@ -18,7 +18,7 @@ export const services: Service[] = [
     titleColor2: "#FF4880",
     description:
       "Evidence-based Applied Behaviour Analysis tailored to each child's unique profile and goals",
-    image: "/images/aba.png",
+    image: "https://ik.imagekit.io/sonu2k1/TEst/Services/aba.png",
     alt: "Child doing ABA therapy activity",
     overview:
       "Applied Behavior Analysis (ABA) is a research-backed therapy that helps children build meaningful skills through positive reinforcement and individualized teaching. At Beyond The View, every ABA program is designed around your child's strengths, needs, and family goals.",
@@ -38,7 +38,7 @@ export const services: Service[] = [
     titleColor2: "#FF4880",
     description:
       "Building communication skills through expert speech language intervention and practice.",
-    image: "/images/Speech.png",
+    image: "https://ik.imagekit.io/sonu2k1/TEst/Services/Speech.png",
     alt: "Child with speech therapy number board",
     overview:
       "Our speech-language services help children express themselves, understand others, and connect with the world around them. Sessions are playful, engaging, and tailored to each child's communication profile.",
@@ -59,7 +59,7 @@ export const services: Service[] = [
     titleColor2: "#FF4880",
     description:
       "Hands-on support for fine motor skills, sensory processing, and daily independence — launching soon.",
-    image: "/images/occu.png",
+    image: "https://ik.imagekit.io/sonu2k1/TEst/Services/occu.png",
     alt: "Children doing occupational therapy on playground",
     overview:
       "Occupational therapy helps children participate fully in daily life — from play and self-care to classroom routines. Our OT team uses structured activities to build motor skills, confidence, and functional independence.",
@@ -79,7 +79,7 @@ export const services: Service[] = [
     titleColor2: "#FF4880",
     description:
       "Comprehensive behavioral support strategies for children and families.",
-    image: "/images/0O3A2609.jpg",
+    image: "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2609.jpg",
     alt: "Child in behavioral support session",
     overview:
       "Behavioral support focuses on understanding why challenging behaviors occur and teaching positive alternatives. We partner closely with families to create practical strategies that work in real life — not just in the clinic.",

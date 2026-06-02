@@ -488,7 +488,7 @@ export const Footer: React.FC = () => {
           <div className="footer-main">
             <div className="footer-brand">
               <Image
-                src="/logo.webp"
+                src="https://ik.imagekit.io/sonu2k1/TEst/Logos/logo.svg"
                 alt="Beyond The View Autism Services"
                 width={160}
                 height={150}

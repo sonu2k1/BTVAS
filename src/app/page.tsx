@@ -59,7 +59,7 @@ export default function Home() {
 
         <div className="footer-divider" style={{ width: "100%", display: "flex", justifyContent: "center", position: "relative", zIndex: 20, marginBottom: "-25px", top: "-14px" }}>
           <Image
-            src="/divider.webp"
+            src="https://ik.imagekit.io/sonu2k1/TEst/Icons/divider.webp"
             alt="Divider"
             width={1440}
             height={90}

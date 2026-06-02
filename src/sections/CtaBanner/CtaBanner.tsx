@@ -148,35 +148,10 @@ export const CtaBanner: React.FC = () => {
                 lineHeight: 1.2,
               }}
             >
-              Joined 100+ Happy Parents
+              Happy Parents
               <br />
               Who Trust BTVAS
             </h2>
-
-            {/* Star Rating */}
-            <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-              <span style={{ color: "#FF4880", fontSize: "18px" }}>★</span>
-              <span
-                style={{
-                  fontFamily: "'Nunito', sans-serif",
-                  fontSize: "14px",
-                  fontWeight: 800,
-                  color: "#FF4880",
-                }}
-              >
-                4.6/5
-              </span>
-              <span
-                style={{
-                  fontFamily: "'Nunito', sans-serif",
-                  fontSize: "14px",
-                  fontWeight: 700,
-                  color: "#3a2a50",
-                }}
-              >
-                Rating
-              </span>
-            </div>
           </div>
 
           {/* RIGHT: Subtitle + 3D Button */}

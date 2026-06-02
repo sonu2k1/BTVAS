@@ -126,7 +126,7 @@ export const TopBar: React.FC = () => {
         <div className="flex items-center gap-2 whitespace-nowrap">
           {/* Phone icon */}
           <div className="w-6 h-6 shrink-0 flex items-center justify-center">
-            <Image src="/icons/Phone.svg" alt="Phone" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
           </div>
 
           <div className="flex items-center gap-[10px] text-white font-sans text-[12px]">
@@ -137,7 +137,7 @@ export const TopBar: React.FC = () => {
           {/* Email icon */}
           <div className="flex items-center gap-[6px] ml-[10px]">
             <div className="w-6 h-6 shrink-0 flex items-center justify-center">
-              <Image src="/icons/Email.svg" alt="Email" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+              <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Email.svg" alt="Email" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
             </div>
             <a className="text-white font-sans text-[12px] underline" href="mailto:intake@btvas.com">
               intake@btvas.com
@@ -145,13 +145,20 @@ export const TopBar: React.FC = () => {
           </div>
         </div>
 
-        {/* CENTER MARQUEE */}
+        {/* CENTER BANNER */}
+        <div style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <span style={{ color: "#ffffffff", fontFamily: "'Prompt', sans-serif", fontSize: "14px", fontWeight: "800", letterSpacing: "0.5px" }}>
+            Enrolling Now
+          </span>
+        </div>
+        {/* PREVIOUS SCROLLING MARQUEE CODE:
         <div className="marquee-wrapper" style={{ width: "498px", height: "22px" }}>
           <div className="marquee-track">
             <span>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.</span>
             <span>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.</span>
           </div>
         </div>
+        */}
 
         {/* RIGHT */}
         <div className="flex items-center gap-[10px] shrink-0">
@@ -184,7 +191,7 @@ export const TopBar: React.FC = () => {
             className="flex items-center gap-[6px] topbar-link"
           >
             <div className="w-6 h-6 shrink-0 flex items-center justify-center topbar-fb-icon">
-              <Image src="/icons/FB.svg" alt="Facebook" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+              <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/FB.svg" alt="Facebook" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
             </div>
             <span className="text-white font-sans text-[12px] whitespace-nowrap">
               @beyondtheviewaba
@@ -198,21 +205,26 @@ export const TopBar: React.FC = () => {
       <div className="topbar-mobile">
         <a href="tel:4044067339" className="flex items-center gap-1 text-white font-sans text-[11px] decoration-none topbar-link" style={{ textDecoration: "none" }}>
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
-            <Image src="/icons/Phone.svg" alt="Phone" width={16} height={16} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={16} height={16} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
           </div>
           (404)-406-7339
         </a>
         <span className="text-white opacity-30 text-[10px]">|</span>
+        <span style={{ color: "#FFE600", fontSize: "11px", fontWeight: "800", fontFamily: "'Prompt', sans-serif" }}>
+          Enrolling Now
+        </span>
+        {/* PREVIOUS SCROLLING MARQUEE CODE:
         <div className="marquee-wrapper" style={{ width: "200px", flexShrink: 0 }}>
           <div className="marquee-track">
             <span style={{ fontSize: "11px", fontWeight: "bold", fontFamily: "'Prompt', sans-serif" }}>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;</span>
             <span style={{ fontSize: "11px", fontWeight: "bold", fontFamily: "'Prompt', sans-serif" }}>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;</span>
           </div>
         </div>
+        */}
         <span className="text-white opacity-30 text-[10px]">|</span>
         <a href="mailto:intake@btvas.com" className="flex items-center gap-1 text-white font-sans text-[11px] underline topbar-link">
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
-            <Image src="/icons/Email.svg" alt="Email" width={16} height={16} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Email.svg" alt="Email" width={16} height={16} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
           </div>
           intake@btvas.com
         </a>
