@@ -9,7 +9,7 @@ export const HeroCard: React.FC = () => {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Baloo+2:wght@400;500;600;700;800&family=Prompt:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Baloo+2:wght@400;500;600;700;800&family=Mochiy+Pop+One&family=Mochiy+Pop+P+One&family=Prompt:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
 
         .hero-visit-btn:hover {
           background-color: #fff233 !important;
@@ -55,10 +55,10 @@ export const HeroCard: React.FC = () => {
             font-size: 30px !important;
           }
           .hero-card-title {
-            font-size: 44px !important;
+            font-size: 38px !important;
           }
           .hero-card-title span {
-            font-size: 24px !important;
+            font-size: inherit !important;
             margin-top: 4px !important;
           }
           .hero-card-quote {
@@ -71,14 +71,14 @@ export const HeroCard: React.FC = () => {
 
         @media (max-width: 480px) {
           .hero-card-title {
-            font-size: 34px !important;
+            font-size: 26px !important;
           }
           .hero-card-title span {
-            font-size: 18px !important;
+            font-size: inherit !important;
             margin-top: 3px !important;
           }
           .hero-card-subtitle {
-            font-size: 24px !important;
+            font-size: 22px !important;
           }
         }
       `}</style>
@@ -132,16 +132,16 @@ export const HeroCard: React.FC = () => {
             <h1
               className="hero-card-title"
               style={{
-                fontFamily: "'Baloo 2', sans-serif",
-                fontSize: "72px",
+                fontFamily: "'Mochiy Pop P One', 'Mochiy Pop One', sans-serif",
+                fontSize: "52px",
                 fontWeight: "800",
                 color: "#FFE600",
                 margin: 0,
-                lineHeight: 1.05,
+                lineHeight: 1.15,
               }}
             >
               Beyond The View
-              <span style={{ display: "block", fontSize: "38px", fontWeight: "700", color: "#ffffff", marginTop: "6px", letterSpacing: "0.5px" }}>
+              <span style={{ display: "block", fontSize: "inherit", fontWeight: "inherit", color: "#ffffff", marginTop: "8px", letterSpacing: "0.5px" }}>
                 Autism Services
               </span>
             </h1>
