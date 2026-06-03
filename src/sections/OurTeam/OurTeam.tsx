@@ -683,7 +683,7 @@ export const OurTeam: React.FC = () => {
                   <p
                     style={{
                       fontFamily: "'Nunito', sans-serif",
-                      fontSize: "13px",
+                      fontSize: "18px",
                       fontWeight: "400",
                       color: "#777",
                       margin: "0 0 12px 0",

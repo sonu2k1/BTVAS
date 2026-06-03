@@ -168,7 +168,7 @@ export const FocusAndHours: React.FC = () => {
           <p
             style={{
               fontFamily: "'Nunito', sans-serif",
-              fontSize: "14.5px",
+              fontSize: "16px",
               fontWeight: "400",
               color: "#555",
               lineHeight: "1.75",
