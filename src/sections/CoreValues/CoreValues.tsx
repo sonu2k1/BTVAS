@@ -143,7 +143,7 @@ export const CoreValues: React.FC = () => {
         style={{
           width: "100%",
           maxWidth: "1440px",
-          height: "552px",
+          height: "auto",
           backgroundColor: "#faf6f0",
           display: "flex",
           flexDirection: "column",
@@ -151,10 +151,27 @@ export const CoreValues: React.FC = () => {
           justifyContent: "center",
           gap: "24px",
           boxSizing: "border-box",
-          padding: "0 clamp(16px, 7vw, 104px)",
+          padding: "56px clamp(16px, 7vw, 104px)",
           margin: "0 auto",
         }}
       >
+        {/* QUOTE */}
+        <p
+          style={{
+            fontFamily: "'Annie Use Your Telescope', cursive",
+            fontSize: "clamp(24px, 4.5vw, 42px)",
+            color: "#0b0f8a",
+            lineHeight: 1.3,
+            fontWeight: "400",
+            margin: "0 0 8px 0",
+            maxWidth: "960px",
+            textAlign: "center",
+            textWrap: "balance",
+          }}
+        >
+          If they can&apos;t learn the way we teach them, we teach them the way they learn
+        </p>
+
         {/* HEADER */}
         <div style={{ textAlign: "center" }}>
 
