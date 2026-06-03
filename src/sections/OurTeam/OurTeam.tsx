@@ -177,7 +177,7 @@ const coreLeadershipGroup = {
   role: "Beyond The View Autism Services",
   image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
   thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
-  quote: `Our core leadership team is dedicated to meeting each child's individual needs, creating limitless opportunities for learning, and supporting each child on their journey to reach their full potential.\n\nTeam Members:\n• Danielle Strickland (Co-Founder, BCBA, LBA)\n• Sheneice Willis Lewis (Co-Founder, BCBA, LBA)\n• Sheckeema Taylor (Director of Operations)`,
+  quote: `Our core leadership team is dedicated to meeting each child's individual needs, creating limitless opportunities for learning, and supporting each child on their journey to reach their full potential.`,
   category: "Core Leadership Team",
 };
 
@@ -188,7 +188,7 @@ const operationsLeadershipGroup = {
   role: "Beyond The View Autism Services",
   image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
   thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
-  quote: `Our operations leadership team coordinates daily administrative functions, ensures compliance and safety, and manages scheduling so that children receive seamless, high-quality care.\n\nTeam Members:\n• Danielle Strickland (Co-Founder)\n• Sheneice Willis Lewis (Co-Founder)\n• Sheckeema Taylor (Director of Operations)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Kianna Jamison (College Park Clinic Coordinator)`,
+  quote: `Our operations leadership team coordinates daily administrative functions, ensures compliance and safety, and manages scheduling so that children receive seamless, high-quality care.`,
   category: "Operations Leadership Team",
 };
 
@@ -221,7 +221,7 @@ const teamLeadsGroup = {
   role: "Beyond The View Autism Services",
   image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
   thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
-  quote: `Our dedicated team of RBT Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy.`,
+  quote: `Our dedicated team of Registered Behavior Technicians Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy.`,
   category: "Team Leads & Specialists",
 };
 

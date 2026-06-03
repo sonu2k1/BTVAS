@@ -129,7 +129,9 @@ export const HeroCard: React.FC = () => {
             padding: "24px",
             display: "flex",
             flexDirection: "column",
+            alignItems: "center",
             justifyContent: "space-between",
+            textAlign: "center",
             gap: "20px",
           }}
         >
@@ -142,6 +144,7 @@ export const HeroCard: React.FC = () => {
               height: "auto",
               display: "flex",
               flexDirection: "column",
+              alignItems: "center",
               justifyContent: "flex-start",
               gap: "12px",
             }}
@@ -156,6 +159,7 @@ export const HeroCard: React.FC = () => {
                 color: "#FFE600",
                 margin: 0,
                 lineHeight: 1.15,
+                textAlign: "center",
               }}
             >
               Beyond The View
@@ -174,6 +178,7 @@ export const HeroCard: React.FC = () => {
                 color: "#ffffff",
                 margin: "4px 0 0 0",
                 lineHeight: 1.2,
+                textAlign: "center",
               }}
             >
               Seeing Every Child <br className="hero-subtitle-br" /> Beyond Their Diagnosis

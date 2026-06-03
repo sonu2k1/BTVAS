@@ -70,8 +70,8 @@ export const Testimonials: React.FC = () => {
 
         .testimonials-subtitle-wrap {
           flex-shrink: 0;
-          margin-top: 64px;
-          margin-bottom: 64px;
+          margin-top: 32px;
+          margin-bottom: 48px;
         }
 
         .testimonials-row {
@@ -167,8 +167,8 @@ export const Testimonials: React.FC = () => {
           }
 
           .testimonials-subtitle-wrap {
-            margin-top: 32px !important;
-            margin-bottom: 32px !important;
+            margin-top: 24px !important;
+            margin-bottom: 24px !important;
           }
           .testimonials-subtitle {
             font-size: 19px !important;
@@ -224,15 +224,39 @@ export const Testimonials: React.FC = () => {
       {/* Testimonials card */}
       <div
         className="relative flex flex-col items-center testimonials-card site-inner-root site-inner-root--1340"
-        style={{ width: "100%", maxWidth: "1340px", height: "580px" }}
+        style={{ width: "100%", maxWidth: "1340px", height: "auto", minHeight: "580px" }}
       >
         <div className="testimonials-header">
-          <div className="flex flex-col items-center">
-            <svg width="52" height="42" viewBox="0 0 52 42" fill="none">
-              <text x="0" y="40" fontSize="52" fill="#E91E8C" fontFamily="Georgia, serif">
-                ❝
-              </text>
-            </svg>
+          <div className="flex flex-col items-center" style={{ height: "42px" }}>
+            {/* Space preserved */}
+          </div>
+
+          {/* RITA PIERSON QUOTE */}
+          <div className="flex flex-col items-center max-w-[850px] mx-auto text-center px-4 mt-6">
+            <p
+              style={{
+                fontFamily: "'Prompt', sans-serif",
+                fontSize: "20px",
+                lineHeight: "1.5",
+                color: "#010C6F",
+                fontWeight: 400,
+                margin: "0 0 10px 0",
+                fontStyle: "italic",
+              }}
+            >
+              &ldquo;Every child deserves a champion&mdash;an adult who will never give up on them, who understands the power of connection and insists that they become the best that they can possibly be.&rdquo;
+            </p>
+            <p
+              style={{
+                fontFamily: "'Prompt', sans-serif",
+                fontSize: "18px",
+                fontWeight: 600,
+                color: "#E91E8C",
+                margin: 0,
+              }}
+            >
+              — Rita Pierson
+            </p>
           </div>
 
           <p className="testimonials-subtitle testimonials-subtitle-wrap text-gray-500">
