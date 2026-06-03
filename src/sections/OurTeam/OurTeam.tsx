@@ -194,23 +194,23 @@ const operationsLeadershipGroup = {
 
 const clinicalExcellenceGroup1 = {
   id: "clinical-group-1",
-  name: "Clinical Excellence Team (Group A)",
-  credentials: "Board Certified Clinicians",
+  name: "Clinical Excellence Team",
+  credentials: "BCBAs",
   role: "Beyond The View Autism Services",
   image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2474.jpg",
   thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2474.jpg",
-  quote: `Our clinical excellence team of Board Certified Behavior Analysts (BCBAs) holds themselves to the highest standards of evidence-based practice, conducting thorough developmental assessments and tailoring individualized programs to nurture every child's full potential.\n\nTeam Members:\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Alexander Jones (RBT Lead, Trainer)\n• Alicante Parker (BCBA, LBA)\n• Keajia Campbell (BCBA, LBA)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• CaTarrus Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
+  quote: `Our clinical excellence team of Board Certified Behavior Analysts (BCBAs) holds themselves to the highest standards of evidence-based practice, conducting thorough developmental assessments and tailoring individualized programs to nurture every child's full potential.`,
   category: "Clinical Excellence Team",
 };
 
 const clinicalExcellenceGroup2 = {
   id: "clinical-group-2",
-  name: "Clinical Excellence Team (Group B)",
-  credentials: "Board Certified Clinicians",
+  name: "Clinical Excellence Team ",
+  credentials: "BCBAs",
   role: "Beyond The View Autism Services",
   image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
   thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
-  quote: `We collaborate closely with caregivers and providers to ensure that learning is integrated, comprehensive, and consistent across home, clinic, and community environments.\n\nTeam Members:\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Alexander Jones (RBT Lead, Trainer)\n• Alicante Parker (BCBA, LBA)\n• Keajia Campbell (BCBA, LBA)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• CaTarrus Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
+  quote: `We collaborate closely with caregivers and providers to ensure that learning is integrated, comprehensive, and consistent across home, clinic, and community environments.`,
   category: "Clinical Excellence Team",
 };
 
@@ -221,7 +221,7 @@ const teamLeadsGroup = {
   role: "Beyond The View Autism Services",
   image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
   thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
-  quote: `Our dedicated team of RBT Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy.\n\nTeam Members:\n• Danielle Strickland (Co-Founder, BCBA, LBA)\n• Sheneice Willis Lewis (Co-Founder, BCBA, LBA)\n• Shanika Marks (RBT Lead, Clinical Lead)\n• Sheckeema Taylor (Director of Operations, Specialist)\n• Alexander Jones (RBT Lead, Trainer)\n• Eternia Richmond (Morrow Clinic Operations Manager)\n• Alicante Parker (Clinical Excellence)\n• Keajia Campbell (Clinical Excellence)\n• Kianna Jamison (College Park Clinic Coordinator)\n• Terricka Comer (RBT Leader, Trainer & Clinical Specialist)\n• Evette Sims (BCBA)\n• CaTarrus Black (RBT, Clinical Specialist)\n• Jeff Jean-Baptiste (BCBA, LBA)`,
+  quote: `Our dedicated team of RBT Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy.`,
   category: "Team Leads & Specialists",
 };
 

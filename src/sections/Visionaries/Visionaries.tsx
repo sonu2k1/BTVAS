@@ -127,8 +127,8 @@ export const Visionaries: React.FC = () => {
             lineHeight: 1.2,
           }}
         >
-          <span style={{ textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>The</span>{" "}
-          <span style={{ color: "#FF4880" }}>Visionaries</span>
+          <span style={{ textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>The Visionaries </span>{" "}
+          <span style={{ color: "#FF4880" }}>of Beyond the View Autism Services</span>
         </h2>
       </div>
 

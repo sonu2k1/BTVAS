@@ -83,13 +83,18 @@ export const TopBar: React.FC = () => {
           filter: drop-shadow(0 0 4px rgba(66, 103, 178, 0.8));
         }
 
-        .topbar-mobile {
+              .topbar-mobile {
           display: none;
         }
 
         .topbar-desktop {
           width: 100%;
           max-width: 1400px;
+        }
+
+        .topbar-desktop span.enrolling-now-text {
+          font-size: 16px !important;
+          color: #FFE600 !important;
         }
 
         @media (min-width: 1025px) and (max-width: 1279px) {
@@ -147,7 +152,10 @@ export const TopBar: React.FC = () => {
 
         {/* CENTER BANNER */}
         <div style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <span style={{ color: "#ffffffff", fontFamily: "'Prompt', sans-serif", fontSize: "14px", fontWeight: "800", letterSpacing: "0.5px" }}>
+          <span
+            className="enrolling-now-text"
+            style={{ fontFamily: "'Prompt', sans-serif", fontWeight: "800", letterSpacing: "0.5px" }}
+          >
             Enrolling Now
           </span>
         </div>

@@ -25,6 +25,12 @@ export const TESTIMONIALS = [
   {
     quote:
       "Been great thus far. My son is very excited every time we're pulling into the center. He's eager to go right along with his therapist. I appreciate you all.",
+    name: "",
+  },
+  {
+    quote:
+      "Every child deserves a champion—an adult who will never give up on them, who understands the power of connection and insists that they become the best that they can possibly be",
+    name: "Rita Pierson",
   },
 ];
 

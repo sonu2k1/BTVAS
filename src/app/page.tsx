@@ -5,7 +5,6 @@ import { CoreValues } from "@/sections/CoreValues";
 import { Mission } from "@/sections/Mission";
 import { Visionaries } from "@/sections/Visionaries";
 import { FocusAndHours } from "@/sections/FocusAndHours";
-import { CtaBanner } from "@/sections/CtaBanner";
 import { OurTeam } from "@/sections/OurTeam";
 import { Testimonials } from "@/sections/Testimonials";
 import { OurServices } from "@/sections/OurServices";
@@ -49,7 +48,6 @@ export default function Home() {
         <Mission />
         <Visionaries />
         <FocusAndHours />
-        <CtaBanner />
         <OurTeam />
         <OurServices />
         <Testimonials />

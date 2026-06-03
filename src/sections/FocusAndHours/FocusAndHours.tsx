@@ -205,7 +205,7 @@ export const FocusAndHours: React.FC = () => {
           <h3
             style={{
               fontFamily: "'Nunito', sans-serif",
-              fontSize: "18px",
+              fontSize: "20px",
               fontWeight: "900",
               color: "#ffffff",
               margin: "0 0 20px 0",
@@ -227,7 +227,7 @@ export const FocusAndHours: React.FC = () => {
             <span
               style={{
                 fontFamily: "'Nunito', sans-serif",
-                fontSize: "14px",
+                fontSize: "20px",
                 fontWeight: "600",
                 color: "#ffffff",
               }}
@@ -237,7 +237,7 @@ export const FocusAndHours: React.FC = () => {
             <span
               style={{
                 fontFamily: "'Nunito', sans-serif",
-                fontSize: "14px",
+                fontSize: "18px",
                 fontWeight: "700",
                 color: "#ffffff",
               }}
@@ -258,7 +258,7 @@ export const FocusAndHours: React.FC = () => {
             <span
               style={{
                 fontFamily: "'Nunito', sans-serif",
-                fontSize: "14px",
+                fontSize: "20px",
                 fontWeight: "600",
                 color: "#ffffff",
               }}
@@ -268,7 +268,7 @@ export const FocusAndHours: React.FC = () => {
             <span
               style={{
                 fontFamily: "'Nunito', sans-serif",
-                fontSize: "14px",
+                fontSize: "18px",
                 fontWeight: "700",
                 color: "#ffffff",
               }}
