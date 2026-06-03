@@ -672,7 +672,7 @@ export const OurTeam: React.FC = () => {
                   <p
                     style={{
                       fontFamily: "'Nunito', sans-serif",
-                      fontSize: "15px",
+                      fontSize: "18px",
                       fontWeight: "700",
                       color: "#333",
                       margin: 0,
@@ -683,7 +683,7 @@ export const OurTeam: React.FC = () => {
                   <p
                     style={{
                       fontFamily: "'Nunito', sans-serif",
-                      fontSize: "13px",
+                      fontSize: "18px",
                       fontWeight: "400",
                       color: "#777",
                       margin: "0 0 12px 0",
@@ -694,7 +694,7 @@ export const OurTeam: React.FC = () => {
                   <p
                     style={{
                       fontFamily: "'Nunito', sans-serif",
-                      fontSize: "14px",
+                      fontSize: "16px",
                       fontWeight: "400",
                       fontStyle: "italic",
                       color: "#333",

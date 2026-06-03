@@ -116,7 +116,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
             className="text-center"
             style={{
               fontFamily: "'Prompt', sans-serif",
-              fontSize: "14px",
+              fontSize: "16px",
               lineHeight: "26px",
               color: "#666666",
               width: "310px",
