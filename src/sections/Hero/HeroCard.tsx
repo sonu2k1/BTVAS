@@ -39,7 +39,7 @@ export const HeroCard: React.FC = () => {
         @media (max-width: 1024px) {
           .hero-card-outer {
             width: 100% !important;
-            max-width: 90vw !important;
+            max-width: min(580px, 90vw) !important;
             height: auto !important;
             padding: 8px !important;
             flex-shrink: 1 !important;
