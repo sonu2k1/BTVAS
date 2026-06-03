@@ -694,7 +694,7 @@ export const OurTeam: React.FC = () => {
                   <p
                     style={{
                       fontFamily: "'Nunito', sans-serif",
-                      fontSize: "14px",
+                      fontSize: "16px",
                       fontWeight: "400",
                       fontStyle: "italic",
                       color: "#333",
