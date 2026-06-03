@@ -44,8 +44,13 @@ export const CoreValues: React.FC = () => {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Mochiy+Pop+One&display=swap');
 
+        .val-card {
+          height: auto;
+          min-height: 390px;
+          transition: border-color 0.4s ease;
+        }
         .val-card .val-img-wrap {
           height: 290px;
           transition: height 0.4s ease;
@@ -62,7 +67,7 @@ export const CoreValues: React.FC = () => {
         }
         .val-card:hover .val-desc,
         .val-card.is-active .val-desc {
-          max-height: 160px;
+          max-height: 280px;
           opacity: 1;
         }
         .val-text-box {
@@ -113,7 +118,8 @@ export const CoreValues: React.FC = () => {
           .val-card {
             width: 100% !important;
             max-width: 320px !important;
-            height: 350px !important;
+            height: auto !important;
+            min-height: 350px !important;
           }
           .val-card .val-img-wrap {
             height: 255px !important;
@@ -131,7 +137,7 @@ export const CoreValues: React.FC = () => {
           }
           .val-card:hover .val-desc,
           .val-card.is-active .val-desc {
-            max-height: 160px !important;
+            max-height: 280px !important;
             opacity: 1 !important;
           }
         }
@@ -158,13 +164,13 @@ export const CoreValues: React.FC = () => {
         {/* QUOTE */}
         <p
           style={{
-            fontFamily: "'Annie Use Your Telescope', cursive",
-            fontSize: "clamp(24px, 4.5vw, 42px)",
-            color: "#0b0f8a",
-            lineHeight: 1.3,
-            fontWeight: "400",
+            fontFamily: "'Annie Use Your Telescope', sans-serif",
+            fontSize: "clamp(20px, 3.5vw, 34px)",
+            color: "#0e0e0fff",
+            lineHeight: 1.4,
+            fontWeight: "1000",
             margin: "0 0 8px 0",
-            maxWidth: "960px",
+            maxWidth: "1060px",
             textAlign: "center",
             textWrap: "balance",
           }}
@@ -195,7 +201,7 @@ export const CoreValues: React.FC = () => {
           style={{
             width: "100%",
             maxWidth: "1232px",
-            height: "390px",
+            minHeight: "390px",
             display: "flex",
             gap: "20px",
             flexShrink: 0,
@@ -208,7 +214,6 @@ export const CoreValues: React.FC = () => {
               onClick={() => setActiveIndex(activeIndex === val.id ? null : val.id)}
               style={{
                 width: "290px",
-                height: "390px",
                 borderRadius: "22px",
                 border: `2px dashed ${val.borderColor}`,
                 overflow: "hidden",
