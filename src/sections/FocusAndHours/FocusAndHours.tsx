@@ -76,6 +76,51 @@ export const FocusAndHours: React.FC = () => {
             max-width: 343px !important;
             height: 235px !important;
           }
+          .hours-label,
+          .hours-value {
+            white-space: nowrap !important;
+          }
+        }
+
+        @media (max-width: 375px) {
+          .hours-right {
+            padding: 20px 20px !important;
+            height: auto !important;
+          }
+          .hours-right h3.hours-title {
+            font-size: 18px !important;
+            margin-bottom: 12px !important;
+          }
+          .hours-row {
+            padding-top: 12px !important;
+            padding-bottom: 12px !important;
+          }
+          .hours-label {
+            font-size: 15px !important;
+          }
+          .hours-value {
+            font-size: 14px !important;
+          }
+        }
+
+        @media (max-width: 320px) {
+          .hours-right {
+            padding: 16px 14px !important;
+          }
+          .hours-right h3.hours-title {
+            font-size: 16px !important;
+            margin-bottom: 8px !important;
+          }
+          .hours-row {
+            padding-top: 8px !important;
+            padding-bottom: 8px !important;
+          }
+          .hours-label {
+            font-size: 13.5px !important;
+          }
+          .hours-value {
+            font-size: 12.5px !important;
+          }
         }
       `}</style>
 
@@ -203,6 +248,7 @@ export const FocusAndHours: React.FC = () => {
           }}
         >
           <h3
+            className="hours-title"
             style={{
               fontFamily: "'Nunito', sans-serif",
               fontSize: "20px",
@@ -216,6 +262,7 @@ export const FocusAndHours: React.FC = () => {
 
           {/* Mon - Fri */}
           <div
+            className="hours-row"
             style={{
               display: "flex",
               justifyContent: "space-between",
@@ -225,6 +272,7 @@ export const FocusAndHours: React.FC = () => {
             }}
           >
             <span
+              className="hours-label"
               style={{
                 fontFamily: "'Nunito', sans-serif",
                 fontSize: "20px",
@@ -235,6 +283,7 @@ export const FocusAndHours: React.FC = () => {
               Mon - Fri
             </span>
             <span
+              className="hours-value"
               style={{
                 fontFamily: "'Nunito', sans-serif",
                 fontSize: "18px",
@@ -248,6 +297,7 @@ export const FocusAndHours: React.FC = () => {
 
           {/* Clinic Tours */}
           <div
+            className="hours-row"
             style={{
               display: "flex",
               justifyContent: "space-between",
@@ -256,6 +306,7 @@ export const FocusAndHours: React.FC = () => {
             }}
           >
             <span
+              className="hours-label"
               style={{
                 fontFamily: "'Nunito', sans-serif",
                 fontSize: "20px",
@@ -266,6 +317,7 @@ export const FocusAndHours: React.FC = () => {
               Clinic Tours
             </span>
             <span
+              className="hours-value"
               style={{
                 fontFamily: "'Nunito', sans-serif",
                 fontSize: "18px",

@@ -64,6 +64,9 @@ export const Visionaries: React.FC = () => {
             width: 100% !important;
             text-align: center !important;
           }
+          .visionaries-heading h2 {
+            line-height: 1.75 !important;
+          }
           .visionaries-row {
             width: 100% !important;
             height: auto !important;
@@ -111,6 +114,27 @@ export const Visionaries: React.FC = () => {
             font-size: 11.5px !important;
             line-height: 1.45 !important;
             margin-top: 8px !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .visionaries-heading h2 {
+            font-size: 22px !important;
+            line-height: 1.75 !important;
+          }
+        }
+
+        @media (max-width: 375px) {
+          .visionaries-heading h2 {
+            font-size: 20px !important;
+            line-height: 1.75 !important;
+          }
+        }
+
+        @media (max-width: 320px) {
+          .visionaries-heading h2 {
+            font-size: 18px !important;
+            line-height: 1.75 !important;
           }
         }
       `}</style>
