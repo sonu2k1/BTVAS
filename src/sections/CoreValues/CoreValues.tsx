@@ -239,7 +239,7 @@ export const CoreValues: React.FC = () => {
                   className="val-desc"
                   style={{
                     fontFamily: "'Nunito', sans-serif",
-                    fontSize: "13.5px",
+                    fontSize: "16px",
                     fontWeight: "400",
                     color: "#666",
                     lineHeight: "1.6",

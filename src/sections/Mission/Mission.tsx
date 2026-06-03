@@ -318,7 +318,7 @@ export const Mission: React.FC = () => {
           <p
             style={{
               fontFamily: "'Nunito', sans-serif",
-              fontSize: "15px",
+              fontSize: "16px",
               fontWeight: "400",
               color: "#555",
               lineHeight: "1.75",
