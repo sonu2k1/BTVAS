@@ -11,6 +11,10 @@ export const HeroCard: React.FC = () => {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Baloo+2:wght@400;500;600;700;800&family=Mochiy+Pop+One&family=Mochiy+Pop+P+One&family=Prompt:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+        .hero-subtitle-br {
+          display: none;
+        }
+
         .hero-visit-btn:hover {
           background-color: #fff233 !important;
           top: 2px !important;
@@ -43,8 +47,10 @@ export const HeroCard: React.FC = () => {
           .hero-card-inner {
             width: 100% !important;
             height: auto !important;
+            min-height: auto !important;
             padding: 16px !important;
             gap: 16px !important;
+            border-radius: 12px !important;
           }
           .hero-card-content {
             width: 100% !important;
@@ -53,6 +59,9 @@ export const HeroCard: React.FC = () => {
           }
           .hero-card-subtitle {
             font-size: 30px !important;
+          }
+          .hero-subtitle-br {
+            display: block !important;
           }
           .hero-card-title {
             font-size: 38px !important;
@@ -70,6 +79,15 @@ export const HeroCard: React.FC = () => {
         }
 
         @media (max-width: 480px) {
+          .hero-card-outer {
+            padding: 6px !important;
+          }
+          .hero-card-inner {
+            padding: 26px 20px 40px !important;
+            gap: 16px !important;
+            min-height: auto !important;
+            border-radius: 14px !important;
+          }
           .hero-card-title {
             font-size: 26px !important;
           }
@@ -78,7 +96,7 @@ export const HeroCard: React.FC = () => {
             margin-top: 3px !important;
           }
           .hero-card-subtitle {
-            font-size: 22px !important;
+            font-size: 24px !important;
           }
         }
       `}</style>
@@ -158,7 +176,7 @@ export const HeroCard: React.FC = () => {
                 lineHeight: 1.2,
               }}
             >
-              Seeing Every Child Beyond Their Diagnosis
+              Seeing Every Child <br className="hero-subtitle-br" /> Beyond Their Diagnosis
             </p>
           </div>
 

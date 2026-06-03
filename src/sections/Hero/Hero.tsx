@@ -11,6 +11,10 @@ export const Hero: React.FC = () => {
       className="relative w-full max-w-[1400px] mx-auto flex items-center justify-center overflow-hidden rounded-[1rem] md:rounded-[1.25rem] -top-[57px] mt-0 min-h-[520px] md:min-h-[700px] lg:min-h-[850px] hero-section"
     >
       <style>{`
+        .hero-bg-image {
+          object-position: center center !important;
+        }
+
         @media (min-width: 1025px) {
           .hero-content-wrapper {
             left: 53% !important;
@@ -25,15 +29,44 @@ export const Hero: React.FC = () => {
             top: 0px !important;
           }
           .hero-content-wrapper {
-            position: relative !important;
-            top: auto !important;
-            left: auto !important;
+            position: absolute !important;
+            top: 32px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
             width: 100% !important;
-            padding: 16px !important;
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
+            max-width: 90vw !important;
+            padding: 0 !important;
             z-index: 10 !important;
+          }
+          .hero-bg-image {
+            object-position: 50% 28% !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-section {
+            min-height: 420px !important;
+          }
+          .hero-content-wrapper {
+            top: 24px !important;
+          }
+        }
+
+        @media (max-width: 375px) {
+          .hero-section {
+            min-height: 380px !important;
+          }
+          .hero-content-wrapper {
+            top: 18px !important;
+          }
+        }
+
+        @media (max-width: 320px) {
+          .hero-section {
+            min-height: 340px !important;
+          }
+          .hero-content-wrapper {
+            top: 12px !important;
           }
         }
       `}</style>
@@ -45,7 +78,7 @@ export const Hero: React.FC = () => {
           alt="Hero background"
           fill
           priority
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover hero-bg-image"
           style={{ objectFit: "cover" }}
         />
       </div>

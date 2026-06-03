@@ -53,6 +53,7 @@ export const Testimonials: React.FC = () => {
           line-height: 28px;
           font-weight: 400;
           font-style: normal;
+          text-align: center;
         }
 
         .testimonials-card {
@@ -169,6 +170,12 @@ export const Testimonials: React.FC = () => {
             margin-top: 32px !important;
             margin-bottom: 32px !important;
           }
+          .testimonials-subtitle {
+            font-size: 19px !important;
+            line-height: 26px !important;
+            text-align: center !important;
+            padding: 0 16px !important;
+          }
 
           .testimonials-author-slot {
             margin-top: 24px !important;
@@ -197,6 +204,20 @@ export const Testimonials: React.FC = () => {
             width: 40px !important;
             height: 40px !important;
             z-index: 10 !important;
+          }
+        }
+
+        @media (max-width: 375px) {
+          .testimonials-subtitle {
+            font-size: 17px !important;
+            line-height: 24px !important;
+          }
+        }
+
+        @media (max-width: 320px) {
+          .testimonials-subtitle {
+            font-size: 15px !important;
+            line-height: 22px !important;
           }
         }
       `}</style>
