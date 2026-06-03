@@ -215,7 +215,7 @@ export const Testimonials: React.FC = () => {
           </div>
 
           <p className="testimonials-subtitle testimonials-subtitle-wrap text-gray-500">
-            What parents say about us
+           Happy parents who trust BTVAS
           </p>
         </div>
 

@@ -24,7 +24,7 @@ export const HeroCard: React.FC = () => {
           .hero-card-inner,
           .hero-card-content {
             width: 100% !important;
-            max-width: min(756px, 92vw) !important;
+            max-width: min(580px, 92vw) !important;
           }
           .hero-card-quote {
             width: 100% !important;
@@ -87,9 +87,9 @@ export const HeroCard: React.FC = () => {
         className="hero-card-outer"
         style={{
           width: "100%",
-          maxWidth: "756px",
+          maxWidth: "580px",
           height: "auto",
-          minHeight: "382px",
+          minHeight: "282px",
           borderRadius: "20px",
           backgroundColor: "rgba(117, 61, 190, 0.6)",
           padding: "10px",
@@ -102,9 +102,9 @@ export const HeroCard: React.FC = () => {
           className="hero-card-inner"
           style={{
             width: "100%",
-            maxWidth: "736px",
+            maxWidth: "580px",
             height: "auto",
-            minHeight: "362px",
+            minHeight: "262px",
             borderRadius: "20px",
             border: "1.5px dashed rgba(255, 255, 255, 0.4)",
             boxSizing: "border-box",
@@ -159,29 +159,6 @@ export const HeroCard: React.FC = () => {
               }}
             >
               Seeing Every Child Beyond Their Diagnosis
-            </p>
-
-            {/* Quote */}
-            <p
-              className="hero-card-quote"
-              style={{
-                fontFamily: "'Prompt', sans-serif",
-                fontSize: "18px",
-                fontWeight: "500",
-                fontStyle: "italic",
-                color: "#ffffff",
-                lineHeight: "1.4",
-                margin: 0,
-                marginTop: "4px",
-                width: "100%",
-                maxWidth: "602px",
-                height: "auto",
-                minHeight: "112px",
-              }}
-            >
-              &ldquo;Every child deserves a champion-an adult who will never give up on
-              them, who understands the power of connection and insists that they
-              become the best that they can possibly be&rdquo; -Rita Pierson
             </p>
           </div>
 

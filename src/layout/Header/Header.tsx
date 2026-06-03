@@ -128,18 +128,18 @@ export const Header: React.FC = () => {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          min-width: 180px;
+          min-width: 220px;
         }
 
         .logo-img {
-          height: 80px;
+          height: 120px;
           width: auto;
           object-fit: contain;
           transition: height 0.3s ease;
         }
 
         .custom-navbar.scrolled .logo-img {
-          height: 60px;
+          height: 70px;
         }
 
         /* NAV LINKS */
@@ -246,7 +246,7 @@ export const Header: React.FC = () => {
             height: 90px;
           }
           .logo-img {
-            height: 60px;
+            height: 70px;
           }
         }
       `}</style>
@@ -263,8 +263,8 @@ export const Header: React.FC = () => {
             <Image
               src="https://ik.imagekit.io/sonu2k1/TEst/Logos/logo.webp"
               alt="Beyond the View Autism Services"
-              width={180}
-              height={80}
+              width={220}
+              height={96}
               className="logo-img"
               style={{ width: "auto" }}
               priority
