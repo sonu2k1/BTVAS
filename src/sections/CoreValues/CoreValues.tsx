@@ -44,7 +44,7 @@ export const CoreValues: React.FC = () => {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Prompt:wght@400;500;600;700&display=swap');
 
         .val-card .val-img-wrap {
           height: 290px;
@@ -158,11 +158,11 @@ export const CoreValues: React.FC = () => {
         {/* QUOTE */}
         <p
           style={{
-            fontFamily: "'Annie Use Your Telescope', cursive",
-            fontSize: "clamp(24px, 4.5vw, 42px)",
+            fontFamily: "'Prompt', sans-serif",
+            fontSize: "clamp(20px, 3.5vw, 34px)",
             color: "#0b0f8a",
-            lineHeight: 1.3,
-            fontWeight: "400",
+            lineHeight: 1.4,
+            fontWeight: "500",
             margin: "0 0 8px 0",
             maxWidth: "960px",
             textAlign: "center",
