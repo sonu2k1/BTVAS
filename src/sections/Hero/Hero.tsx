@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
             left: 50% !important;
             transform: translateX(-50%) !important;
             width: 100% !important;
-            max-width: 90vw !important;
+            max-width: min(580px, 90vw) !important;
             padding: 0 !important;
             z-index: 10 !important;
           }
