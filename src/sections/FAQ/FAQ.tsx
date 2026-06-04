@@ -74,8 +74,13 @@ export const FAQ: React.FC = () => {
           object-fit: contain;
         }
 
-        .insurance-logo-wrapper.bcbs img {
+        .insurance-logo-wrapper.bcbs img,
+        .insurance-logo-wrapper.caresource img {
           height: 30px !important;
+        }
+
+        .insurance-logo-wrapper.uhc img {
+          height: 58px !important;
         }
 
         @keyframes insurance-marquee-scroll {
@@ -103,8 +108,13 @@ export const FAQ: React.FC = () => {
             max-width: 220px;
           }
 
-          .insurance-logo-wrapper.bcbs img {
+          .insurance-logo-wrapper.bcbs img,
+          .insurance-logo-wrapper.caresource img {
             height: 35px !important;
+          }
+
+          .insurance-logo-wrapper.uhc img {
+            height: 68px !important;
           }
 
           .insurance-marquee-track {
@@ -132,8 +142,13 @@ export const FAQ: React.FC = () => {
             max-width: 260px;
           }
 
-          .insurance-logo-wrapper.bcbs img {
+          .insurance-logo-wrapper.bcbs img,
+          .insurance-logo-wrapper.caresource img {
             height: 41px !important;
+          }
+
+          .insurance-logo-wrapper.uhc img {
+            height: 78px !important;
           }
         }
 
@@ -156,8 +171,13 @@ export const FAQ: React.FC = () => {
             max-width: 300px;
           }
 
-          .insurance-logo-wrapper.bcbs img {
+          .insurance-logo-wrapper.bcbs img,
+          .insurance-logo-wrapper.caresource img {
             height: 46px !important;
+          }
+
+          .insurance-logo-wrapper.uhc img {
+            height: 88px !important;
           }
         }
 
@@ -180,8 +200,13 @@ export const FAQ: React.FC = () => {
             max-width: none;
           }
 
-          .insurance-logo-wrapper.bcbs img {
+          .insurance-logo-wrapper.bcbs img,
+          .insurance-logo-wrapper.caresource img {
             height: 50px !important;
+          }
+
+          .insurance-logo-wrapper.uhc img {
+            height: 96px !important;
           }
         }
 
@@ -647,7 +672,7 @@ export const FAQ: React.FC = () => {
             {INSURANCE_LOGOS.map((logo, index) => (
               <div 
                 key={`logo-1-${index}`} 
-                className={`insurance-logo-wrapper ${logo.alt === "BlueCross BlueShield" ? "bcbs" : ""}`}
+                className={`insurance-logo-wrapper ${logo.className || ""}`}
               >
                 <Image
                   src={logo.src}
@@ -662,7 +687,7 @@ export const FAQ: React.FC = () => {
             {INSURANCE_LOGOS.map((logo, index) => (
               <div 
                 key={`logo-2-${index}`} 
-                className={`insurance-logo-wrapper ${logo.alt === "BlueCross BlueShield" ? "bcbs" : ""}`}
+                className={`insurance-logo-wrapper ${logo.className || ""}`}
                 aria-hidden="true"
               >
                 <Image
