@@ -103,7 +103,7 @@ export const Header: React.FC = () => {
         .custom-navbar {
           width: 100%;
           max-width: 1400px;
-          height: 124.84px;
+          height: 140px;
           background: #ffffff;
           border-radius: 20px;
           border: 2px solid #2e2e8e22;
@@ -118,7 +118,7 @@ export const Header: React.FC = () => {
         }
 
         .custom-navbar.scrolled {
-          height: 90px;
+          height: 96px;
           border-radius: 0 0 20px 20px;
           box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
         }
@@ -128,18 +128,18 @@ export const Header: React.FC = () => {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          min-width: 220px;
+          min-width: 260px;
         }
 
         .logo-img {
-          height: 120px;
+          height: 135px;
           width: auto;
           object-fit: contain;
           transition: height 0.3s ease;
         }
 
         .custom-navbar.scrolled .logo-img {
-          height: 70px;
+          height: 80px;
         }
 
         /* NAV LINKS */
@@ -244,10 +244,10 @@ export const Header: React.FC = () => {
           }
           .custom-navbar {
             padding: 0 16px;
-            height: 90px;
+            height: 100px;
           }
           .logo-img {
-            height: 70px;
+            height: 80px;
           }
         }
       `}</style>
@@ -264,8 +264,8 @@ export const Header: React.FC = () => {
             <Image
               src="https://ik.imagekit.io/sonu2k1/TEst/Logos/logo.webp"
               alt="Beyond the View Autism Services"
-              width={220}
-              height={96}
+              width={260}
+              height={114}
               className="logo-img"
               style={{ width: "auto" }}
               priority
