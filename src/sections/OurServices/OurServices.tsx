@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { services, type Service } from "@/data/services";
@@ -15,15 +15,45 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden }) => {
   const isComingSoon = service.comingSoon === true;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isInCenter, setIsInCenter] = useState(false);
   const hasMultipleImages = service.images && service.images.length > 0;
+  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!hasMultipleImages) return;
+
+    const checkPosition = () => {
+      if (!cardRef.current) return;
+      const rect = cardRef.current.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const viewportCenter = window.innerWidth / 2;
+      const distance = Math.abs(cardCenter - viewportCenter);
+
+      // Check if card center is close to viewport center
+      const threshold = rect.width ? rect.width / 2 + 15 : 220;
+      setIsInCenter(distance < threshold);
+    };
+
+    checkPosition();
+    const intervalId = setInterval(checkPosition, 200);
+
+    return () => clearInterval(intervalId);
+  }, [hasMultipleImages]);
+
+  useEffect(() => {
+    if (!hasMultipleImages) return;
+
+    if (!isInCenter) {
+      setCurrentImageIndex(0);
+      return;
+    }
+
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % service.images!.length);
     }, 2000);
+
     return () => clearInterval(interval);
-  }, [hasMultipleImages, service.images]);
+  }, [hasMultipleImages, isInCenter, service.images]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (isComingSoon) return;
@@ -37,6 +67,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
 
   return (
     <div
+      ref={cardRef}
       className="services-marquee-item"
       aria-hidden={ariaHidden || undefined}
       style={ariaHidden ? { pointerEvents: "none" } : undefined}
