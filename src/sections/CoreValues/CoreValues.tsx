@@ -44,7 +44,16 @@ export const CoreValues: React.FC = () => {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Mochiy+Pop+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Mochiy+Pop+One&family=Playwrite+GB+S:wght@100..400&display=swap');
+
+        .core-values-quote {
+          font-family: 'Playwrite GB S', cursive;
+          font-size: 30px;
+          line-height: 45px;
+          font-weight: 400;
+          font-style: normal;
+          text-align: center;
+        }
 
         .val-card {
           height: auto;
@@ -140,6 +149,25 @@ export const CoreValues: React.FC = () => {
             max-height: 280px !important;
             opacity: 1 !important;
           }
+          .core-values-quote {
+            font-size: 19px !important;
+            line-height: 26px !important;
+            padding: 0 16px !important;
+          }
+        }
+
+        @media (max-width: 375px) {
+          .core-values-quote {
+            font-size: 17px !important;
+            line-height: 24px !important;
+          }
+        }
+
+        @media (max-width: 320px) {
+          .core-values-quote {
+            font-size: 15px !important;
+            line-height: 22px !important;
+          }
         }
       `}</style>
 
@@ -163,15 +191,10 @@ export const CoreValues: React.FC = () => {
       >
         {/* QUOTE */}
         <p
+          className="core-values-quote text-gray-500"
           style={{
-            fontFamily: "'Annie Use Your Telescope', sans-serif",
-            fontSize: "clamp(20px, 3.5vw, 34px)",
-            color: "#0e0e0fff",
-            lineHeight: 1.4,
-            fontWeight: "1000",
             margin: "0 0 8px 0",
             maxWidth: "1060px",
-            textAlign: "center",
             textWrap: "balance",
           }}
         >
