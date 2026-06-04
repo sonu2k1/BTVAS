@@ -7,7 +7,7 @@ export const TopBar: React.FC = () => {
   return (
     <div className="w-full flex justify-center bg-transparent" style={{ padding: "12px 0" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&family=Mochiy+Pop+One&display=swap');
 
         .topbar-desktop, 
         .topbar-desktop a, 
@@ -93,6 +93,7 @@ export const TopBar: React.FC = () => {
         }
 
         .topbar-desktop span.enrolling-now-text {
+          font-family: 'Mochiy Pop One', sans-serif !important;
           font-size: 16px !important;
           color: #FFE600 !important;
         }
@@ -130,9 +131,10 @@ export const TopBar: React.FC = () => {
             white-space: nowrap !important;
           }
           .topbar-mobile span.topbar-enrolling-now {
+            font-family: 'Mochiy Pop One', sans-serif !important;
             font-size: 13px !important;
             color: #FFE600 !important;
-            font-weight: 800 !important;
+            font-weight: 400 !important;
             white-space: nowrap !important;
           }
         }
@@ -197,7 +199,7 @@ export const TopBar: React.FC = () => {
         <div style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center" }}>
           <span
             className="enrolling-now-text"
-            style={{ fontFamily: "'Prompt', sans-serif", fontWeight: "800", letterSpacing: "0.5px" }}
+            style={{ letterSpacing: "0.5px" }}
           >
             Enrolling Now
           </span>
@@ -261,7 +263,7 @@ export const TopBar: React.FC = () => {
           (404)-406-7339
         </a>
         <span className="text-white opacity-30 topbar-divider">|</span>
-        <span className="topbar-enrolling-now" style={{ fontFamily: "'Prompt', sans-serif" }}>
+        <span className="topbar-enrolling-now">
           Enrolling Now
         </span>
         {/* PREVIOUS SCROLLING MARQUEE CODE:
