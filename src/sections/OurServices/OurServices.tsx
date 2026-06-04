@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { services, type Service } from "@/data/services";
 import { ServiceDetailModal } from "@/components/ServiceDetailModal";
 
@@ -13,6 +14,16 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden }) => {
   const isComingSoon = service.comingSoon === true;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const hasMultipleImages = service.images && service.images.length > 0;
+
+  useEffect(() => {
+    if (!hasMultipleImages) return;
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % service.images!.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [hasMultipleImages, service.images]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (isComingSoon) return;
@@ -68,18 +79,51 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
               flexShrink: 0,
             }}
           >
-            <Image
-              src={service.image}
-              alt={service.alt}
-              width={374}
-              height={238}
-              className="w-full h-full object-cover object-center"
-              style={{
-                width: "100%",
-                height: "100%",
-                ...(isComingSoon ? { filter: "grayscale(0.35) brightness(0.92)" } : {}),
-              }}
-            />
+            {hasMultipleImages ? (
+              service.images!.map((imgSrc, idx) => (
+                <motion.div
+                  key={imgSrc}
+                  initial={{ opacity: idx === 0 ? 1 : 0 }}
+                  animate={{ opacity: currentImageIndex === idx ? 1 : 0 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    zIndex: currentImageIndex === idx ? 1 : 0,
+                  }}
+                >
+                  <Image
+                    src={imgSrc}
+                    alt={service.alt}
+                    width={374}
+                    height={238}
+                    className="w-full h-full object-cover object-center"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      ...(isComingSoon ? { filter: "grayscale(0.35) brightness(0.92)" } : {}),
+                    }}
+                    priority={idx === 0}
+                  />
+                </motion.div>
+              ))
+            ) : (
+              <Image
+                src={service.image}
+                alt={service.alt}
+                width={374}
+                height={238}
+                className="w-full h-full object-cover object-center"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  ...(isComingSoon ? { filter: "grayscale(0.35) brightness(0.92)" } : {}),
+                }}
+              />
+            )}
             {isComingSoon && (
               <span className="services-coming-soon-badge" aria-hidden>
                 Coming Soon
