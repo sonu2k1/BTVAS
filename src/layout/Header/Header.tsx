@@ -152,8 +152,9 @@ export const Header: React.FC = () => {
 
         .nav-links li a {
           font-family: 'Nunito', sans-serif;
-          font-size: 15px;
+          font-size: 16px;
           font-weight: 800;
+          text-transform: uppercase;
           text-decoration: none;
           color: #7b2d8b;
           padding: 10px 20px;
@@ -348,9 +349,10 @@ export const Header: React.FC = () => {
                         padding: "12px 24px",
                         borderRadius: "16px",
                         fontWeight: 800,
-                        fontSize: "15px",
+                        fontSize: "16px",
                         fontFamily: "'Nunito', sans-serif",
                         textDecoration: "none",
+                        textTransform: "uppercase",
                         backgroundColor: isActive ? "#FF4880" : "transparent",
                         color: isActive ? "#ffffff" : "#7b2d8b",
                         transition: "all 0.2s ease",
