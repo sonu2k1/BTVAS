@@ -150,7 +150,7 @@ export const CoreValues: React.FC = () => {
           width: "100%",
           maxWidth: "1440px",
           height: "auto",
-          backgroundColor: "#faf6f0",
+          backgroundColor: "transparent",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

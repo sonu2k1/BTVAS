@@ -101,8 +101,7 @@ export const CtaBanner: React.FC = () => {
           width: "100%",
           maxWidth: "1280px",
           height: "114px",
-          background:
-            "linear-gradient(180deg, #FFFFFF 0%, #fbfbfbff 14%, #dbc1f9ff 60%, #dac3f9ff 86%, #cdbce2ff 100%)",
+          background: "transparent",
           borderRadius: "20px",
           display: "flex",
           alignItems: "center",

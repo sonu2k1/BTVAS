@@ -30,7 +30,7 @@ export const Visionaries: React.FC = () => {
         width: "100%",
         maxWidth: "1440px",
         height: "552px",
-        backgroundColor: "#ffffff",
+        backgroundColor: "transparent",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

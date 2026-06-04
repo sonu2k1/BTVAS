@@ -565,7 +565,7 @@ export const FAQ: React.FC = () => {
       {/* ── FAQ SECTION ── */}
       <section
         id="faq"
-        className="bg-white shrink-0 faq-section scroll-mt-6"
+        className="bg-transparent shrink-0 faq-section scroll-mt-6"
       >
         <div className="faq-inner-row">
           {/* ── LEFT: Image block ── */}
@@ -639,7 +639,7 @@ export const FAQ: React.FC = () => {
       {/* ── ACCEPTED INSURANCE BANNER ── */}
       <div
         id="accepted-insurance"
-        className="flex flex-col items-center bg-white shrink-0 insurance-banner scroll-mt-6"
+        className="flex flex-col items-center bg-transparent shrink-0 insurance-banner scroll-mt-6"
       >
         <p className="insurance-banner-title">Accepted Insurance</p>
         <div className="insurance-marquee-container">

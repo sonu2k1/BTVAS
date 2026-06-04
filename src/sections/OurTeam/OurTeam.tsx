@@ -268,6 +268,16 @@ export const OurTeam: React.FC = () => {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 
+        .team-section {
+          background: linear-gradient(
+            180deg,
+            #fffdf8 0%,
+            #faf6f0 18%,
+            #f5efe6 82%,
+            #faf6f0 100%
+          ) !important;
+        }
+
         .no-scrollbar::-webkit-scrollbar {
           display: none;
         }
@@ -406,14 +416,13 @@ export const OurTeam: React.FC = () => {
         className="team-section site-section-root"
         style={{
           width: "100%",
-          maxWidth: "1440px",
           height: "800px",
-          backgroundColor: "#ffffff",
+          backgroundColor: "#faf6f0",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           boxSizing: "border-box",
-          margin: "0 auto",
+          paddingBottom: "64px",
         }}
       >
         {/* INNER WRAPPER */}
@@ -421,8 +430,11 @@ export const OurTeam: React.FC = () => {
           className="team-wrapper site-inner-root"
           style={{
             width: "100%",
-            maxWidth: "1280px",
+            maxWidth: "1440px",
             height: "750px",
+            margin: "0 auto",
+            padding: "0 clamp(16px, 4vw, 80px)",
+            boxSizing: "border-box",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",

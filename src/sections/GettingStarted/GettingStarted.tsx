@@ -12,6 +12,11 @@ export const GettingStarted: React.FC = () => {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Prompt:wght@400;500;600;700;800&display=swap');
 
+        #getting-started,
+        #getting-started .getting-started-section {
+          background-color: #753DBE !important;
+        }
+
         .get-started-btn-wrapper {
           position: relative;
           width: 216px;
@@ -85,7 +90,7 @@ export const GettingStarted: React.FC = () => {
       `}</style>
       {/* ── DESKTOP VIEW: 100% EXACT ORIGINAL LAYOUT & PIXELS (Visible on lg and larger) ── */}
       <section
-        className="hidden lg:flex relative overflow-hidden flex-col site-section-root"
+        className="getting-started-section hidden lg:flex relative overflow-hidden flex-col site-section-root"
         style={{
           width: "100%",
           maxWidth: "1440px",
@@ -280,11 +285,12 @@ export const GettingStarted: React.FC = () => {
 
       {/* ── MOBILE / TABLET VIEW: DYNAMIC FLUID & RESPONSIVE (Visible below lg) ── */}
       <section
-        className="flex lg:hidden flex-col w-full"
+        className="getting-started-section flex lg:hidden flex-col w-full"
         style={{
           padding: "48px 20px",
           boxSizing: "border-box",
           gap: "32px",
+          backgroundColor: "#753DBE",
         }}
       >
         {/* Top Part */}

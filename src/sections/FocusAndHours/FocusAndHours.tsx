@@ -15,18 +15,26 @@ export const FocusAndHours: React.FC = () => {
       className="focus-hours-section site-section-root"
       style={{
         width: "100%",
-        maxWidth: "1440px",
         height: "400px",
         backgroundColor: "#ffffff",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         boxSizing: "border-box",
-        margin: "0 auto",
       }}
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+        .focus-hours-section {
+          background: linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f8f4fc 22%,
+            #f3eef8 78%,
+            #ffffff 100%
+          ) !important;
+        }
 
         @media (min-width: 1025px) and (max-width: 1439px) {
           .focus-hours-section {
@@ -129,8 +137,11 @@ export const FocusAndHours: React.FC = () => {
         className="focus-hours-wrapper site-inner-root"
         style={{
           width: "100%",
-          maxWidth: "1280px",
+          maxWidth: "1440px",
           height: "235px",
+          margin: "0 auto",
+          padding: "0 clamp(16px, 4vw, 80px)",
+          boxSizing: "border-box",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",

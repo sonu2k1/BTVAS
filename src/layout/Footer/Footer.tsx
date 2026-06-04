@@ -73,18 +73,18 @@ const ChevronDoubleRight = () => (
 
 const contactTextStyle: React.CSSProperties = {
   fontFamily: "'Prompt', sans-serif",
-  fontSize: "14px",
-  lineHeight: "20px",
+  fontSize: "16px",
+  lineHeight: "24px",
   fontWeight: 600,
-  color: "rgba(255, 255, 255, 0.75)",
+  color: "rgba(1, 12, 111, 0.85)",
   textDecoration: "none",
 };
 
 const descriptionStyle: React.CSSProperties = {
   fontFamily: "'Prompt', sans-serif",
-  fontSize: "16px",
-  lineHeight: "22px",
-  color: "rgba(255, 255, 255, 0.8)",
+  fontSize: "18px",
+  lineHeight: "26px",
+  color: "rgba(1, 12, 111, 0.9)",
   margin: 0,
 };
 
@@ -199,8 +199,45 @@ export const Footer: React.FC = () => {
 
         .site-footer {
           width: 100%;
-          background: #010C6F;
-          color: #fff;
+          background: linear-gradient(
+            -45deg,
+            #E8F7FC,
+            #C8EAF5,
+            #8FD4EA,
+            #4AB8D4,
+            #39B1D1,
+            #8FD4EA,
+            #C8EAF5
+          );
+          background-size: 400% 400%;
+          animation: footer-gradient-move 7s ease infinite;
+          color: #010C6F;
+        }
+
+        @keyframes footer-gradient-move {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .site-footer {
+            animation: none;
+            background-size: auto;
+            background: linear-gradient(
+              160deg,
+              #E8F7FC 0%,
+              #C8EAF5 32%,
+              #8FD4EA 65%,
+              #4AB8D4 100%
+            );
+          }
         }
 
         .footer-inner {
@@ -231,6 +268,10 @@ export const Footer: React.FC = () => {
         .footer-logo {
           width: 140px;
           height: auto;
+          padding: 10px 12px;
+          background: #ffffff;
+          border-radius: 12px;
+          box-shadow: 0 2px 8px rgba(1, 12, 111, 0.08);
         }
 
         .footer-description {
@@ -285,7 +326,7 @@ export const Footer: React.FC = () => {
         }
 
         .footer-contact-link:hover {
-          color: #fff;
+          color: #010C6F;
         }
 
         .footer-icon-link {
@@ -304,7 +345,7 @@ export const Footer: React.FC = () => {
         .footer-section-divider {
           width: 100%;
           height: 1px;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(1, 12, 111, 0.15);
         }
 
         .footer-explore {
@@ -313,7 +354,7 @@ export const Footer: React.FC = () => {
 
         .footer-explore-title {
           font-family: 'Inter', sans-serif;
-          font-size: 20px;
+          font-size: 24px;
           font-weight: 700;
           margin: 0 0 12px;
         }
@@ -336,7 +377,7 @@ export const Footer: React.FC = () => {
         .footer-explore-divider-muted {
           flex: 1;
           height: 2.5px;
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(1, 12, 111, 0.2);
         }
 
         .footer-explore-links {
@@ -353,9 +394,9 @@ export const Footer: React.FC = () => {
           align-items: center;
           gap: 12px;
           font-family: 'Inter', sans-serif;
-          font-size: 14px;
+          font-size: 16px;
           font-weight: 500;
-          color: #fff;
+          color: #010C6F;
           text-decoration: none;
           transition: color 0.2s ease;
           min-width: 0;
@@ -385,7 +426,7 @@ export const Footer: React.FC = () => {
             display: block;
             width: 1px;
             height: 32px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(1, 12, 111, 0.2);
             flex-shrink: 0;
           }
         }
@@ -495,7 +536,7 @@ export const Footer: React.FC = () => {
                 className="footer-logo"
               />
               <p className="footer-description" style={descriptionStyle}>
-                At <strong className="text-white">Beyond The View Autism Services</strong>, We Believe That Every Child Should Be Supported To Their Greatest Level Of Independence. With Independence Comes The Ability To Access New Environments And Opportunities.
+                At <strong style={{ color: "#010C6F" }}>Beyond The View Autism Services</strong>, We Believe That Every Child Should Be Supported To Their Greatest Level Of Independence. With Independence Comes The Ability To Access New Environments And Opportunities.
               </p>
             </div>
 
