@@ -189,21 +189,8 @@ export const CoreValues: React.FC = () => {
           margin: "0 auto",
         }}
       >
-        {/* QUOTE */}
-        <p
-          className="core-values-quote text-gray-500"
-          style={{
-            margin: "0 0 8px 0",
-            maxWidth: "1060px",
-            textWrap: "balance",
-          }}
-        >
-          If they can&apos;t learn the way we teach them, we teach them the way they learn
-        </p>
-
         {/* HEADER */}
         <div style={{ textAlign: "center" }}>
-
           <h2
             style={{
               fontFamily: "'Mochiy Pop One', sans-serif",
@@ -217,6 +204,18 @@ export const CoreValues: React.FC = () => {
             <span style={{ color: "#1a1a1a", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Care</span> <span style={{ color: "#FF4880" }}>That Matters</span>
           </h2>
         </div>
+
+        {/* QUOTE */}
+        <p
+          className="core-values-quote text-gray-500"
+          style={{
+            margin: "0 0 8px 0",
+            maxWidth: "1060px",
+            textWrap: "balance",
+          }}
+        >
+          If they can&apos;t learn the way we teach them, we teach them the way they learn - Dr. O. Lvar Lovass
+        </p>
 
         {/* CARDS ROW */}
         <div
