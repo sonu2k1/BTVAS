@@ -94,7 +94,7 @@ export const TopBar: React.FC = () => {
 
         .topbar-desktop span.enrolling-now-text {
           font-family: 'Mochiy Pop One', sans-serif !important;
-          font-size: 16px !important;
+          font-size: 20px !important;
           color: #FFE600 !important;
         }
 

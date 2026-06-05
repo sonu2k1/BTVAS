@@ -17,7 +17,7 @@ export const Hero: React.FC = () => {
 
         @media (min-width: 1025px) {
           .hero-content-wrapper {
-            left: 53% !important;
+            left: 54.5% !important;
             transform: translateX(-50%) !important;
             top: 80px !important;
           }

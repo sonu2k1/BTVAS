@@ -27,6 +27,7 @@ const values = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/card-3.webp",
     borderColor: "#a5d6a7",
     objectPosition: "center 5%",
+    hoverFullCard: true,
   },
   {
     id: 4,
@@ -56,13 +57,12 @@ export const CoreValues: React.FC = () => {
         }
 
         .val-card {
-          height: auto;
-          min-height: 390px;
+          height: 420px;
           transition: border-color 0.4s ease;
         }
         .val-card .val-img-wrap {
           height: 290px;
-          transition: height 0.4s ease;
+          transition: height 0.4s ease, opacity 0.4s ease;
         }
         .val-card:hover .val-img-wrap,
         .val-card.is-active .val-img-wrap {
@@ -85,13 +85,24 @@ export const CoreValues: React.FC = () => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justifyContent: center;
+          justify-content: center;
           flex: 1;
           text-align: center;
           border-radius: 22px 22px 0 0;
           margin-top: -22px;
           position: relative;
           z-index: 2;
+          transition: margin-top 0.4s ease, border-radius 0.4s ease;
+        }
+        .val-card--hover-full:hover .val-img-wrap,
+        .val-card--hover-full.is-active .val-img-wrap {
+          height: 0px !important;
+          opacity: 0 !important;
+        }
+        .val-card--hover-full:hover .val-text-box,
+        .val-card--hover-full.is-active .val-text-box {
+          margin-top: 0px !important;
+          border-radius: 20px !important;
         }
 
         @media (min-width: 1025px) and (max-width: 1439px) {
@@ -127,8 +138,7 @@ export const CoreValues: React.FC = () => {
           .val-card {
             width: 100% !important;
             max-width: 320px !important;
-            height: auto !important;
-            min-height: 350px !important;
+            height: 380px !important;
           }
           .val-card .val-img-wrap {
             height: 255px !important;
@@ -232,7 +242,7 @@ export const CoreValues: React.FC = () => {
           {values.map((val) => (
             <div
               key={val.id}
-              className={`val-card ${activeIndex === val.id ? "is-active" : ""}`}
+              className={`val-card ${activeIndex === val.id ? "is-active" : ""} ${val.hoverFullCard ? "val-card--hover-full" : ""}`}
               onClick={() => setActiveIndex(activeIndex === val.id ? null : val.id)}
               style={{
                 width: "290px",
@@ -271,7 +281,7 @@ export const CoreValues: React.FC = () => {
                 <h3
                   style={{
                     fontFamily: "'Nunito', sans-serif",
-                    fontSize: "22px",
+                    fontSize: "28px",
                     fontWeight: "900",
                     color: "#1a1a1a",
                     margin: 0,

@@ -28,7 +28,7 @@ export const HeroCard: React.FC = () => {
           .hero-card-inner,
           .hero-card-content {
             width: 100% !important;
-            max-width: min(580px, 92vw) !important;
+            max-width: min(520px, 92vw) !important;
           }
           .hero-card-quote {
             width: 100% !important;
@@ -39,7 +39,7 @@ export const HeroCard: React.FC = () => {
         @media (max-width: 1024px) {
           .hero-card-outer {
             width: 100% !important;
-            max-width: min(580px, 90vw) !important;
+            max-width: min(520px, 90vw) !important;
             height: auto !important;
             padding: 8px !important;
             flex-shrink: 1 !important;
@@ -105,9 +105,9 @@ export const HeroCard: React.FC = () => {
         className="hero-card-outer"
         style={{
           width: "100%",
-          maxWidth: "580px",
+          maxWidth: "520px",
           height: "auto",
-          minHeight: "282px",
+          minHeight: "250px",
           borderRadius: "20px",
           backgroundColor: "rgba(117, 61, 190, 0.6)",
           padding: "10px",
@@ -120,19 +120,19 @@ export const HeroCard: React.FC = () => {
           className="hero-card-inner"
           style={{
             width: "100%",
-            maxWidth: "580px",
+            maxWidth: "520px",
             height: "auto",
-            minHeight: "262px",
+            minHeight: "230px",
             borderRadius: "20px",
             border: "1.5px dashed rgba(255, 255, 255, 0.4)",
             boxSizing: "border-box",
-            padding: "24px",
+            padding: "20px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-between",
             textAlign: "center",
-            gap: "20px",
+            gap: "16px",
           }}
         >
           {/* CONTENT AREA */}
@@ -154,7 +154,7 @@ export const HeroCard: React.FC = () => {
               className="hero-card-title"
               style={{
                 fontFamily: "'Mochiy Pop P One', 'Mochiy Pop One', sans-serif",
-                fontSize: "52px",
+                fontSize: "46px",
                 fontWeight: "800",
                 color: "#FFE600",
                 margin: 0,
@@ -173,7 +173,7 @@ export const HeroCard: React.FC = () => {
               className="hero-card-subtitle"
               style={{
                 fontFamily: "'Annie Use Your Telescope', cursive",
-                fontSize: "42px",
+                fontSize: "36px",
                 fontWeight: "400",
                 color: "#ffffff",
                 margin: "4px 0 0 0",
