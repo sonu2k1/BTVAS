@@ -44,6 +44,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
     if (!hasMultipleImages) return;
 
     if (!isInCenter) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setCurrentImageIndex(0);
       return;
     }

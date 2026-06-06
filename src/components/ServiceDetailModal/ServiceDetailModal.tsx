@@ -36,6 +36,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
   }, [hasMultipleImages, service]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setCurrentImageIndex(0);
   }, [service, isOpen]);
 
@@ -88,6 +89,18 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
           top: 5px !important;
           background-color: #e03570 !important;
         }
+        .service-modal-img-container {
+          width: 100%;
+          height: 220px;
+          border-radius: 16px;
+          overflow: hidden;
+          position: relative;
+        }
+        @media (min-width: 640px) {
+          .service-modal-img-container {
+            height: 380px;
+          }
+        }
       `}</style>
 
       <Modal
@@ -124,15 +137,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
         }
       >
         <div className="flex flex-col gap-5">
-          <div
-            style={{
-              width: "100%",
-              height: "200px",
-              borderRadius: "16px",
-              overflow: "hidden",
-              position: "relative",
-            }}
-          >
+          <div className="service-modal-img-container">
             {hasMultipleImages ? (
               service.images!.map((imgSrc, idx) => (
                 <motion.div
