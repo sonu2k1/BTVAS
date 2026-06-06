@@ -265,7 +265,7 @@ export const FAQ: React.FC = () => {
 
         .faq-hero-img {
           object-fit: cover;
-          object-position: 42% 18%;
+          object-position: 28% 18%;
         }
 
         .faq-img-overlay {
@@ -276,7 +276,7 @@ export const FAQ: React.FC = () => {
           flex-direction: column;
           justify-content: space-between;
           align-items: flex-start;
-          padding: 28px 24px 32px 36px;
+          padding: 24px 20px 24px 24px;
           background: linear-gradient(
             180deg,
             rgba(1, 8, 79, 0) 0%,
@@ -300,9 +300,9 @@ export const FAQ: React.FC = () => {
 
         .faq-img-heading {
           font-family: 'Mochiy Pop One', sans-serif;
-          font-size: 36px;
+          font-size: 22px;
           font-weight: 400;
-          line-height: 42px;
+          line-height: 28px;
           color: #ffffff;
           margin: 0;
           max-width: 100%;
@@ -468,6 +468,11 @@ export const FAQ: React.FC = () => {
             padding: 32px 28px 36px 44px;
           }
 
+          .faq-img-heading {
+            font-size: 26px !important;
+            line-height: 32px !important;
+          }
+
           .faq-accordion-wrap {
             gap: 14px;
           }
@@ -506,6 +511,11 @@ export const FAQ: React.FC = () => {
 
           .faq-img-overlay {
             padding: 36px 32px 40px 48px;
+          }
+
+          .faq-img-heading {
+            font-size: 32px !important;
+            line-height: 38px !important;
           }
 
           .faq-question-btn {
@@ -553,6 +563,8 @@ export const FAQ: React.FC = () => {
           }
 
           .faq-img-heading {
+            font-size: 36px !important;
+            line-height: 42px !important;
             max-width: 380px;
           }
 
