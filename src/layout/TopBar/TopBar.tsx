@@ -16,7 +16,7 @@ export const TopBar: React.FC = () => {
         .topbar-mobile a, 
         .topbar-mobile span {
           font-family: 'Prompt', sans-serif !important;
-          font-size: 14px !important;
+          font-size: 16px !important;
         }
 
         .marquee-wrapper {
@@ -123,16 +123,16 @@ export const TopBar: React.FC = () => {
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
-            font-size: 11px !important;
+            font-size: 13px !important;
             white-space: nowrap !important;
           }
           .topbar-mobile span.topbar-divider {
-            font-size: 10px !important;
+            font-size: 12px !important;
             white-space: nowrap !important;
           }
           .topbar-mobile span.topbar-enrolling-now {
             font-family: 'Mochiy Pop One', sans-serif !important;
-            font-size: 13px !important;
+            font-size: 14.5px !important;
             color: #FFE600 !important;
             font-weight: 400 !important;
             white-space: nowrap !important;
@@ -146,10 +146,10 @@ export const TopBar: React.FC = () => {
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
-            font-size: 10px !important;
+            font-size: 11.5px !important;
           }
           .topbar-mobile span.topbar-enrolling-now {
-            font-size: 12.5px !important;
+            font-size: 13.5px !important;
           }
         }
 
@@ -160,10 +160,10 @@ export const TopBar: React.FC = () => {
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
-            font-size: 9px !important;
+            font-size: 10.5px !important;
           }
           .topbar-mobile span.topbar-enrolling-now {
-            font-size: 11.5px !important;
+            font-size: 12px !important;
           }
         }
       `}</style>
