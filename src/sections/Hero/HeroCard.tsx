@@ -39,18 +39,20 @@ export const HeroCard: React.FC = () => {
         @media (max-width: 767px) {
           .hero-card-outer {
             width: 100% !important;
-            max-width: min(520px, 90vw) !important;
+            max-width: min(340px, 88vw) !important;
             height: auto !important;
+            min-height: auto !important;
             padding: 8px !important;
             flex-shrink: 1 !important;
+            border-radius: 24px !important;
           }
           .hero-card-inner {
             width: 100% !important;
             height: auto !important;
             min-height: auto !important;
-            padding: 16px !important;
-            gap: 16px !important;
-            border-radius: 12px !important;
+            padding: 20px 16px 24px 16px !important;
+            gap: 12px !important;
+            border-radius: 16px !important;
           }
           .hero-card-content {
             width: 100% !important;
@@ -58,13 +60,13 @@ export const HeroCard: React.FC = () => {
             gap: 8px !important;
           }
           .hero-card-subtitle {
-            font-size: 30px !important;
+            font-size: 20px !important;
           }
           .hero-subtitle-br {
             display: block !important;
           }
           .hero-card-title {
-            font-size: 38px !important;
+            font-size: 24px !important;
           }
           .hero-card-title span {
             font-size: inherit !important;
@@ -81,22 +83,25 @@ export const HeroCard: React.FC = () => {
         @media (max-width: 480px) {
           .hero-card-outer {
             padding: 6px !important;
+            max-width: min(320px, 86vw) !important;
+            min-height: auto !important;
+            border-radius: 22px !important;
           }
           .hero-card-inner {
-            padding: 26px 20px 40px !important;
-            gap: 16px !important;
+            padding: 20px 16px 24px 16px !important;
+            gap: 12px !important;
             min-height: auto !important;
-            border-radius: 14px !important;
+            border-radius: 16px !important;
           }
           .hero-card-title {
-            font-size: 26px !important;
+            font-size: 22px !important;
           }
           .hero-card-title span {
             font-size: inherit !important;
             margin-top: 3px !important;
           }
           .hero-card-subtitle {
-            font-size: 24px !important;
+            font-size: 18px !important;
           }
         }
       `}</style>

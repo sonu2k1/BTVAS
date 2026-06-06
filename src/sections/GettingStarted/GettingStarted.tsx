@@ -173,7 +173,7 @@ export const GettingStarted: React.FC = () => {
         <div className="getting-started-steps-wrap w-full">
         <div
           className="relative flex flex-col"
-          style={{ width: "100%", maxWidth: "1380px", minWidth: "900px", height: "223.36px", flexShrink: 0 }}
+          style={{ width: "100%", maxWidth: "1380px", minWidth: "900px", minHeight: "223.36px", height: "auto", flexShrink: 0 }}
         >
           {/* Step titles row */}
           <div className="flex w-full" style={{ maxWidth: "1380px" }}>
@@ -186,8 +186,8 @@ export const GettingStarted: React.FC = () => {
                 <p
                   style={{
                     fontFamily: "'Prompt', sans-serif",
-                    fontSize: "13.5px",
-                    fontWeight: 700,
+                    fontSize: "16px",
+                    fontWeight: 800,
                     color: "#ffffff",
                     lineHeight: 1.3,
                     minHeight: "40px",
@@ -261,8 +261,8 @@ export const GettingStarted: React.FC = () => {
                 <p
                   style={{
                     fontFamily: "'Prompt', sans-serif",
-                    fontSize: "12.5px",
-                    fontWeight: 500,
+                    fontSize: "15px",
+                    fontWeight: 700,
                     color: "#ffffff",
                     lineHeight: 1.5,
                     margin: 0,
@@ -359,19 +359,7 @@ export const GettingStarted: React.FC = () => {
             boxSizing: "border-box",
           }}
         >
-          {/* Vertical connecting line */}
-          <div
-            style={{
-              position: "absolute",
-              left: "19px",
-              top: "14px",
-              bottom: "14px",
-              width: "2px",
-              backgroundColor: "#FF4880"
-            }}
-          />
-
-          {steps.map((step) => (
+          {steps.map((step, idx) => (
             <div
               key={step.number}
               style={{
@@ -382,6 +370,19 @@ export const GettingStarted: React.FC = () => {
                 textAlign: "left",
               }}
             >
+              {idx < steps.length - 1 && (
+                <div
+                  style={{
+                    position: "absolute",
+                    left: "-21px",
+                    top: "14px",
+                    bottom: "-46px",
+                    width: "2px",
+                    backgroundColor: "#FF4880",
+                    zIndex: 0,
+                  }}
+                />
+              )}
               {/* Number bubble */}
               <div
                 style={{
@@ -421,8 +422,8 @@ export const GettingStarted: React.FC = () => {
               <p
                 style={{
                   fontFamily: "'Prompt', sans-serif",
-                  fontSize: "13px",
-                  fontWeight: 500,
+                  fontSize: "14.5px",
+                  fontWeight: 700,
                   color: "#ffffff",
                   lineHeight: 1.5,
                   margin: 0,

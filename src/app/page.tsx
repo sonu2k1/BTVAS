@@ -24,7 +24,7 @@ export default function Home() {
           className="w-full max-w-[1688px] hero-bg-img"
           style={{
             height: "clamp(520px, 85vh, 850px)",
-            backgroundImage: "url('/images/background.webp')",
+            backgroundImage: "url('https://ik.imagekit.io/sonu2k1/TEst/Group%201000004053.png')",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "top center"
@@ -40,7 +40,7 @@ export default function Home() {
           <Header />
         </div>
 
-        <div className="relative w-full flex justify-center hero-container px-0 md:px-4" style={{ minHeight: "clamp(380px, calc(85vh - 140px), 710px)" }}>
+        <div className="relative w-full flex justify-center hero-container px-4" style={{ minHeight: "clamp(380px, calc(85vh - 140px), 710px)" }}>
           <Hero />
         </div>
 
