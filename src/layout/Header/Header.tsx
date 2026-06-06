@@ -98,7 +98,7 @@ export const Header: React.FC = () => {
   );
 
   return (
-    <header className="mx-auto w-full max-w-[1400px] flex justify-center px-4 md:px-0">
+    <header className="mx-auto w-full max-w-[1432px] flex justify-center px-4">
       <style>{`
         .custom-navbar {
           width: 100%;

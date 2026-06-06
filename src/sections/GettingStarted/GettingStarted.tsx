@@ -359,19 +359,7 @@ export const GettingStarted: React.FC = () => {
             boxSizing: "border-box",
           }}
         >
-          {/* Vertical connecting line */}
-          <div
-            style={{
-              position: "absolute",
-              left: "19px",
-              top: "14px",
-              bottom: "14px",
-              width: "2px",
-              backgroundColor: "#FF4880"
-            }}
-          />
-
-          {steps.map((step) => (
+          {steps.map((step, idx) => (
             <div
               key={step.number}
               style={{
@@ -382,6 +370,19 @@ export const GettingStarted: React.FC = () => {
                 textAlign: "left",
               }}
             >
+              {idx < steps.length - 1 && (
+                <div
+                  style={{
+                    position: "absolute",
+                    left: "-21px",
+                    top: "14px",
+                    bottom: "-46px",
+                    width: "2px",
+                    backgroundColor: "#FF4880",
+                    zIndex: 0,
+                  }}
+                />
+              )}
               {/* Number bubble */}
               <div
                 style={{
