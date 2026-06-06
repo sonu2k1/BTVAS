@@ -61,8 +61,8 @@ export default function Home() {
             alt="Divider"
             width={1440}
             height={90}
-            className="w-full h-auto object-cover pointer-events-none"
-            style={{ height: "auto" }}
+            className="object-cover pointer-events-none"
+            style={{ width: "100%", height: "auto" }}
           />
         </div>
 

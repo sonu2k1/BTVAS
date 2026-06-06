@@ -176,7 +176,7 @@ export const TopBar: React.FC = () => {
         <div className="flex items-center gap-2 whitespace-nowrap">
           {/* Phone icon */}
           <div className="w-6 h-6 shrink-0 flex items-center justify-center">
-            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={24} height={24} />
           </div>
 
           <div className="flex items-center gap-[10px] text-white font-sans text-[12px]">
@@ -187,7 +187,7 @@ export const TopBar: React.FC = () => {
           {/* Email icon */}
           <div className="flex items-center gap-[6px] ml-[10px]">
             <div className="w-6 h-6 shrink-0 flex items-center justify-center">
-              <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Email.svg" alt="Email" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+              <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Email.svg" alt="Email" width={24} height={24} />
             </div>
             <a className="text-white font-sans text-[12px] underline" href="mailto:intake@btvas.com">
               intake@btvas.com
@@ -244,7 +244,7 @@ export const TopBar: React.FC = () => {
             className="flex items-center gap-[6px] topbar-link"
           >
             <div className="w-6 h-6 shrink-0 flex items-center justify-center topbar-fb-icon">
-              <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/FB.svg" alt="Facebook" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+              <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/FB.svg" alt="Facebook" width={24} height={24} />
             </div>
             <span className="text-white font-sans text-[12px] whitespace-nowrap">
               @beyondtheviewaba
@@ -258,7 +258,7 @@ export const TopBar: React.FC = () => {
       <div className="topbar-mobile">
         <a href="tel:4044067339" className="flex items-center gap-1 text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none" }}>
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
-            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={16} height={16} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={16} height={16} />
           </div>
           (404)-406-7339
         </a>
@@ -277,7 +277,7 @@ export const TopBar: React.FC = () => {
         <span className="text-white opacity-30 topbar-divider">|</span>
         <a href="mailto:intake@btvas.com" className="flex items-center gap-1 text-white font-sans underline topbar-link topbar-email-link">
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
-            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Email.svg" alt="Email" width={16} height={16} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Email.svg" alt="Email" width={16} height={16} />
           </div>
           intake@btvas.com
         </a>

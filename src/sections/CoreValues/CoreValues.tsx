@@ -138,7 +138,8 @@ export const CoreValues: React.FC = () => {
           .val-card {
             width: 100% !important;
             max-width: 320px !important;
-            height: 380px !important;
+            height: auto !important;
+            min-height: 380px !important;
           }
           .val-card .val-img-wrap {
             height: 255px !important;
@@ -147,6 +148,16 @@ export const CoreValues: React.FC = () => {
           .val-card:hover .val-img-wrap,
           .val-card.is-active .val-img-wrap {
             height: 160px !important;
+          }
+          .val-card--hover-full:hover .val-img-wrap,
+          .val-card--hover-full.is-active .val-img-wrap {
+            height: 0px !important;
+            opacity: 0 !important;
+          }
+          .val-card--hover-full:hover .val-text-box,
+          .val-card--hover-full.is-active .val-text-box {
+            margin-top: 0px !important;
+            border-radius: 20px !important;
           }
           .val-card .val-desc {
             max-height: 0 !important;
