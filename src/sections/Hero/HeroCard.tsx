@@ -11,6 +11,46 @@ export const HeroCard: React.FC = () => {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Baloo+2:wght@400;500;600;700;800&family=Mochiy+Pop+One&family=Mochiy+Pop+P+One&family=Prompt:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+        @keyframes heroCardFadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes heroCardFloat {
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-6px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+
+        .hero-card-outer {
+          animation: heroCardFadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, background-color 0.3s ease !important;
+        }
+
+        .hero-card-inner {
+          animation: heroCardFloat 6s ease-in-out infinite;
+        }
+
+        @media (min-width: 768px) {
+          .hero-card-outer:hover {
+            transform: translateY(-4px) scale(1.015) !important;
+            box-shadow: 0 20px 40px rgba(117, 61, 190, 0.35) !important;
+            background-color: rgba(117, 61, 190, 0.7) !important;
+          }
+        }
+
         .hero-subtitle-br {
           display: none;
         }
