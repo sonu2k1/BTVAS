@@ -681,6 +681,7 @@ export const FAQ: React.FC = () => {
                   height={logo.height}
                   className="object-contain"
                   sizes="(max-width: 480px) 150px, (max-width: 768px) 200px, 300px"
+                  style={{ width: "auto", height: "auto" }}
                 />
               </div>
             ))}
@@ -697,6 +698,7 @@ export const FAQ: React.FC = () => {
                   height={logo.height}
                   className="object-contain"
                   sizes="(max-width: 480px) 150px, (max-width: 768px) 200px, 300px"
+                  style={{ width: "auto", height: "auto" }}
                 />
               </div>
             ))}
