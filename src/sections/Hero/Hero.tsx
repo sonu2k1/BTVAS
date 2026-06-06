@@ -15,14 +15,14 @@ export const Hero: React.FC = () => {
           object-position: center center !important;
         }
 
-        @media (min-width: 1025px) {
+        @media (min-width: 768px) {
           .hero-content-wrapper {
             left: 54.5% !important;
             transform: translateX(-50%) !important;
             top: 80px !important;
           }
         }
-        @media (max-width: 1024px) {
+        @media (max-width: 767px) {
           .hero-section {
             min-height: 480px !important;
             border-radius: 0px !important;

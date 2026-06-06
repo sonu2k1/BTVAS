@@ -23,7 +23,7 @@ export const HeroCard: React.FC = () => {
           top: 8px !important;
           background-color: #e6d400 !important;
         }
-        @media (min-width: 1025px) and (max-width: 1439px) {
+        @media (min-width: 768px) and (max-width: 1439px) {
           .hero-card-outer,
           .hero-card-inner,
           .hero-card-content {
@@ -36,7 +36,7 @@ export const HeroCard: React.FC = () => {
           }
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 767px) {
           .hero-card-outer {
             width: 100% !important;
             max-width: min(520px, 90vw) !important;

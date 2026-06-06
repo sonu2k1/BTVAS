@@ -154,7 +154,7 @@ a[href^="#"] {
 }
 
 /* Page Layout responsive fixes */
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
   .hero-bg-img {
     height: clamp(520px, 70vh, 650px) !important;
   }
@@ -162,11 +162,16 @@ a[href^="#"] {
   .hero-container {
     min-height: clamp(420px, 55vh, 520px) !important;
   }
+}
+
+@media (max-width: 1024px) {
+
 
   .footer-divider {
-    height: 18px !important;
-    margin-top: -14px !important;
-    margin-bottom: -14px !important;
+    
+    height: 14px !important;
+    margin-top: -20px !important;
+    margin-bottom: -11px !important;
     top: 0px !important;
   }
 
