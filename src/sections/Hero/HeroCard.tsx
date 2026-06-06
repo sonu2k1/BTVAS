@@ -34,20 +34,77 @@ export const HeroCard: React.FC = () => {
           }
         }
 
+        @keyframes ambientGlow {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        @keyframes revealItem {
+          from {
+            opacity: 0;
+            transform: translateY(15px) scale(0.98);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
         .hero-card-outer {
+          position: relative;
           animation: heroCardFadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
           transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, background-color 0.3s ease !important;
+        }
+
+        .hero-card-outer::before {
+          content: '';
+          position: absolute;
+          inset: -5px;
+          background: linear-gradient(135deg, #753DBE, #FF4880, #FFE600, #753DBE);
+          background-size: 300% 300%;
+          border-radius: inherit;
+          z-index: -1;
+          filter: blur(20px);
+          opacity: 0.45;
+          animation: ambientGlow 8s ease infinite;
+          transition: opacity 0.4s ease, filter 0.4s ease;
         }
 
         .hero-card-inner {
           animation: heroCardFloat 6s ease-in-out infinite;
         }
 
+        .hero-card-title {
+          opacity: 0;
+          animation: revealItem 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s;
+        }
+
+        .hero-card-subtitle {
+          opacity: 0;
+          animation: revealItem 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
+        }
+
+        .hero-btn-pop {
+          opacity: 0;
+          animation: revealItem 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.6s;
+        }
+
         @media (min-width: 768px) {
           .hero-card-outer:hover {
-            transform: translateY(-4px) scale(1.015) !important;
-            box-shadow: 0 20px 40px rgba(117, 61, 190, 0.35) !important;
-            background-color: rgba(117, 61, 190, 0.7) !important;
+            transform: translateY(-5px) scale(1.015) !important;
+            box-shadow: 0 25px 50px rgba(117, 61, 190, 0.4) !important;
+            background-color: rgba(117, 61, 190, 0.72) !important;
+          }
+          .hero-card-outer:hover::before {
+            opacity: 0.75;
+            filter: blur(25px);
           }
         }
 
@@ -232,6 +289,7 @@ export const HeroCard: React.FC = () => {
 
           {/* BUTTON — 3D drop shadow style */}
           <div
+            className="hero-btn-pop"
             style={{
               position: "relative",
               width: "198px",
