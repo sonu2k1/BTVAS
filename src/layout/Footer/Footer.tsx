@@ -171,6 +171,40 @@ const ContactItem: React.FC<{
   </div>
 );
 
+type FooterCloudConfig = {
+  id: string;
+  top: string;
+  size: number;
+  duration: number;
+  delay: number;
+  opacity: number;
+};
+
+const FOOTER_CLOUDS: FooterCloudConfig[] = [
+  { id: "fc1", top: "6%", size: 100, duration: 20, delay: 0, opacity: 0.85 },
+  { id: "fc2", top: "24%", size: 75, duration: 18, delay: 12, opacity: 0.75 },
+  { id: "fc3", top: "42%", size: 115, duration: 22, delay: 24, opacity: 0.8 },
+  { id: "fc4", top: "58%", size: 88, duration: 19, delay: 36, opacity: 0.7 },
+  { id: "fc5", top: "72%", size: 105, duration: 21, delay: 48, opacity: 0.78 },
+  { id: "fc6", top: "86%", size: 82, duration: 17, delay: 60, opacity: 0.72 },
+];
+
+const FooterCloudSvg: React.FC<{ size: number }> = ({ size }) => (
+  <svg
+    width={size}
+    height={size * 0.55}
+    viewBox="0 0 120 66"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden
+  >
+    <ellipse cx="38" cy="40" rx="28" ry="22" fill="#ffffff" />
+    <ellipse cx="62" cy="34" rx="34" ry="26" fill="#f8fcff" />
+    <ellipse cx="86" cy="42" rx="26" ry="20" fill="#ffffff" />
+    <ellipse cx="54" cy="48" rx="40" ry="16" fill="#eef7fc" />
+  </svg>
+);
+
 const ExploreSection: React.FC = () => (
   <div className="footer-explore">
     <h4 className="footer-explore-title">Explore</h4>
@@ -198,6 +232,8 @@ export const Footer: React.FC = () => {
         @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&display=swap');
 
         .site-footer {
+          position: relative;
+          overflow: hidden;
           width: 100%;
           background: linear-gradient(
             -45deg,
@@ -238,9 +274,50 @@ export const Footer: React.FC = () => {
               #4AB8D4 100%
             );
           }
+
+          .footer-clouds-layer {
+            display: none;
+          }
+        }
+
+        .footer-clouds-layer {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
+          overflow: hidden;
+        }
+
+        .footer-cloud {
+          position: absolute;
+          top: var(--footer-cloud-top);
+          left: -140px;
+          opacity: 0;
+          will-change: transform, opacity;
+          animation: footer-cloud-ltr linear infinite;
+          filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.35));
+        }
+
+        @keyframes footer-cloud-ltr {
+          0% {
+            left: -140px;
+            opacity: 0;
+          }
+          8% {
+            opacity: var(--footer-cloud-opacity);
+          }
+          92% {
+            opacity: var(--footer-cloud-opacity);
+          }
+          100% {
+            left: calc(100% + 140px);
+            opacity: 0;
+          }
         }
 
         .footer-inner {
+          position: relative;
+          z-index: 1;
           width: 100%;
           max-width: 1440px;
           margin: 0 auto;
@@ -406,6 +483,12 @@ export const Footer: React.FC = () => {
           color: #FF4880;
         }
 
+        @media (max-width: 768px) {
+          .footer-cloud--hide-mobile {
+            display: none;
+          }
+        }
+
         @media (min-width: 480px) {
           .footer-inner {
             padding: 52px 28px 44px;
@@ -525,6 +608,25 @@ export const Footer: React.FC = () => {
       <div id="contact" className="scroll-mt-6" aria-hidden="true" />
 
       <footer className="site-footer scroll-mt-6">
+        <div className="footer-clouds-layer" aria-hidden="true">
+          {FOOTER_CLOUDS.map((cloud, index) => (
+            <div
+              key={cloud.id}
+              className={`footer-cloud${index >= 4 ? " footer-cloud--hide-mobile" : ""}`}
+              style={
+                {
+                  animationDuration: `${cloud.duration}s`,
+                  animationDelay: `${cloud.delay}s`,
+                  "--footer-cloud-top": cloud.top,
+                  "--footer-cloud-opacity": cloud.opacity,
+                } as React.CSSProperties
+              }
+            >
+              <FooterCloudSvg size={cloud.size} />
+            </div>
+          ))}
+        </div>
+
         <div className="footer-inner">
           <div className="footer-main">
             <div className="footer-brand">
