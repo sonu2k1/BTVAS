@@ -235,7 +235,7 @@ export const Footer: React.FC = () => {
 
         .site-footer {
           width: 100%;
-          background: #010C6F;
+          background: #41b6e4ff;
           color: #fff;
           /*
           position: relative;
@@ -252,8 +252,8 @@ export const Footer: React.FC = () => {
           );
           background-size: 400% 400%;
           animation: footer-gradient-move 7s ease infinite;
-          */
-        }
+          
+        }*/
 
         /*
         @keyframes footer-gradient-move {
