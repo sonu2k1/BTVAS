@@ -24,7 +24,7 @@ export default function Home() {
           className="w-full max-w-[1688px] hero-bg-img"
           style={{
             height: "clamp(520px, 85vh, 850px)",
-            backgroundImage: "url('/images/background.webp')",
+            backgroundImage: "https://ik.imagekit.io/sonu2k1/TEst/Group%201000004053.png?updatedAt=1780751557595",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "top center"
