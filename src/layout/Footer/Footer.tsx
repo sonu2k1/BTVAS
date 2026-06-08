@@ -76,7 +76,7 @@ const contactTextStyle: React.CSSProperties = {
   fontSize: "16px",
   lineHeight: "24px",
   fontWeight: 600,
-  color: "rgba(255, 255, 255, 0.75)",
+  color: "rgba(1, 12, 111, 0.85)",
   textDecoration: "none",
 };
 
@@ -84,7 +84,7 @@ const descriptionStyle: React.CSSProperties = {
   fontFamily: "'Prompt', sans-serif",
   fontSize: "18px",
   lineHeight: "26px",
-  color: "rgba(255, 255, 255, 0.8)",
+  color: "rgba(1, 12, 111, 0.9)",
   margin: 0,
 };
 
@@ -171,7 +171,6 @@ const ContactItem: React.FC<{
   </div>
 );
 
-/*
 type FooterCloudConfig = {
   id: string;
   top: string;
@@ -205,7 +204,6 @@ const FooterCloudSvg: React.FC<{ size: number }> = ({ size }) => (
     <ellipse cx="54" cy="48" rx="40" ry="16" fill="#eef7fc" />
   </svg>
 );
-*/
 
 const ExploreSection: React.FC = () => (
   <div className="footer-explore">
@@ -234,12 +232,9 @@ export const Footer: React.FC = () => {
         @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&display=swap');
 
         .site-footer {
-          width: 100%;
-          background: #41b6e4ff;
-          color: #fff;
-          /*
           position: relative;
           overflow: hidden;
+          width: 100%;
           background: linear-gradient(
             -45deg,
             #E8F7FC,
@@ -252,10 +247,9 @@ export const Footer: React.FC = () => {
           );
           background-size: 400% 400%;
           animation: footer-gradient-move 7s ease infinite;
-          
-        }*/
+          color: #010C6F;
+        }
 
-        /*
         @keyframes footer-gradient-move {
           0% {
             background-position: 0% 50%;
@@ -320,9 +314,64 @@ export const Footer: React.FC = () => {
             opacity: 0;
           }
         }
+
+        @media (prefers-reduced-motion: reduce) {
+          .site-footer {
+            animation: none;
+            background-size: auto;
+            background: linear-gradient(
+              160deg,
+              #E8F7FC 0%,
+              #C8EAF5 32%,
+              #8FD4EA 65%,
+              #4AB8D4 100%
+            );
+          }
+
+          .footer-clouds-layer {
+            display: none;
+          }
+        }
+
+        .footer-clouds-layer {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
+          overflow: hidden;
+        }
+
+        .footer-cloud {
+          position: absolute;
+          top: var(--footer-cloud-top);
+          left: -140px;
+          opacity: 0;
+          will-change: transform, opacity;
+          animation: footer-cloud-ltr linear infinite;
+          filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.35));
+        }
+
+        @keyframes footer-cloud-ltr {
+          0% {
+            left: -140px;
+            opacity: 0;
+          }
+          8% {
+            opacity: var(--footer-cloud-opacity);
+          }
+          92% {
+            opacity: var(--footer-cloud-opacity);
+          }
+          100% {
+            left: calc(100% + 140px);
+            opacity: 0;
+          }
+        }
         */
 
         .footer-inner {
+          position: relative;
+          z-index: 1;
           width: 100%;
           max-width: 1440px;
           margin: 0 auto;
@@ -350,6 +399,10 @@ export const Footer: React.FC = () => {
         .footer-logo {
           width: 200px;
           height: auto;
+          padding: 10px 12px;
+          background: #ffffff;
+          border-radius: 12px;
+          box-shadow: 0 2px 8px rgba(1, 12, 111, 0.08);
         }
 
         .footer-description {
@@ -404,7 +457,7 @@ export const Footer: React.FC = () => {
         }
 
         .footer-contact-link:hover {
-          color: #fff;
+          color: #010C6F;
         }
 
         .footer-icon-link {
@@ -423,7 +476,7 @@ export const Footer: React.FC = () => {
         .footer-section-divider {
           width: 100%;
           height: 1px;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(1, 12, 111, 0.15);
         }
 
         .footer-explore {
@@ -455,7 +508,7 @@ export const Footer: React.FC = () => {
         .footer-explore-divider-muted {
           flex: 1;
           height: 2.5px;
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(1, 12, 111, 0.2);
         }
 
         .footer-explore-links {
@@ -474,7 +527,7 @@ export const Footer: React.FC = () => {
           font-family: 'Inter', sans-serif;
           font-size: 16px;
           font-weight: 500;
-          color: #fff;
+          color: #010C6F;
           text-decoration: none;
           transition: color 0.2s ease;
           min-width: 0;
@@ -484,13 +537,11 @@ export const Footer: React.FC = () => {
           color: #FF4880;
         }
 
-        /*
         @media (max-width: 768px) {
           .footer-cloud--hide-mobile {
             display: none;
           }
         }
-        */
 
         @media (min-width: 480px) {
           .footer-inner {
@@ -512,7 +563,7 @@ export const Footer: React.FC = () => {
             display: block;
             width: 1px;
             height: 32px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(1, 12, 111, 0.2);
             flex-shrink: 0;
           }
         }
@@ -611,7 +662,6 @@ export const Footer: React.FC = () => {
       <div id="contact" className="scroll-mt-6" aria-hidden="true" />
 
       <footer className="site-footer scroll-mt-6">
-        {/*
         <div className="footer-clouds-layer" aria-hidden="true">
           {FOOTER_CLOUDS.map((cloud, index) => (
             <div
@@ -630,7 +680,6 @@ export const Footer: React.FC = () => {
             </div>
           ))}
         </div>
-        */}
 
         <div className="footer-inner">
           <div className="footer-main">
@@ -643,7 +692,7 @@ export const Footer: React.FC = () => {
                 className="footer-logo"
               />
               <p className="footer-description" style={descriptionStyle}>
-                At <strong className="text-white">Beyond The View Autism Services</strong>, We Believe That Every Child Should Be Supported To Their Greatest Level Of Independence. With Independence Comes The Ability To Access New Environments And Opportunities.
+                At <strong style={{ color: "#010C6F" }}>Beyond The View Autism Services</strong>, We Believe That Every Child Should Be Supported To Their Greatest Level Of Independence. With Independence Comes The Ability To Access New Environments And Opportunities.
               </p>
             </div>
 

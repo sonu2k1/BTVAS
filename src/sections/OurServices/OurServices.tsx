@@ -231,8 +231,14 @@ export const OurServices: React.FC = () => {
 
   return (
     <section
-      className="bg-white flex flex-col items-center justify-start overflow-hidden relative services-section site-section-root"
-      style={{ width: "100%", maxWidth: "1440px", height: "auto", padding: "60px 0", margin: "0 auto", boxSizing: "border-box" }}
+      className="bg-transparent flex flex-col items-center justify-start overflow-hidden relative services-section site-section-root"
+      style={{
+        width: "100%",
+        maxWidth: "1440px",
+        height: "540px",
+        margin: "64px auto 0",
+        boxSizing: "border-box",
+      }}
       id="services"
     >
       <style>{`

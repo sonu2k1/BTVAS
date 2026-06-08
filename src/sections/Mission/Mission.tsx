@@ -10,18 +10,26 @@ export const Mission: React.FC = () => {
       className="mission-section site-section-root"
       style={{
         width: "100%",
-        maxWidth: "1440px",
         height: "552px",
         backgroundColor: "#faf6f0",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         boxSizing: "border-box",
-        margin: "0 auto",
       }}
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+        .mission-section {
+          background: linear-gradient(
+            180deg,
+            #fffdf8 0%,
+            #faf6f0 18%,
+            #f5efe6 82%,
+            #faf6f0 100%
+          ) !important;
+        }
 
         @media (max-width: 1024px) {
           .mission-section {
@@ -99,8 +107,11 @@ export const Mission: React.FC = () => {
         className="mission-wrapper site-inner-root"
         style={{
           width: "100%",
-          maxWidth: "1280px",
+          maxWidth: "1440px",
           height: "478px",
+          margin: "0 auto",
+          padding: "0 clamp(16px, 4vw, 80px)",
+          boxSizing: "border-box",
           display: "flex",
           alignItems: "center",
           gap: "80px",

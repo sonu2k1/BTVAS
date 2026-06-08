@@ -158,7 +158,7 @@ export const JoinOurTeam: React.FC = () => {
       `}</style>
       <section
         id="career"
-        className="relative bg-white flex items-center justify-between overflow-hidden join-team-section site-section-root scroll-mt-6"
+        className="relative bg-transparent flex items-center justify-between overflow-hidden join-team-section site-section-root scroll-mt-6"
         style={{
           width: "100%",
           maxWidth: "1440px",

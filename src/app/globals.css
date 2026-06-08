@@ -82,6 +82,20 @@ a[href^="#"] {
 }
 
 
+/* Transparent section backgrounds — page bg shows through */
+.core-values-section,
+.visionaries-section,
+.services-section,
+.testimonials-section,
+.join-team-section,
+.faq-section,
+.insurance-banner,
+.cta-banner-section,
+.site-section-root {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
 /* ── Site-wide responsive layout ── */
 .site-section-root {
   width: 100% !important;

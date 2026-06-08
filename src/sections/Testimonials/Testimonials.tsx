@@ -41,7 +41,7 @@ export const Testimonials: React.FC = () => {
 
   return (
     <section
-      className="bg-white flex items-center justify-center testimonials-section site-section-root"
+      className="bg-transparent flex items-center justify-center testimonials-section site-section-root"
       style={{ width: "100%", maxWidth: "1440px", height: "auto", margin: "0 auto", paddingTop: "0px", paddingBottom: "40px", boxSizing: "border-box" }}
     >
       <style>{`
