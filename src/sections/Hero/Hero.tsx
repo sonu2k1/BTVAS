@@ -1,10 +1,25 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { HeroCard } from "./HeroCard";
 
+const HERO_IMAGES = [
+  "https://ik.imagekit.io/sonu2k1/TEst/Hero-1.png",
+  "https://ik.imagekit.io/sonu2k1/TEst/Services/Hero1.2.jpeg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Services/Hero-1.2.jpeg",
+];
+
 export const Hero: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % HERO_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       id="home"
@@ -72,16 +87,22 @@ export const Hero: React.FC = () => {
         }
       `}</style>
 
-      {/* Background Image */}
+      {/* Background Images with smooth cross-fade */}
       <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
-        <Image
-          src="https://ik.imagekit.io/sonu2k1/TEst/Hero-1.png"
-          alt="Hero background"
-          fill
-          priority
-          className="w-full h-full object-cover hero-bg-image"
-          style={{ objectFit: "cover" }}
-        />
+        {HERO_IMAGES.map((src, index) => (
+          <Image
+            key={src}
+            src={src}
+            alt={`Hero background ${index + 1}`}
+            fill
+            priority={index === 0}
+            className="w-full h-full object-cover hero-bg-image absolute inset-0 transition-opacity duration-1000 ease-in-out"
+            style={{
+              objectFit: "cover",
+              opacity: index === currentIndex ? 1 : 0,
+            }}
+          />
+        ))}
       </div>
 
       {/* Subtle dark overlay for better text contrast */}
