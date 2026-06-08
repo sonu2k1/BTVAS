@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { FloatingBalloons } from "@/components/FloatingBalloons";
 import { siteNavLinks } from "@/data/navigation";
 
 const iconBoxStyle: React.CSSProperties = {
@@ -181,12 +182,12 @@ type FooterCloudConfig = {
 };
 
 const FOOTER_CLOUDS: FooterCloudConfig[] = [
-  { id: "fc1", top: "6%", size: 100, duration: 20, delay: 0, opacity: 0.85 },
-  { id: "fc2", top: "24%", size: 75, duration: 18, delay: 12, opacity: 0.75 },
-  { id: "fc3", top: "42%", size: 115, duration: 22, delay: 24, opacity: 0.8 },
-  { id: "fc4", top: "58%", size: 88, duration: 19, delay: 36, opacity: 0.7 },
-  { id: "fc5", top: "72%", size: 105, duration: 21, delay: 48, opacity: 0.78 },
-  { id: "fc6", top: "86%", size: 82, duration: 17, delay: 60, opacity: 0.72 },
+  { id: "fc1", top: "6%", size: 100, duration: 34, delay: 0, opacity: 0.85 },
+  { id: "fc2", top: "24%", size: 75, duration: 30, delay: 18, opacity: 0.75 },
+  { id: "fc3", top: "42%", size: 115, duration: 38, delay: 36, opacity: 0.8 },
+  { id: "fc4", top: "58%", size: 88, duration: 32, delay: 54, opacity: 0.7 },
+  { id: "fc5", top: "72%", size: 105, duration: 36, delay: 72, opacity: 0.78 },
+  { id: "fc6", top: "86%", size: 82, duration: 28, delay: 90, opacity: 0.72 },
 ];
 
 const FooterCloudSvg: React.FC<{ size: number }> = ({ size }) => (
@@ -233,7 +234,7 @@ export const Footer: React.FC = () => {
 
         .site-footer {
           position: relative;
-          overflow: hidden;
+          overflow: visible;
           width: 100%;
           background: linear-gradient(
             -45deg,
@@ -314,60 +315,6 @@ export const Footer: React.FC = () => {
             opacity: 0;
           }
         }
-
-        @media (prefers-reduced-motion: reduce) {
-          .site-footer {
-            animation: none;
-            background-size: auto;
-            background: linear-gradient(
-              160deg,
-              #E8F7FC 0%,
-              #C8EAF5 32%,
-              #8FD4EA 65%,
-              #4AB8D4 100%
-            );
-          }
-
-          .footer-clouds-layer {
-            display: none;
-          }
-        }
-
-        .footer-clouds-layer {
-          position: absolute;
-          inset: 0;
-          z-index: 0;
-          pointer-events: none;
-          overflow: hidden;
-        }
-
-        .footer-cloud {
-          position: absolute;
-          top: var(--footer-cloud-top);
-          left: -140px;
-          opacity: 0;
-          will-change: transform, opacity;
-          animation: footer-cloud-ltr linear infinite;
-          filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.35));
-        }
-
-        @keyframes footer-cloud-ltr {
-          0% {
-            left: -140px;
-            opacity: 0;
-          }
-          8% {
-            opacity: var(--footer-cloud-opacity);
-          }
-          92% {
-            opacity: var(--footer-cloud-opacity);
-          }
-          100% {
-            left: calc(100% + 140px);
-            opacity: 0;
-          }
-        }
-        */
 
         .footer-inner {
           position: relative;
@@ -582,33 +529,47 @@ export const Footer: React.FC = () => {
 
         @media (min-width: 768px) {
           .footer-inner {
+            flex-direction: row;
+            align-items: flex-start;
             gap: 40px;
             padding: 48px 32px 36px;
           }
 
           .footer-main {
+            flex: 1;
+            min-width: 0;
             gap: 48px;
           }
 
+          .footer-section-divider {
+            display: none;
+          }
+
+          .footer-explore {
+            width: 245px;
+            flex-shrink: 0;
+            margin-left: auto;
+          }
+
+          .footer-explore-divider {
+            width: 245px;
+          }
+
           .footer-explore-links {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
           }
         }
 
         @media (min-width: 1024px) {
           .footer-inner {
-            flex-direction: row;
-            align-items: flex-start;
             gap: 48px;
             padding: 36px 40px;
           }
 
           .footer-main {
             gap: 72px;
-          }
-
-          .footer-section-divider {
-            display: none;
           }
 
           .footer-contact-grid {
@@ -625,20 +586,6 @@ export const Footer: React.FC = () => {
           .footer-contact-item {
             flex: 1 1 180px;
             max-width: 280px;
-          }
-
-          .footer-explore {
-            width: 245px;
-            flex-shrink: 0;
-          }
-
-          .footer-explore-divider {
-            width: 245px;
-          }
-
-          .footer-explore-links {
-            display: flex;
-            flex-direction: column;
           }
         }
 
@@ -662,6 +609,8 @@ export const Footer: React.FC = () => {
       <div id="contact" className="scroll-mt-6" aria-hidden="true" />
 
       <footer className="site-footer scroll-mt-6">
+        <FloatingBalloons />
+
         <div className="footer-clouds-layer" aria-hidden="true">
           {FOOTER_CLOUDS.map((cloud, index) => (
             <div

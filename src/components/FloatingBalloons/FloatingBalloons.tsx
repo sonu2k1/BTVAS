@@ -54,45 +54,48 @@ export const FloatingBalloons: React.FC = () => {
   return (
     <>
       <style>{`
-        .floating-balloons-layer {
-          position: fixed;
-          inset: 0;
-          z-index: 1;
+        .footer-balloons-layer {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 100vh;
+          z-index: 0;
           pointer-events: none;
-          overflow: hidden;
+          overflow: visible;
         }
 
-        .floating-balloon {
+        .footer-balloon {
           position: absolute;
-          bottom: -120px;
+          bottom: 0;
           opacity: 0;
           will-change: transform, opacity;
-          animation: balloon-rise linear infinite;
+          animation: footer-balloon-rise linear infinite;
           filter: drop-shadow(0 6px 10px rgba(1, 12, 111, 0.12));
         }
 
-        @keyframes balloon-rise {
+        @keyframes footer-balloon-rise {
           0% {
-            transform: translate3d(0, 110vh, 0) rotate(-6deg);
+            transform: translate3d(0, 24px, 0) rotate(-6deg);
             opacity: 0;
           }
           8% {
             opacity: 0.55;
           }
           50% {
-            transform: translate3d(var(--drift), -35vh, 0) rotate(4deg);
+            transform: translate3d(var(--drift), -48vh, 0) rotate(4deg);
             opacity: 0.65;
           }
           92% {
             opacity: 0.5;
           }
           100% {
-            transform: translate3d(calc(var(--drift) * 1.4), -125vh, 0) rotate(-3deg);
+            transform: translate3d(calc(var(--drift) * 1.4), -92vh, 0) rotate(-3deg);
             opacity: 0;
           }
         }
 
-        @keyframes balloon-sway {
+        @keyframes footer-balloon-sway {
           0%, 100% {
             margin-left: 0;
           }
@@ -101,32 +104,32 @@ export const FloatingBalloons: React.FC = () => {
           }
         }
 
-        .floating-balloon-inner {
+        .footer-balloon-inner {
           display: block;
-          animation: balloon-sway 4s ease-in-out infinite;
+          animation: footer-balloon-sway 4s ease-in-out infinite;
         }
 
         @media (max-width: 768px) {
-          .floating-balloon--hide-mobile {
+          .footer-balloon--hide-mobile {
             display: none;
           }
-          .floating-balloon {
+          .footer-balloon {
             filter: drop-shadow(0 4px 6px rgba(1, 12, 111, 0.1));
           }
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .floating-balloons-layer {
+          .footer-balloons-layer {
             display: none;
           }
         }
       `}</style>
 
-      <div className="floating-balloons-layer" aria-hidden="true">
+      <div className="footer-balloons-layer" aria-hidden="true">
         {BALLOONS.map((balloon, index) => (
           <div
             key={balloon.id}
-            className={`floating-balloon${index >= 8 ? " floating-balloon--hide-mobile" : ""}`}
+            className={`footer-balloon${index >= 8 ? " footer-balloon--hide-mobile" : ""}`}
             style={
               {
                 left: balloon.left,
@@ -136,7 +139,7 @@ export const FloatingBalloons: React.FC = () => {
               } as React.CSSProperties
             }
           >
-            <span className="floating-balloon-inner">
+            <span className="footer-balloon-inner">
               <BalloonSvg size={balloon.size} color={balloon.color} shine={balloon.shine} />
             </span>
           </div>
