@@ -76,7 +76,7 @@ const contactTextStyle: React.CSSProperties = {
   fontSize: "16px",
   lineHeight: "24px",
   fontWeight: 600,
-  color: "rgba(255, 255, 255, 0.75)",
+  color: "rgba(1, 12, 111, 0.85)",
   textDecoration: "none",
 };
 
@@ -84,7 +84,7 @@ const descriptionStyle: React.CSSProperties = {
   fontFamily: "'Prompt', sans-serif",
   fontSize: "18px",
   lineHeight: "26px",
-  color: "rgba(255, 255, 255, 0.8)",
+  color: "rgba(1, 12, 111, 0.9)",
   margin: 0,
 };
 
@@ -171,7 +171,6 @@ const ContactItem: React.FC<{
   </div>
 );
 
-/*
 type FooterCloudConfig = {
   id: string;
   top: string;
@@ -205,7 +204,6 @@ const FooterCloudSvg: React.FC<{ size: number }> = ({ size }) => (
     <ellipse cx="54" cy="48" rx="40" ry="16" fill="#eef7fc" />
   </svg>
 );
-*/
 
 const ExploreSection: React.FC = () => (
   <div className="footer-explore">
@@ -236,8 +234,7 @@ export const Footer: React.FC = () => {
         .site-footer {
           width: 100%;
           background: #41b6e4ff;
-          color: #fff;
-          /*
+          color: #010C6F;
           position: relative;
           overflow: hidden;
           background: linear-gradient(
@@ -252,10 +249,8 @@ export const Footer: React.FC = () => {
           );
           background-size: 400% 400%;
           animation: footer-gradient-move 7s ease infinite;
-          
-        }*/
+        }
 
-        /*
         @keyframes footer-gradient-move {
           0% {
             background-position: 0% 50%;
@@ -320,7 +315,6 @@ export const Footer: React.FC = () => {
             opacity: 0;
           }
         }
-        */
 
         .footer-inner {
           width: 100%;
@@ -404,7 +398,7 @@ export const Footer: React.FC = () => {
         }
 
         .footer-contact-link:hover {
-          color: #fff;
+          color: #010C6F;
         }
 
         .footer-icon-link {
@@ -423,7 +417,7 @@ export const Footer: React.FC = () => {
         .footer-section-divider {
           width: 100%;
           height: 1px;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(1, 12, 111, 0.15);
         }
 
         .footer-explore {
@@ -455,7 +449,7 @@ export const Footer: React.FC = () => {
         .footer-explore-divider-muted {
           flex: 1;
           height: 2.5px;
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(1, 12, 111, 0.2);
         }
 
         .footer-explore-links {
@@ -474,7 +468,7 @@ export const Footer: React.FC = () => {
           font-family: 'Inter', sans-serif;
           font-size: 16px;
           font-weight: 500;
-          color: #fff;
+          color: #010C6F;
           text-decoration: none;
           transition: color 0.2s ease;
           min-width: 0;
@@ -484,13 +478,11 @@ export const Footer: React.FC = () => {
           color: #FF4880;
         }
 
-        /*
         @media (max-width: 768px) {
           .footer-cloud--hide-mobile {
             display: none;
           }
         }
-        */
 
         @media (min-width: 480px) {
           .footer-inner {
@@ -512,7 +504,7 @@ export const Footer: React.FC = () => {
             display: block;
             width: 1px;
             height: 32px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(1, 12, 111, 0.2);
             flex-shrink: 0;
           }
         }
@@ -611,7 +603,6 @@ export const Footer: React.FC = () => {
       <div id="contact" className="scroll-mt-6" aria-hidden="true" />
 
       <footer className="site-footer scroll-mt-6">
-        {/*
         <div className="footer-clouds-layer" aria-hidden="true">
           {FOOTER_CLOUDS.map((cloud, index) => (
             <div
@@ -630,7 +621,6 @@ export const Footer: React.FC = () => {
             </div>
           ))}
         </div>
-        */}
 
         <div className="footer-inner">
           <div className="footer-main">
@@ -643,7 +633,7 @@ export const Footer: React.FC = () => {
                 className="footer-logo"
               />
               <p className="footer-description" style={descriptionStyle}>
-                At <strong className="text-white">Beyond The View Autism Services</strong>, We Believe That Every Child Should Be Supported To Their Greatest Level Of Independence. With Independence Comes The Ability To Access New Environments And Opportunities.
+                At <strong style={{ color: "#010C6F" }}>Beyond The View Autism Services</strong>, We Believe That Every Child Should Be Supported To Their Greatest Level Of Independence. With Independence Comes The Ability To Access New Environments And Opportunities.
               </p>
             </div>
 
