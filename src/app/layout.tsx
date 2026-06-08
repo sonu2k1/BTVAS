@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
+import { FloatingBalloons } from "@/components/FloatingBalloons";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -22,6 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${nunito.variable}`}>
       <body className="font-sans antialiased">
+        <FloatingBalloons />
         {children}
       </body>
     </html>

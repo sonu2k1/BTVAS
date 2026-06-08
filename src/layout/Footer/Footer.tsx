@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { FloatingBalloons } from "@/components/FloatingBalloons";
 import { siteNavLinks } from "@/data/navigation";
 
 const iconBoxStyle: React.CSSProperties = {
@@ -234,7 +233,7 @@ export const Footer: React.FC = () => {
 
         .site-footer {
           position: relative;
-          overflow: visible;
+          overflow: hidden;
           width: 100%;
           background: linear-gradient(
             -45deg,
@@ -609,8 +608,6 @@ export const Footer: React.FC = () => {
       <div id="contact" className="scroll-mt-6" aria-hidden="true" />
 
       <footer className="site-footer scroll-mt-6">
-        <FloatingBalloons />
-
         <div className="footer-clouds-layer" aria-hidden="true">
           {FOOTER_CLOUDS.map((cloud, index) => (
             <div
