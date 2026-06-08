@@ -17,6 +17,7 @@ export const TopBar: React.FC = () => {
         .topbar-mobile span {
           font-family: 'Prompt', sans-serif !important;
           font-size: 16px !important;
+          color: rgba(1, 12, 111, 0.9) !important;
         }
 
         .marquee-wrapper {
