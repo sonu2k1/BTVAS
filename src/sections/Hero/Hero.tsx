@@ -6,8 +6,8 @@ import { HeroCard } from "./HeroCard";
 
 const HERO_IMAGES = [
   "https://ik.imagekit.io/sonu2k1/TEst/Hero-1.png",
-  "https://ik.imagekit.io/sonu2k1/TEst/Services/Hero1.2.jpeg",
-  "https://ik.imagekit.io/sonu2k1/TEst/Services/Hero-1.2.jpeg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2799.jpg?updatedAt=1780577328135",
+  "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2854.jpg?updatedAt=1780577328321",
 ];
 
 export const Hero: React.FC = () => {
