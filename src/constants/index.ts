@@ -112,11 +112,11 @@ export const faqs = [
 export const FAQS = faqs;
 
 export const INSURANCE_LOGOS = [
-  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/logo-bcbs-Photoroom.svg", alt: "BlueCross BlueShield", width: 355, height: 74 },
-  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/Unitedhealthcare.svg", alt: "UnitedHealthcare", width: 200, height: 74 },
-  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/CareSource.png", alt: "CareSource", width: 150, height: 74 },
-  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/Molina.png", alt: "Molina Healthcare", width: 200, height: 75 },
-  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/Georgie.png", alt: "Georgie", width: 153, height: 74 },
-  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/Amerigroup.png", alt: "Amerigroup", width: 200, height: 75 },
+  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/logo-bcbs-Photoroom.svg", alt: "BlueCross BlueShield", width: 355, height: 74, className: "bcbs" },
+  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/Unitedhealthcare.svg", alt: "UnitedHealthcare", width: 200, height: 74, className: "uhc" },
+  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/Care.webp", alt: "CareSource", width: 150, height: 74, className: "caresource" },
+  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/Molina.png", alt: "Molina Healthcare", width: 200, height: 75, className: "molina" },
+  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/Georgie.png", alt: "Georgie", width: 153, height: 74, className: "georgie" },
+  { src: "https://ik.imagekit.io/sonu2k1/TEst/Logos/Amerigroup.png", alt: "Amerigroup", width: 200, height: 75, className: "amerigroup" },
 ] as const;
 

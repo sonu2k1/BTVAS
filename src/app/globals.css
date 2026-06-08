@@ -168,7 +168,7 @@ a[href^="#"] {
 }
 
 /* Page Layout responsive fixes */
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
   .hero-bg-img {
     height: clamp(520px, 70vh, 650px) !important;
   }
@@ -176,12 +176,23 @@ a[href^="#"] {
   .hero-container {
     min-height: clamp(420px, 55vh, 520px) !important;
   }
+}
+
+@media (max-width: 1024px) {
+
 
   .footer-divider {
-    height: 30px;
-    margin-top: -14px;
-    margin-bottom: 0px;
-    top: 0px;
+    
+    height: 14px !important;
+    margin-top: -20px !important;
+    margin-bottom: -11px !important;
+    top: 0px !important;
+  }
+
+  .footer-divider img {
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
   }
 
   .site-section-root,

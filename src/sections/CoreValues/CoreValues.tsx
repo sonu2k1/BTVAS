@@ -27,6 +27,7 @@ const values = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/card-3.webp",
     borderColor: "#a5d6a7",
     objectPosition: "center 5%",
+    hoverFullCard: true,
   },
   {
     id: 4,
@@ -44,16 +45,24 @@ export const CoreValues: React.FC = () => {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Mochiy+Pop+One&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Mochiy+Pop+One&family=Playwrite+GB+S:wght@100..400&display=swap');
+
+        .core-values-quote {
+          font-family: 'Playwrite GB S', cursive;
+          font-size: 30px;
+          line-height: 45px;
+          font-weight: 400;
+          font-style: normal;
+          text-align: center;
+        }
 
         .val-card {
-          height: auto;
-          min-height: 390px;
+          height: 420px;
           transition: border-color 0.4s ease;
         }
         .val-card .val-img-wrap {
           height: 290px;
-          transition: height 0.4s ease;
+          transition: height 0.4s ease, opacity 0.4s ease;
         }
         .val-card:hover .val-img-wrap,
         .val-card.is-active .val-img-wrap {
@@ -76,13 +85,24 @@ export const CoreValues: React.FC = () => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justifyContent: center;
+          justify-content: center;
           flex: 1;
           text-align: center;
           border-radius: 22px 22px 0 0;
           margin-top: -22px;
           position: relative;
           z-index: 2;
+          transition: margin-top 0.4s ease, border-radius 0.4s ease;
+        }
+        .val-card--hover-full:hover .val-img-wrap,
+        .val-card--hover-full.is-active .val-img-wrap {
+          height: 0px !important;
+          opacity: 0 !important;
+        }
+        .val-card--hover-full:hover .val-text-box,
+        .val-card--hover-full.is-active .val-text-box {
+          margin-top: 0px !important;
+          border-radius: 20px !important;
         }
 
         @media (min-width: 1025px) and (max-width: 1439px) {
@@ -119,7 +139,7 @@ export const CoreValues: React.FC = () => {
             width: 100% !important;
             max-width: 320px !important;
             height: auto !important;
-            min-height: 350px !important;
+            min-height: 380px !important;
           }
           .val-card .val-img-wrap {
             height: 255px !important;
@@ -128,6 +148,16 @@ export const CoreValues: React.FC = () => {
           .val-card:hover .val-img-wrap,
           .val-card.is-active .val-img-wrap {
             height: 160px !important;
+          }
+          .val-card--hover-full:hover .val-img-wrap,
+          .val-card--hover-full.is-active .val-img-wrap {
+            height: 0px !important;
+            opacity: 0 !important;
+          }
+          .val-card--hover-full:hover .val-text-box,
+          .val-card--hover-full.is-active .val-text-box {
+            margin-top: 0px !important;
+            border-radius: 20px !important;
           }
           .val-card .val-desc {
             max-height: 0 !important;
@@ -139,6 +169,25 @@ export const CoreValues: React.FC = () => {
           .val-card.is-active .val-desc {
             max-height: 280px !important;
             opacity: 1 !important;
+          }
+          .core-values-quote {
+            font-size: 19px !important;
+            line-height: 26px !important;
+            padding: 0 16px !important;
+          }
+        }
+
+        @media (max-width: 375px) {
+          .core-values-quote {
+            font-size: 17px !important;
+            line-height: 24px !important;
+          }
+        }
+
+        @media (max-width: 320px) {
+          .core-values-quote {
+            font-size: 15px !important;
+            line-height: 22px !important;
           }
         }
       `}</style>
@@ -161,26 +210,8 @@ export const CoreValues: React.FC = () => {
           margin: "0 auto",
         }}
       >
-        {/* QUOTE */}
-        <p
-          style={{
-            fontFamily: "'Annie Use Your Telescope', sans-serif",
-            fontSize: "clamp(20px, 3.5vw, 34px)",
-            color: "#0e0e0fff",
-            lineHeight: 1.4,
-            fontWeight: "1000",
-            margin: "0 0 8px 0",
-            maxWidth: "1060px",
-            textAlign: "center",
-            textWrap: "balance",
-          }}
-        >
-          If they can&apos;t learn the way we teach them, we teach them the way they learn
-        </p>
-
         {/* HEADER */}
         <div style={{ textAlign: "center" }}>
-
           <h2
             style={{
               fontFamily: "'Mochiy Pop One', sans-serif",
@@ -194,6 +225,18 @@ export const CoreValues: React.FC = () => {
             <span style={{ color: "#1a1a1a", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Care</span> <span style={{ color: "#FF4880" }}>That Matters</span>
           </h2>
         </div>
+
+        {/* QUOTE */}
+        <p
+          className="core-values-quote text-gray-500"
+          style={{
+            margin: "0 0 8px 0",
+            maxWidth: "1060px",
+            textWrap: "balance",
+          }}
+        >
+          If they can&apos;t learn the way we teach them, we teach them the way they learn - Dr. O. Lvar Lovass
+        </p>
 
         {/* CARDS ROW */}
         <div
@@ -210,7 +253,7 @@ export const CoreValues: React.FC = () => {
           {values.map((val) => (
             <div
               key={val.id}
-              className={`val-card ${activeIndex === val.id ? "is-active" : ""}`}
+              className={`val-card ${activeIndex === val.id ? "is-active" : ""} ${val.hoverFullCard ? "val-card--hover-full" : ""}`}
               onClick={() => setActiveIndex(activeIndex === val.id ? null : val.id)}
               style={{
                 width: "290px",
@@ -249,7 +292,7 @@ export const CoreValues: React.FC = () => {
                 <h3
                   style={{
                     fontFamily: "'Nunito', sans-serif",
-                    fontSize: "22px",
+                    fontSize: "28px",
                     fontWeight: "900",
                     color: "#1a1a1a",
                     margin: 0,

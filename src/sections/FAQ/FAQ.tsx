@@ -74,8 +74,13 @@ export const FAQ: React.FC = () => {
           object-fit: contain;
         }
 
-        .insurance-logo-wrapper.bcbs img {
+        .insurance-logo-wrapper.bcbs img,
+        .insurance-logo-wrapper.caresource img {
           height: 30px !important;
+        }
+
+        .insurance-logo-wrapper.uhc img {
+          height: 58px !important;
         }
 
         @keyframes insurance-marquee-scroll {
@@ -103,8 +108,13 @@ export const FAQ: React.FC = () => {
             max-width: 220px;
           }
 
-          .insurance-logo-wrapper.bcbs img {
+          .insurance-logo-wrapper.bcbs img,
+          .insurance-logo-wrapper.caresource img {
             height: 35px !important;
+          }
+
+          .insurance-logo-wrapper.uhc img {
+            height: 68px !important;
           }
 
           .insurance-marquee-track {
@@ -132,8 +142,13 @@ export const FAQ: React.FC = () => {
             max-width: 260px;
           }
 
-          .insurance-logo-wrapper.bcbs img {
+          .insurance-logo-wrapper.bcbs img,
+          .insurance-logo-wrapper.caresource img {
             height: 41px !important;
+          }
+
+          .insurance-logo-wrapper.uhc img {
+            height: 78px !important;
           }
         }
 
@@ -156,8 +171,13 @@ export const FAQ: React.FC = () => {
             max-width: 300px;
           }
 
-          .insurance-logo-wrapper.bcbs img {
+          .insurance-logo-wrapper.bcbs img,
+          .insurance-logo-wrapper.caresource img {
             height: 46px !important;
+          }
+
+          .insurance-logo-wrapper.uhc img {
+            height: 88px !important;
           }
         }
 
@@ -180,8 +200,13 @@ export const FAQ: React.FC = () => {
             max-width: none;
           }
 
-          .insurance-logo-wrapper.bcbs img {
+          .insurance-logo-wrapper.bcbs img,
+          .insurance-logo-wrapper.caresource img {
             height: 50px !important;
+          }
+
+          .insurance-logo-wrapper.uhc img {
+            height: 96px !important;
           }
         }
 
@@ -240,7 +265,7 @@ export const FAQ: React.FC = () => {
 
         .faq-hero-img {
           object-fit: cover;
-          object-position: 42% 18%;
+          object-position: 28% 18%;
         }
 
         .faq-img-overlay {
@@ -251,7 +276,7 @@ export const FAQ: React.FC = () => {
           flex-direction: column;
           justify-content: space-between;
           align-items: flex-start;
-          padding: 28px 24px 32px 36px;
+          padding: 24px 20px 24px 24px;
           background: linear-gradient(
             180deg,
             rgba(1, 8, 79, 0) 0%,
@@ -275,9 +300,9 @@ export const FAQ: React.FC = () => {
 
         .faq-img-heading {
           font-family: 'Mochiy Pop One', sans-serif;
-          font-size: 36px;
+          font-size: 22px;
           font-weight: 400;
-          line-height: 42px;
+          line-height: 28px;
           color: #ffffff;
           margin: 0;
           max-width: 100%;
@@ -443,6 +468,11 @@ export const FAQ: React.FC = () => {
             padding: 32px 28px 36px 44px;
           }
 
+          .faq-img-heading {
+            font-size: 26px !important;
+            line-height: 32px !important;
+          }
+
           .faq-accordion-wrap {
             gap: 14px;
           }
@@ -483,6 +513,11 @@ export const FAQ: React.FC = () => {
             padding: 36px 32px 40px 48px;
           }
 
+          .faq-img-heading {
+            font-size: 32px !important;
+            line-height: 38px !important;
+          }
+
           .faq-question-btn {
             padding: 0 18px;
           }
@@ -503,7 +538,7 @@ export const FAQ: React.FC = () => {
 
           .faq-inner-row {
             flex-direction: row;
-            align-items: flex-start;
+            align-items: center;
             gap: 24px;
             padding-right: 32px;
             padding-left: 0;
@@ -528,6 +563,8 @@ export const FAQ: React.FC = () => {
           }
 
           .faq-img-heading {
+            font-size: 36px !important;
+            line-height: 42px !important;
             max-width: 380px;
           }
 
@@ -571,7 +608,7 @@ export const FAQ: React.FC = () => {
           {/* ── LEFT: Image block ── */}
           <div className="faq-img-wrap">
             <Image
-              src="https://ik.imagekit.io/sonu2k1/TEst/0O3A2539.jpg"
+              src="https://ik.imagekit.io/sonu2k1/TEst/FAQ.png"
               alt="Children at Beyond The View Autism Services"
               fill
               sizes="(max-width: 1024px) 100vw, 700px"
@@ -647,7 +684,7 @@ export const FAQ: React.FC = () => {
             {INSURANCE_LOGOS.map((logo, index) => (
               <div 
                 key={`logo-1-${index}`} 
-                className={`insurance-logo-wrapper ${logo.alt === "BlueCross BlueShield" ? "bcbs" : ""}`}
+                className={`insurance-logo-wrapper ${logo.className || ""}`}
               >
                 <Image
                   src={logo.src}
@@ -656,13 +693,14 @@ export const FAQ: React.FC = () => {
                   height={logo.height}
                   className="object-contain"
                   sizes="(max-width: 480px) 150px, (max-width: 768px) 200px, 300px"
+                  style={{ width: "auto", height: "auto" }}
                 />
               </div>
             ))}
             {INSURANCE_LOGOS.map((logo, index) => (
               <div 
                 key={`logo-2-${index}`} 
-                className={`insurance-logo-wrapper ${logo.alt === "BlueCross BlueShield" ? "bcbs" : ""}`}
+                className={`insurance-logo-wrapper ${logo.className || ""}`}
                 aria-hidden="true"
               >
                 <Image
@@ -672,6 +710,7 @@ export const FAQ: React.FC = () => {
                   height={logo.height}
                   className="object-contain"
                   sizes="(max-width: 480px) 150px, (max-width: 768px) 200px, 300px"
+                  style={{ width: "auto", height: "auto" }}
                 />
               </div>
             ))}

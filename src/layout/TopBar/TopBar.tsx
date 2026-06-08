@@ -7,7 +7,7 @@ export const TopBar: React.FC = () => {
   return (
     <div className="w-full flex justify-center bg-transparent" style={{ padding: "12px 0" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&family=Mochiy+Pop+One&display=swap');
 
         .topbar-desktop, 
         .topbar-desktop a, 
@@ -16,7 +16,7 @@ export const TopBar: React.FC = () => {
         .topbar-mobile a, 
         .topbar-mobile span {
           font-family: 'Prompt', sans-serif !important;
-          font-size: 14px !important;
+          font-size: 16px !important;
         }
 
         .marquee-wrapper {
@@ -93,7 +93,8 @@ export const TopBar: React.FC = () => {
         }
 
         .topbar-desktop span.enrolling-now-text {
-          font-size: 16px !important;
+          font-family: 'Mochiy Pop One', sans-serif !important;
+          font-size: 20px !important;
           color: #FFE600 !important;
         }
 
@@ -122,17 +123,18 @@ export const TopBar: React.FC = () => {
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
-            font-size: 11px !important;
+            font-size: 13px !important;
             white-space: nowrap !important;
           }
           .topbar-mobile span.topbar-divider {
-            font-size: 10px !important;
+            font-size: 12px !important;
             white-space: nowrap !important;
           }
           .topbar-mobile span.topbar-enrolling-now {
-            font-size: 13px !important;
+            font-family: 'Mochiy Pop One', sans-serif !important;
+            font-size: 14.5px !important;
             color: #FFE600 !important;
-            font-weight: 800 !important;
+            font-weight: 400 !important;
             white-space: nowrap !important;
           }
         }
@@ -144,10 +146,10 @@ export const TopBar: React.FC = () => {
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
-            font-size: 10px !important;
+            font-size: 11.5px !important;
           }
           .topbar-mobile span.topbar-enrolling-now {
-            font-size: 12.5px !important;
+            font-size: 13.5px !important;
           }
         }
 
@@ -158,10 +160,10 @@ export const TopBar: React.FC = () => {
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
-            font-size: 9px !important;
+            font-size: 10.5px !important;
           }
           .topbar-mobile span.topbar-enrolling-now {
-            font-size: 11.5px !important;
+            font-size: 12px !important;
           }
         }
       `}</style>
@@ -174,7 +176,7 @@ export const TopBar: React.FC = () => {
         <div className="flex items-center gap-2 whitespace-nowrap">
           {/* Phone icon */}
           <div className="w-6 h-6 shrink-0 flex items-center justify-center">
-            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={24} height={24} />
           </div>
 
           <div className="flex items-center gap-[10px] text-white font-sans text-[12px]">
@@ -185,7 +187,7 @@ export const TopBar: React.FC = () => {
           {/* Email icon */}
           <div className="flex items-center gap-[6px] ml-[10px]">
             <div className="w-6 h-6 shrink-0 flex items-center justify-center">
-              <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Email.svg" alt="Email" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+              <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Email.svg" alt="Email" width={24} height={24} />
             </div>
             <a className="text-white font-sans text-[12px] underline" href="mailto:intake@btvas.com">
               intake@btvas.com
@@ -197,7 +199,7 @@ export const TopBar: React.FC = () => {
         <div style={{ flex: 1, display: "flex", justifyContent: "center", alignItems: "center" }}>
           <span
             className="enrolling-now-text"
-            style={{ fontFamily: "'Prompt', sans-serif", fontWeight: "800", letterSpacing: "0.5px" }}
+            style={{ letterSpacing: "0.5px" }}
           >
             Enrolling Now
           </span>
@@ -242,7 +244,7 @@ export const TopBar: React.FC = () => {
             className="flex items-center gap-[6px] topbar-link"
           >
             <div className="w-6 h-6 shrink-0 flex items-center justify-center topbar-fb-icon">
-              <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/FB.svg" alt="Facebook" width={24} height={24} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+              <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/FB.svg" alt="Facebook" width={24} height={24} />
             </div>
             <span className="text-white font-sans text-[12px] whitespace-nowrap">
               @beyondtheviewaba
@@ -256,12 +258,12 @@ export const TopBar: React.FC = () => {
       <div className="topbar-mobile">
         <a href="tel:4044067339" className="flex items-center gap-1 text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none" }}>
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
-            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={16} height={16} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={16} height={16} />
           </div>
           (404)-406-7339
         </a>
         <span className="text-white opacity-30 topbar-divider">|</span>
-        <span className="topbar-enrolling-now" style={{ fontFamily: "'Prompt', sans-serif" }}>
+        <span className="topbar-enrolling-now">
           Enrolling Now
         </span>
         {/* PREVIOUS SCROLLING MARQUEE CODE:
@@ -275,7 +277,7 @@ export const TopBar: React.FC = () => {
         <span className="text-white opacity-30 topbar-divider">|</span>
         <a href="mailto:intake@btvas.com" className="flex items-center gap-1 text-white font-sans underline topbar-link topbar-email-link">
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
-            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Email.svg" alt="Email" width={16} height={16} className="w-full h-full object-contain" style={{ width: "auto", height: "auto" }} />
+            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Email.svg" alt="Email" width={16} height={16} />
           </div>
           intake@btvas.com
         </a>

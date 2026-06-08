@@ -9,35 +9,41 @@ const GAP = 16;
 
 const leftCol1Images = [
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2433.jpg",
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2453.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2474.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
+
 ];
 const leftCol1Repeated = [...leftCol1Images, ...leftCol1Images];
 
 const leftCol2Images = [
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2474.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2453.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
 ];
 const leftCol2Repeated = [...leftCol2Images, ...leftCol2Images];
 
 const rightCol1Images = [
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2474.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2453.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
 ];
 const rightCol1Repeated = [...rightCol1Images, ...rightCol1Images];
 
 const rightCol2Images = [
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2453.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2433.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2474.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
 ];
 const rightCol2Repeated = [...rightCol2Images, ...rightCol2Images];
+
+const mobileMarquee1Repeated = [...leftCol1Images, ...rightCol1Images, ...leftCol1Images, ...rightCol1Images];
+const mobileMarquee2Repeated = [...leftCol2Images, ...rightCol2Images, ...leftCol2Images, ...rightCol2Images];
 
 export const JoinOurTeam: React.FC = () => {
   return (
@@ -69,11 +75,45 @@ export const JoinOurTeam: React.FC = () => {
             transform: translateY(0);
           }
         }
+        @keyframes scrollLeftMobile {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        @keyframes scrollRightMobile {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
         .scroll-up-col {
           animation: scrollUp 25s linear infinite;
         }
         .scroll-down-col {
           animation: scrollDown 25s linear infinite;
+        }
+        .scroll-left-mobile {
+          animation: scrollLeftMobile 25s linear infinite;
+        }
+        .scroll-right-mobile {
+          animation: scrollRightMobile 25s linear infinite;
+        }
+        .join-team-mobile-marquee-container {
+          display: none;
+          width: calc(100% + 32px);
+          margin-left: -16px;
+          overflow: hidden;
+          padding: 8px 0;
+        }
+        .join-team-mobile-marquee-track {
+          display: flex;
+          width: max-content;
+          gap: 12px;
         }
         @media (max-width: 1024px) {
           .join-team-section {
@@ -82,9 +122,16 @@ export const JoinOurTeam: React.FC = () => {
             padding: 48px 16px !important;
             border-top: 4px solid #7e5cb3 !important;
             border-bottom: 1px solid #E5E7EB !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 32px !important;
           }
           .join-team-side-images {
             display: none !important;
+          }
+          .join-team-mobile-marquee-container {
+            display: block;
           }
           .join-team-middle-content {
             width: 100% !important;
@@ -99,6 +146,10 @@ export const JoinOurTeam: React.FC = () => {
         @media (max-width: 480px) {
           .join-team-section {
             padding: 32px 12px !important;
+          }
+          .join-team-mobile-marquee-container {
+            width: calc(100% + 24px) !important;
+            margin-left: -12px !important;
           }
           .join-team-middle-content h2 {
             font-size: 22px !important;
@@ -117,6 +168,32 @@ export const JoinOurTeam: React.FC = () => {
           borderBottom: "1px solid #E5E7EB",
         }}
       >
+        {/* Mobile Top Marquee */}
+        <div className="join-team-mobile-marquee-container">
+          <div className="join-team-mobile-marquee-track scroll-left-mobile">
+            {mobileMarquee1Repeated.map((src, i) => (
+              <div
+                key={`mobile-marquee-1-${i}`}
+                style={{
+                  width: "125px",
+                  height: "85px",
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                  flexShrink: 0,
+                }}
+              >
+                <Image
+                  src={src}
+                  alt={`Team Member Mobile ${i}`}
+                  width={125}
+                  height={85}
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* ── LEFT IMAGE BLOCK ── */}
         <div
           className="relative flex-shrink-0 join-team-side-images"
@@ -334,6 +411,32 @@ export const JoinOurTeam: React.FC = () => {
                   alt={`Team Member ${i}`}
                   width={IMG_WIDTH}
                   height={IMG_HEIGHT}
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile Bottom Marquee */}
+        <div className="join-team-mobile-marquee-container">
+          <div className="join-team-mobile-marquee-track scroll-right-mobile">
+            {mobileMarquee2Repeated.map((src, i) => (
+              <div
+                key={`mobile-marquee-2-${i}`}
+                style={{
+                  width: "125px",
+                  height: "85px",
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                  flexShrink: 0,
+                }}
+              >
+                <Image
+                  src={src}
+                  alt={`Team Member Mobile ${i}`}
+                  width={125}
+                  height={85}
                   className="w-full h-full object-cover object-center"
                 />
               </div>

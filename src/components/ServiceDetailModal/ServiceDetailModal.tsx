@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Modal } from "../Modal";
 import type { Service } from "@/data/services";
 
@@ -23,6 +24,22 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
   onClose,
   service,
 }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const hasMultipleImages = service && service.images && service.images.length > 0;
+
+  useEffect(() => {
+    if (!hasMultipleImages) return;
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % service.images!.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [hasMultipleImages, service]);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCurrentImageIndex(0);
+  }, [service, isOpen]);
+
   const handleContactClick = () => {
     onClose();
     setTimeout(scrollToContact, 280);
@@ -72,6 +89,18 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
           top: 5px !important;
           background-color: #e03570 !important;
         }
+        .service-modal-img-container {
+          width: 100%;
+          height: 220px;
+          border-radius: 16px;
+          overflow: hidden;
+          position: relative;
+        }
+        @media (min-width: 640px) {
+          .service-modal-img-container {
+            height: 380px;
+          }
+        }
       `}</style>
 
       <Modal
@@ -108,22 +137,42 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
         }
       >
         <div className="flex flex-col gap-5">
-          <div
-            style={{
-              width: "100%",
-              height: "200px",
-              borderRadius: "16px",
-              overflow: "hidden",
-              position: "relative",
-            }}
-          >
-            <Image
-              src={service.image}
-              alt={service.alt}
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 768px) 100vw, 672px"
-            />
+          <div className="service-modal-img-container">
+            {hasMultipleImages ? (
+              service.images!.map((imgSrc, idx) => (
+                <motion.div
+                  key={imgSrc}
+                  initial={{ opacity: idx === 0 ? 1 : 0 }}
+                  animate={{ opacity: currentImageIndex === idx ? 1 : 0 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    zIndex: currentImageIndex === idx ? 1 : 0,
+                  }}
+                >
+                  <Image
+                    src={imgSrc}
+                    alt={service.alt}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 672px"
+                    priority={idx === 0}
+                  />
+                </motion.div>
+              ))
+            ) : (
+              <Image
+                src={service.image}
+                alt={service.alt}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 672px"
+              />
+            )}
           </div>
 
           <div>

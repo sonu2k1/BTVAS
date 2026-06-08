@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { services, type Service } from "@/data/services";
 import { ServiceDetailModal } from "@/components/ServiceDetailModal";
 
@@ -13,6 +14,47 @@ interface ServiceCardProps {
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden }) => {
   const isComingSoon = service.comingSoon === true;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isInCenter, setIsInCenter] = useState(false);
+  const hasMultipleImages = service.images && service.images.length > 0;
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!hasMultipleImages) return;
+
+    const checkPosition = () => {
+      if (!cardRef.current) return;
+      const rect = cardRef.current.getBoundingClientRect();
+      const cardCenter = rect.left + rect.width / 2;
+      const viewportCenter = window.innerWidth / 2;
+      const distance = Math.abs(cardCenter - viewportCenter);
+
+      // Check if card center is close to viewport center
+      const threshold = rect.width ? rect.width / 2 + 15 : 220;
+      setIsInCenter(distance < threshold);
+    };
+
+    checkPosition();
+    const intervalId = setInterval(checkPosition, 200);
+
+    return () => clearInterval(intervalId);
+  }, [hasMultipleImages]);
+
+  useEffect(() => {
+    if (!hasMultipleImages) return;
+
+    if (!isInCenter) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setCurrentImageIndex(0);
+      return;
+    }
+
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % service.images!.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [hasMultipleImages, isInCenter, service.images]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (isComingSoon) return;
@@ -26,6 +68,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
 
   return (
     <div
+      ref={cardRef}
       className="services-marquee-item"
       aria-hidden={ariaHidden || undefined}
       style={ariaHidden ? { pointerEvents: "none" } : undefined}
@@ -44,17 +87,17 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
         className={`flex flex-col items-center bg-transparent services-card relative overflow-visible border-0 p-0 text-left${isComingSoon ? " services-card--coming-soon" : ""}`}
         style={{
           width: "410px",
-          height: "474px",
+          height: "440px",
           boxSizing: "border-box",
           filter: "drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.06))",
         }}
       >
         <div
-          className="flex flex-col items-center bg-white w-full border-t border-l border-r border-[#E2E8F0] services-card-body"
+          className="flex flex-col items-center bg-white w-full border border-[#E2E8F0] services-card-body"
           style={{
-            height: "434px",
-            borderRadius: "20px 20px 0 0",
-            padding: "18px 18px 0px 18px",
+            height: "100%",
+            borderRadius: "24px",
+            padding: "18px",
             boxSizing: "border-box",
           }}
         >
@@ -68,18 +111,51 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
               flexShrink: 0,
             }}
           >
-            <Image
-              src={service.image}
-              alt={service.alt}
-              width={374}
-              height={238}
-              className="w-full h-full object-cover object-center"
-              style={{
-                width: "100%",
-                height: "100%",
-                ...(isComingSoon ? { filter: "grayscale(0.35) brightness(0.92)" } : {}),
-              }}
-            />
+            {hasMultipleImages ? (
+              service.images!.map((imgSrc, idx) => (
+                <motion.div
+                  key={imgSrc}
+                  initial={{ opacity: idx === 0 ? 1 : 0 }}
+                  animate={{ opacity: currentImageIndex === idx ? 1 : 0 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    zIndex: currentImageIndex === idx ? 1 : 0,
+                  }}
+                >
+                  <Image
+                    src={imgSrc}
+                    alt={service.alt}
+                    width={374}
+                    height={238}
+                    className="w-full h-full object-cover object-center"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      ...(isComingSoon ? { filter: "grayscale(0.35) brightness(0.92)" } : {}),
+                    }}
+                    priority={idx === 0}
+                  />
+                </motion.div>
+              ))
+            ) : (
+              <Image
+                src={service.image}
+                alt={service.alt}
+                width={374}
+                height={238}
+                className="w-full h-full object-cover object-center"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  ...(isComingSoon ? { filter: "grayscale(0.35) brightness(0.92)" } : {}),
+                }}
+              />
+            )}
             {isComingSoon && (
               <span className="services-coming-soon-badge" aria-hidden>
                 Coming Soon
@@ -96,7 +172,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
               lineHeight: "27.3px",
               marginTop: "20px",
               marginBottom: "12px",
-              width: "187px",
+              width: "100%",
+              maxWidth: "340px",
               height: "28px",
               display: "flex",
               alignItems: "center",
@@ -119,7 +196,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
               fontSize: "16px",
               lineHeight: "26px",
               color: "#666666",
-              width: "310px",
+              width: "100%",
+              maxWidth: "340px",
               height: "76px",
               margin: 0,
               overflow: "hidden",
@@ -130,42 +208,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
           >
             {service.description}
           </p>
-        </div>
-
-        <div className="absolute bottom-0 left-0 right-0 h-[40px] flex w-full select-none pointer-events-none services-card-scoop">
-          <svg
-            width="40"
-            height="40"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ flexShrink: 0 }}
-          >
-            <path d="M 0 0 C 0 15, 8 30, 24 40 L 40 40 L 40 0 Z" fill="#ffffff" />
-            <path
-              d="M 0 0 C 0 15, 8 30, 24 40 L 40 40"
-              stroke="#E2E8F0"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-            />
-          </svg>
-          <div className="grow bg-white h-[40px]" style={{ borderBottom: "1.2px solid #E2E8F0" }} />
-          <svg
-            width="40"
-            height="40"
-            viewBox="0 0 40 40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ flexShrink: 0 }}
-          >
-            <path d="M 40 0 C 40 15, 32 30, 16 40 L 0 40 L 0 0 Z" fill="#ffffff" />
-            <path
-              d="M 40 0 C 40 15, 32 30, 16 40 L 0 40"
-              stroke="#E2E8F0"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-            />
-          </svg>
         </div>
       </button>
     </div>
@@ -396,7 +438,7 @@ export const OurServices: React.FC = () => {
         </h2>
       </div>
 
-      <div className="relative services-container" style={{ width: "100%", minHeight: "474px" }}>
+      <div className="relative services-container" style={{ width: "100%", minHeight: "440px" }}>
         <div className="services-marquee-container">
           <div className="services-marquee-track">
             {services.map((service) => (

@@ -15,28 +15,28 @@ export const Hero: React.FC = () => {
           object-position: center center !important;
         }
 
-        @media (min-width: 1025px) {
+        @media (min-width: 768px) {
           .hero-content-wrapper {
-            left: 53% !important;
+            left: 54.5% !important;
             transform: translateX(-50%) !important;
             top: 80px !important;
           }
         }
-        @media (max-width: 1024px) {
+        @media (max-width: 767px) {
           .hero-section {
             min-height: 480px !important;
-            border-radius: 0px !important;
-            top: 0px !important;
           }
           .hero-content-wrapper {
             position: absolute !important;
-            top: 32px !important;
+            top: 115px !important;
             left: 50% !important;
             transform: translateX(-50%) !important;
             width: 100% !important;
-            max-width: min(580px, 90vw) !important;
+            max-width: min(340px, 88vw) !important;
             padding: 0 !important;
             z-index: 10 !important;
+            display: flex !important;
+            justify-content: center !important;
           }
           .hero-bg-image {
             object-position: 50% 28% !important;
@@ -48,7 +48,8 @@ export const Hero: React.FC = () => {
             min-height: 420px !important;
           }
           .hero-content-wrapper {
-            top: 24px !important;
+            top: 95px !important;
+            max-width: min(320px, 86vw) !important;
           }
         }
 
@@ -57,7 +58,7 @@ export const Hero: React.FC = () => {
             min-height: 380px !important;
           }
           .hero-content-wrapper {
-            top: 18px !important;
+            top: 85px !important;
           }
         }
 
@@ -66,7 +67,7 @@ export const Hero: React.FC = () => {
             min-height: 340px !important;
           }
           .hero-content-wrapper {
-            top: 12px !important;
+            top: 75px !important;
           }
         }
       `}</style>

@@ -315,6 +315,60 @@ export const Footer: React.FC = () => {
           }
         }
 
+        @media (prefers-reduced-motion: reduce) {
+          .site-footer {
+            animation: none;
+            background-size: auto;
+            background: linear-gradient(
+              160deg,
+              #E8F7FC 0%,
+              #C8EAF5 32%,
+              #8FD4EA 65%,
+              #4AB8D4 100%
+            );
+          }
+
+          .footer-clouds-layer {
+            display: none;
+          }
+        }
+
+        .footer-clouds-layer {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
+          overflow: hidden;
+        }
+
+        .footer-cloud {
+          position: absolute;
+          top: var(--footer-cloud-top);
+          left: -140px;
+          opacity: 0;
+          will-change: transform, opacity;
+          animation: footer-cloud-ltr linear infinite;
+          filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.35));
+        }
+
+        @keyframes footer-cloud-ltr {
+          0% {
+            left: -140px;
+            opacity: 0;
+          }
+          8% {
+            opacity: var(--footer-cloud-opacity);
+          }
+          92% {
+            opacity: var(--footer-cloud-opacity);
+          }
+          100% {
+            left: calc(100% + 140px);
+            opacity: 0;
+          }
+        }
+        */
+
         .footer-inner {
           position: relative;
           z-index: 1;
@@ -343,7 +397,7 @@ export const Footer: React.FC = () => {
         }
 
         .footer-logo {
-          width: 140px;
+          width: 200px;
           height: auto;
           padding: 10px 12px;
           background: #ffffff;
@@ -495,7 +549,7 @@ export const Footer: React.FC = () => {
           }
 
           .footer-logo {
-            width: 150px;
+            width: 220px;
           }
 
           .footer-social-row {
@@ -631,10 +685,10 @@ export const Footer: React.FC = () => {
           <div className="footer-main">
             <div className="footer-brand">
               <Image
-                src="https://ik.imagekit.io/sonu2k1/TEst/Logos/logo.svg"
+                src="https://ik.imagekit.io/sonu2k1/TEst/Logos/logo.webp?updatedAt=1780330681267"
                 alt="Beyond The View Autism Services"
-                width={160}
-                height={150}
+                width={220}
+                height={180}
                 className="footer-logo"
               />
               <p className="footer-description" style={descriptionStyle}>

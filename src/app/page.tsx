@@ -40,7 +40,7 @@ export default function Home() {
           <Header />
         </div>
 
-        <div className="relative w-full flex justify-center hero-container px-0 md:px-4" style={{ minHeight: "clamp(380px, calc(85vh - 140px), 710px)" }}>
+        <div className="relative w-full flex justify-center hero-container px-4" style={{ minHeight: "clamp(380px, calc(85vh - 140px), 710px)" }}>
           <Hero />
         </div>
 
@@ -61,8 +61,8 @@ export default function Home() {
             alt="Divider"
             width={1440}
             height={90}
-            className="w-full h-auto object-cover pointer-events-none"
-            style={{ height: "auto" }}
+            className="object-cover pointer-events-none"
+            style={{ width: "100%", height: "auto" }}
           />
         </div>
 

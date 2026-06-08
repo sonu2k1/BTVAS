@@ -23,12 +23,12 @@ export const HeroCard: React.FC = () => {
           top: 8px !important;
           background-color: #e6d400 !important;
         }
-        @media (min-width: 1025px) and (max-width: 1439px) {
+        @media (min-width: 768px) and (max-width: 1439px) {
           .hero-card-outer,
           .hero-card-inner,
           .hero-card-content {
             width: 100% !important;
-            max-width: min(580px, 92vw) !important;
+            max-width: min(520px, 92vw) !important;
           }
           .hero-card-quote {
             width: 100% !important;
@@ -36,21 +36,23 @@ export const HeroCard: React.FC = () => {
           }
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 767px) {
           .hero-card-outer {
             width: 100% !important;
-            max-width: min(580px, 90vw) !important;
+            max-width: min(340px, 88vw) !important;
             height: auto !important;
+            min-height: auto !important;
             padding: 8px !important;
             flex-shrink: 1 !important;
+            border-radius: 24px !important;
           }
           .hero-card-inner {
             width: 100% !important;
             height: auto !important;
             min-height: auto !important;
-            padding: 16px !important;
-            gap: 16px !important;
-            border-radius: 12px !important;
+            padding: 20px 16px 24px 16px !important;
+            gap: 12px !important;
+            border-radius: 16px !important;
           }
           .hero-card-content {
             width: 100% !important;
@@ -58,13 +60,13 @@ export const HeroCard: React.FC = () => {
             gap: 8px !important;
           }
           .hero-card-subtitle {
-            font-size: 30px !important;
+            font-size: 20px !important;
           }
           .hero-subtitle-br {
             display: block !important;
           }
           .hero-card-title {
-            font-size: 38px !important;
+            font-size: 24px !important;
           }
           .hero-card-title span {
             font-size: inherit !important;
@@ -81,22 +83,25 @@ export const HeroCard: React.FC = () => {
         @media (max-width: 480px) {
           .hero-card-outer {
             padding: 6px !important;
+            max-width: min(320px, 86vw) !important;
+            min-height: auto !important;
+            border-radius: 22px !important;
           }
           .hero-card-inner {
-            padding: 26px 20px 40px !important;
-            gap: 16px !important;
+            padding: 20px 16px 24px 16px !important;
+            gap: 12px !important;
             min-height: auto !important;
-            border-radius: 14px !important;
+            border-radius: 16px !important;
           }
           .hero-card-title {
-            font-size: 26px !important;
+            font-size: 22px !important;
           }
           .hero-card-title span {
             font-size: inherit !important;
             margin-top: 3px !important;
           }
           .hero-card-subtitle {
-            font-size: 24px !important;
+            font-size: 18px !important;
           }
         }
       `}</style>
@@ -105,9 +110,9 @@ export const HeroCard: React.FC = () => {
         className="hero-card-outer"
         style={{
           width: "100%",
-          maxWidth: "580px",
+          maxWidth: "520px",
           height: "auto",
-          minHeight: "282px",
+          minHeight: "250px",
           borderRadius: "20px",
           backgroundColor: "rgba(117, 61, 190, 0.6)",
           padding: "10px",
@@ -120,19 +125,19 @@ export const HeroCard: React.FC = () => {
           className="hero-card-inner"
           style={{
             width: "100%",
-            maxWidth: "580px",
+            maxWidth: "520px",
             height: "auto",
-            minHeight: "262px",
+            minHeight: "230px",
             borderRadius: "20px",
             border: "1.5px dashed rgba(255, 255, 255, 0.4)",
             boxSizing: "border-box",
-            padding: "24px",
+            padding: "20px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "space-between",
             textAlign: "center",
-            gap: "20px",
+            gap: "16px",
           }}
         >
           {/* CONTENT AREA */}
@@ -154,7 +159,7 @@ export const HeroCard: React.FC = () => {
               className="hero-card-title"
               style={{
                 fontFamily: "'Mochiy Pop P One', 'Mochiy Pop One', sans-serif",
-                fontSize: "52px",
+                fontSize: "46px",
                 fontWeight: "800",
                 color: "#FFE600",
                 margin: 0,
@@ -173,7 +178,7 @@ export const HeroCard: React.FC = () => {
               className="hero-card-subtitle"
               style={{
                 fontFamily: "'Annie Use Your Telescope', cursive",
-                fontSize: "42px",
+                fontSize: "36px",
                 fontWeight: "400",
                 color: "#ffffff",
                 margin: "4px 0 0 0",

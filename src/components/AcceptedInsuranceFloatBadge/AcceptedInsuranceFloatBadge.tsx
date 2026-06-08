@@ -140,8 +140,13 @@ export const AcceptedInsuranceFloatBadge: React.FC = () => {
           object-fit: contain;
         }
 
-        .insurance-float-badge-logo.bcbs img {
+        .insurance-float-badge-logo.bcbs img,
+        .insurance-float-badge-logo.caresource img {
           height: 19px !important;
+        }
+
+        .insurance-float-badge-logo.uhc img {
+          height: 36px !important;
         }
 
         @media (min-width: 380px) {
@@ -169,8 +174,13 @@ export const AcceptedInsuranceFloatBadge: React.FC = () => {
             max-width: 84px;
           }
 
-          .insurance-float-badge-logo.bcbs img {
+          .insurance-float-badge-logo.bcbs img,
+          .insurance-float-badge-logo.caresource img {
             height: 22px !important;
+          }
+
+          .insurance-float-badge-logo.uhc img {
+            height: 41px !important;
           }
         }
 
@@ -199,8 +209,13 @@ export const AcceptedInsuranceFloatBadge: React.FC = () => {
             max-width: 88px;
           }
 
-          .insurance-float-badge-logo.bcbs img {
+          .insurance-float-badge-logo.bcbs img,
+          .insurance-float-badge-logo.caresource img {
             height: 23px !important;
+          }
+
+          .insurance-float-badge-logo.uhc img {
+            height: 44px !important;
           }
         }
 
@@ -226,8 +241,13 @@ export const AcceptedInsuranceFloatBadge: React.FC = () => {
             max-width: 92px;
           }
 
-          .insurance-float-badge-logo.bcbs img {
+          .insurance-float-badge-logo.bcbs img,
+          .insurance-float-badge-logo.caresource img {
             height: 24px !important;
+          }
+
+          .insurance-float-badge-logo.uhc img {
+            height: 46px !important;
           }
         }
 
@@ -291,7 +311,7 @@ export const AcceptedInsuranceFloatBadge: React.FC = () => {
           {INSURANCE_LOGOS.map((logo, index) => (
             <div
               key={logo.src}
-              className={`insurance-float-badge-logo${index === activeIndex ? " is-active" : ""}${logo.alt === "BlueCross BlueShield" ? " bcbs" : ""}`}
+              className={`insurance-float-badge-logo${index === activeIndex ? " is-active" : ""}${logo.className ? ` ${logo.className}` : ""}`}
               aria-hidden={index !== activeIndex}
             >
               <Image

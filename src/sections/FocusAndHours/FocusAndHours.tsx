@@ -262,7 +262,7 @@ export const FocusAndHours: React.FC = () => {
             className="hours-title"
             style={{
               fontFamily: "'Nunito', sans-serif",
-              fontSize: "20px",
+              fontSize: "22px",
               fontWeight: "900",
               color: "#ffffff",
               margin: "0 0 20px 0",

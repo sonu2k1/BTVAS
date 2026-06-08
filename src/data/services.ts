@@ -4,6 +4,7 @@ export interface Service {
   titleColor2: string;
   description: string;
   image: string;
+  images?: string[];
   alt: string;
   overview: string;
   highlights: string[];
@@ -18,7 +19,13 @@ export const services: Service[] = [
     titleColor2: "#FF4880",
     description:
       "Evidence-based Applied Behaviour Analysis tailored to each child's unique profile and goals",
-    image: "https://ik.imagekit.io/sonu2k1/TEst/Services/aba.png",
+    image: "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2805.jpg",
+    images: [
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2722.jpg?updatedAt=1780577327719",
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2805.jpg",
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2734.jpg",
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2743.jpg?updatedAt=1780577328144"
+    ],
     alt: "Child doing ABA therapy activity",
     overview:
       "Applied Behavior Analysis (ABA) is a research-backed therapy that helps children build meaningful skills through positive reinforcement and individualized teaching. At Beyond The View, every ABA program is designed around your child's strengths, needs, and family goals.",
@@ -38,7 +45,13 @@ export const services: Service[] = [
     titleColor2: "#FF4880",
     description:
       "Building communication skills through expert speech language intervention and practice.",
-    image: "https://ik.imagekit.io/sonu2k1/TEst/Services/Speech.png",
+    image: "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2866.jpg?updatedAt=1780577328084",
+    images: [
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2814.jpg?updatedAt=1780577328047",
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2866.jpg?updatedAt=1780577328084",
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2788.jpg",
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2787.jpg",
+    ],
     alt: "Child with speech therapy number board",
     overview:
       "Our speech-language services help children express themselves, understand others, and connect with the world around them. Sessions are playful, engaging, and tailored to each child's communication profile.",
@@ -59,7 +72,13 @@ export const services: Service[] = [
     titleColor2: "#FF4880",
     description:
       "Hands-on support for fine motor skills, sensory processing, and daily independence — launching soon.",
-    image: "https://ik.imagekit.io/sonu2k1/TEst/Services/occu.png",
+    image: "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2786.jpg",
+    images: [
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2848.jpg?updatedAt=1780577328150",
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2786.jpg",
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2817.jpg",
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2786.jpg?updatedAt=1780577328217"
+    ],
     alt: "Children doing occupational therapy on playground",
     overview:
       "Occupational therapy helps children participate fully in daily life — from play and self-care to classroom routines. Our OT team uses structured activities to build motor skills, confidence, and functional independence.",
@@ -75,11 +94,18 @@ export const services: Service[] = [
   },
   {
     title: "Behavioral Support",
+    comingSoon: true,
     titleColor1: "#753DBE",
     titleColor2: "#FF4880",
     description:
       "Comprehensive behavioral support strategies for children and families.",
-    image: "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2609.jpg",
+    image: "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2757.jpg",
+    images: [
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2727.jpg?updatedAt=1780577328191",
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2757.jpg",
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2753.jpg",
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2732.jpg?updatedAt=1780577328272"
+    ],
     alt: "Child in behavioral support session",
     overview:
       "Behavioral support focuses on understanding why challenging behaviors occur and teaching positive alternatives. We partner closely with families to create practical strategies that work in real life — not just in the clinic.",
