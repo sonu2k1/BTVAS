@@ -73,18 +73,18 @@ const ChevronDoubleRight = () => (
 
 const contactTextStyle: React.CSSProperties = {
   fontFamily: "'Prompt', sans-serif",
-  fontSize: "14px",
-  lineHeight: "20px",
+  fontSize: "16px",
+  lineHeight: "24px",
   fontWeight: 600,
-  color: "rgba(255, 255, 255, 0.75)",
+  color: "rgba(1, 12, 111, 0.85)",
   textDecoration: "none",
 };
 
 const descriptionStyle: React.CSSProperties = {
   fontFamily: "'Prompt', sans-serif",
-  fontSize: "16px",
-  lineHeight: "22px",
-  color: "rgba(255, 255, 255, 0.8)",
+  fontSize: "18px",
+  lineHeight: "26px",
+  color: "rgba(1, 12, 111, 0.9)",
   margin: 0,
 };
 
@@ -171,6 +171,40 @@ const ContactItem: React.FC<{
   </div>
 );
 
+type FooterCloudConfig = {
+  id: string;
+  top: string;
+  size: number;
+  duration: number;
+  delay: number;
+  opacity: number;
+};
+
+const FOOTER_CLOUDS: FooterCloudConfig[] = [
+  { id: "fc1", top: "6%", size: 100, duration: 20, delay: 0, opacity: 0.85 },
+  { id: "fc2", top: "24%", size: 75, duration: 18, delay: 12, opacity: 0.75 },
+  { id: "fc3", top: "42%", size: 115, duration: 22, delay: 24, opacity: 0.8 },
+  { id: "fc4", top: "58%", size: 88, duration: 19, delay: 36, opacity: 0.7 },
+  { id: "fc5", top: "72%", size: 105, duration: 21, delay: 48, opacity: 0.78 },
+  { id: "fc6", top: "86%", size: 82, duration: 17, delay: 60, opacity: 0.72 },
+];
+
+const FooterCloudSvg: React.FC<{ size: number }> = ({ size }) => (
+  <svg
+    width={size}
+    height={size * 0.55}
+    viewBox="0 0 120 66"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden
+  >
+    <ellipse cx="38" cy="40" rx="28" ry="22" fill="#ffffff" />
+    <ellipse cx="62" cy="34" rx="34" ry="26" fill="#f8fcff" />
+    <ellipse cx="86" cy="42" rx="26" ry="20" fill="#ffffff" />
+    <ellipse cx="54" cy="48" rx="40" ry="16" fill="#eef7fc" />
+  </svg>
+);
+
 const ExploreSection: React.FC = () => (
   <div className="footer-explore">
     <h4 className="footer-explore-title">Explore</h4>
@@ -198,12 +232,92 @@ export const Footer: React.FC = () => {
         @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&display=swap');
 
         .site-footer {
+          position: relative;
+          overflow: hidden;
           width: 100%;
-          background: #010C6F;
-          color: #fff;
+          background: linear-gradient(
+            -45deg,
+            #E8F7FC,
+            #C8EAF5,
+            #8FD4EA,
+            #4AB8D4,
+            #39B1D1,
+            #8FD4EA,
+            #C8EAF5
+          );
+          background-size: 400% 400%;
+          animation: footer-gradient-move 7s ease infinite;
+          color: #010C6F;
+        }
+
+        @keyframes footer-gradient-move {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .site-footer {
+            animation: none;
+            background-size: auto;
+            background: linear-gradient(
+              160deg,
+              #E8F7FC 0%,
+              #C8EAF5 32%,
+              #8FD4EA 65%,
+              #4AB8D4 100%
+            );
+          }
+
+          .footer-clouds-layer {
+            display: none;
+          }
+        }
+
+        .footer-clouds-layer {
+          position: absolute;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
+          overflow: hidden;
+        }
+
+        .footer-cloud {
+          position: absolute;
+          top: var(--footer-cloud-top);
+          left: -140px;
+          opacity: 0;
+          will-change: transform, opacity;
+          animation: footer-cloud-ltr linear infinite;
+          filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.35));
+        }
+
+        @keyframes footer-cloud-ltr {
+          0% {
+            left: -140px;
+            opacity: 0;
+          }
+          8% {
+            opacity: var(--footer-cloud-opacity);
+          }
+          92% {
+            opacity: var(--footer-cloud-opacity);
+          }
+          100% {
+            left: calc(100% + 140px);
+            opacity: 0;
+          }
         }
 
         .footer-inner {
+          position: relative;
+          z-index: 1;
           width: 100%;
           max-width: 1440px;
           margin: 0 auto;
@@ -229,7 +343,7 @@ export const Footer: React.FC = () => {
         }
 
         .footer-logo {
-          width: 140px;
+          width: 200px;
           height: auto;
         }
 
@@ -285,7 +399,7 @@ export const Footer: React.FC = () => {
         }
 
         .footer-contact-link:hover {
-          color: #fff;
+          color: #010C6F;
         }
 
         .footer-icon-link {
@@ -304,7 +418,7 @@ export const Footer: React.FC = () => {
         .footer-section-divider {
           width: 100%;
           height: 1px;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(1, 12, 111, 0.15);
         }
 
         .footer-explore {
@@ -313,7 +427,7 @@ export const Footer: React.FC = () => {
 
         .footer-explore-title {
           font-family: 'Inter', sans-serif;
-          font-size: 20px;
+          font-size: 24px;
           font-weight: 700;
           margin: 0 0 12px;
         }
@@ -336,7 +450,7 @@ export const Footer: React.FC = () => {
         .footer-explore-divider-muted {
           flex: 1;
           height: 2.5px;
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(1, 12, 111, 0.2);
         }
 
         .footer-explore-links {
@@ -353,9 +467,9 @@ export const Footer: React.FC = () => {
           align-items: center;
           gap: 12px;
           font-family: 'Inter', sans-serif;
-          font-size: 14px;
+          font-size: 16px;
           font-weight: 500;
-          color: #fff;
+          color: #010C6F;
           text-decoration: none;
           transition: color 0.2s ease;
           min-width: 0;
@@ -365,13 +479,19 @@ export const Footer: React.FC = () => {
           color: #FF4880;
         }
 
+        @media (max-width: 768px) {
+          .footer-cloud--hide-mobile {
+            display: none;
+          }
+        }
+
         @media (min-width: 480px) {
           .footer-inner {
             padding: 52px 28px 44px;
           }
 
           .footer-logo {
-            width: 150px;
+            width: 220px;
           }
 
           .footer-social-row {
@@ -385,7 +505,7 @@ export const Footer: React.FC = () => {
             display: block;
             width: 1px;
             height: 32px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(1, 12, 111, 0.2);
             flex-shrink: 0;
           }
         }
@@ -484,18 +604,37 @@ export const Footer: React.FC = () => {
       <div id="contact" className="scroll-mt-6" aria-hidden="true" />
 
       <footer className="site-footer scroll-mt-6">
+        <div className="footer-clouds-layer" aria-hidden="true">
+          {FOOTER_CLOUDS.map((cloud, index) => (
+            <div
+              key={cloud.id}
+              className={`footer-cloud${index >= 4 ? " footer-cloud--hide-mobile" : ""}`}
+              style={
+                {
+                  animationDuration: `${cloud.duration}s`,
+                  animationDelay: `${cloud.delay}s`,
+                  "--footer-cloud-top": cloud.top,
+                  "--footer-cloud-opacity": cloud.opacity,
+                } as React.CSSProperties
+              }
+            >
+              <FooterCloudSvg size={cloud.size} />
+            </div>
+          ))}
+        </div>
+
         <div className="footer-inner">
           <div className="footer-main">
             <div className="footer-brand">
               <Image
-                src="https://ik.imagekit.io/sonu2k1/TEst/Logos/logo.svg"
+                src="https://ik.imagekit.io/sonu2k1/TEst/Logos/logo.webp?updatedAt=1780330681267"
                 alt="Beyond The View Autism Services"
-                width={160}
-                height={150}
+                width={220}
+                height={180}
                 className="footer-logo"
               />
               <p className="footer-description" style={descriptionStyle}>
-                At <strong className="text-white">Beyond The View Autism Services</strong>, We Believe That Every Child Should Be Supported To Their Greatest Level Of Independence. With Independence Comes The Ability To Access New Environments And Opportunities.
+                At <strong style={{ color: "#010C6F" }}>Beyond The View Autism Services</strong>, We Believe That Every Child Should Be Supported To Their Greatest Level Of Independence. With Independence Comes The Ability To Access New Environments And Opportunities.
               </p>
             </div>
 
