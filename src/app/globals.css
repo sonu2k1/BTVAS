@@ -14,11 +14,15 @@
   --color-yellow-hover: #e5d000;
   --color-purple: #7e5cb3;
   --color-cream: #fffdf8;
+  --color-sky-blue: #69b4ff;
 }
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --section-space-y: 64px;
+  --section-space-x: clamp(16px, 4vw, 80px);
+  --section-inner-max: 1440px;
 }
 
 *,
@@ -35,7 +39,7 @@ html {
 }
 
 body {
-  background: var(--color-cream);
+  background: #ffffff;
   color: var(--foreground);
   font-family: var(--font-nunito), system-ui, sans-serif;
   overflow-x: hidden;
@@ -105,6 +109,66 @@ a[href^="#"] {
   box-sizing: border-box;
 }
 
+/* Full-width sections — bg spans viewport, inner content stays centered */
+.mission-section,
+.core-values-section,
+.visionaries-section,
+.focus-hours-section,
+.team-section,
+.services-section,
+.testimonials-section,
+.join-team-section,
+.getting-started-section,
+.faq-outer-container {
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Consistent section spacing */
+.site-section-spacing {
+  padding-top: var(--section-space-y);
+  padding-bottom: var(--section-space-y);
+  padding-left: var(--section-space-x);
+  padding-right: var(--section-space-x);
+  box-sizing: border-box;
+}
+
+.site-section-spacing--compact-top {
+  padding-top: 0;
+}
+
+.site-section-spacing--compact-bottom {
+  padding-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .site-section-spacing {
+    padding-top: 48px;
+    padding-bottom: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-section-spacing {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* Inner wrappers inherit horizontal padding from section — avoid double gutters */
+.site-section-spacing .mission-wrapper,
+.site-section-spacing .focus-hours-wrapper,
+.site-section-spacing .team-wrapper,
+.site-section-spacing .faq-inner-row {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .site-inner-root {
   width: 100% !important;
   max-width: 1280px;
@@ -123,11 +187,6 @@ a[href^="#"] {
 
 /* Tablet landscape / small desktop — fluid inner wrappers */
 @media (min-width: 1025px) and (max-width: 1439px) {
-  .site-section-root {
-    padding-left: clamp(24px, 4vw, 56px);
-    padding-right: clamp(24px, 4vw, 56px);
-  }
-
   .mission-wrapper,
   .focus-hours-wrapper,
   .team-wrapper,
@@ -195,11 +254,6 @@ a[href^="#"] {
     object-position: top center !important;
   }
 
-  .site-section-root,
-  .site-inner-root {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
 }
 
 @media (max-width: 767px) {
@@ -209,13 +263,5 @@ a[href^="#"] {
 
   .hero-container {
     min-height: clamp(380px, 50vh, 480px) !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .site-section-root,
-  .site-inner-root {
-    padding-left: 12px;
-    padding-right: 12px;
   }
 }

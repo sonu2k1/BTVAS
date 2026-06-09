@@ -94,7 +94,6 @@ export const services: Service[] = [
   },
   {
     title: "Behavioral Support",
-    comingSoon: true,
     titleColor1: "#753DBE",
     titleColor2: "#FF4880",
     description:

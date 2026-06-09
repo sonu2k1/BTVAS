@@ -64,32 +64,39 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
     }
   };
 
-  const isInteractive = !ariaHidden && !isComingSoon;
+  const isClickable = !isComingSoon;
+  const isFocusable = !ariaHidden && !isComingSoon;
 
   return (
     <div
       ref={cardRef}
       className="services-marquee-item"
       aria-hidden={ariaHidden || undefined}
-      style={ariaHidden ? { pointerEvents: "none" } : undefined}
     >
       <button
         type="button"
-        disabled={!isInteractive}
-        tabIndex={isInteractive ? 0 : -1}
+        disabled={!isClickable}
+        tabIndex={isFocusable ? 0 : -1}
         aria-label={
           isComingSoon
             ? `${service.title} — coming soon`
             : `Learn more about ${service.title}`
         }
-        onClick={() => isInteractive && onSelect(service)}
+        onPointerDown={() => {
+          cardRef.current?.closest(".services-marquee-track")?.classList.add("is-interacting");
+        }}
+        onClick={(e) => {
+          if (!isClickable) return;
+          e.stopPropagation();
+          cardRef.current?.closest(".services-marquee-track")?.classList.remove("is-interacting");
+          onSelect(service);
+        }}
         onKeyDown={handleKeyDown}
         className={`flex flex-col items-center bg-transparent services-card relative overflow-visible border-0 p-0 text-left${isComingSoon ? " services-card--coming-soon" : ""}`}
         style={{
           width: "410px",
           height: "440px",
           boxSizing: "border-box",
-          filter: "drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.06))",
         }}
       >
         <div
@@ -231,12 +238,10 @@ export const OurServices: React.FC = () => {
 
   return (
     <section
-      className="bg-transparent flex flex-col items-center justify-start overflow-hidden relative services-section site-section-root"
+      className="bg-transparent flex flex-col items-center justify-start overflow-hidden relative services-section site-section-spacing"
       style={{
         width: "100%",
-        maxWidth: "1440px",
-        height: "540px",
-        margin: "64px auto 0",
+        height: "auto",
         boxSizing: "border-box",
       }}
       id="services"
@@ -244,12 +249,44 @@ export const OurServices: React.FC = () => {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Prompt&display=swap');
 
+        .services-section {
+          background: transparent !important;
+          position: relative;
+          z-index: 5;
+          width: 100% !important;
+          max-width: none !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        .services-section-heading {
+          width: 100%;
+          padding-left: clamp(16px, 4vw, 80px);
+          padding-right: clamp(16px, 4vw, 80px);
+          box-sizing: border-box;
+        }
+
+        .services-container,
+        .services-marquee-container,
+        .services-marquee-track {
+          background: transparent !important;
+        }
+
         .services-card {
           cursor: pointer;
-          transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+          background: transparent !important;
+          pointer-events: auto;
+          transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
           appearance: none;
           -webkit-appearance: none;
         }
+
+        .services-card-body {
+          transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
         .services-card:disabled {
           cursor: default;
         }
@@ -258,7 +295,6 @@ export const OurServices: React.FC = () => {
         }
         .services-card--coming-soon:hover {
           transform: none;
-          filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.06));
         }
         .services-card--coming-soon:hover .services-card-img-wrap img {
           transform: none !important;
@@ -279,15 +315,19 @@ export const OurServices: React.FC = () => {
           box-shadow: 0 4px 14px rgba(117, 61, 190, 0.35);
           z-index: 2;
         }
-        .services-card:hover {
+        .services-card:hover .services-card-body {
           transform: translateY(-10px) scale(1.02);
-          filter: drop-shadow(0px 16px 32px rgba(0, 0, 0, 0.10));
         }
+
         .services-card:focus-visible {
           outline: 3px solid #753DBE;
           outline-offset: 4px;
           border-radius: 20px;
         }
+        .services-card-img-wrap {
+          background: #ffffff;
+        }
+
         .services-card-img-wrap img {
           transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
         }
@@ -310,7 +350,8 @@ export const OurServices: React.FC = () => {
           animation: services-marquee-scroll 50s linear infinite;
         }
 
-        .services-marquee-container:hover .services-marquee-track {
+        .services-marquee-container:hover .services-marquee-track,
+        .services-marquee-track.is-interacting {
           animation-play-state: paused;
         }
 
@@ -320,7 +361,6 @@ export const OurServices: React.FC = () => {
         }
 
         .services-marquee-item[aria-hidden="true"] {
-          pointer-events: none;
           user-select: none;
         }
 
@@ -332,7 +372,6 @@ export const OurServices: React.FC = () => {
         @media (min-width: 1025px) and (max-width: 1439px) {
           .services-section {
             height: auto !important;
-            padding: 32px clamp(16px, 3vw, 40px) 40px !important;
           }
           .services-card {
             width: min(360px, 88vw) !important;
@@ -351,7 +390,6 @@ export const OurServices: React.FC = () => {
           .services-section {
             width: 100% !important;
             height: auto !important;
-            padding: 40px 0 48px !important;
           }
           .services-container {
             width: 100% !important;
@@ -415,7 +453,7 @@ export const OurServices: React.FC = () => {
         }
       `}</style>
 
-      <div className="flex flex-col items-center" style={{ marginBottom: "30px", padding: "0 16px" }}>
+      <div className="flex flex-col items-center services-section-heading" style={{ marginBottom: "30px" }}>
         <h2
           style={{
             fontFamily: "'Mochiy Pop One', sans-serif",

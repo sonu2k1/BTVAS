@@ -119,9 +119,7 @@ export const JoinOurTeam: React.FC = () => {
           .join-team-section {
             width: 100% !important;
             height: auto !important;
-            padding: 48px 16px !important;
             border-top: 4px solid #7e5cb3 !important;
-            border-bottom: 1px solid #E5E7EB !important;
             flex-direction: column !important;
             align-items: center !important;
             justify-content: center !important;
@@ -144,9 +142,6 @@ export const JoinOurTeam: React.FC = () => {
         }
 
         @media (max-width: 480px) {
-          .join-team-section {
-            padding: 32px 12px !important;
-          }
           .join-team-mobile-marquee-container {
             width: calc(100% + 24px) !important;
             margin-left: -12px !important;
@@ -158,14 +153,11 @@ export const JoinOurTeam: React.FC = () => {
       `}</style>
       <section
         id="career"
-        className="relative bg-transparent flex items-center justify-between overflow-hidden join-team-section site-section-root scroll-mt-6"
+        className="relative bg-transparent flex items-center justify-between overflow-hidden join-team-section site-section-root site-section-spacing scroll-mt-6"
         style={{
           width: "100%",
-          maxWidth: "1440px",
           height: "455px",
-          margin: "0 auto",
           borderTop: "6px solid #7e5cb3",
-          borderBottom: "1px solid #E5E7EB",
         }}
       >
         {/* Mobile Top Marquee */}

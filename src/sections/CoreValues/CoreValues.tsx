@@ -108,7 +108,6 @@ export const CoreValues: React.FC = () => {
         @media (min-width: 1025px) and (max-width: 1439px) {
           .core-values-section {
             height: auto !important;
-            padding: 48px clamp(24px, 4vw, 56px) !important;
           }
           .core-values-row {
             width: 100% !important;
@@ -126,7 +125,6 @@ export const CoreValues: React.FC = () => {
           .core-values-section {
             width: 100% !important;
             height: auto !important;
-            padding: 40px 16px !important;
           }
           .core-values-row {
             width: 100% !important;
@@ -194,10 +192,9 @@ export const CoreValues: React.FC = () => {
 
       <section
         id="values"
-        className="core-values-section site-section-root"
+        className="core-values-section site-section-root site-section-spacing"
         style={{
           width: "100%",
-          maxWidth: "1440px",
           height: "auto",
           backgroundColor: "transparent",
           display: "flex",
@@ -205,9 +202,6 @@ export const CoreValues: React.FC = () => {
           alignItems: "center",
           justifyContent: "center",
           gap: "24px",
-          boxSizing: "border-box",
-          padding: "56px clamp(16px, 7vw, 104px)",
-          margin: "0 auto",
         }}
       >
         {/* HEADER */}
