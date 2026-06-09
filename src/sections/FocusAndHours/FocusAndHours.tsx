@@ -12,34 +12,22 @@ const features = [
 export const FocusAndHours: React.FC = () => {
   return (
     <section
-      className="focus-hours-section site-section-root"
+      className="focus-hours-section site-section-root site-section-spacing"
       style={{
         width: "100%",
-        height: "400px",
-        backgroundColor: "#ffffff",
+        height: "auto",
+        backgroundColor: "transparent",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        boxSizing: "border-box",
       }}
     >
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 
-        .focus-hours-section {
-          background: linear-gradient(
-            180deg,
-            #ffffff 0%,
-            #f8f4fc 22%,
-            #f3eef8 78%,
-            #ffffff 100%
-          ) !important;
-        }
-
         @media (min-width: 1025px) and (max-width: 1439px) {
           .focus-hours-section {
             height: auto !important;
-            padding: 40px clamp(24px, 4vw, 56px) !important;
           }
           .focus-hours-wrapper {
             gap: clamp(24px, 4vw, 64px) !important;
@@ -58,7 +46,6 @@ export const FocusAndHours: React.FC = () => {
           .focus-hours-section {
             width: 100% !important;
             height: auto !important;
-            padding: 40px 16px !important;
           }
           .focus-hours-wrapper {
             width: 100% !important;
@@ -140,7 +127,6 @@ export const FocusAndHours: React.FC = () => {
           maxWidth: "1440px",
           height: "235px",
           margin: "0 auto",
-          padding: "0 clamp(16px, 4vw, 80px)",
           boxSizing: "border-box",
           display: "flex",
           alignItems: "center",

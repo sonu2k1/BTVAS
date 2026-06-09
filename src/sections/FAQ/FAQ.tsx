@@ -25,11 +25,12 @@ export const FAQ: React.FC = () => {
         }
 
         .insurance-banner {
-          width: 100%;
-          max-width: 1440px;
-          margin: 0 auto;
+          width: 100% !important;
+          max-width: none !important;
+          margin: 0;
           box-sizing: border-box;
-          padding: 24px 16px 80px;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
         }
 
         .insurance-banner-title {
@@ -38,9 +39,12 @@ export const FAQ: React.FC = () => {
           font-weight: 700;
           color: #888c99;
           margin: 0 0 12px;
-          padding: 0 8px;
+          width: 100%;
+          padding-left: clamp(16px, 4vw, 80px);
+          padding-right: clamp(16px, 4vw, 80px);
           text-align: center;
           line-height: 1.3;
+          box-sizing: border-box;
         }
 
         .insurance-marquee-container {
@@ -89,10 +93,6 @@ export const FAQ: React.FC = () => {
         }
 
         @media (min-width: 480px) {
-          .insurance-banner {
-            padding: 28px 20px 84px;
-          }
-
           .insurance-banner-title {
             font-size: 15px;
             margin-bottom: 14px;
@@ -123,10 +123,6 @@ export const FAQ: React.FC = () => {
         }
 
         @media (min-width: 768px) {
-          .insurance-banner {
-            padding: 28px 24px 88px;
-          }
-
           .insurance-banner-title {
             font-size: 16px;
             margin-bottom: 16px;
@@ -153,10 +149,6 @@ export const FAQ: React.FC = () => {
         }
 
         @media (min-width: 1024px) {
-          .insurance-banner {
-            padding: 24px 32px 92px;
-          }
-
           .insurance-banner-title {
             font-size: 17px;
           }
@@ -182,10 +174,6 @@ export const FAQ: React.FC = () => {
         }
 
         @media (min-width: 1280px) {
-          .insurance-banner {
-            padding: 24px 0 96px;
-          }
-
           .insurance-banner-title {
             font-size: 18px;
           }
@@ -235,8 +223,9 @@ export const FAQ: React.FC = () => {
           max-width: none;
           margin: 0;
           box-sizing: border-box;
-          padding: 32px 16px 40px 0;
           overflow: visible;
+          display: flex;
+          justify-content: center;
         }
 
         .faq-inner-row {
@@ -245,7 +234,7 @@ export const FAQ: React.FC = () => {
           margin: 0 auto;
           display: flex;
           flex-direction: column;
-          align-items: stretch;
+          align-items: center;
           gap: 20px;
           padding: 0;
           box-sizing: border-box;
@@ -253,12 +242,11 @@ export const FAQ: React.FC = () => {
 
         .faq-img-wrap {
           position: relative;
-          width: 100vw;
-          max-width: 100vw;
-          margin-left: calc(50% - 50vw);
+          width: 100%;
+          max-width: 700px;
           aspect-ratio: 1.55;
           min-height: 240px;
-          border-radius: 0 48px 0 0;
+          border-radius: 24px 48px 24px 24px;
           overflow: hidden;
           flex-shrink: 0;
         }
@@ -345,11 +333,12 @@ export const FAQ: React.FC = () => {
 
         .faq-accordion-wrap {
           width: 100%;
+          max-width: 668px;
           display: flex;
           flex-direction: column;
           gap: 12px;
           min-width: 0;
-          padding: 0 16px 0 20px;
+          padding: 0;
           box-sizing: border-box;
         }
 
@@ -443,20 +432,12 @@ export const FAQ: React.FC = () => {
         }
 
         @media (min-width: 480px) {
-          .faq-section {
-            padding: 36px 20px 44px 0;
-          }
-
-          .faq-accordion-wrap {
-            padding: 0 20px 0 24px;
-          }
-
           .faq-inner-row {
             gap: 24px;
           }
 
           .faq-img-wrap {
-            border-radius: 0 72px 0 0;
+            border-radius: 28px 72px 28px 28px;
             min-height: 260px;
           }
 
@@ -492,16 +473,8 @@ export const FAQ: React.FC = () => {
         }
 
         @media (min-width: 768px) {
-          .faq-section {
-            padding: 48px 24px 48px 0;
-          }
-
-          .faq-accordion-wrap {
-            padding: 0 24px 0 28px;
-          }
-
           .faq-img-wrap {
-            border-radius: 0 96px 0 0;
+            border-radius: 32px 96px 32px 32px;
             min-height: 300px;
           }
 
@@ -532,25 +505,19 @@ export const FAQ: React.FC = () => {
         }
 
         @media (min-width: 1024px) {
-          .faq-section {
-            padding: 56px 32px 52px 0;
-          }
-
           .faq-inner-row {
             flex-direction: row;
             align-items: center;
-            gap: 24px;
-            padding-right: 32px;
-            padding-left: 0;
+            justify-content: center;
+            gap: clamp(24px, 3vw, 48px);
           }
 
           .faq-img-wrap {
-            width: min(700px, 52vw);
+            width: min(700px, 48%);
             max-width: 700px;
-            margin-left: calc(50% - 50vw);
             aspect-ratio: auto;
             height: 400px;
-            border-radius: 0 120px 0 0;
+            border-radius: 32px 120px 32px 32px;
             flex-shrink: 0;
           }
 
@@ -569,10 +536,9 @@ export const FAQ: React.FC = () => {
           }
 
           .faq-accordion-wrap {
-            flex: 1;
+            flex: 1 1 420px;
             max-width: 668px;
             gap: 16px;
-            padding: 0 0 0 8px;
           }
 
           .faq-question-btn {
@@ -589,20 +555,11 @@ export const FAQ: React.FC = () => {
           }
         }
 
-        @media (min-width: 1280px) {
-          .faq-section {
-            padding: 60px 0 56px 0;
-          }
-
-          .faq-inner-row {
-            padding-right: 60px;
-          }
-        }
       `}</style>
       {/* ── FAQ SECTION ── */}
       <section
         id="faq"
-        className="bg-transparent shrink-0 faq-section scroll-mt-6"
+        className="bg-transparent shrink-0 faq-section site-section-spacing scroll-mt-6"
       >
         <div className="faq-inner-row">
           {/* ── LEFT: Image block ── */}
@@ -676,7 +633,7 @@ export const FAQ: React.FC = () => {
       {/* ── ACCEPTED INSURANCE BANNER ── */}
       <div
         id="accepted-insurance"
-        className="flex flex-col items-center bg-transparent shrink-0 insurance-banner scroll-mt-6"
+        className="flex flex-col items-center bg-transparent shrink-0 insurance-banner site-section-spacing site-section-spacing--compact-top scroll-mt-6"
       >
         <p className="insurance-banner-title">Accepted Insurance</p>
         <div className="insurance-marquee-container">

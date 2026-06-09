@@ -17,9 +17,9 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-cream relative">
+    <main className="min-h-screen bg-white relative">
       {/* Absolute background layer for the Hero section */}
-      <div className="absolute top-0 left-0 w-full bg-navy-deep z-0 overflow-hidden flex justify-center">
+      <div className="absolute top-0 left-0 w-full bg-sky-blue z-0 overflow-hidden flex justify-center">
         <div
           className="w-full max-w-[1688px] hero-bg-img"
           style={{

@@ -25,20 +25,16 @@ const visionaries = [
 export const Visionaries: React.FC = () => {
   return (
     <section
-      className="visionaries-section site-section-root"
+      className="visionaries-section site-section-root site-section-spacing"
       style={{
         width: "100%",
-        maxWidth: "1440px",
-        height: "552px",
+        height: "auto",
         backgroundColor: "transparent",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        boxSizing: "border-box",
-        padding: "0 80px",
-        gap: "32px",
-        margin: "0 auto",
+        gap: "24px",
       }}
     >
       <style>{`
@@ -58,7 +54,6 @@ export const Visionaries: React.FC = () => {
           .visionaries-section {
             width: 100% !important;
             height: auto !important;
-            padding: 40px 16px !important;
           }
           .visionaries-heading {
             width: 100% !important;

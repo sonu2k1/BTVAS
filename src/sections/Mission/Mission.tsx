@@ -7,11 +7,11 @@ export const Mission: React.FC = () => {
   return (
     <section
       id="about"
-      className="mission-section site-section-root"
+      className="mission-section site-section-spacing"
       style={{
         width: "100%",
-        height: "552px",
-        backgroundColor: "#faf6f0",
+        minHeight: "552px",
+        backgroundColor: "#ede5f8",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -22,45 +22,135 @@ export const Mission: React.FC = () => {
         @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 
         .mission-section {
+          width: 100%;
+          max-width: none;
+          margin: 0;
           background: linear-gradient(
             180deg,
-            #fffdf8 0%,
-            #faf6f0 18%,
-            #f5efe6 82%,
-            #faf6f0 100%
+            #f7f2fc 0%,
+            #ede5f8 20%,
+            #e3d6f4 80%,
+            #ede5f8 100%
           ) !important;
+        }
+
+        .mission-wrapper {
+          width: 100%;
+          max-width: 1440px;
+          min-height: 478px;
+          height: auto;
+          margin: 0 auto;
+          padding: 0;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          gap: clamp(32px, 5vw, 80px);
+        }
+
+        .mission-left {
+          flex: 1 1 518px;
+          max-width: 518px;
+          min-width: 0;
+          width: 100%;
+          height: 454px;
+          position: relative;
+          flex-shrink: 1;
+        }
+
+        .mission-image-container {
+          position: absolute;
+          top: 50px;
+          left: 15%;
+          width: 81%;
+          height: 88%;
+          border-radius: 16px;
+          z-index: 1;
+          background-color: #fff;
+        }
+
+        .mission-image-inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 16px;
+          overflow: hidden;
+          background-color: #fff;
+        }
+
+        .mission-image-photo {
+          object-fit: cover;
+          object-position: center center;
+        }
+
+        .mission-right {
+          flex: 1 1 580px;
+          max-width: 580px;
+          min-width: 0;
+          width: 100%;
+          height: auto;
+          min-height: 312px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 16px;
+        }
+
+        @media (min-width: 1025px) and (max-width: 1439px) {
+          .mission-section {
+            min-height: auto;
+          }
+
+          .mission-left {
+            flex: 1 1 42%;
+            max-width: 480px;
+            height: auto;
+            aspect-ratio: 1.14;
+          }
+
+          .mission-right {
+            flex: 1 1 50%;
+            max-width: none;
+          }
         }
 
         @media (max-width: 1024px) {
           .mission-section {
             width: 100% !important;
             height: auto !important;
-            padding: 40px 16px !important;
           }
           .mission-wrapper {
             width: 100% !important;
             height: auto !important;
             flex-direction: column !important;
-            gap: 32px !important;
+            gap: 0 !important;
           }
           .mission-left {
             width: 100% !important;
-            max-width: 360px !important;
+            max-width: 340px !important;
             height: auto !important;
-            aspect-ratio: 1.14 !important;
+            aspect-ratio: unset !important;
             position: relative !important;
             margin: 0 auto !important;
+            padding-top: 4px !important;
           }
           .mission-image-container {
-            width: 81% !important;
-            height: 88% !important;
-            left: calc(12% - 5px) !important;
-            top: 11% !important;
-            position: absolute !important;
+            position: relative !important;
+            width: 100% !important;
+            height: auto !important;
+            left: 0 !important;
+            top: 0 !important;
+            margin-top: 36px !important;
+            aspect-ratio: 3 / 2 !important;
+          }
+          .mission-image-photo {
+            object-fit: contain !important;
+            object-position: center center !important;
           }
           .mission-badge {
-            left: 5% !important;
-            top: 2% !important;
+            left: 4% !important;
+            top: 0 !important;
             position: absolute !important;
           }
           .mission-badge-circle {
@@ -86,8 +176,12 @@ export const Mission: React.FC = () => {
           .mission-right {
             width: 100% !important;
             height: auto !important;
+            min-height: 0 !important;
+            justify-content: flex-start !important;
             align-items: center !important;
             text-align: center !important;
+            margin-top: 0 !important;
+            padding-top: 0 !important;
           }
           .mission-bg-circle {
             display: none !important;
@@ -103,30 +197,9 @@ export const Mission: React.FC = () => {
       `}</style>
 
       {/* INNER WRAPPER */}
-      <div
-        className="mission-wrapper site-inner-root"
-        style={{
-          width: "100%",
-          maxWidth: "1440px",
-          height: "478px",
-          margin: "0 auto",
-          padding: "0 clamp(16px, 4vw, 80px)",
-          boxSizing: "border-box",
-          display: "flex",
-          alignItems: "center",
-          gap: "80px",
-        }}
-      >
+      <div className="mission-wrapper">
         {/* LEFT — Image + 25+ badge */}
-        <div
-          className="mission-left"
-          style={{
-            width: "518px",
-            height: "454px",
-            position: "relative",
-            flexShrink: 0,
-          }}
-        >
+        <div className="mission-left">
           {/* Cream circle background */}
           <div
             className="mission-bg-circle"
@@ -137,7 +210,7 @@ export const Mission: React.FC = () => {
               width: "200px",
               height: "340px",
               borderRadius: "170px 0 0 170px",
-              backgroundColor: "#F3E8D6", // Matches the screenshot cream color
+              backgroundColor: "#F5E0C4",
               zIndex: 0,
             }}
           />
@@ -230,40 +303,17 @@ export const Mission: React.FC = () => {
           </div>
 
           {/* Main image */}
-          <div
-            className="mission-image-container"
-            style={{
-              position: "absolute",
-              top: "50px",
-              left: "80px",
-              width: "420px",
-              height: "400px",
-              borderRadius: "16px",
-              zIndex: 1,
-              backgroundColor: "#fff",
-            }}
-          >
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                borderRadius: "16px",
-                overflow: "hidden",
-              }}
-            >
+          <div className="mission-image-container">
+            <div className="mission-image-inner">
               <Image
                 src="https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg"
                 alt="Beyond The View team"
                 fill
                 sizes="(max-width: 768px) 100vw, 420px"
-                className="object-cover"
+                className="mission-image-photo"
                 priority
               />
             </div>
-            {/* Dashed Border Overlay matching screenshot */}
             <div
               style={{
                 position: "absolute",
@@ -281,18 +331,7 @@ export const Mission: React.FC = () => {
         </div>
 
         {/* RIGHT — Description */}
-        <div
-          className="mission-right"
-          style={{
-            width: "580px",
-            height: "312px",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            gap: "16px",
-            flexShrink: 0,
-          }}
-        >
+        <div className="mission-right">
 
 
           {/* Heading */}
@@ -340,7 +379,7 @@ export const Mission: React.FC = () => {
             individual needs, create limitless opportunities for learning, and support
             each child on their journey to reach their full potential.
             <br />
-            Founded by two local BCAs, we bring clinician-led expertise to every family
+            Founded by two local BCBAs, we bring clinician-led expertise to every family
             we serve
           </p>
 

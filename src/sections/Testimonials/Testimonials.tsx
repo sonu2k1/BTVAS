@@ -41,17 +41,17 @@ export const Testimonials: React.FC = () => {
 
   return (
     <section
-      className="bg-transparent flex items-center justify-center testimonials-section site-section-root"
-      style={{ width: "100%", maxWidth: "1440px", height: "auto", margin: "0 auto", paddingTop: "0px", paddingBottom: "40px", boxSizing: "border-box" }}
+      className="bg-transparent flex items-center justify-center testimonials-section site-section-root site-section-spacing"
+      style={{ width: "100%", height: "auto", boxSizing: "border-box" }}
     >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:wght@100..400&family=Prompt:wght@400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Prompt:wght@400&display=swap');
 
         .testimonials-subtitle {
-          font-family: 'Playwrite GB S', cursive;
-          font-size: 22px;
-          line-height: 28px;
-          font-weight: 400;
+          font-family: 'Baloo 2', sans-serif;
+          font-size: 36px;
+          line-height: 44px;
+          font-weight: 600;
           font-style: normal;
           text-align: center;
         }
@@ -128,7 +128,6 @@ export const Testimonials: React.FC = () => {
           .testimonials-section {
             width: 100% !important;
             height: auto !important;
-            padding: 20px 16px 40px !important;
             overflow: visible !important;
           }
           .testimonials-card {
@@ -171,8 +170,8 @@ export const Testimonials: React.FC = () => {
             margin-bottom: 24px !important;
           }
           .testimonials-subtitle {
-            font-size: 19px !important;
-            line-height: 26px !important;
+            font-size: 28px !important;
+            line-height: 34px !important;
             text-align: center !important;
             padding: 0 16px !important;
           }
@@ -209,15 +208,15 @@ export const Testimonials: React.FC = () => {
 
         @media (max-width: 375px) {
           .testimonials-subtitle {
-            font-size: 17px !important;
-            line-height: 24px !important;
+            font-size: 24px !important;
+            line-height: 30px !important;
           }
         }
 
         @media (max-width: 320px) {
           .testimonials-subtitle {
-            font-size: 15px !important;
-            line-height: 22px !important;
+            font-size: 22px !important;
+            line-height: 28px !important;
           }
         }
       `}</style>

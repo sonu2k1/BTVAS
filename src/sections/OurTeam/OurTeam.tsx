@@ -260,13 +260,7 @@ export const OurTeam: React.FC = () => {
         @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
 
         .team-section {
-          background: linear-gradient(
-            180deg,
-            #fffdf8 0%,
-            #faf6f0 18%,
-            #f5efe6 82%,
-            #faf6f0 100%
-          ) !important;
+          background: transparent !important;
         }
 
         .no-scrollbar::-webkit-scrollbar {
@@ -307,7 +301,6 @@ export const OurTeam: React.FC = () => {
         @media (min-width: 1025px) and (max-width: 1439px) {
           .team-section {
             height: auto !important;
-            padding: 40px clamp(24px, 4vw, 56px) !important;
           }
           .team-wrapper {
             height: auto !important;
@@ -336,7 +329,6 @@ export const OurTeam: React.FC = () => {
           .team-section {
             width: 100% !important;
             height: auto !important;
-            padding: 40px 16px !important;
           }
           .team-wrapper {
             width: 100% !important;
@@ -404,16 +396,15 @@ export const OurTeam: React.FC = () => {
         }
       `}</style>
       <section
-        className="team-section site-section-root"
+        className="team-section site-section-root site-section-spacing"
         style={{
           width: "100%",
-          height: "800px",
-          backgroundColor: "#faf6f0",
+          height: "auto",
+          backgroundColor: "transparent",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           boxSizing: "border-box",
-          paddingBottom: "64px",
         }}
       >
         {/* INNER WRAPPER */}
@@ -422,9 +413,8 @@ export const OurTeam: React.FC = () => {
           style={{
             width: "100%",
             maxWidth: "1440px",
-            height: "750px",
+            height: "auto",
             margin: "0 auto",
-            padding: "0 clamp(16px, 4vw, 80px)",
             boxSizing: "border-box",
             display: "flex",
             flexDirection: "column",
