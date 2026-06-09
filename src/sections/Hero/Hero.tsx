@@ -12,7 +12,7 @@ const HERO_IMAGES_DESKTOP = [
 
 const HERO_IMAGES_MOBILE = [
   "https://ik.imagekit.io/sonu2k1/TEst/Hero-mobile1.1.png",
-  "https://ik.imagekit.io/sonu2k1/TEst/Hero-mobile1.2.png",
+  "https://ik.imagekit.io/sonu2k1/TEst/Services/Hero-mobile1.2.3.png",
   "https://ik.imagekit.io/sonu2k1/TEst/Hero-mobile1.3.png",
 ];
 
