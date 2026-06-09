@@ -26,7 +26,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-1.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-1.jpg",
     quote: `"Seeing beyond the diagnosis means looking at each child for who they truly are not just their challenges, but their strengths and possibilities. I focus on what a child can achieve, not just where they are today. I'm here to support them every step of the way while helping families feel hopeful about their child's future. A diagnosis is just one part of their story; it does not define who they are or all that they can achieve. With every small success is a big celebration not just for us, but for the families we service. Being a part of a child's growth and development will always be something I am so proud to be a part of. We not only create relationships with our kiddos, but also the families we service. It gives the family a sense of hope. The word beyond is what you can only imagine and we put that back into the work that we do to ensure we show up daily by going beyond working on skills, but building life long skills that will continue once they go on to school and into adulthood.\nWith the right support, they can grow, succeed, and thrive here at Beyond The View Autism services."`,
-    category: ["Core Leadership Team", "Operations Leadership Team", "Team Leads & Specialists"],
+    category: ["Core Leadership Team", "Operations Leadership Team"],
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-2.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-2.jpg",
     quote: `"As a CEO, what does “seeing beyond the diagnosis” mean to me? In one word—Faith.\n\nFaith is the ability to see beyond what is immediately in front of you. It is choosing to believe in a child’s potential, even when progress feels slow, uncertain, or unseen. It is recognizing that a diagnosis does not define a child’s future—it is only one part of their story.\n\nTo me, seeing beyond the diagnosis means holding a vision for who that child is destined to become. It means showing up every day, committed to the small steps that lead to meaningful growth—steps that may not always be visible in the moment, but are powerful over time.\n\nThere is a unique kind of joy in this work. Not just in the milestones we can measure, but in the belief that we are part of something bigger. We are helping shape confidence, independence, and possibility—one interaction, one breakthrough, one moment at a time.\n\nThis mindset is rooted in both hope and faith. Hope for what is possible, and faith in the journey it takes to get there.\n\nI also recognize that for many families, a diagnosis can feel overwhelming. It can come with fear, uncertainty, and questions about the future. But what I want families to understand is this: their child is not limited by a diagnosis. They are filled with potential, purpose, and GREATNESS.\n\nIn many ways, these families are raising individuals who will defy expectations, rewrite narratives, and show the world new perspectives—true superheroes in their own right.\n\nAnd our role is to walk alongside them—to believe when it’s hard, to support when it’s needed, and to never lose sight of what’s possible.\n\nBecause seeing beyond the diagnosis is not just what we do—it’s who we are."`,
-    category: ["Core Leadership Team", "Operations Leadership Team", "Team Leads & Specialists"],
+    category: ["Core Leadership Team", "Operations Leadership Team"],
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-3.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-3.jpg",
     quote: `"What excites me the most about ABA is being able to make a positive difference. I love supporting children and families in reaching goals that matter in their everyday lives."`,
-    category: ["Team Leads & Specialists", "Clinical Excellence Team"],
+    category: ["Team Leads & Specialists"],
   },
   {
     id: 4,
@@ -56,7 +56,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-4.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-4.jpg",
     quote: `"One of the most impactful moments in my ABA career was witnessing our very first graduation ceremony. It was incredibly meaningful because it represented the culmination of consistent, collaborative effort from an entire support system of caregivers, loved ones, BCBAs, RBTs, and administrators all working toward a child’s individualized goals. In that moment, it was impossible not to reflect on where each child began, the barriers they overcame, and the progress they achieved over time. It was a powerful reminder that if followed through, ABA works, especially here at Beyond The View Autism Services!"`,
-    category: ["Operations Leadership Team", "Core Leadership Team", "Team Leads & Specialists"],
+    category: ["Operations Leadership Team", "Core Leadership Team"],
   },
   {
     id: 5,
@@ -66,7 +66,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-5.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-5.jpg",
     quote: `"ABA allows me to help develop young minds while making a difference for those who need it. Being given the opportunity to make an impact big or small excites me most about ABA."`,
-    category: ["Team Leads & Specialists", "Clinical Excellence Team"],
+    category: ["Team Leads & Specialists"],
   },
   {
     id: 6,
@@ -76,7 +76,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-6.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-6.jpg",
     quote: `"The moment that impacted me the most was when a child with severe behaviors had a breakthrough. Seeing their parents' relief showed me that I’m making a difference for the whole family."`,
-    category: ["Operations Leadership Team", "Team Leads & Specialists"],
+    category: ["Operations Leadership Team"],
   },
   {
     id: 7,
@@ -86,7 +86,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-7.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-7.jpg",
     quote: `"Becoming a BCBA is more than a career for me—it’s a purposeful commitment to supporting meaningful growth and improving quality of life for others. I am passionate about helping individuals with autism and other developmental differences build skills, reach milestones, and access opportunities within their communities. Seeing that progress is what drives my work and reinforces my commitment to making a lasting, positive impact.\n\nWhitney Davis My “why” for becoming a BCBA is rooted in my passion for helping children grow into their fullest potential, no matter what path they choose. I want to provide them with the tools, support, and encouragement they need to thrive in ways that are meaningful to them. Being part of their progress and celebrating their success is what drives me every day."`,
-    category: ["Clinical Excellence Team", "Team Leads & Specialists"],
+    category: ["Clinical Excellence Team"],
   },
   {
     id: 8,
@@ -96,7 +96,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-8.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-8.jpg",
     quote: `"I became a BCBA because I love supporting children and celebrating the progress they make as they grow! I am dedicated to leading with compassion and focusing on meaningful change."`,
-    category: ["Clinical Excellence Team", "Team Leads & Specialists"],
+    category: ["Clinical Excellence Team"],
   },
   {
     id: 9,
@@ -106,7 +106,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-9.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-9.jpg",
     quote: `"What is one moment in ABA that has impacted you the most? A moment where parents feel supported and truly heard by their child’s team working through challenging skills and behaviors."`,
-    category: ["Operations Leadership Team", "Team Leads & Specialists"],
+    category: ["Operations Leadership Team"],
   },
   {
     id: 10,
@@ -116,7 +116,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-10.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-10.jpg",
     quote: `"What excites me the most about ABA is that I am able to spend every day living my purpose to make a difference in individuals lives and advocate for those who could not advocate for themselves. They didn’t choose this life, the life chose them."`,
-    category: ["Team Leads & Specialists", "Clinical Excellence Team"],
+    category: ["Team Leads & Specialists"],
   },
   {
     id: 11,
@@ -126,7 +126,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-11.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-11.jpg",
     quote: `"I am motivated each day by the opportunity to be part of every client’s journey and to witness their growth and progress. My work is also driven by a desire to model dedication and purpose for my own children, showing them the value of meaningful work. Above all, I am committed to creating lasting change for my family by breaking generational barriers and building a stronger future."`,
-    category: ["Clinical Excellence Team", "Team Leads & Specialists"],
+    category: ["Clinical Excellence Team"],
   },
   {
     id: 12,
@@ -136,7 +136,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-12.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-12.jpg",
     quote: `"My drive and inspiration each day stem from observing the gradual progression and development of those I am helping. Noticing the changes in their abilities and general wellbeing makes me see the importance of my job. This motivates me to continue caring for others through compassionate means."`,
-    category: ["Team Leads & Specialists", "Clinical Excellence Team"],
+    category: ["Team Leads & Specialists"],
   },
   {
     id: 13,
@@ -146,7 +146,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-13.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-13.jpg",
     quote: `"I chose to work in the field of ABA as a BCBA because I’m passionate about helping individuals reach their full potential and improve their quality of life. Seeing meaningful progress, no matter how small, is incredibly rewarding and motivates me to keep growing in this field. I also value the opportunity to use evidence-based strategies to create positive, lasting change for both clients and their families"`,
-    category: ["Clinical Excellence Team", "Team Leads & Specialists"],
+    category: ["Clinical Excellence Team"],
   },
   {
     id: 14,
@@ -156,7 +156,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-14.jpeg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-14.jpeg",
     quote: `"I’m passionate about ABA because I genuinely love working with the kids and building meaningful connections with them each day. Watching them reach small but powerful milestones is incredibly rewarding and reminds me why this work matters. Seeing them grow in their independence in their own unique ways makes me proud to be part of their journey."`,
-    category: ["Clinical Excellence Team"],
+    category: [],
   },
   {
     id: 15,
@@ -166,7 +166,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-15.png",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-15.png",
     quote: `"What excites most about ABA is getting to work closely with my clients, no matter where they’re starting from. I really love seeing those moments when things start to click, especially when they begin interacting with their peers in more natural and meaningful ways."`,
-    category: ["Clinical Excellence Team"],
+    category: [],
   },
 ];
 
@@ -203,24 +203,15 @@ const clinicalExcellenceGroup1 = {
   category: "Clinical Excellence Team",
 };
 
-const clinicalExcellenceGroup2 = {
-  id: "clinical-group-2",
-  name: "Clinical Excellence Team ",
-  credentials: "BCBAs",
-  role: "Beyond The View Autism Services",
-  image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
-  thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
-  quote: `We collaborate closely with caregivers and providers to ensure that learning is integrated, comprehensive, and consistent across home, clinic, and community environments.`,
-  category: "Clinical Excellence Team",
-};
+
 
 const teamLeadsGroup = {
   id: "team-leads-group",
   name: "Team Leads & Specialists",
   credentials: "Lead Clinicians & Trainers",
   role: "Beyond The View Autism Services",
-  image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
-  thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg",
+  image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg?updatedAt=1780326610914",
+  thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg?updatedAt=1780326610914",
   quote: `Our dedicated team of Registered Behavior Technicians Leads, Trainers, and Clinical Specialists works directly with children every day to execute behavior plans with fidelity, compassion, and energy.`,
   category: "Team Leads & Specialists",
 };
@@ -244,7 +235,7 @@ export const OurTeam: React.FC = () => {
             : m.category === activeTab
         )]
         : activeTab === "Clinical Excellence Team"
-          ? [clinicalExcellenceGroup1, clinicalExcellenceGroup2, ...teamMembers.filter((m) =>
+          ? [clinicalExcellenceGroup1, ...teamMembers.filter((m) =>
             Array.isArray(m.category)
               ? m.category.includes(activeTab)
               : m.category === activeTab

@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { HeroCard } from "./HeroCard";
 
 const HERO_IMAGES_DESKTOP = [
-  "https://ik.imagekit.io/sonu2k1/TEst/Hero-1.png",
-  "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2799.jpg?updatedAt=1780577328135",
+  "https://ik.imagekit.io/sonu2k1/TEst/Hero-vidd.mp4?updatedAt=1780417586204",
+  "https://ik.imagekit.io/sonu2k1/TEst/Services/Hero1.4.png",
   "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2854.jpg?updatedAt=1780577328321",
 ];
 
@@ -18,6 +18,7 @@ const HERO_IMAGES_MOBILE = [
 
 export const Hero: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -25,6 +26,18 @@ export const Hero: React.FC = () => {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      if (currentIndex === 0) {
+        videoRef.current.play().catch((err) => {
+          console.log("Video play interrupted or blocked:", err);
+        });
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [currentIndex]);
 
   return (
     <section
@@ -103,17 +116,33 @@ export const Hero: React.FC = () => {
               }}
             />
             {/* Desktop version */}
-            <Image
-              src={src}
-              alt={`Hero background ${index + 1} (Desktop)`}
-              fill
-              priority={index === 0}
-              className="hidden md:block w-full h-full object-cover hero-bg-image absolute inset-0 transition-opacity duration-1000 ease-in-out"
-              style={{
-                objectFit: "cover",
-                opacity: index === currentIndex ? 1 : 0,
-              }}
-            />
+            {index === 0 ? (
+              <video
+                ref={videoRef}
+                src={src}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="hidden md:block w-full h-full object-cover hero-bg-image absolute inset-0 transition-opacity duration-1000 ease-in-out"
+                style={{
+                  objectFit: "cover",
+                  opacity: index === currentIndex ? 1 : 0,
+                }}
+              />
+            ) : (
+              <Image
+                src={src}
+                alt={`Hero background ${index + 1} (Desktop)`}
+                fill
+                priority={index === 0}
+                className="hidden md:block w-full h-full object-cover hero-bg-image absolute inset-0 transition-opacity duration-1000 ease-in-out"
+                style={{
+                  objectFit: "cover",
+                  opacity: index === currentIndex ? 1 : 0,
+                }}
+              />
+            )}
           </React.Fragment>
         ))}
       </div>
