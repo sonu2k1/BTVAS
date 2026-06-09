@@ -54,7 +54,7 @@ export const Mission: React.FC = () => {
           .mission-image-container {
             width: 81% !important;
             height: 88% !important;
-            left: calc(10% - 5px) !important;
+            left: calc(12% - 5px) !important;
             top: 11% !important;
             position: absolute !important;
           }
