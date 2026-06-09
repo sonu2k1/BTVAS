@@ -4,10 +4,16 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { HeroCard } from "./HeroCard";
 
-const HERO_IMAGES = [
+const HERO_IMAGES_DESKTOP = [
   "https://ik.imagekit.io/sonu2k1/TEst/Hero-1.png",
   "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2799.jpg?updatedAt=1780577328135",
   "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2854.jpg?updatedAt=1780577328321",
+];
+
+const HERO_IMAGES_MOBILE = [
+  "https://ik.imagekit.io/sonu2k1/TEst/Hero-mobile1.1.png",
+  "https://ik.imagekit.io/sonu2k1/TEst/Hero-mobile1.2.png",
+  "https://ik.imagekit.io/sonu2k1/TEst/Hero-mobile1.3.png",
 ];
 
 export const Hero: React.FC = () => {
@@ -15,7 +21,7 @@ export const Hero: React.FC = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % HERO_IMAGES.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % HERO_IMAGES_DESKTOP.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
@@ -39,11 +45,13 @@ export const Hero: React.FC = () => {
         }
         @media (max-width: 767px) {
           .hero-section {
-            min-height: 480px !important;
+            min-height: auto !important;
+            height: auto !important;
+            aspect-ratio: 992 / 1586 !important;
           }
           .hero-content-wrapper {
             position: absolute !important;
-            top: 115px !important;
+            top: 15% !important;
             left: 50% !important;
             transform: translateX(-50%) !important;
             width: 100% !important;
@@ -54,54 +62,59 @@ export const Hero: React.FC = () => {
             justify-content: center !important;
           }
           .hero-bg-image {
-            object-position: 50% 28% !important;
+            object-position: center center !important;
           }
         }
 
         @media (max-width: 480px) {
-          .hero-section {
-            min-height: 420px !important;
-          }
           .hero-content-wrapper {
-            top: 95px !important;
+            top: 15% !important;
             max-width: min(320px, 86vw) !important;
           }
         }
 
         @media (max-width: 375px) {
-          .hero-section {
-            min-height: 380px !important;
-          }
           .hero-content-wrapper {
-            top: 85px !important;
+            top: 15% !important;
           }
         }
 
         @media (max-width: 320px) {
-          .hero-section {
-            min-height: 340px !important;
-          }
           .hero-content-wrapper {
-            top: 75px !important;
+            top: 15% !important;
           }
         }
       `}</style>
 
       {/* Background Images with smooth cross-fade */}
       <div className="absolute inset-0 z-0 overflow-hidden w-full h-full">
-        {HERO_IMAGES.map((src, index) => (
-          <Image
-            key={src}
-            src={src}
-            alt={`Hero background ${index + 1}`}
-            fill
-            priority={index === 0}
-            className="w-full h-full object-cover hero-bg-image absolute inset-0 transition-opacity duration-1000 ease-in-out"
-            style={{
-              objectFit: "cover",
-              opacity: index === currentIndex ? 1 : 0,
-            }}
-          />
+        {HERO_IMAGES_DESKTOP.map((src, index) => (
+          <React.Fragment key={src}>
+            {/* Mobile version */}
+            <Image
+              src={HERO_IMAGES_MOBILE[index]}
+              alt={`Hero background ${index + 1} (Mobile)`}
+              fill
+              priority={index === 0}
+              className="block md:hidden w-full h-full object-cover hero-bg-image absolute inset-0 transition-opacity duration-1000 ease-in-out"
+              style={{
+                objectFit: "cover",
+                opacity: index === currentIndex ? 1 : 0,
+              }}
+            />
+            {/* Desktop version */}
+            <Image
+              src={src}
+              alt={`Hero background ${index + 1} (Desktop)`}
+              fill
+              priority={index === 0}
+              className="hidden md:block w-full h-full object-cover hero-bg-image absolute inset-0 transition-opacity duration-1000 ease-in-out"
+              style={{
+                objectFit: "cover",
+                opacity: index === currentIndex ? 1 : 0,
+              }}
+            />
+          </React.Fragment>
         ))}
       </div>
 
