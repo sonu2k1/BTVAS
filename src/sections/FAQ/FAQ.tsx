@@ -303,7 +303,7 @@ export const FAQ: React.FC = () => {
           font-size: 22px;
           font-weight: 400;
           line-height: 28px;
-          color: #ffffff;
+          color: #1e1695ff;
           margin: 0;
           max-width: 100%;
         }
@@ -608,7 +608,7 @@ export const FAQ: React.FC = () => {
           {/* ── LEFT: Image block ── */}
           <div className="faq-img-wrap">
             <Image
-              src="https://ik.imagekit.io/sonu2k1/TEst/FAQ.png"
+              src="https://ik.imagekit.io/sonu2k1/TEst/Services/FAQi.png"
               alt="Children at Beyond The View Autism Services"
               fill
               sizes="(max-width: 1024px) 100vw, 700px"
