@@ -10,7 +10,6 @@ export const Mission: React.FC = () => {
       className="mission-section site-section-spacing"
       style={{
         width: "100%",
-        minHeight: "552px",
         backgroundColor: "#ede5f8",
         display: "flex",
         alignItems: "center",
@@ -25,6 +24,7 @@ export const Mission: React.FC = () => {
           width: 100%;
           max-width: none;
           margin: 0;
+          min-height: auto;
           background: linear-gradient(
             180deg,
             #f7f2fc 0%,
@@ -37,7 +37,6 @@ export const Mission: React.FC = () => {
         .mission-wrapper {
           width: 100%;
           max-width: 1440px;
-          min-height: 478px;
           height: auto;
           margin: 0 auto;
           padding: 0;
@@ -52,7 +51,8 @@ export const Mission: React.FC = () => {
           max-width: 518px;
           min-width: 0;
           width: 100%;
-          height: 454px;
+          min-height: 420px;
+          height: clamp(380px, 38vw, 454px);
           position: relative;
           flex-shrink: 1;
         }
@@ -90,22 +90,74 @@ export const Mission: React.FC = () => {
           min-width: 0;
           width: 100%;
           height: auto;
-          min-height: 312px;
           display: flex;
           flex-direction: column;
           justify-content: center;
-          gap: 16px;
+          gap: clamp(12px, 2vw, 16px);
+        }
+
+        .mission-heading {
+          font-family: 'Mochiy Pop One', sans-serif;
+          font-weight: 400;
+          line-height: 1.2;
+          font-size: clamp(26px, 3.2vw, 38px);
+        }
+
+        .mission-headings {
+          width: 100%;
+        }
+
+        .mission-heading-first {
+          color: #1a1a1a;
+          margin: 0 0 4px 0;
+        }
+
+        .mission-heading-second {
+          margin: 0;
+        }
+
+        .mission-description {
+          font-family: 'Nunito', sans-serif;
+          font-size: clamp(14px, 1.6vw, 16px);
+          font-weight: 400;
+          color: #555;
+          line-height: 1.75;
+          margin: 0;
+        }
+
+        .mission-tags {
+          display: flex;
+          align-items: center;
+          gap: clamp(16px, 3vw, 40px);
+          margin-top: 8px;
+          flex-wrap: wrap;
+        }
+
+        .mission-tag-item {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .mission-tag-label {
+          font-family: 'Nunito', sans-serif;
+          font-size: clamp(12px, 1.4vw, 14px);
+          font-weight: 700;
+          color: #1a1a1a;
+        }
+
+        @media (min-width: 1440px) {
+          .mission-left {
+            height: 454px;
+          }
         }
 
         @media (min-width: 1025px) and (max-width: 1439px) {
-          .mission-section {
-            min-height: auto;
-          }
-
           .mission-left {
             flex: 1 1 42%;
             max-width: 480px;
             height: auto;
+            min-height: 360px;
             aspect-ratio: 1.14;
           }
 
@@ -113,85 +165,176 @@ export const Mission: React.FC = () => {
             flex: 1 1 50%;
             max-width: none;
           }
+
+          .mission-image-container {
+            top: clamp(36px, 4vw, 50px);
+            left: 12%;
+            width: 84%;
+            height: 86%;
+          }
         }
 
         @media (max-width: 1024px) {
-          .mission-section {
-            width: 100% !important;
-            height: auto !important;
-          }
           .mission-wrapper {
-            width: 100% !important;
-            height: auto !important;
-            flex-direction: column !important;
-            gap: 0 !important;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
           }
+
           .mission-left {
-            width: 100% !important;
-            max-width: 340px !important;
-            height: auto !important;
-            aspect-ratio: unset !important;
-            position: relative !important;
-            margin: 0 auto !important;
-            padding-top: 4px !important;
-          }
-          .mission-image-container {
-            position: relative !important;
-            width: 100% !important;
-            height: auto !important;
-            left: 0 !important;
-            top: 0 !important;
-            margin-top: 36px !important;
-            aspect-ratio: 3 / 2 !important;
-          }
-          .mission-image-photo {
-            object-fit: contain !important;
-            object-position: center center !important;
-          }
-          .mission-badge {
-            left: 4% !important;
-            top: 0 !important;
-            position: absolute !important;
-          }
-          .mission-badge-circle {
-            width: 80px !important;
-            height: 80px !important;
-          }
-          .mission-badge-number {
-            font-size: 24px !important;
-          }
-          .mission-badge-pill {
-            width: 120px !important;
-            height: 38px !important;
-            margin-left: -15px !important;
-            padding-left: 12px !important;
-            border-radius: 0 19px 19px 0 !important;
-          }
-          .mission-badge-pill-text {
-            font-size: 10px !important;
-          }
-          .mission-heading {
-            font-size: 32px !important;
-          }
-          .mission-right {
-            width: 100% !important;
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: min(420px, 100%);
             height: auto !important;
             min-height: 0 !important;
-            justify-content: flex-start !important;
-            align-items: center !important;
-            text-align: center !important;
-            margin-top: 0 !important;
-            padding-top: 0 !important;
+            margin: 0 auto;
+            padding-top: 0;
           }
+
+          .mission-image-container {
+            position: relative;
+            width: 100%;
+            left: 0;
+            top: 0;
+            margin-top: 36px;
+            aspect-ratio: 4 / 3;
+            height: auto;
+          }
+
+          .mission-image-photo {
+            object-fit: cover;
+            object-position: center center;
+          }
+
+          .mission-badge {
+            left: 0;
+            top: 0;
+          }
+
+          .mission-badge-circle {
+            width: clamp(72px, 18vw, 90px);
+            height: clamp(72px, 18vw, 90px);
+          }
+
+          .mission-badge-number {
+            font-size: clamp(22px, 5vw, 28px);
+          }
+
+          .mission-badge-pill {
+            width: clamp(110px, 28vw, 136px);
+            height: clamp(36px, 9vw, 44px);
+            margin-left: -16px;
+            padding-left: 14px;
+            border-radius: 0 22px 22px 0;
+          }
+
+          .mission-badge-pill-text {
+            font-size: clamp(9.5px, 2.4vw, 11.5px);
+          }
+
+          .mission-right {
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 640px;
+            align-items: center;
+            text-align: center;
+            margin-top: 0;
+            padding-top: 0;
+          }
+
           .mission-bg-circle {
-            display: none !important;
+            display: none;
           }
+
           .mission-tags {
-            flex-direction: row !important;
-            flex-wrap: wrap !important;
-            gap: 20px !important;
-            justify-content: center !important;
-            align-items: center !important;
+            justify-content: center;
+          }
+        }
+
+        @media (max-width: 767px) {
+          .mission-wrapper {
+            gap: 16px;
+          }
+
+          .mission-left {
+            max-width: min(360px, 100%);
+          }
+
+          .mission-image-container {
+            margin-top: 30px;
+            aspect-ratio: 3 / 2;
+          }
+
+          .mission-badge {
+            left: 2%;
+          }
+
+          .mission-description {
+            max-width: 520px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .mission-wrapper {
+            gap: 12px;
+          }
+
+          .mission-left {
+            max-width: 100%;
+          }
+
+          .mission-image-container {
+            margin-top: 24px;
+            border-radius: 12px;
+          }
+
+          .mission-image-inner {
+            border-radius: 12px;
+          }
+
+          .mission-badge-circle {
+            width: 68px;
+            height: 68px;
+          }
+
+          .mission-badge-number {
+            font-size: 20px;
+          }
+
+          .mission-badge-pill {
+            width: 108px;
+            height: 34px;
+            margin-left: -14px;
+            padding-left: 10px;
+          }
+
+          .mission-badge-pill-text {
+            font-size: 9px;
+          }
+
+          .mission-tags {
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+          }
+
+          .mission-tag-item {
+            justify-content: center;
+          }
+        }
+
+        @media (max-width: 360px) {
+          .mission-heading {
+            font-size: 22px;
+          }
+
+          .mission-description {
+            font-size: 13px;
+            line-height: 1.65;
+          }
+
+          .mission-tag-label {
+            font-size: 11px;
           }
         }
       `}</style>
@@ -309,7 +452,7 @@ export const Mission: React.FC = () => {
                 src="https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg"
                 alt="Beyond The View team"
                 fill
-                sizes="(max-width: 768px) 100vw, 420px"
+                sizes="(max-width: 480px) 100vw, (max-width: 1024px) 90vw, 420px"
                 className="mission-image-photo"
                 priority
               />
@@ -335,46 +478,18 @@ export const Mission: React.FC = () => {
 
 
           {/* Heading */}
-          <div>
-            <h2
-              className="mission-heading"
-              style={{
-                fontFamily: "'Mochiy Pop One', sans-serif",
-                fontSize: "38px",
-                fontWeight: "400",
-                color: "#1a1a1a",
-                margin: "0 0 4px 0",
-                lineHeight: 1.2,
-              }}
-            >
+          <div className="mission-headings">
+            <h2 className="mission-heading mission-heading-first">
               Nurturing Growth
             </h2>
-            <h2
-              className="mission-heading"
-              style={{
-                fontFamily: "'Mochiy Pop One', sans-serif",
-                fontSize: "38px",
-                fontWeight: "400",
-                margin: 0,
-                lineHeight: 1.2,
-              }}
-            >
+            <h2 className="mission-heading mission-heading-second">
               <span style={{ color: "#753DBE" }}>Beyond </span>
               <span style={{ color: "#FF4880" }}>The Horizon</span>
             </h2>
           </div>
 
           {/* Description */}
-          <p
-            style={{
-              fontFamily: "'Nunito', sans-serif",
-              fontSize: "16px",
-              fontWeight: "400",
-              color: "#555",
-              lineHeight: "1.75",
-              margin: 0,
-            }}
-          >
+          <p className="mission-description">
             Our mission at Beyond The View Autism Services, is to meet each {"child's"}
             individual needs, create limitless opportunities for learning, and support
             each child on their journey to reach their full potential.
@@ -384,40 +499,14 @@ export const Mission: React.FC = () => {
           </p>
 
           {/* Tags */}
-          <div
-            className="mission-tags"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "40px",
-              marginTop: "8px",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <div className="mission-tags">
+            <div className="mission-tag-item">
               <Image src="/images/Baby.svg" alt="Baby Icon" width={24} height={24} />
-              <span
-                style={{
-                  fontFamily: "'Nunito', sans-serif",
-                  fontSize: "14px",
-                  fontWeight: "700",
-                  color: "#1a1a1a",
-                }}
-              >
-                Ages 2–7 Years Old
-              </span>
+              <span className="mission-tag-label">Ages 2–7 Years Old</span>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <div className="mission-tag-item">
               <Image src="/images/Loc.svg" alt="Location Icon" width={24} height={24} />
-              <span
-                style={{
-                  fontFamily: "'Nunito', sans-serif",
-                  fontSize: "14px",
-                  fontWeight: "700",
-                  color: "#1a1a1a",
-                }}
-              >
-                Clinic & Community (Day Care)
-              </span>
+              <span className="mission-tag-label">Clinic & Community (Day Care)</span>
             </div>
           </div>
         </div>

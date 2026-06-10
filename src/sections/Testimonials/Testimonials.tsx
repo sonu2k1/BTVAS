@@ -45,15 +45,20 @@ export const Testimonials: React.FC = () => {
       style={{ width: "100%", height: "auto", boxSizing: "border-box" }}
     >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Prompt:wght@400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Prompt:wght@400&display=swap');
 
         .testimonials-subtitle {
-          font-family: 'Baloo 2', sans-serif;
-          font-size: 36px;
-          line-height: 44px;
-          font-weight: 600;
+          font-family: 'Mochiy Pop One', sans-serif;
+          font-size: 32px;
+          line-height: 40px;
+          font-weight: 400;
           font-style: normal;
           text-align: center;
+          color: #111827;
+          text-decoration: underline;
+          text-decoration-color: #FF4880;
+          text-underline-offset: 8px;
+          text-decoration-thickness: 4px;
         }
 
         .testimonials-card {
@@ -170,8 +175,8 @@ export const Testimonials: React.FC = () => {
             margin-bottom: 24px !important;
           }
           .testimonials-subtitle {
-            font-size: 28px !important;
-            line-height: 34px !important;
+            font-size: clamp(24px, 5vw, 32px) !important;
+            line-height: 1.25 !important;
             text-align: center !important;
             padding: 0 16px !important;
           }
@@ -206,17 +211,10 @@ export const Testimonials: React.FC = () => {
           }
         }
 
-        @media (max-width: 375px) {
-          .testimonials-subtitle {
-            font-size: 24px !important;
-            line-height: 30px !important;
-          }
-        }
-
-        @media (max-width: 320px) {
+        @media (max-width: 480px) {
           .testimonials-subtitle {
             font-size: 22px !important;
-            line-height: 28px !important;
+            line-height: 1.25 !important;
           }
         }
       `}</style>
@@ -258,8 +256,8 @@ export const Testimonials: React.FC = () => {
             </p>
           </div>
 
-          <p className="testimonials-subtitle testimonials-subtitle-wrap text-gray-500">
-           Happy parents who trust BTVAS
+          <p className="testimonials-subtitle testimonials-subtitle-wrap">
+            Happy parents who trust BTVAS
           </p>
         </div>
 
