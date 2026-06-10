@@ -18,7 +18,7 @@ const visionaries = [
     credentials: "BCBA, LBA",
     role: "Co-Founder",
     quote: '"Empowering families through structured, compassionate intervention strategies…"',
-    image: "https://ik.imagekit.io/sonu2k1/TEst/Team/visionary-2.png",
+    image: "https://ik.imagekit.io/sonu2k1/TEst/Team/Visinory-2.3.png",
   },
 ];
 
@@ -44,10 +44,11 @@ export const Visionaries: React.FC = () => {
           cursor: pointer;
         }
         .visionary-img-wrap img {
+          transform: translateY(var(--translate-y, 0px)) !important;
           transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
         }
         .visionary-card:hover .visionary-img-wrap img {
-          transform: scale(1.08) !important;
+          transform: translateY(var(--translate-y, 0px)) scale(1.08) !important;
         }
 
         @media (max-width: 1024px) {
@@ -213,6 +214,9 @@ export const Visionaries: React.FC = () => {
                 fill
                 sizes="(max-width: 768px) 100vw, 200px"
                 className="object-cover object-top"
+                style={{
+                  "--translate-y": person.id === 2 ? "10px" : "0px",
+                } as React.CSSProperties}
               />
             </div>
 
