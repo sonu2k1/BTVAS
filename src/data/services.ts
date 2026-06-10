@@ -21,7 +21,7 @@ export const services: Service[] = [
       "Evidence-based Applied Behaviour Analysis tailored to each child's unique profile and goals",
     image: "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2805.jpg",
     images: [
-      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2722.jpg?updatedAt=1780577327719",
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2751.jpg?updatedAt=1780577328194",
       "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2805.jpg",
       "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2734.jpg",
       "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2743.jpg?updatedAt=1780577328144"
