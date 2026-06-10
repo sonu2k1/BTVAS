@@ -176,7 +176,7 @@ export const Testimonials: React.FC = () => {
           }
           .testimonials-subtitle {
             font-size: clamp(24px, 5vw, 32px) !important;
-            line-height: 1.25 !important;
+            line-height: 1.55 !important;
             text-align: center !important;
             padding: 0 16px !important;
           }
@@ -214,7 +214,7 @@ export const Testimonials: React.FC = () => {
         @media (max-width: 480px) {
           .testimonials-subtitle {
             font-size: 22px !important;
-            line-height: 1.25 !important;
+            line-height: 1.6 !important;
           }
         }
       `}</style>
