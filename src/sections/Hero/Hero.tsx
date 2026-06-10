@@ -5,20 +5,21 @@ import Image from "next/image";
 import { HeroCard } from "./HeroCard";
 
 const HERO_IMAGES_DESKTOP = [
-  "https://ik.imagekit.io/sonu2k1/TEst/Hero-vidd.mp4?updatedAt=1780417586204",
+  "https://ik.imagekit.io/sonu2k1/TEst/Hero-v.mp4",
   "https://ik.imagekit.io/sonu2k1/TEst/Services/Hero1.4.png",
   "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2854.jpg?updatedAt=1780577328321",
 ];
 
 const HERO_IMAGES_MOBILE = [
-  "https://ik.imagekit.io/sonu2k1/TEst/Hero-mobile1.1.png",
+  "https://ik.imagekit.io/sonu2k1/TEst/Hero-image-vid.mp4",
   "https://ik.imagekit.io/sonu2k1/TEst/Services/Hero-mobile1.2.3.png",
   "https://ik.imagekit.io/sonu2k1/TEst/Hero-mobile1.3.png",
 ];
 
 export const Hero: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const desktopVideoRef = useRef<HTMLVideoElement>(null);
+  const mobileVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -28,15 +29,19 @@ export const Hero: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (videoRef.current) {
-      if (currentIndex === 0) {
-        videoRef.current.play().catch((err) => {
-          console.log("Video play interrupted or blocked:", err);
-        });
-      } else {
-        videoRef.current.pause();
+    const playVideo = (ref: React.RefObject<HTMLVideoElement | null>) => {
+      if (ref.current) {
+        if (currentIndex === 0) {
+          ref.current.play().catch((err) => {
+            console.log("Video play interrupted or blocked:", err);
+          });
+        } else {
+          ref.current.pause();
+        }
       }
-    }
+    };
+    playVideo(desktopVideoRef);
+    playVideo(mobileVideoRef);
   }, [currentIndex]);
 
   return (
@@ -104,21 +109,37 @@ export const Hero: React.FC = () => {
         {HERO_IMAGES_DESKTOP.map((src, index) => (
           <React.Fragment key={src}>
             {/* Mobile version */}
-            <Image
-              src={HERO_IMAGES_MOBILE[index]}
-              alt={`Hero background ${index + 1} (Mobile)`}
-              fill
-              priority={index === 0}
-              className="block md:hidden w-full h-full object-cover hero-bg-image absolute inset-0 transition-opacity duration-1000 ease-in-out"
-              style={{
-                objectFit: "cover",
-                opacity: index === currentIndex ? 1 : 0,
-              }}
-            />
+            {index === 0 ? (
+              <video
+                ref={mobileVideoRef}
+                src={HERO_IMAGES_MOBILE[index]}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="block md:hidden w-full h-full object-cover hero-bg-image absolute inset-0 transition-opacity duration-1000 ease-in-out"
+                style={{
+                  objectFit: "cover",
+                  opacity: index === currentIndex ? 1 : 0,
+                }}
+              />
+            ) : (
+              <Image
+                src={HERO_IMAGES_MOBILE[index]}
+                alt={`Hero background ${index + 1} (Mobile)`}
+                fill
+                priority={index === 0}
+                className="block md:hidden w-full h-full object-cover hero-bg-image absolute inset-0 transition-opacity duration-1000 ease-in-out"
+                style={{
+                  objectFit: "cover",
+                  opacity: index === currentIndex ? 1 : 0,
+                }}
+              />
+            )}
             {/* Desktop version */}
             {index === 0 ? (
               <video
-                ref={videoRef}
+                ref={desktopVideoRef}
                 src={src}
                 autoPlay
                 loop
