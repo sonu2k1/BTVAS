@@ -12,20 +12,20 @@ type BalloonConfig = {
 };
 
 const BALLOONS: BalloonConfig[] = [
-  { id: "b1", left: "4%", size: 52, color: "#FF4880", shine: "#ff7aa3", duration: 28, delay: 0, drift: 24 },
-  { id: "b2", left: "12%", size: 38, color: "#7e5cb3", shine: "#a88fd4", duration: 34, delay: 4, drift: -18 },
-  { id: "b3", left: "22%", size: 44, color: "#fee70a", shine: "#fff06a", duration: 31, delay: 9, drift: 20 },
-  { id: "b4", left: "31%", size: 34, color: "#4AB8D4", shine: "#8FD4EA", duration: 36, delay: 2, drift: -22 },
-  { id: "b5", left: "42%", size: 48, color: "#f94a8a", shine: "#ff8ab0", duration: 29, delay: 14, drift: 16 },
-  { id: "b6", left: "53%", size: 40, color: "#753DBE", shine: "#9b6fd4", duration: 33, delay: 7, drift: -14 },
-  { id: "b7", left: "64%", size: 46, color: "#FFD740", shine: "#ffe566", duration: 30, delay: 11, drift: 26 },
-  { id: "b8", left: "74%", size: 36, color: "#39B1D1", shine: "#7ecae3", duration: 35, delay: 5, drift: -20 },
-  { id: "b9", left: "84%", size: 42, color: "#FF4880", shine: "#ff8aab", duration: 32, delay: 18, drift: 12 },
-  { id: "b10", left: "92%", size: 32, color: "#7e5cb3", shine: "#b39ad8", duration: 37, delay: 3, drift: -16 },
-  { id: "b11", left: "18%", size: 30, color: "#4AB8D4", shine: "#9adcef", duration: 38, delay: 22, drift: 18 },
-  { id: "b12", left: "58%", size: 34, color: "#fee70a", shine: "#fff59d", duration: 27, delay: 16, drift: -24 },
-  { id: "b13", left: "38%", size: 28, color: "#f94a8a", shine: "#ff9ec0", duration: 40, delay: 12, drift: 14 },
-  { id: "b14", left: "48%", size: 26, color: "#753DBE", shine: "#a67fd8", duration: 39, delay: 20, drift: -12 },
+  { id: "b1", left: "3%", size: 48, color: "#FF4880", shine: "#ff7aa3", duration: 28, delay: 0, drift: 14 },
+  { id: "b2", left: "22%", size: 36, color: "#7e5cb3", shine: "#a88fd4", duration: 34, delay: 10, drift: -12 },
+  { id: "b3", left: "41%", size: 40, color: "#fee70a", shine: "#fff06a", duration: 31, delay: 20, drift: 14 },
+  { id: "b4", left: "60%", size: 32, color: "#4AB8D4", shine: "#8FD4EA", duration: 36, delay: 30, drift: -14 },
+  { id: "b5", left: "79%", size: 44, color: "#f94a8a", shine: "#ff8ab0", duration: 29, delay: 40, drift: 12 },
+  { id: "b6", left: "96%", size: 34, color: "#753DBE", shine: "#9b6fd4", duration: 33, delay: 50, drift: -10 },
+  { id: "b7", left: "12%", size: 40, color: "#FFD740", shine: "#ffe566", duration: 30, delay: 60, drift: 16 },
+  { id: "b8", left: "88%", size: 30, color: "#39B1D1", shine: "#7ecae3", duration: 35, delay: 70, drift: -12 },
+  { id: "b9", left: "31%", size: 36, color: "#FF4880", shine: "#ff8aab", duration: 32, delay: 80, drift: 10 },
+  { id: "b10", left: "69%", size: 28, color: "#7e5cb3", shine: "#b39ad8", duration: 37, delay: 90, drift: -10 },
+  { id: "b11", left: "50%", size: 26, color: "#4AB8D4", shine: "#9adcef", duration: 38, delay: 100, drift: 12 },
+  { id: "b12", left: "7%", size: 30, color: "#fee70a", shine: "#fff59d", duration: 27, delay: 110, drift: -14 },
+  { id: "b13", left: "93%", size: 24, color: "#f94a8a", shine: "#ff9ec0", duration: 40, delay: 120, drift: 10 },
+  { id: "b14", left: "55%", size: 22, color: "#753DBE", shine: "#a67fd8", duration: 39, delay: 130, drift: -8 },
 ];
 
 const BalloonSvg: React.FC<{ size: number; color: string; shine: string }> = ({ size, color, shine }) => (
@@ -97,7 +97,7 @@ export const FloatingBalloons: React.FC = () => {
             margin-left: 0;
           }
           50% {
-            margin-left: 10px;
+            margin-left: 6px;
           }
         }
 
@@ -126,7 +126,7 @@ export const FloatingBalloons: React.FC = () => {
         {BALLOONS.map((balloon, index) => (
           <div
             key={balloon.id}
-            className={`floating-balloon${index >= 8 ? " floating-balloon--hide-mobile" : ""}`}
+            className={`floating-balloon${index >= 5 ? " floating-balloon--hide-mobile" : ""}`}
             style={
               {
                 left: balloon.left,
