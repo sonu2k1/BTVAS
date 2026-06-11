@@ -172,6 +172,10 @@ export const Mission: React.FC = () => {
             width: 84%;
             height: 86%;
           }
+
+          .mission-badge {
+            left: 25px !important;
+          }
         }
 
         @media (max-width: 1024px) {
@@ -207,10 +211,10 @@ export const Mission: React.FC = () => {
           }
 
           .mission-badge {
-            left: 0;
-            top: 0;
+            left: -20px !important;
+            top: -18px !important;
+            bottom: auto !important;
           }
-
           .mission-badge-circle {
             width: clamp(72px, 18vw, 90px);
             height: clamp(72px, 18vw, 90px);
@@ -221,10 +225,11 @@ export const Mission: React.FC = () => {
           }
 
           .mission-badge-pill {
-            width: clamp(110px, 28vw, 136px);
+            width: auto !important;
             height: clamp(36px, 9vw, 44px);
-            margin-left: -16px;
-            padding-left: 14px;
+            margin-left: -20px !important;
+            padding-left: 32px !important;
+            padding-right: 16px !important;
             border-radius: 0 22px 22px 0;
           }
 
@@ -266,7 +271,7 @@ export const Mission: React.FC = () => {
           }
 
           .mission-badge {
-            left: 2%;
+            left: -15px !important;
           }
 
           .mission-description {
@@ -302,10 +307,15 @@ export const Mission: React.FC = () => {
           }
 
           .mission-badge-pill {
-            width: 108px;
+            width: auto !important;
             height: 34px;
-            margin-left: -14px;
-            padding-left: 10px;
+            margin-left: -16px !important;
+            padding-left: 24px !important;
+            padding-right: 12px !important;
+          }
+
+          .mission-badge {
+            left: -10px !important;
           }
 
           .mission-badge-pill-text {
@@ -363,8 +373,8 @@ export const Mission: React.FC = () => {
             className="mission-badge"
             style={{
               position: "absolute",
-              top: "10px", // Positioned to overlap the image's top-left corner
-              left: "40px",
+              top: "0px", // Positioned to overlap the image's top-left corner (moved 10px higher)
+              left: "15px",
               zIndex: 3,
               display: "flex",
               alignItems: "center",
@@ -417,15 +427,16 @@ export const Mission: React.FC = () => {
             <div
               className="mission-badge-pill"
               style={{
-                width: "146px", // User requested width
-                height: "46px", // User requested height
+                width: "auto",
+                height: "46px",
                 backgroundColor: "#fff",
                 borderRadius: "0 23px 23px 0",
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
-                marginLeft: "-20px", // Tucked under the purple circle
-                paddingLeft: "15px", // Push text away from circle
+                marginLeft: "-25px", // Tucked under the purple circle
+                paddingLeft: "40px", // Push text away from circle overlap (25px overlap + 15px gap)
+                paddingRight: "24px",
                 boxShadow: "4px 4px 15px rgba(0,0,0,0.06)",
                 zIndex: 1,
               }}
