@@ -50,7 +50,7 @@ export const Testimonials: React.FC = () => {
         .testimonials-subtitle {
           font-family: 'Mochiy Pop One', sans-serif;
           font-size: 32px;
-          line-height: 40px;
+          line-height: 48px;
           font-weight: 400;
           font-style: normal;
           text-align: center;
@@ -58,7 +58,7 @@ export const Testimonials: React.FC = () => {
           text-decoration: underline;
           text-decoration-style: solid;
           text-decoration-color: #FF4880;
-          text-underline-offset: 12px;
+          text-underline-offset: 8px;
           text-decoration-thickness: 4px;
         }
 
@@ -177,7 +177,8 @@ export const Testimonials: React.FC = () => {
           }
           .testimonials-subtitle {
             font-size: clamp(24px, 5vw, 32px) !important;
-            line-height: 1.55 !important;
+            line-height: 1.65 !important;
+            text-underline-offset: 6px !important;
             text-align: center !important;
             padding: 0 16px !important;
           }
@@ -215,7 +216,8 @@ export const Testimonials: React.FC = () => {
         @media (max-width: 480px) {
           .testimonials-subtitle {
             font-size: 22px !important;
-            line-height: 1.6 !important;
+            line-height: 1.7 !important;
+            text-underline-offset: 4px !important;
           }
         }
       `}</style>
