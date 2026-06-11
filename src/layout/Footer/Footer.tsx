@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { siteNavLinks } from "@/data/navigation";
+import { SITE_PHONE_NUMBERS } from "@/constants";
 
 const iconBoxStyle: React.CSSProperties = {
   width: 32,
@@ -98,11 +99,6 @@ const SOCIAL_LINKS = {
     label: "@beyondtheviewaba",
   },
 } as const;
-
-const PHONES = [
-  { display: "(404)-398-2622", href: "tel:+14043982622" },
-  { display: "(404)-406-7339", href: "tel:+14044067339" },
-] as const;
 
 const LOCATIONS = [
   {
@@ -663,7 +659,7 @@ export const Footer: React.FC = () => {
 
               <div className="footer-contact-grid">
                 <ContactItem icon={<PhoneIcon />} label="Call Us">
-                  {PHONES.map((phone) => (
+                  {SITE_PHONE_NUMBERS.map((phone) => (
                     <ContactLink key={phone.href} href={phone.href}>
                       {phone.display}
                     </ContactLink>

@@ -68,7 +68,7 @@ export const FloatingBalloons: React.FC = () => {
           opacity: 0;
           will-change: transform, opacity;
           animation: floating-balloon-rise linear infinite;
-          filter: drop-shadow(0 6px 10px rgba(1, 12, 111, 0.12));
+          filter: saturate(1.25) drop-shadow(0 6px 10px rgba(1, 12, 111, 0.12));
         }
 
         @keyframes floating-balloon-rise {
@@ -77,14 +77,14 @@ export const FloatingBalloons: React.FC = () => {
             opacity: 0;
           }
           8% {
-            opacity: 0.55;
+            opacity: 0.72;
           }
           50% {
             transform: translate3d(var(--drift), -48vh, 0) rotate(4deg);
-            opacity: 0.65;
+            opacity: 0.88;
           }
           92% {
-            opacity: 0.5;
+            opacity: 0.68;
           }
           100% {
             transform: translate3d(calc(var(--drift) * 1.4), -100vh, 0) rotate(-3deg);

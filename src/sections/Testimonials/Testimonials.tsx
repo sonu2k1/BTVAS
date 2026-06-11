@@ -56,8 +56,9 @@ export const Testimonials: React.FC = () => {
           text-align: center;
           color: #111827;
           text-decoration: underline;
+          text-decoration-style: solid;
           text-decoration-color: #FF4880;
-          text-underline-offset: 8px;
+          text-underline-offset: 12px;
           text-decoration-thickness: 4px;
         }
 
@@ -257,7 +258,7 @@ export const Testimonials: React.FC = () => {
           </div>
 
           <p className="testimonials-subtitle testimonials-subtitle-wrap">
-            Happy parents who trust BTVAS
+            Happy parents who trust <span style={{ color: "#FF4880" }}>BTVAS</span>
           </p>
         </div>
 

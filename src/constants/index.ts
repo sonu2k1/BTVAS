@@ -6,6 +6,11 @@ export const CONTACT_INFO = {
   address: "Atlanta, GA",
 };
 
+export const SITE_PHONE_NUMBERS = [
+  { display: "(404) 398-2622", href: "tel:+14043982622" },
+  { display: "(404) 406-7339", href: "tel:+14044067339" },
+] as const;
+
 export const CLINIC_HOURS = {
   weekdays: "8:00 AM - 5:00 PM",
   weekends: "Closed",
