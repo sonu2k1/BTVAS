@@ -10,9 +10,10 @@ interface ServiceCardProps {
   service: Service;
   onSelect: (service: Service) => void;
   ariaHidden?: boolean;
+  isDragging: () => boolean;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden, isDragging }) => {
   const isComingSoon = service.comingSoon === true;
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isInCenter, setIsInCenter] = useState(false);
@@ -82,13 +83,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
             ? `${service.title} — coming soon`
             : `Learn more about ${service.title}`
         }
-        onPointerDown={() => {
-          cardRef.current?.closest(".services-marquee-track")?.classList.add("is-interacting");
-        }}
         onClick={(e) => {
           if (!isClickable) return;
           e.stopPropagation();
-          cardRef.current?.closest(".services-marquee-track")?.classList.remove("is-interacting");
+          if (isDragging()) return;
           onSelect(service);
         }}
         onKeyDown={handleKeyDown}
@@ -146,6 +144,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
                       ...(isComingSoon ? { filter: "grayscale(0.35) brightness(0.92)" } : {}),
                     }}
                     priority={idx === 0}
+                    draggable={false}
                   />
                 </motion.div>
               ))
@@ -161,6 +160,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
                   height: "100%",
                   ...(isComingSoon ? { filter: "grayscale(0.35) brightness(0.92)" } : {}),
                 }}
+                draggable={false}
               />
             )}
             {isComingSoon && (
@@ -224,6 +224,116 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, onSelect, ariaHidden
 export const OurServices: React.FC = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInteractingRef = useRef(false);
+  const isDraggingRef = useRef(false);
+  const startXRef = useRef(0);
+  const scrollLeftStartRef = useRef(0);
+  const dragDistanceRef = useRef(0);
+  const interactionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const autoScrollSpeed = 0.8; // px per frame
+
+  useEffect(() => {
+    // Check if user prefers reduced motion
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mediaQuery.matches) return;
+
+    const container = containerRef.current;
+    if (!container) return;
+
+    let animationFrameId: number;
+
+    const scroll = () => {
+      if (!isInteractingRef.current && !isDraggingRef.current) {
+        container.scrollLeft += autoScrollSpeed;
+
+        const halfWidth = container.scrollWidth / 2;
+        if (halfWidth > 0) {
+          if (container.scrollLeft >= halfWidth) {
+            container.scrollLeft -= halfWidth;
+          } else if (container.scrollLeft <= 0) {
+            container.scrollLeft += halfWidth;
+          }
+        }
+      }
+      animationFrameId = requestAnimationFrame(scroll);
+    };
+
+    animationFrameId = requestAnimationFrame(scroll);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      if (interactionTimeoutRef.current) {
+        clearTimeout(interactionTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const isDragging = () => dragDistanceRef.current > 5;
+
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.button !== 0 && e.pointerType === "mouse") return;
+    
+    isInteractingRef.current = true;
+    isDraggingRef.current = true;
+    startXRef.current = e.pageX - containerRef.current!.offsetLeft;
+    scrollLeftStartRef.current = containerRef.current!.scrollLeft;
+    dragDistanceRef.current = 0;
+    
+    if (containerRef.current) {
+      containerRef.current.style.cursor = "grabbing";
+      containerRef.current.setPointerCapture(e.pointerId);
+    }
+    
+    if (interactionTimeoutRef.current) {
+      clearTimeout(interactionTimeoutRef.current);
+      interactionTimeoutRef.current = null;
+    }
+  };
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!isDraggingRef.current) return;
+    
+    const x = e.pageX - containerRef.current!.offsetLeft;
+    const walk = x - startXRef.current;
+    dragDistanceRef.current = Math.abs(walk);
+    
+    let newScrollLeft = scrollLeftStartRef.current - walk;
+    
+    const halfWidth = containerRef.current!.scrollWidth / 2;
+    if (halfWidth > 0) {
+      if (newScrollLeft >= halfWidth) {
+        newScrollLeft -= halfWidth;
+        startXRef.current -= halfWidth;
+      } else if (newScrollLeft <= 0) {
+        newScrollLeft += halfWidth;
+        startXRef.current += halfWidth;
+      }
+    }
+    
+    containerRef.current!.scrollLeft = newScrollLeft;
+  };
+
+  const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (isDraggingRef.current) {
+      if (containerRef.current) {
+        containerRef.current.style.cursor = "grab";
+        containerRef.current.releasePointerCapture(e.pointerId);
+      }
+      isDraggingRef.current = false;
+    }
+    
+    if (interactionTimeoutRef.current) {
+      clearTimeout(interactionTimeoutRef.current);
+    }
+    
+    interactionTimeoutRef.current = setTimeout(() => {
+      isInteractingRef.current = false;
+      dragDistanceRef.current = 0;
+    }, 1500);
+  };
 
   const openServiceModal = (service: Service) => {
     if (service.comingSoon) return;
@@ -337,22 +447,23 @@ export const OurServices: React.FC = () => {
 
         .services-marquee-container {
           width: 100%;
-          overflow: hidden;
+          overflow-x: auto;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
           position: relative;
           display: flex;
           align-items: center;
+          user-select: none;
+          cursor: grab;
+        }
+        .services-marquee-container::-webkit-scrollbar {
+          display: none;
         }
 
         .services-marquee-track {
           display: flex;
           align-items: center;
           width: max-content;
-          animation: services-marquee-scroll 50s linear infinite;
-        }
-
-        .services-marquee-container:hover .services-marquee-track,
-        .services-marquee-track.is-interacting {
-          animation-play-state: paused;
         }
 
         .services-marquee-item {
@@ -362,11 +473,6 @@ export const OurServices: React.FC = () => {
 
         .services-marquee-item[aria-hidden="true"] {
           user-select: none;
-        }
-
-        @keyframes services-marquee-scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
         }
 
         @media (min-width: 1025px) and (max-width: 1439px) {
@@ -429,14 +535,10 @@ export const OurServices: React.FC = () => {
             height: auto !important;
             white-space: normal !important;
           }
-          .services-marquee-track {
-            animation-duration: 40s;
-          }
         }
 
         @media (prefers-reduced-motion: reduce) {
           .services-marquee-track {
-            animation: none;
             flex-wrap: wrap;
             justify-content: center;
             width: 100%;
@@ -477,13 +579,21 @@ export const OurServices: React.FC = () => {
       </div>
 
       <div className="relative services-container" style={{ width: "100%", minHeight: "440px" }}>
-        <div className="services-marquee-container">
+        <div 
+          className="services-marquee-container"
+          ref={containerRef}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerUp}
+        >
           <div className="services-marquee-track">
             {services.map((service) => (
               <ServiceCard
                 key={`service-1-${service.title}`}
                 service={service}
                 onSelect={openServiceModal}
+                isDragging={isDragging}
               />
             ))}
             {services.map((service) => (
@@ -492,6 +602,7 @@ export const OurServices: React.FC = () => {
                 service={service}
                 onSelect={openServiceModal}
                 ariaHidden
+                isDragging={isDragging}
               />
             ))}
           </div>
