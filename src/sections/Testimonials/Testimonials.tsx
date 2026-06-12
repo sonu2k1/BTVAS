@@ -50,16 +50,20 @@ export const Testimonials: React.FC = () => {
         .testimonials-subtitle {
           font-family: 'Mochiy Pop One', sans-serif;
           font-size: 32px;
-          line-height: 40px;
+          line-height: 48px;
           font-weight: 400;
           font-style: normal;
           text-align: center;
           color: #111827;
+        }
+
+        .testimonials-subtitle .underline-part {
           text-decoration: underline;
           text-decoration-style: solid;
           text-decoration-color: #FF4880;
-          text-underline-offset: 12px;
+          text-underline-offset: 14px;
           text-decoration-thickness: 4px;
+          text-decoration-skip-ink: none;
         }
 
         .testimonials-card {
@@ -177,9 +181,12 @@ export const Testimonials: React.FC = () => {
           }
           .testimonials-subtitle {
             font-size: clamp(24px, 5vw, 32px) !important;
-            line-height: 1.55 !important;
+            line-height: 1.65 !important;
             text-align: center !important;
             padding: 0 16px !important;
+          }
+          .testimonials-subtitle .underline-part {
+            text-underline-offset: 10px !important;
           }
 
           .testimonials-author-slot {
@@ -215,7 +222,10 @@ export const Testimonials: React.FC = () => {
         @media (max-width: 480px) {
           .testimonials-subtitle {
             font-size: 22px !important;
-            line-height: 1.6 !important;
+            line-height: 1.7 !important;
+          }
+          .testimonials-subtitle .underline-part {
+            text-underline-offset: 8px !important;
           }
         }
       `}</style>
@@ -258,7 +268,7 @@ export const Testimonials: React.FC = () => {
           </div>
 
           <p className="testimonials-subtitle testimonials-subtitle-wrap">
-            Happy parents who trust <span style={{ color: "#FF4880" }}>BTVAS</span>
+            <span className="underline-part">Happy parents who trust</span> <span style={{ color: "#FF4880" }}>BTVAS</span>
           </p>
         </div>
 
