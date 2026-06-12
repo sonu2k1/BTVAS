@@ -216,7 +216,7 @@ export const CoreValues: React.FC = () => {
               lineHeight: 1.2,
             }}
           >
-            <span style={{ color: "#1a1a1a", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Care</span> <span style={{ color: "#FF4880" }}>That Matters</span>
+            <span style={{ color: "#1a1a1a", textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px", textDecorationSkipInk: "none" }}>Care</span> <span style={{ color: "#FF4880" }}>That Matters</span>
           </h2>
         </div>
 

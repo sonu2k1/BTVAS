@@ -157,7 +157,7 @@ export const FocusAndHours: React.FC = () => {
               lineHeight: 1.2,
             }}
           >
-            <span style={{ textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px" }}>Our</span>{" "}
+            <span style={{ textDecoration: "underline", textDecorationColor: "#FF4880", textUnderlineOffset: "8px", textDecorationThickness: "4px", textDecorationSkipInk: "none" }}>Our</span>{" "}
             <span style={{ color: "#FF4880" }}>Focus</span>
           </h2>
 
