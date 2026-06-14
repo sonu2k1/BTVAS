@@ -501,7 +501,7 @@ export const Mission: React.FC = () => {
 
           {/* Description */}
           <p className="mission-description">
-            Our mission at Beyond The View Autism Services, is to meet each child's
+            Our mission at Beyond The View Autism Services, is to meet each child&apos;s
             individual needs, create limitless opportunities for learning, and support
             each child on their journey to reach their full potential.
             <br />
