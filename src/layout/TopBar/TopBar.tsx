@@ -116,11 +116,17 @@ export const TopBar: React.FC = () => {
           .topbar-mobile {
             display: flex !important;
             align-items: center;
-            justify-content: center;
-            gap: 3px;
+            justify-content: flex-start !important;
+            gap: 8px !important;
             width: 100% !important;
             padding: 0 16px;
             height: 28px !important;
+            overflow-x: auto !important;
+            white-space: nowrap !important;
+            scrollbar-width: none !important;
+          }
+          .topbar-mobile::-webkit-scrollbar {
+            display: none !important;
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
@@ -257,14 +263,19 @@ export const TopBar: React.FC = () => {
 
       {/* ── MOBILE TopBar ── */}
       <div className="topbar-mobile">
-        <a href="tel:4044067339" className="flex items-center gap-1 text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none" }}>
+        <div className="flex items-center gap-1 shrink-0">
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
             <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={16} height={16} />
           </div>
-          (404)-406-7339
-        </a>
-        <span className="text-white opacity-30 topbar-divider">|</span>
-        <span className="topbar-enrolling-now">
+          <a href="tel:4044067339" className="text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none" }}>
+            (404)-406-7339
+          </a>
+          <a href="tel:4043982622" className="text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none", marginLeft: "4px" }}>
+            (404)-398-2622
+          </a>
+        </div>
+        <span className="text-white opacity-30 topbar-divider shrink-0">|</span>
+        <span className="topbar-enrolling-now shrink-0">
           Enrolling Now
         </span>
         {/* PREVIOUS SCROLLING MARQUEE CODE:
@@ -275,8 +286,8 @@ export const TopBar: React.FC = () => {
           </div>
         </div>
         */}
-        <span className="text-white opacity-30 topbar-divider">|</span>
-        <a href="mailto:intake@btvas.com" className="flex items-center gap-1 text-white font-sans underline topbar-link topbar-email-link">
+        <span className="text-white opacity-30 topbar-divider shrink-0">|</span>
+        <a href="mailto:intake@btvas.com" className="flex items-center gap-1 text-white font-sans underline topbar-link topbar-email-link shrink-0">
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
             <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Email.svg" alt="Email" width={16} height={16} />
           </div>
