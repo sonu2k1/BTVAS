@@ -13,7 +13,6 @@ interface TeamMember {
   thumb: string;
   quote: string;
   category: string | string[];
-  excludeFromAll?: boolean;
 }
 
 const tabs = ["All", "Core Leadership Team", "Operations Leadership Team", "Clinical Excellence Team", "Team Leads & Specialists"];
@@ -122,7 +121,7 @@ const teamMembers = [
   {
     id: 11,
     name: "Evette Sims",
-    credentials: "BCBA LBA",
+    credentials: "BCBA, LBA",
     role: " ",
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-11.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-11.jpg",
@@ -138,17 +137,6 @@ const teamMembers = [
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-12.jpg",
     quote: `"My drive and inspiration each day stem from observing the gradual progression and development of those I am helping. Noticing the changes in their abilities and general wellbeing makes me see the importance of my job. This motivates me to continue caring for others through compassionate means."`,
     category: ["Team Leads & Specialists"],
-  },
-  {
-    id: 13,
-    name: "Jeff Jean-Baptiste",
-    credentials: "BCBA, LBA",
-    role: " ",
-    image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-13.jpg",
-    thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-13.jpg",
-    quote: `"I chose to work in the field of ABA as a BCBA because I’m passionate about helping individuals reach their full potential and improve their quality of life. Seeing meaningful progress, no matter how small, is incredibly rewarding and motivates me to keep growing in this field. I also value the opportunity to use evidence-based strategies to create positive, lasting change for both clients and their families"`,
-    category: ["Clinical Excellence Team"],
-    excludeFromAll: true,
   },
   {
     id: 14,
@@ -228,7 +216,7 @@ export const OurTeam: React.FC = () => {
   const [selectedMember, setSelectedMember] = useState<TeamMember>(teamMembers[0]);
 
   const filteredMembers = activeTab === "All"
-    ? teamMembers.filter((m) => !m.excludeFromAll)
+    ? teamMembers
     : activeTab === "Core Leadership Team"
       ? [coreLeadershipGroup, ...teamMembers.filter((m) =>
         Array.isArray(m.category)
@@ -472,7 +460,7 @@ export const OurTeam: React.FC = () => {
                     setSelectedMember(teamLeadsGroup);
                   } else {
                     const filtered = tab === "All"
-                      ? teamMembers.filter((m) => !m.excludeFromAll)
+                      ? teamMembers
                       : teamMembers.filter((m) =>
                         Array.isArray(m.category)
                           ? m.category.includes(tab)
