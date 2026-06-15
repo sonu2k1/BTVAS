@@ -257,25 +257,26 @@ export const TopBar: React.FC = () => {
 
       {/* ── MOBILE TopBar ── */}
       <div className="topbar-mobile">
-        <div className="flex items-center gap-1 shrink-0">
+        <a href="tel:4044067339" className="flex items-center gap-1 text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none" }}>
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
             <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={16} height={16} />
           </div>
-          <div className="topbar-phone-container">
-            <a href="tel:4044067339" className="text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none" }}>
-              (404)-406-7339
-            </a>
-            <a href="tel:4043982622" className="text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none" }}>
-              (404)-398-2622
-            </a>
-          </div>
-        </div>
-        <span className="text-white opacity-30 topbar-divider shrink-0">|</span>
-        <span className="topbar-enrolling-now shrink-0">
+          (404)-406-7339
+        </a>
+        <span className="text-white opacity-30 topbar-divider">|</span>
+        <span className="topbar-enrolling-now">
           Enrolling Now
         </span>
-        <span className="text-white opacity-30 topbar-divider shrink-0">|</span>
-        <a href="mailto:intake@btvas.com" className="flex items-center gap-1 text-white font-sans underline topbar-link topbar-email-link shrink-0">
+        {/* PREVIOUS SCROLLING MARQUEE CODE:
+        <div className="marquee-wrapper" style={{ width: "200px", flexShrink: 0 }}>
+          <div className="marquee-track">
+            <span style={{ fontSize: "11px", fontWeight: "bold", fontFamily: "'Prompt', sans-serif" }}>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;</span>
+            <span style={{ fontSize: "11px", fontWeight: "bold", fontFamily: "'Prompt', sans-serif" }}>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;</span>
+          </div>
+        </div>
+        */}
+        <span className="text-white opacity-30 topbar-divider">|</span>
+        <a href="mailto:intake@btvas.com" className="flex items-center gap-1 text-white font-sans underline topbar-link topbar-email-link">
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
             <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Email.svg" alt="Email" width={16} height={16} />
           </div>
