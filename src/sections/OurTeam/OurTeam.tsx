@@ -13,6 +13,7 @@ interface TeamMember {
   thumb: string;
   quote: string;
   category: string | string[];
+  excludeFromAll?: boolean;
 }
 
 const tabs = ["All", "Core Leadership Team", "Operations Leadership Team", "Clinical Excellence Team", "Team Leads & Specialists"];
@@ -52,7 +53,7 @@ const teamMembers = [
     id: 4,
     name: "Sheckeema Taylor",
     credentials: "Director of Operations",
-    role: "Specialist",
+    role: "Administrator",
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-4.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-4.jpg",
     quote: `"One of the most impactful moments in my ABA career was witnessing our very first graduation ceremony. It was incredibly meaningful because it represented the culmination of consistent, collaborative effort from an entire support system of caregivers, loved ones, BCBAs, RBTs, and administrators all working toward a child’s individualized goals. In that moment, it was impossible not to reflect on where each child began, the barriers they overcame, and the progress they achieved over time. It was a powerful reminder that if followed through, ABA works, especially here at Beyond The View Autism Services!"`,
@@ -71,7 +72,7 @@ const teamMembers = [
   {
     id: 6,
     name: "Eternia Richmond",
-    credentials: "RBT",
+    credentials: "",
     role: "Morrow Clinic Operations Manager",
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-6.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-6.jpg",
@@ -121,7 +122,7 @@ const teamMembers = [
   {
     id: 11,
     name: "Evette Sims",
-    credentials: "BCBA",
+    credentials: "BCBA LBA",
     role: " ",
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-11.jpg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-11.jpg",
@@ -147,10 +148,11 @@ const teamMembers = [
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-13.jpg",
     quote: `"I chose to work in the field of ABA as a BCBA because I’m passionate about helping individuals reach their full potential and improve their quality of life. Seeing meaningful progress, no matter how small, is incredibly rewarding and motivates me to keep growing in this field. I also value the opportunity to use evidence-based strategies to create positive, lasting change for both clients and their families"`,
     category: ["Clinical Excellence Team"],
+    excludeFromAll: true,
   },
   {
     id: 14,
-    name: "Omega Springer",
+    name: "Kendall Davis",
     credentials: "RBT",
     role: "Clinical Specialist ",
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-14.jpeg",
@@ -160,7 +162,7 @@ const teamMembers = [
   },
   {
     id: 15,
-    name: "Kendall Davis",
+    name: "Omega Springer",
     credentials: "RBT Lead",
     role: " ",
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-15.png",
@@ -216,12 +218,17 @@ const teamLeadsGroup = {
   category: "Team Leads & Specialists",
 };
 
+const getImageUrl = (url: string) => {
+  if (!url) return "";
+  return url.includes("?") ? `${url}&v=3` : `${url}?v=3`;
+};
+
 export const OurTeam: React.FC = () => {
   const [activeTab, setActiveTab] = useState("All");
   const [selectedMember, setSelectedMember] = useState<TeamMember>(teamMembers[0]);
 
   const filteredMembers = activeTab === "All"
-    ? teamMembers
+    ? teamMembers.filter((m) => !m.excludeFromAll)
     : activeTab === "Core Leadership Team"
       ? [coreLeadershipGroup, ...teamMembers.filter((m) =>
         Array.isArray(m.category)
@@ -465,7 +472,7 @@ export const OurTeam: React.FC = () => {
                     setSelectedMember(teamLeadsGroup);
                   } else {
                     const filtered = tab === "All"
-                      ? teamMembers
+                      ? teamMembers.filter((m) => !m.excludeFromAll)
                       : teamMembers.filter((m) =>
                         Array.isArray(m.category)
                           ? m.category.includes(tab)
@@ -569,7 +576,7 @@ export const OurTeam: React.FC = () => {
                       }}
                     >
                       <Image
-                        src={`${member.thumb}?v=2`}
+                        src={getImageUrl(member.thumb)}
                         alt={member.name}
                         fill
                         sizes="100px"
@@ -610,7 +617,7 @@ export const OurTeam: React.FC = () => {
                   style={{ width: "100%", height: "100%", position: "relative" }}
                 >
                   <Image
-                    src={`${selectedMember.image}?v=2`}
+                    src={getImageUrl(selectedMember.image)}
                     alt={selectedMember.name}
                     fill
                     sizes="(max-width: 768px) 100vw, 560px"
