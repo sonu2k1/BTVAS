@@ -119,8 +119,8 @@ export const TopBar: React.FC = () => {
             justify-content: flex-start !important;
             gap: 8px !important;
             width: 100% !important;
-            padding: 0 16px;
-            height: 28px !important;
+            padding: 4px 16px !important;
+            height: auto !important;
             overflow-x: auto !important;
             white-space: nowrap !important;
             scrollbar-width: none !important;
@@ -149,7 +149,7 @@ export const TopBar: React.FC = () => {
         @media (max-width: 375px) {
           .topbar-mobile {
             gap: 2px !important;
-            padding: 0 8px !important;
+            padding: 4px 8px !important;
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
@@ -163,7 +163,7 @@ export const TopBar: React.FC = () => {
         @media (max-width: 320px) {
           .topbar-mobile {
             gap: 2px !important;
-            padding: 0 4px !important;
+            padding: 4px 4px !important;
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
@@ -267,12 +267,14 @@ export const TopBar: React.FC = () => {
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
             <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={16} height={16} />
           </div>
-          <a href="tel:4044067339" className="text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none" }}>
-            (404)-406-7339
-          </a>
-          <a href="tel:4043982622" className="text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none", marginLeft: "4px" }}>
-            (404)-398-2622
-          </a>
+          <div className="flex flex-col">
+            <a href="tel:4044067339" className="text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none", lineHeight: "1.1" }}>
+              (404)-406-7339
+            </a>
+            <a href="tel:4043982622" className="text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none", lineHeight: "1.1" }}>
+              (404)-398-2622
+            </a>
+          </div>
         </div>
         <span className="text-white opacity-30 topbar-divider shrink-0">|</span>
         <span className="topbar-enrolling-now shrink-0">
