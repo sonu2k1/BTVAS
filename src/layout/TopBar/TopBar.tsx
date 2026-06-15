@@ -4,6 +4,15 @@ import React from "react";
 import Image from "next/image";
 
 export const TopBar: React.FC = () => {
+  const [currentPhoneIndex, setCurrentPhoneIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentPhoneIndex((prev) => (prev === 0 ? 1 : 0));
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="w-full flex justify-center bg-transparent" style={{ padding: "12px 0" }}>
       <style>{`
@@ -123,6 +132,7 @@ export const TopBar: React.FC = () => {
             height: 28px !important;
           }
           .topbar-mobile a.topbar-phone-link,
+          .topbar-mobile a.topbar-phone-link span,
           .topbar-mobile a.topbar-email-link {
             font-size: 13px !important;
             white-space: nowrap !important;
@@ -146,6 +156,7 @@ export const TopBar: React.FC = () => {
             padding: 0 8px !important;
           }
           .topbar-mobile a.topbar-phone-link,
+          .topbar-mobile a.topbar-phone-link span,
           .topbar-mobile a.topbar-email-link {
             font-size: 11.5px !important;
           }
@@ -160,6 +171,7 @@ export const TopBar: React.FC = () => {
             padding: 0 4px !important;
           }
           .topbar-mobile a.topbar-phone-link,
+          .topbar-mobile a.topbar-phone-link span,
           .topbar-mobile a.topbar-email-link {
             font-size: 10.5px !important;
           }
@@ -257,11 +269,36 @@ export const TopBar: React.FC = () => {
 
       {/* ── MOBILE TopBar ── */}
       <div className="topbar-mobile">
-        <a href="tel:4044067339" className="flex items-center gap-1 text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none" }}>
+        <a
+          href={currentPhoneIndex === 0 ? "tel:4044067339" : "tel:4043982622"}
+          className="flex items-center gap-1 text-white font-sans decoration-none topbar-link topbar-phone-link"
+          style={{ textDecoration: "none" }}
+        >
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
             <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={16} height={16} />
           </div>
-          (404)-406-7339
+          <div style={{ display: "inline-flex", flexDirection: "column", height: "18px", overflow: "hidden", position: "relative" }}>
+            <span style={{
+              transform: `translateY(${currentPhoneIndex * -18}px)`,
+              transition: "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease",
+              opacity: currentPhoneIndex === 0 ? 1 : 0,
+              height: "18px",
+              display: "flex",
+              alignItems: "center"
+            }}>
+              (404)-406-7339
+            </span>
+            <span style={{
+              transform: `translateY(${currentPhoneIndex * -18}px)`,
+              transition: "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease",
+              opacity: currentPhoneIndex === 1 ? 1 : 0,
+              height: "18px",
+              display: "flex",
+              alignItems: "center"
+            }}>
+              (404)-398-2622
+            </span>
+          </div>
         </a>
         <span className="text-white opacity-30 topbar-divider">|</span>
         <span className="topbar-enrolling-now">
