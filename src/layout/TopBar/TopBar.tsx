@@ -116,15 +116,11 @@ export const TopBar: React.FC = () => {
           .topbar-mobile {
             display: flex !important;
             align-items: center;
+            justify-content: center;
+            gap: 3px;
             width: 100% !important;
-            padding: 4px 16px !important;
-            height: auto !important;
-            overflow-x: auto !important;
-            white-space: nowrap !important;
-            scrollbar-width: none !important;
-          }
-          .topbar-mobile::-webkit-scrollbar {
-            display: none !important;
+            padding: 0 16px;
+            height: 28px !important;
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
@@ -144,37 +140,10 @@ export const TopBar: React.FC = () => {
           }
         }
 
-        @media (min-width: 580px) and (max-width: 1024px) {
-          .topbar-mobile {
-            justify-content: center !important;
-            gap: 16px !important;
-          }
-          .topbar-phone-container {
-            display: flex !important;
-            flex-direction: row !important;
-            gap: 8px !important;
-            align-items: center !important;
-          }
-        }
-
-        @media (max-width: 579px) {
-          .topbar-mobile {
-            justify-content: flex-start !important;
-            gap: 8px !important;
-          }
-          .topbar-phone-container {
-            display: flex !important;
-            flex-direction: column !important;
-          }
-          .topbar-mobile a.topbar-phone-link {
-            line-height: 1.15 !important;
-          }
-        }
-
         @media (max-width: 375px) {
           .topbar-mobile {
             gap: 2px !important;
-            padding: 4px 8px !important;
+            padding: 0 8px !important;
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
@@ -188,7 +157,7 @@ export const TopBar: React.FC = () => {
         @media (max-width: 320px) {
           .topbar-mobile {
             gap: 2px !important;
-            padding: 4px 4px !important;
+            padding: 0 4px !important;
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
@@ -305,14 +274,6 @@ export const TopBar: React.FC = () => {
         <span className="topbar-enrolling-now shrink-0">
           Enrolling Now
         </span>
-        {/* PREVIOUS SCROLLING MARQUEE CODE:
-        <div className="marquee-wrapper" style={{ width: "200px", flexShrink: 0 }}>
-          <div className="marquee-track">
-            <span style={{ fontSize: "11px", fontWeight: "bold", fontFamily: "'Prompt', sans-serif" }}>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;</span>
-            <span style={{ fontSize: "11px", fontWeight: "bold", fontFamily: "'Prompt', sans-serif" }}>Enrolling Now.&nbsp;&nbsp;&nbsp;Enrolling Now.&nbsp;&nbsp;&nbsp;</span>
-          </div>
-        </div>
-        */}
         <span className="text-white opacity-30 topbar-divider shrink-0">|</span>
         <a href="mailto:intake@btvas.com" className="flex items-center gap-1 text-white font-sans underline topbar-link topbar-email-link shrink-0">
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
