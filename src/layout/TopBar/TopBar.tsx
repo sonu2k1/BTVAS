@@ -280,7 +280,7 @@ export const TopBar: React.FC = () => {
           <div style={{ display: "inline-flex", flexDirection: "column", height: "18px", overflow: "hidden", position: "relative" }}>
             <span style={{
               transform: `translateY(${currentPhoneIndex * -18}px)`,
-              transition: "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease",
+              transition: "transform 1.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease-in-out",
               opacity: currentPhoneIndex === 0 ? 1 : 0,
               height: "18px",
               display: "flex",
@@ -290,7 +290,7 @@ export const TopBar: React.FC = () => {
             </span>
             <span style={{
               transform: `translateY(${currentPhoneIndex * -18}px)`,
-              transition: "transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease",
+              transition: "transform 1.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease-in-out",
               opacity: currentPhoneIndex === 1 ? 1 : 0,
               height: "18px",
               display: "flex",
