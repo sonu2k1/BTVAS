@@ -4,15 +4,6 @@ import React from "react";
 import Image from "next/image";
 
 export const TopBar: React.FC = () => {
-  const [currentPhoneIndex, setCurrentPhoneIndex] = React.useState(0);
-
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentPhoneIndex((prev) => (prev === 0 ? 1 : 0));
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className="w-full flex justify-center bg-transparent" style={{ padding: "12px 0" }}>
       <style>{`
@@ -125,14 +116,13 @@ export const TopBar: React.FC = () => {
           .topbar-mobile {
             display: flex !important;
             align-items: center;
-            justify-content: center;
-            gap: 3px;
+            justify-content: center !important;
+            gap: 12px !important;
             width: 100% !important;
-            padding: 0 16px;
-            height: 28px !important;
+            padding: 4px 16px !important;
+            height: auto !important;
           }
           .topbar-mobile a.topbar-phone-link,
-          .topbar-mobile a.topbar-phone-link span,
           .topbar-mobile a.topbar-email-link {
             font-size: 13px !important;
             white-space: nowrap !important;
@@ -148,15 +138,48 @@ export const TopBar: React.FC = () => {
             font-weight: 400 !important;
             white-space: nowrap !important;
           }
+          .topbar-phone-container {
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 8px !important;
+            align-items: center !important;
+          }
+          .topbar-phone-divider {
+            display: inline-block !important;
+            width: 1px !important;
+            height: 12px !important;
+            background-color: rgba(255, 255, 255, 0.3) !important;
+            margin: 0 4px !important;
+          }
+        }
+
+        @media (max-width: 639px) {
+          .topbar-mobile {
+            gap: 8px !important;
+          }
+          .topbar-phone-container {
+            flex-direction: column !important;
+            gap: 0px !important;
+            align-items: flex-start !important;
+          }
+          .topbar-mobile a.topbar-phone-link {
+            line-height: 1.15 !important;
+          }
+          .topbar-phone-divider {
+            display: block !important;
+            width: 100% !important;
+            height: 1px !important;
+            background-color: rgba(255, 255, 255, 0.25) !important;
+            margin: 2px 0 !important;
+          }
         }
 
         @media (max-width: 375px) {
           .topbar-mobile {
-            gap: 2px !important;
-            padding: 0 8px !important;
+            gap: 4px !important;
+            padding: 4px 8px !important;
           }
           .topbar-mobile a.topbar-phone-link,
-          .topbar-mobile a.topbar-phone-link span,
           .topbar-mobile a.topbar-email-link {
             font-size: 11.5px !important;
           }
@@ -167,11 +190,10 @@ export const TopBar: React.FC = () => {
 
         @media (max-width: 320px) {
           .topbar-mobile {
-            gap: 2px !important;
-            padding: 0 4px !important;
+            gap: 3px !important;
+            padding: 4px 4px !important;
           }
           .topbar-mobile a.topbar-phone-link,
-          .topbar-mobile a.topbar-phone-link span,
           .topbar-mobile a.topbar-email-link {
             font-size: 10.5px !important;
           }
@@ -269,37 +291,20 @@ export const TopBar: React.FC = () => {
 
       {/* ── MOBILE TopBar ── */}
       <div className="topbar-mobile">
-        <a
-          href={currentPhoneIndex === 0 ? "tel:4044067339" : "tel:4043982622"}
-          className="flex items-center gap-1 text-white font-sans decoration-none topbar-link topbar-phone-link"
-          style={{ textDecoration: "none" }}
-        >
+        <div className="flex items-center gap-1 shrink-0">
           <div className="w-4 h-4 shrink-0 flex items-center justify-center">
             <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={16} height={16} />
           </div>
-          <div style={{ display: "inline-flex", flexDirection: "column", height: "18px", overflow: "hidden", position: "relative" }}>
-            <span style={{
-              transform: `translateY(${currentPhoneIndex * -18}px)`,
-              transition: "transform 1.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease-in-out",
-              opacity: currentPhoneIndex === 0 ? 1 : 0,
-              height: "18px",
-              display: "flex",
-              alignItems: "center"
-            }}>
+          <div className="topbar-phone-container">
+            <a href="tel:4044067339" className="text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none" }}>
               (404)-406-7339
-            </span>
-            <span style={{
-              transform: `translateY(${currentPhoneIndex * -18}px)`,
-              transition: "transform 1.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease-in-out",
-              opacity: currentPhoneIndex === 1 ? 1 : 0,
-              height: "18px",
-              display: "flex",
-              alignItems: "center"
-            }}>
+            </a>
+            <span className="topbar-phone-divider" />
+            <a href="tel:4043982622" className="text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none" }}>
               (404)-398-2622
-            </span>
+            </a>
           </div>
-        </a>
+        </div>
         <span className="text-white opacity-30 topbar-divider">|</span>
         <span className="topbar-enrolling-now">
           Enrolling Now
