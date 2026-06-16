@@ -151,21 +151,22 @@ const teamMembers = [
   {
     id: 14,
     name: "Kendall Davis",
-    credentials: "RBT",
-    role: "Clinical Specialist ",
+    credentials: "RBT Lead",
+    role: "",
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-14.jpeg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-14.jpeg",
-    quote: `"I’m passionate about ABA because I genuinely love working with the kids and building meaningful connections with them each day. Watching them reach small but powerful milestones is incredibly rewarding and reminds me why this work matters. Seeing them grow in their independence in their own unique ways makes me proud to be part of their journey."`,
+    
+    quote: `"What excites most about ABA is getting to work closely with my clients, no matter where they’re starting from. I really love seeing those moments when things start to click, especially when they begin interacting with their peers in more natural and meaningful ways."`,
     category: [],
   },
   {
     id: 15,
     name: "Omega Springer",
-    credentials: "RBT Lead",
-    role: " ",
+    credentials: "RBT",
+    role: "Clinical Specialist  ",
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-15.png",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-15.png",
-    quote: `"What excites most about ABA is getting to work closely with my clients, no matter where they’re starting from. I really love seeing those moments when things start to click, especially when they begin interacting with their peers in more natural and meaningful ways."`,
+    quote: `"I’m passionate about ABA because I genuinely love working with the kids and building meaningful connections with them each day. Watching them reach small but powerful milestones is incredibly rewarding and reminds me why this work matters. Seeing them grow in their independence in their own unique ways makes me proud to be part of their journey."`,
     category: [],
   },
 ];
