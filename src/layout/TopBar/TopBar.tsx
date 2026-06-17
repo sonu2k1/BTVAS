@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const TopBar: React.FC = () => {
   return (
-    <div className="w-full flex justify-center bg-transparent" style={{ padding: "12px 0" }}>
+    <div className="w-full flex justify-center bg-transparent" style={{ padding: "12px 0", maxWidth: "100vw", overflowX: "hidden" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700;800&family=Mochiy+Pop+One&display=swap');
 
@@ -119,8 +119,10 @@ export const TopBar: React.FC = () => {
             justify-content: center !important;
             gap: 12px !important;
             width: 100% !important;
-            padding: 4px 16px !important;
+            max-width: 100vw !important;
+            padding: 4px 24px !important;
             height: auto !important;
+            overflow: hidden !important;
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
@@ -155,7 +157,8 @@ export const TopBar: React.FC = () => {
 
         @media (max-width: 639px) {
           .topbar-mobile {
-            gap: 8px !important;
+            gap: 6px !important;
+            padding: 4px 12px !important;
           }
           .topbar-phone-container {
             flex-direction: column !important;
@@ -164,6 +167,13 @@ export const TopBar: React.FC = () => {
           }
           .topbar-mobile a.topbar-phone-link {
             line-height: 1.15 !important;
+            font-size: 12px !important;
+          }
+          .topbar-mobile a.topbar-email-link {
+            font-size: 12px !important;
+          }
+          .topbar-mobile span.topbar-enrolling-now {
+            font-size: 13px !important;
           }
           .topbar-phone-divider {
             display: block !important;
@@ -172,6 +182,7 @@ export const TopBar: React.FC = () => {
             background-color: rgba(255, 255, 255, 0.25) !important;
             margin: 2px 0 !important;
           }
+
         }
 
         @media (max-width: 375px) {
@@ -181,10 +192,10 @@ export const TopBar: React.FC = () => {
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
-            font-size: 11.5px !important;
+            font-size: 11px !important;
           }
           .topbar-mobile span.topbar-enrolling-now {
-            font-size: 13.5px !important;
+            font-size: 12px !important;
           }
         }
 
@@ -195,10 +206,18 @@ export const TopBar: React.FC = () => {
           }
           .topbar-mobile a.topbar-phone-link,
           .topbar-mobile a.topbar-email-link {
-            font-size: 10.5px !important;
+            font-size: 10px !important;
           }
           .topbar-mobile span.topbar-enrolling-now {
-            font-size: 12px !important;
+            font-size: 11px !important;
+          }
+          .mob-icon {
+            width: 18px !important;
+            height: 18px !important;
+          }
+          .mob-icon img {
+            width: 18px !important;
+            height: 18px !important;
           }
         }
       `}</style>
@@ -292,8 +311,8 @@ export const TopBar: React.FC = () => {
       {/* ── MOBILE TopBar ── */}
       <div className="topbar-mobile">
         <div className="flex items-center gap-1 shrink-0">
-          <div className="w-4 h-4 shrink-0 flex items-center justify-center">
-            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={16} height={16} />
+          <div className="w-[22px] h-[22px] shrink-0 flex items-center justify-center mob-icon">
+            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Phone.svg" alt="Phone" width={22} height={22} />
           </div>
           <div className="topbar-phone-container">
             <a href="tel:4044067339" className="text-white font-sans decoration-none topbar-link topbar-phone-link" style={{ textDecoration: "none" }}>
@@ -319,8 +338,8 @@ export const TopBar: React.FC = () => {
         */}
         <span className="text-white opacity-30 topbar-divider">|</span>
         <a href="mailto:intake@btvas.com" className="flex items-center gap-1 text-white font-sans underline topbar-link topbar-email-link">
-          <div className="w-4 h-4 shrink-0 flex items-center justify-center">
-            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Email.svg" alt="Email" width={16} height={16} />
+          <div className="w-[22px] h-[22px] shrink-0 flex items-center justify-center mob-icon">
+            <Image src="https://ik.imagekit.io/sonu2k1/TEst/Icons/icons/Email.svg" alt="Email" width={22} height={22} />
           </div>
           intake@btvas.com
         </a>
