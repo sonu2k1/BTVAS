@@ -18,7 +18,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white relative">
+    <main className="min-h-screen bg-white relative" style={{ maxWidth: "100vw", overflowX: "hidden" }}>
       {/* Absolute background layer for the Hero section */}
       <div className="absolute top-0 left-0 w-full bg-sky-blue z-0 overflow-hidden flex justify-center">
         <div

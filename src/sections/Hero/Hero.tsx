@@ -6,13 +6,13 @@ import { HeroCard } from "./HeroCard";
 
 const HERO_IMAGES_DESKTOP = [
   "https://ik.imagekit.io/sonu2k1/TEst/Hero-v.mp4",
-  "https://ik.imagekit.io/sonu2k1/TEst/Services/Hero1.4.png",
+  "https://ik.imagekit.io/sonu2k1/TEst/Services/Hero2.1.1.png",
   "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2854.jpg?updatedAt=1780577328321",
 ];
 
 const HERO_IMAGES_MOBILE = [
   "https://ik.imagekit.io/sonu2k1/TEst/Hero-image-vid.mp4",
-  "https://ik.imagekit.io/sonu2k1/TEst/Services/Hero-mobile1.2.3.png",
+  "https://ik.imagekit.io/sonu2k1/TEst/Services/Hero-mobile2.2.1.png",
   "https://ik.imagekit.io/sonu2k1/TEst/Hero-mobile1.3.png",
 ];
 
