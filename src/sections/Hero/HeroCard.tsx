@@ -177,7 +177,8 @@ export const HeroCard: React.FC = () => {
             <p
               className="hero-card-subtitle"
               style={{
-                fontFamily: "'Annie Use Your Telescope', cursive",
+                fontFamily: "'Playfair Display', serif",
+                fontStyle: "italic",
                 fontSize: "36px",
                 fontWeight: "400",
                 color: "#ffffff",
@@ -251,3 +252,4 @@ export const HeroCard: React.FC = () => {
     </>
   );
 };
+
