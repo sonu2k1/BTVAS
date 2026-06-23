@@ -460,7 +460,7 @@ export const Mission: React.FC = () => {
           <div className="mission-image-container">
             <div className="mission-image-inner">
               <Image
-                src="https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2503.jpg"
+                src="https://ik.imagekit.io/sonu2k1/TEst/Groups/25+.jpeg"
                 alt="Beyond The View team"
                 fill
                 sizes="(max-width: 480px) 100vw, (max-width: 1024px) 90vw, 420px"
