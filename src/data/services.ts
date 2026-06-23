@@ -23,8 +23,8 @@ export const services: Service[] = [
     images: [
       "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2751.jpg?updatedAt=1780577328194",
       "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2805.jpg",
-      "https://ik.imagekit.io/sonu2k1/TEst/Services/Aba1.3.png",
-      "https://ik.imagekit.io/sonu2k1/TEst/Services/Aba1.4.png"
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2782.jpg?updatedAt=1780577328311",
+      "https://ik.imagekit.io/sonu2k1/TEst/Services/0O3A2844.jpg?updatedAt=1780577328200"
     ],
     alt: "Child doing ABA therapy activity",
     overview:
