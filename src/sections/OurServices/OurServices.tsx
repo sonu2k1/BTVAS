@@ -283,8 +283,7 @@ export const OurServices: React.FC = () => {
     dragDistanceRef.current = 0;
     
     if (containerRef.current) {
-      containerRef.current.style.cursor = "grabbing";
-      containerRef.current.setPointerCapture(e.pointerId);
+      containerRef.current.style.cursor = "grab";
     }
     
     if (interactionTimeoutRef.current) {
@@ -298,7 +297,15 @@ export const OurServices: React.FC = () => {
     
     const x = e.pageX - containerRef.current!.offsetLeft;
     const walk = x - startXRef.current;
-    dragDistanceRef.current = Math.abs(walk);
+    const distance = Math.abs(walk);
+    dragDistanceRef.current = distance;
+    
+    if (distance > 7 && containerRef.current) {
+      if (!containerRef.current.hasPointerCapture(e.pointerId)) {
+        containerRef.current.setPointerCapture(e.pointerId);
+        containerRef.current.style.cursor = "grabbing";
+      }
+    }
     
     let newScrollLeft = scrollLeftStartRef.current - walk;
     
@@ -320,7 +327,9 @@ export const OurServices: React.FC = () => {
     if (isDraggingRef.current) {
       if (containerRef.current) {
         containerRef.current.style.cursor = "grab";
-        containerRef.current.releasePointerCapture(e.pointerId);
+        if (containerRef.current.hasPointerCapture(e.pointerId)) {
+          containerRef.current.releasePointerCapture(e.pointerId);
+        }
       }
       isDraggingRef.current = false;
     }
