@@ -198,8 +198,8 @@ const clinicalExcellenceGroup1 = {
   name: "Clinical Excellence Team",
   credentials: "BCBAs",
   role: "Beyond The View Autism Services",
-  image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2474.jpg",
-  thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2474.jpg",
+  image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp.png",
+  thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp.png",
   quote: `Our clinical excellence team of Board Certified Behavior Analysts (BCBAs) holds themselves to the highest standards of evidence-based practice, conducting thorough developmental assessments and tailoring individualized programs to nurture every child's full potential.`,
   category: "Clinical Excellence Team",
 };
