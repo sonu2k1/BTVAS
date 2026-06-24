@@ -9,7 +9,7 @@ const GAP = 16;
 
 const leftCol1Images = [
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2433.jpg",
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2474.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp.png?updatedAt=1782228808919",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
@@ -18,7 +18,7 @@ const leftCol1Images = [
 const leftCol1Repeated = [...leftCol1Images, ...leftCol1Images];
 
 const leftCol2Images = [
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2474.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp.png?updatedAt=1782228808919",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2453.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
@@ -26,7 +26,7 @@ const leftCol2Images = [
 const leftCol2Repeated = [...leftCol2Images, ...leftCol2Images];
 
 const rightCol1Images = [
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2474.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp.png?updatedAt=1782228808919",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2453.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
@@ -35,7 +35,7 @@ const rightCol1Repeated = [...rightCol1Images, ...rightCol1Images];
 
 const rightCol2Images = [
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2433.jpg",
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2474.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp.png?updatedAt=1782228808919",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
