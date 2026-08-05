@@ -23,6 +23,7 @@ const leftCol2Images = [
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/grp-1.1.png",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/grp-1.1.png",
 ];
 const leftCol2Repeated = [...leftCol2Images, ...leftCol2Images];
 

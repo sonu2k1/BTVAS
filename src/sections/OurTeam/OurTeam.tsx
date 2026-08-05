@@ -69,16 +69,6 @@ const teamMembers = [
     category: ["Team Leads & Specialists"],
   },
   {
-    id: 6,
-    name: "Eternia Richmond",
-    credentials: "",
-    role: "Morrow Clinic Operations Manager",
-    image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-6.jpg",
-    thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-6.jpg",
-    quote: `"The moment that impacted me the most was when a child with severe behaviors had a breakthrough. Seeing their parents' relief showed me that I’m making a difference for the whole family."`,
-    category: ["Operations Leadership Team"],
-  },
-  {
     id: 7,
     name: "Alicante Parker",
     credentials: "BCBA, LBA",
@@ -187,8 +177,8 @@ const operationsLeadershipGroup = {
   name: "Operations Leadership Team",
   credentials: "Management & Operations",
   role: "Beyond The View Autism Services",
-  image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
-  thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
+  image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/grp-1.1.png",
+  thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/grp-1.1.png",
   quote: `Our operations leadership team coordinates daily administrative functions, ensures compliance and safety, and manages scheduling so that children receive seamless, high-quality care.`,
   category: "Operations Leadership Team",
 };
