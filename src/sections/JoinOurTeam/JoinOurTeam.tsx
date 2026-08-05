@@ -11,7 +11,7 @@ const leftCol1Images = [
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2433.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp.png?updatedAt=1782228808919",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/Growth.png",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
 
 ];
@@ -21,6 +21,7 @@ const leftCol2Images = [
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp.png?updatedAt=1782228808919",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2453.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/grp-1.1.png",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
 ];
 const leftCol2Repeated = [...leftCol2Images, ...leftCol2Images];
@@ -29,7 +30,7 @@ const rightCol1Images = [
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp.png?updatedAt=1782228808919",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2453.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/grp-1.1.png",
 ];
 const rightCol1Repeated = [...rightCol1Images, ...rightCol1Images];
 
@@ -37,7 +38,7 @@ const rightCol2Images = [
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2433.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp.png?updatedAt=1782228808919",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2462.jpg",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/grp-1.1.png",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
 ];
 const rightCol2Repeated = [...rightCol2Images, ...rightCol2Images];
