@@ -11,7 +11,7 @@ const leftCol1Images = [
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2433.jpg",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp.png?updatedAt=1782228808919",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2459.jpg",
-  "https://ik.imagekit.io/sonu2k1/TEst/Groups/Growth.png",
+  "https://ik.imagekit.io/sonu2k1/TEst/Groups/grp-1.1.png",
   "https://ik.imagekit.io/sonu2k1/TEst/Groups/0O3A2486.jpg",
 
 ];
