@@ -68,16 +68,7 @@ const teamMembers = [
     quote: `"ABA allows me to help develop young minds while making a difference for those who need it. Being given the opportunity to make an impact big or small excites me most about ABA."`,
     category: ["Team Leads & Specialists"],
   },
-  {
-    id: 7,
-    name: "Alicante Parker",
-    credentials: "BCBA, LBA",
-    role: " ",
-    image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-7.jpg",
-    thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Member-7.jpg",
-    quote: `"Becoming a BCBA is more than a career for me—it’s a purposeful commitment to supporting meaningful growth and improving quality of life for others. I am passionate about helping individuals with autism and other developmental differences build skills, reach milestones, and access opportunities within their communities. Seeing that progress is what drives my work and reinforces my commitment to making a lasting, positive impact."`,
-    category: ["Clinical Excellence Team"],
-  },
+
   {
     id: 16,
     name: "Whitney Davis",
@@ -188,8 +179,8 @@ const clinicalExcellenceGroup1 = {
   name: "Clinical Excellence Team",
   credentials: "BCBAs",
   role: "Beyond The View Autism Services",
-  image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp.png",
-  thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp.png",
+  image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp2.1.1.png",
+  thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp2.1.1.png",
   quote: `Our clinical excellence team of Board Certified Behavior Analysts (BCBAs) holds themselves to the highest standards of evidence-based practice, conducting thorough developmental assessments and tailoring individualized programs to nurture every child's full potential.`,
   category: "Clinical Excellence Team",
 };
