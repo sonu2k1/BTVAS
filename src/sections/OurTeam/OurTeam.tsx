@@ -77,7 +77,7 @@ const teamMembers = [
     image: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Whitey.jpeg",
     thumb: "https://ik.imagekit.io/sonu2k1/TEst/Team/team/Whitey.jpeg",
     quote: `"My “why” for becoming a BCBA is rooted in my passion for helping children grow into their fullest potential, no matter what path they choose. I want to provide them with the tools, support, and encouragement they need to thrive in ways that are meaningful to them. Being part of their progress and celebrating their success is what drives me every day."`,
-    category: [],
+    category: ["Clinical Excellence Team"],
   },
   {
     id: 8,
@@ -179,8 +179,8 @@ const clinicalExcellenceGroup1 = {
   name: "Clinical Excellence Team",
   credentials: "BCBAs",
   role: "Beyond The View Autism Services",
-  image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp2.1.1.png",
-  thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/Grp2.1.1.png",
+  image: "https://ik.imagekit.io/sonu2k1/TEst/Groups/clinical_grp.png",
+  thumb: "https://ik.imagekit.io/sonu2k1/TEst/Groups/clinical_grp.png",
   quote: `Our clinical excellence team of Board Certified Behavior Analysts (BCBAs) holds themselves to the highest standards of evidence-based practice, conducting thorough developmental assessments and tailoring individualized programs to nurture every child's full potential.`,
   category: "Clinical Excellence Team",
 };
